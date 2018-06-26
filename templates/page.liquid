@@ -1,0 +1,18 @@
+{% if page.title == "The World's Most Powerful Turmeric Elixir" %}
+	{% layout none %}
+<link rel="shortcut icon" href="https://cdn.besynchro.com/global/fav-icon.png">
+<title>The World's Most Powerful Turmeric Elixir</title>
+
+<div class="rte">
+  	{{ page.content }}
+</div>
+
+{% else %}
+
+<h1 class="page-title">{{ page.title }}</h1>
+
+<div class="rte">
+  {{ page.content }}
+</div>
+
+{% endif %}

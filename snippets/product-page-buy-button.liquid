@@ -1,0 +1,335 @@
+<div id='product-component-subscription'></div>
+<div id='product-component-one-time'></div>
+
+{% if settings.product-show-info-link-1 or settings.product-show-info-link-2 %}
+  <div class="product-more-info">
+    {% if settings.product-show-info-link-1 %}
+    <p class="product-info-link {{ settings.product-info-link-icon-1 }}">
+      {% if settings.product-info-link-url-1.size > 0 %}<a href="{{ settings.product-info-link-url-1 }}">{% endif %}
+      {{ settings.product-info-link-text-1 }}
+      {% if settings.product-info-link-url-1.size > 0 %}</a>{% endif %}
+    </p>
+    {% endif %}
+
+    {% if settings.product-show-info-link-2 %}
+    <p class="product-info-link {{ settings.product-info-link-icon-2 }}">
+      {% if settings.product-info-link-url-2.size > 0 %}<a href="{{ settings.product-info-link-url-2 }}">{% endif %}
+      {{ settings.product-info-link-text-2 }}
+      {% if settings.product-info-link-url-2.size > 0 %}</a>{% endif %}
+    </p>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% if settings.product-show-share-buttons %}
+  {% include 'share-buttons' %}
+{% endif %}
+
+<script type="text/javascript">
+/*<![CDATA[*/
+  
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit({{product.id}});
+    } else {
+      loadScript({{product.id}});
+    }
+  } else {
+    loadScript({{product.id}});
+  }
+
+  function loadScript(productId) {
+    var script = document.createElement('script');
+    var actualInit = function() {
+      ShopifyBuyInit(productId);
+    };
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = actualInit;
+  }
+  
+  function showSubscribeOptions(componentContainer) {
+      //regular mixed case with subscription and one time
+      if (subscription_on==true && subscription_only_{{product.id}}!=true) {
+        rjQuery('#recurring_choice_{{product.id}}').show()
+          rechargedebug['showinghtml']='true'
+          //only show html if subscription is On and subscription only if Off 
+      }
+            //case for subscription only with shipping interval frequency dropdown
+
+      var multiple_frequency_options_{{product.id}}=false
+      {% if shipping_interval_frequency.size > 1 %}
+        var multiple_frequency_options_{{product.id}}=true
+      {% endif %}
+      if (subscription_on==true && subscription_only_{{product.id}}==true && multiple_frequency_options_{{product.id}}) {
+          rjQuery('#recurring_choice_{{product.id}}').show()
+          rechargedebug['showinghtml']='true'
+          rjQuery('#single_purchase_{{product.id}}').hide()
+          rjQuery('#recurring_purchase_{{product.id}} label').eq(0).hide()
+
+          //only show html if subscription is On and subscription only if Off 
+      }
+
+      rjQuery(componentContainer + ' .shopify-buy__quantity-container').prepend('<label for="quantity">Quantity</label>');       
+  }
+                
+  function createComponentFromId(ui, nodeId, productId) {
+  	return ui.createComponent('product', {
+      id: productId,
+      node: document.getElementById(nodeId),
+      moneyFormat: '%24%7B%7Bamount%7D%7D',
+      options: {
+        "product": {
+          "iframe": false,
+          "layout": "horizontal",
+          "variantId": "all",
+          "width": "100%",
+          "contents": {
+            "img": false,
+            "title": false,
+            "variantTitle": false,
+            "description": true,
+            "buttonWithQuantity": true,
+            "button": false,
+            "quantity": false
+          },
+          "styles": {
+            "product": {
+              "text-align": "left",
+              "@media (min-width: 601px)": {
+                "max-width": "100%",
+                "margin-left": "0",
+                "margin-bottom": "50px"
+              }
+            },
+            "button": {
+              "background-color": "#000000",
+              "font-size": "14px",
+              "padding-top": "15px",
+              "padding-bottom": "15px",
+              "padding-left": "10px",
+              "padding-right": "10px",
+              ":hover": {
+                "background-color": "#000000"
+              },
+              ":focus": {
+                "background-color": "#000000"
+              },
+              "font-weight": "bold"
+            },
+            "title": {
+              "font-size": "26px"
+            },
+            "price": {
+              "font-size": "18px"
+            },
+            "quantityInput": {
+              "font-size": "14px",
+              "padding-top": "15px",
+              "padding-bottom": "15px"
+            },
+            "compareAt": {
+              "font-size": "15px"
+            }
+          }
+        },
+        "cart": {
+          "contents": {
+            "button": true
+          },
+          "text": {
+            "button": "Checkout"
+          },
+          "styles": {
+            "button": {
+              "background-color": "#000000",
+              "font-size": "14px",
+              "padding-top": "15px",
+              "padding-bottom": "15px",
+              ":hover": {
+                "background-color": "#000000"
+              },
+              ":focus": {
+                "background-color": "#000000"
+              },
+              "font-weight": "bold"
+            },
+            "footer": {
+              "background-color": "#ffffff"
+            }
+          }
+        },
+        "modalProduct": {
+          "contents": {
+            "variantTitle": false,
+            "buttonWithQuantity": false,
+            "quantity": false
+          },
+          "styles": {
+            "product": {
+              "@media (min-width: 601px)": {
+                "max-width": "100%",
+                "margin-left": "0px",
+                "margin-bottom": "0px"
+              }
+            },
+            "button": {
+              "background-color": "#000000",
+              "font-size": "14px",
+              "padding-top": "15px",
+              "padding-bottom": "15px",
+              "padding-left": "10px",
+              "padding-right": "10px",
+              ":hover": {
+                "background-color": "#000000"
+              },
+              ":focus": {
+                "background-color": "#000000"
+              },
+              "font-weight": "bold"
+            },
+            "quantityInput": {
+              "font-size": "14px",
+              "padding-top": "15px",
+              "padding-bottom": "15px"
+            }
+          }
+        },
+        "toggle": {
+          "styles": {
+            "toggle": {
+              "background-color": "#000000",
+              ":hover": {
+                "background-color": "#000000"
+              },
+              ":focus": {
+                "background-color": "#000000"
+              },
+              "font-weight": "bold"
+            },
+            "count": {
+              "font-size": "14px"
+            }
+          }
+        },
+        "productSet": {
+          "styles": {
+            "products": {
+              "@media (min-width: 601px)": {
+                "margin-left": "-20px"
+              }
+            }
+          }
+        }
+      }
+    }) 
+  }        
+
+  function ShopifyBuyInit(productId) {
+    var client = ShopifyBuy.buildClient({
+      domain: 'synchro.myshopify.com',
+      apiKey: 'cbaa65784db00aac3aa2e5e0008fb6dc',
+      appId: '6',
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      createComponentFromId(ui, 'product-component-one-time', productId).then(function() {
+      	showSubscribeOptions('#product-component-one-time');
+      }); ; ;
+      createComponentFromId(ui, 'product-component-subscription', {{ product.metafields.subscriptions.discount_product_id }}).then(function() {
+      	showSubscribeOptions('#product-component-subscription');
+      }); ; 
+    });
+  }
+})();
+/*]]>*/
+</script>
+
+<style>
+   #product-component-subscription {
+     display: none;
+   }
+  
+  .product-wrap {
+    position: relative;
+    top: 25px;
+  }
+
+  .shopify-buy__product__price {
+    font-size: 30px;
+    margin: 0;
+    position: relative;
+    top: -205px;
+    height: 0;
+  }
+
+  .radio_option {
+    margin-top: 5px;
+  }
+
+  .shopify-buy__option-select__label,
+  .shopify-buy__option-select-wrapper {
+    display: inline-block;
+  }
+  .shopify-buy__option-select-wrapper {
+    position: relative;
+    width: 80%;
+  }
+
+  .shopify-buy__product__variant-selectors {
+    margin: 30px 0;
+  }
+  .shopify-buy__option-select-wrapper:after {
+    color: #333;
+    content: "\E010";
+    position: absolute;
+    right: 15px;
+    top: 25%;
+    font-family: 'Single Product Webicons Regular';
+    -webkit-font-smoothing: antialiased;
+    pointer-events: none;
+  }
+
+  .shopify-buy__option-select__select {
+    background-color: #fff;
+    cursor: pointer;
+    border: 1px solid #c7c7c7 ;
+    color: #333;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    margin-left: 10px;
+    padding-left: 15px;
+    -webkit-appearance: none;
+    outline: none;
+  }
+
+  .shopify-buy__quantity {
+    display: inline-block !important;
+    width: 55px !important;
+    text-align: center;
+    margin-top: 0;
+    margin-left: 15px;
+  }
+
+  .shopify-buy__btn-wrapper {
+    margin: 30px 0;
+  }
+  .shopify-buy__select-icon {
+    display: none;
+  }
+
+  @media screen and (max-width: 720px) {
+    .shopify-buy__product__price {
+      display: none;
+    }
+  }
+
+  .shopify-buy-frame--toggle.is-sticky {
+     top: 220px !important;
+  }
+  
+</style>

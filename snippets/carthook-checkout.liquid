@@ -1,0 +1,16 @@
+{% if customer %}
+	<script  type="text/javascript">
+		window.ch_cust_param = 'customer_id={{customer.id}}&customer_email={{customer.email}}';
+		var ch_sd = btoa(JSON.stringify({
+			"id": {{customer.id | json}},
+			"email": {{customer.email | json}},
+			"default_address": {{customer.default_address | json}},
+			"accepts_marketing": {{customer.accepts_marketing | json}}
+		}));
+		sessionStorage.setItem("ch_sd", ch_sd);
+	</script>
+
+{% endif %}
+
+<script src="https://api.c.carthook.com/api/v1/integrations/shopify/fetch.js?shop=synchro.myshopify.com" type="text/javascript"></script>
+<script src="https://api.c.carthook.com/api/v1/integrations/shopify/clear_cart.js?shop=synchro.myshopify.com" type="text/javascript"></script>

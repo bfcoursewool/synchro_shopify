@@ -1,0 +1,385 @@
+{% comment %}
+	to install, insert:
+		{% if product.available %} 
+			{% include 'subscription-product' %} 
+		{% endif %} 
+	above:
+	<form action="/cart/add">
+	in product.liquid template
+{% endcomment %}
+<!-- subscription code begins -->
+
+<script>
+    rechargedebug={}
+	rechargedebug['subscription_active_metafield'] = '{{shop.metafields.subscriptions.subscription_active}}'
+	subscription_on=false
+</script>
+
+{% if shop.metafields.subscriptions.subscription_active == 'true'  %}
+	<script>
+		subscription_on=true 
+		rechargedebug['subscription_on']=subscription_on
+	</script>
+{% endif %}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script>
+	rjQuery = jQuery.noConflict( true );
+	
+    function get_cookie(name){
+        return(document.cookie.match('(^|; )'+name+'=([^;]*)')||0)[2]
+    }
+		
+	function getUrlParameter(desired_param) {
+		var url = window.location.search.substring(1);
+		var url_params = url.split('&');
+		for (var i = 0; i < url_params.length; i++) {
+			var param_name = url_params[i].split('=');
+			if (param_name[0] == desired_param) {
+				return param_name[1];
+			}
+		}
+	} 
+	
+	rechargedebug['previewactive']='not active'
+	if ( getUrlParameter('recharge') =='true' || getUrlParameter('recharge') !=undefined ) {
+		subscription_on=true 
+		rechargedebug['previewactive']='true'
+        
+        if (get_cookie('recharge')!='true') {
+        	//show this preview the first time user comes to this page only
+        	alert('Hi! You are previewing recharge. You can clear your cookies to view as a normal shopper.')
+            rjQuery('.thisisapreview').show()
+        } 
+		document.cookie = "recharge=true; path=/"
+    } 
+</script>
+
+{% if product.metafields.subscriptions.subscription_id  %}
+
+    {% assign subscriptions = shop.metafields.subscriptions%}
+	
+	{% if subscriptions.font_color %} {% assign font_color = subscriptions.font_color %} {% else %} {% assign font_color = '#000' %} {% endif %}
+    
+	{% if subscriptions.background_color %} {% assign background_color = subscriptions.background_color %} {% else %} {% assign background_color = '#fff' %} {% endif %}
+    
+	{% if subscriptions.onetime_message %} {% assign widget_onetime_message = subscriptions.onetime_message %} {% else %} {% assign widget_onetime_message = 'One-time purchase	' %} {% endif %}
+
+    {% if subscriptions.subscribe_message %} {% assign widget_subscribe_message = subscriptions.subscribe_message %} {% else %} {% assign widget_subscribe_message = 'Subscribe & Save' %} {% endif %}
+
+    {% assign widget_how_it_works = subscriptions.how_it_works %}
+
+
+<script>
+	{% if product.metafields.subscriptions.is_subscription_only == 'true' or product.tags contains 'Subscription Only' or product.tags contains 'subscription only' or product.tags contains 'Subscription only' or product.tags contains 'subscriptiononly' %}
+		{% assign subscription_only = 'true' %} 
+		subscription_only_{{product.id}}=true 
+		rechargedebug['subscription_only_{{product.id}}']='true'
+	{% else %}
+		{% assign subscription_only = 'false' %}
+		subscription_only_{{product.id}}=false 
+		rechargedebug['subscription_only_{{product.id}}']='false'
+	{% endif %}
+
+</script>
+
+{% if product.metafields.subscriptions.shipping_interval_unit_type.size > 0%}
+	{% assign shipping_interval_unit_type = product.metafields.subscriptions.shipping_interval_unit_type %}  
+{% else %}
+	{% assign shipping_interval_unit_type = 'Days' %}
+{% endif %}
+
+{% if product.metafields.subscriptions.shipping_interval_frequency.size > 0 %}
+	{% assign shipping_interval_frequency = product.metafields.subscriptions.shipping_interval_frequency | split: ',' %}
+{% else %}
+	{% assign shipping_interval_frequency = '30' %}
+{% endif %}
+  
+{% assign discount_percentage_no_decimals = product.metafields.subscriptions.discount_percentage | floor %}
+{% assign discount_percentage = product.metafields.subscriptions.discount_percentage | round: 2 %}      
+
+{% if discount_percentage_no_decimals == discount_percentage %}
+     {% assign discount_percentage = discount_percentage_no_decimals %}
+{% endif %}
+
+{% assign subscription_id = product.metafields.subscriptions.subscription_id %}
+
+<section id="recurring_choice_{{product.id}}" style="display:none">
+  
+  	   <div class="yotpo bottomLine"
+            data-appkey="CalfzAOupm1BkNXNVPt3HJmsQsP3fMA7RkQhtwQD"
+            data-domain="{{ shop.permanent_domain | escape }}"
+            data-product-id="{{ product.id }}"
+            data-product-models="{{ product.id }}"
+            data-name="{{ product.title | escape }}"
+            data-url="{{ shop.url }}{{ product.url }}"
+            data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+            data-description="{{ product.description | escape }}"
+            data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+  	   </div>
+  
+    <div class="radio_option {{product.id}}" id="single_purchase_{{product.id}}">
+        <label for="autodeliver_off_radio_{{product.id}}" id="auto_deliver_label" class="subscription-font-color">
+            <input type="radio" name="autodeliver_{{product.id}}" class="autodeliver {{product.id}}" value="onetime" {% if subscription_only == 'false' %} checked="" {% endif %} id="autodeliver_off_radio_{{product.id}}"> 
+            {% if discount_percentage > 0 %}
+              <span>{{widget_onetime_message }} </span> <span id="one-time-price_{{product.id}}"></span>
+			{% else %}
+               <span>{{widget_onetime_message }} </span>         
+         	{% endif %}
+      	</label>
+	</div><!--#single_purchase-->
+    <div class="radio_option {{product.id}}" id="recurring_purchase_{{product.id}}">
+        <label for="autodeliver_on_radio_{{product.id}}" id="auto_deliver_label" style="font-weight:bold;">
+			
+			<input type="radio" name="autodeliver_{{product.id}}" class="autodeliver {{product.id}}" value="autodeliver" {% if subscription_only == 'true' %} checked="" {% endif %} id="autodeliver_on_radio_{{product.id}}"> 
+			<span class="subscription-font-color"> {{widget_subscribe_message}}</span> 
+			{% if discount_percentage > 0 %}
+                <span>{{discount_percentage}}%</span>: <span id="recurring-time-price_{{product.id}}"></span>
+			{% endif %}
+		  </label>
+	
+		<div class="offer_newline">
+			<label>
+				<span class="subscription-font-color" style="margin-left:0px;"> 
+				
+				<input type="hidden" name="" id="shipping_interval_unit_type_{{product.id}}" value="{{shipping_interval_unit_type}}" >
+				Deliver every 
+				{% if shipping_interval_frequency.size == 1 %}
+					<span >
+                      	{{shipping_interval_frequency[0]}} 
+                        <!-- Display "1 Month" not "1 Months" -->
+                        {% if shipping_interval_frequency[0] == "1" and shipping_interval_unit_type == 'Months' %}
+                            Month
+                        {% elsif shipping_interval_frequency[0] == "1" and shipping_interval_unit_type == 'Weeks' %}
+                            Week
+                        {% else %}
+                          {{shipping_interval_unit_type}}
+                        {% endif %}                      
+                  	</span>
+					<input type="hidden" name="" id="shipping_interval_frequency_{{product.id}}" value="{{shipping_interval_frequency}}">
+
+				{%elsif shipping_interval_frequency.size > 1%}
+					<select name="" id="shipping_interval_frequency_{{product.id}}">
+					  {% for frequency in shipping_interval_frequency %}
+					  <option value="{{frequency}}">
+                        	{{frequency}} 
+                        	<!-- Display "1 Month" not "1 Months" -->
+                        	{% if frequency == "1" and shipping_interval_unit_type == 'Months' %}
+                        		Month
+                        	{% elsif frequency == "1" and shipping_interval_unit_type == 'Weeks' %}
+                        		Week
+                        	{% else %}
+                              {{shipping_interval_unit_type}}
+                        	{% endif %}
+                      </option>
+					  {% endfor %}
+					</select>
+				{% endif %}
+				</span>
+			</label>
+			
+			<a href="http://www.rechargeapps.com/subscribe-with-recharge?utm_source=shopify%20store&utm_medium=customer%20link&utm_campaign=Shopify%20store%20back%20link&shop={{ shop.permanent_domain }}" target="_blank" rel="nofollow" class="subscription-tooltip subscription-font-color" id="see-details" style="margin-left: 0px; text-transform: none;">See details</a><!--.subscription-tooltip-->
+		</div><!--.offer_newline-->
+	  </div><!--#recurring_purchase-->
+ 
+</section>
+      
+<style>
+    #recurring_choice_{{product.id}}{
+		margin: 10px 0;
+	}
+
+	/* Tool Tip CSS */
+	span.subscription-tooltip {
+		outline:none; 
+		position:relative !important;
+	}
+	span.subscription-tooltip strong {line-height:30px;}
+	span.subscription-tooltip:hover {text-decoration:none;}
+	span.subscription-tooltip span {
+		z-index:10;
+		display:none;
+		padding:14px 20px;
+		margin-top: 20px;
+		margin-left:28px;
+		width:240px;
+		line-height:16px;
+	}
+	span.subscription-tooltip:hover span{
+		display:inline;
+		position:absolute;
+		left:-250px;
+		color:#111;
+		border:1px solid #333;
+		background:white;
+	}
+	span.subscription-tooltip span{
+		-moz-box-shadow: 5px 5px 8px #CCC;
+		-webkit-box-shadow: 5px 5px 8px #CCC;
+		box-shadow: 5px 5px 8px #CCC;
+	}
+	
+	/* Recurring Upsell Widget CSS */
+	
+	.subscription-font-color {
+    color: {{font_color}} !important;
+  }
+    
+	.radio_option {
+		border-radius:4px;
+		cursor:pointer;
+		margin:0;
+		padding:8px;
+		font-family:"Arial","Helvetica",sans-serif;
+		width:98%;
+		border: 1px solid transparent;
+	}
+	
+	.radio_option.active {
+        border:1px solid {{ background_color }} !important;
+        background-color:{{ background_color }} !important;
+    }
+  .radio_option input {
+		margin:0 4px 0 0;
+		padding:0 0 0 5px;
+	}
+	
+	
+	.radio_option input[type="number"] {
+		width:40px;
+	}
+	#auto_deliver_label {
+		font-weight:bold !important;
+		width:90% !important;
+	}
+	.radio_option label {
+		width:auto;
+		font-weight:normal !important;
+		position:relative;
+		display:inline-block
+	}
+	.label_black_text {
+		color:rgb(0,0,0);
+		font-family:"Arial";
+		font-weight:bold;
+		margin-left:21px;
+	}
+	.offer_newline {
+		margin-top:5px;
+	}
+	#see-details {
+		color:rgb(86,148,82);
+		text-decoration:underline;
+		text-transform:none;
+	  opacity:1;
+	}
+	#see-details::before {
+		content: "";
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    background-image: url('//bcassets-rechargeapps.netdna-ssl.com/static/images/recharge-icon-w-2.png');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    vertical-align: middle;
+    margin-right: 4px;
+    border-radius: 2px;
+    background-color: #2d93ac;
+	}
+	#recurring_choice {
+		width: 100%;
+		margin-left: 0px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size:13px;
+	}
+	#single_purchase {
+		margin-bottom:5px; 
+	}
+	select#shipping_interval_frequency_{{product.id}} {
+		display:inline-block;
+		height: auto;
+	}
+	.radio_option label {
+		cursor:pointer;
+	}
+	
+	/* fix for launchpad*/
+	.autodeliver {
+		-webkit-appearance:radio;
+	}
+	
+	/*Client requested changes */
+	#see-details {
+		color:#2d93ac;
+	}
+	.hide-info{
+	  display:none !important;
+	}
+	/* Recurring Upsell Widget HTML */
+</style>
+   
+<script>
+	/**BEGIN JAVASCRIPT **/
+if (subscription_on==true) {
+
+    window.currency_symbol='$'
+    window.currency_suffix=''
+    
+    discount_percentage_metafield_value = {{ product.metafields.subscriptions.discount_percentage | floor }} 
+    has_discount_{{product.id}} = false
+    if(discount_percentage_metafield_value > 0) {
+		has_discount_{{product.id}} = true 
+	}
+	
+	/* for changing background color when a selection is clicked */
+	rjQuery('body').on('click','.autodeliver.{{product.id}}',function() {
+		rjQuery('.radio_option.{{product.id}}').removeClass('active')
+		rjQuery(this).parent().parent().addClass('active')
+
+		if( rjQuery(this).val()=='autodeliver' ) {
+			rjQuery('#recurring_purchase_{{product.id}}').addClass('active')
+			rjQuery('#single_purchase_{{product.id}}').removeClass('active')
+		} else if( rjQuery(this).val()=='onetime' ) {
+			rjQuery('#recurring_purchase_{{product.id}}').removeClass('active')
+			rjQuery('#single_purchase_{{product.id}}').addClass('active')
+		}
+
+		if(has_discount_{{product.id}} == true) {
+            // TODO -- correctly change price on radio select
+			//updatePrice_{{product.id}}("UPDATE - Change radio");    
+		}
+	})
+	
+	 //HANDLE THE ADDING TO CART
+	rjQuery( document ).ready(function() {
+
+        // using a timeout to wait for shopify to load select elements via javascript
+        setTimeout(function(){
+            
+            // LISTENER FOR WHEN RADIO OPTION FOR ONE-TIME/RECURRING IS CHECKED                
+            rjQuery(".autodeliver.{{product.id}}").change(function(){				
+				if(rjQuery(this).val() == 'autodeliver'){
+					rjQuery('#product-component-subscription').show();
+              		rjQuery('#product-component-one-time').hide();
+              		rjQuery('.product-price .money').html(
+              			rjQuery('#product-component-subscription .shopify-buy__product__actual-price').html()
+                    )
+				} else if (rjQuery(this).val() == 'onetime') {
+                  	rjQuery('#product-component-one-time').show();
+					rjQuery('#product-component-subscription').hide();
+                    rjQuery('.product-price .money').html(
+              			rjQuery('#product-component-one-time .shopify-buy__product__actual-price').html()
+                    )
+              	}
+            });
+        }, 300); // end setTimeout / initialization of select menu listeners
+
+    });
+ 
+}//end if (subscription_on==true) section
+  
+</script> 
+{% endif %} {% comment %} Ends the if statement for if product.metafields.subscriptions.subscription_id {% endcomment %}
+<!-- subscription code ends -->

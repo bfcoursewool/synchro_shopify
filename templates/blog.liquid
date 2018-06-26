@@ -1,0 +1,105 @@
+<div class="blogpage mainblogpage">
+  <div class="blogpage-right">
+    {% comment %}
+    {% if current_tags %}
+    <p class="current-tag">{{ 'blogs.blog.posts_tagged' | t }} <em>"{{ current_tags.first }}"</em></p>
+    {% endif %}
+    {% endcomment %}
+
+    {% assign unPaginatedArticles = blog.articles %}
+    {% paginate blog.articles by settings.articles-per-page %}
+    
+    {% assign blogSticky1 = current_tags[0] | append: "-sticky-1" %}
+    {% assign blogSticky2 = current_tags[0] | append: "-sticky-2" %}
+    {% assign blogSticky3 = current_tags[0] | append: "-sticky-3" %}
+
+    {% if paginate.current_page == 1 %}
+      <div class="blog-posts sticky"> 
+        {% for article in unPaginatedArticles %}
+          {% if article.tags contains blogSticky1 %}
+            {% include 'article-list-item' %}
+          {% endif %}
+        {% endfor %}
+        {% for article in unPaginatedArticles %}
+          {% if article.tags contains blogSticky2 %}
+            {% include 'article-list-item' %}
+          {% endif %}
+        {% endfor %}
+        {% for article in unPaginatedArticles %}
+          {% if article.tags contains blogSticky3 %}
+            {% include 'article-list-item' %}
+          {% endif %}
+        {% endfor %}
+      </div>
+	{% endif %}
+    
+    <div class="blog-posts">
+      {% for article in blog.articles %}
+        <!-- Lol, shopify is so shitty you cannot negate "contains" -->
+        {% if article.tags contains blogSticky1 or article.tags contains blogSticky2 or article.tags contains blogSticky3 %}
+        {% else %} 
+          {% include 'article-list-item' %}
+        {% endif %}
+      {% else %}
+      <span class="empty">{{ 'blogs.blog.empty' | t }}</span>
+      {% endfor %}
+    </div>
+
+    {% if paginate.previous or paginate.next %}
+    {% include 'pagination' %}
+    {% endif %}
+    {% endpaginate %}
+  </div>
+  <div class="blogpage-left">
+    <div class="sidebar">
+     
+
+      <div class="sidebar-most-popular-section">
+        <h2>Most Popular</h2>
+        <ul class="sidebar-most-popular-section-list">
+          {% for link in linklists.most-popular-posts.links %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>  
+
+
+      {% assign taghandle=current_tags.first | handle %}
+      {% if taghandle != blank %}
+      <div class="sidebar-newsletter-section">
+        {% include 'mailing-list' %}
+      </div>
+      {% endif %}
+
+      {% if settings.use-sidebar-images %}
+      <div class="sidebar-images-section">
+        {% assign blogAdURL = "sidebar-blog-" | append: current_tags[0] %}
+        {% assign blogAdURL = blogAdURL | append: "-ad-link" %}
+        {% assign blogAdImage = "sidebar-blog-" | append: current_tags[0] %}
+        {% assign blogAdImage = blogAdImage | append: "-ad-image.png" %}
+
+        {% if settings[blogAdURL] != blank %}
+          <span class="sidebar-blog-image-1">
+            <div style="display:none;">{{blogAdImage}}</div>
+            <a href="{{settings[blogAdURL]}}">
+              <img src="{{settings[blogAdImage]}}">
+            </a>
+          </span>
+        {% else %}
+          {% if settings.sidebar-blog-default-ad-link != blank %}
+          <span class="sidebar-blog-image-1">
+            <a href="{{settings.sidebar-blog-default-ad-link}}">
+              <img src="{{settings['sidebar-blog-default-ad-image.png']}}">
+            </a>
+          </span>
+          {% endif %}
+        {% endif %}
+      </div>
+      {% endif %}
+
+
+    </div>
+  </div>
+</div>

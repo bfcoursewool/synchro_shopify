@@ -1,0 +1,203 @@
+<div class="singleblogpage blogpage mainblogpage">
+  <div class="blog-top-head">
+    <div style="display:none;">{{ current_tags }}</div>
+    <div class="post-date-publish">{{ article.published_at | date: format: 'short_month' }}</div>
+    <h1 class="page-title">{{ article.title }}</h1>
+  </div>
+  <div class="blogpage-right">
+    <div class="blog-posts">
+      <article class="blog-post clearfix">
+
+        {% comment %}
+        <div class="post-meta meta">
+          {% if article.tags.size > 0 and settings.blog-show-tags %}
+          <p><strong>{{ 'blogs.article_item.filed_under' | t }}</strong>:
+            {% for tag in article.tags %}
+            <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %},&nbsp;{% endunless %}
+            {% endfor %}
+          </p>
+          {% endif %}
+          {% if index and article.comments_enabled? and article.comments.size > 0 and settings.blog-show-comment-count %}
+          <p class="post-comment-count"><a href="{{ article.url }}#comments">{{ article.comments_count }} {{ 'blogs.article_item.comment_count' | t: count: article.comments_count }}</a></p>
+          {% endif %}
+        </div>
+        {% endcomment %}
+
+
+        {% if article.tags.size > 0 and settings.blog-show-tags %}
+        <span class="article-tags">
+          {% for tag in article.tags %}
+          <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+          {% unless forloop.last %}
+          ,&nbsp;
+          {% endunless %}
+          {% endfor %}
+        </span>
+        {% endif %}
+        
+
+        <div class="rte post-content">
+          {% if index %}
+          {% if article.excerpt == blank %}
+          <p>{{ article.content | strip_html | truncatewords: 40 }}</p>
+          {% else %}
+          {{ article.excerpt }}
+          {% endif %}
+          <p class="blog-read-more"><a href="{{ article.url }}">{{ 'blogs.article_item.read_more' | t }}</a></p>
+          {% else %}
+          {{ article.content }}
+          {% endif %}
+        </div>
+      </article>
+    </div>
+
+
+    {% if blog.next_article or blog.previous_article %}
+    <div class="single-post-pagination clearfix">
+      {% if blog.previous_article %}<a class="previous-post button" href="{{ blog.previous_article }}">{{ 'general.pagination.previous' | t }}</a>{% endif %}
+      {% if blog.next_article %}<a class="next-post button" href="{{ blog.next_article }}">{{ 'general.pagination.next' | t }}</a>{% endif %}
+    </div>
+    {% endif %}
+
+    
+    <!-- DISQUS COMMENTS
+	================================================-->
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'synchrolife'; // required: replace example with your forum shortname
+      
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <!--END DISQUS
+	================================================-->
+    
+    {% if article.comments_enabled? %}
+
+    <div class="post-comments" id="comments">
+
+      {% if article.comments_count > 0 %}
+      <div class="post-comments-list">
+
+        <h3>{{ article.comments_count }} {{ 'blogs.article_item.comment_count' | t: count: article.comments_count }}</h3>
+
+        {% paginate article.comments by 10 %}
+        {% for comment in article.comments %}
+        <div class="post-comment" id="comment-{{ comment.id }}">
+          <p class="meta"><a href="{{ comment.url }}" class="post-comment-date">{{ comment.created_at | date: format: 'short_month' }}</a>
+            &bull; {{ 'blogs.article_item.posted_by' | t }} <strong>{{ comment.author }}</strong></p>
+          <div class="rte">{{ comment.content }}</div>
+        </div>
+        {% endfor %}
+
+        {% if paginate.previous or paginate.next %}
+        {% include 'pagination' %}
+        {% endif %}
+
+        {% endpaginate %}
+      </div>
+      {% endif %}
+
+      <div class="post-comments-submit">
+        <h3>{{ 'blogs.article_item.leave_comment' | t }}</h3>
+
+        {% form article %}
+
+        {% if form.posted_successfully? %}
+        <p>
+          {% if blog.moderated? %}
+          {{ 'blogs.article_item.comment_pending' | t }}
+          {% else %}
+          {{ 'blogs.article_item.comment_posted' | t }}
+          {% endif %}
+        </p>
+        {% endif %}
+
+        {% if form.errors %}
+        <p class="error-message">{{ 'blogs.article_item.error_message' | t }}</p>
+        {% endif %}
+
+        <div class="input-wrapper {% if form.errors contains "author" %}error{% endif %}">
+          <label>{{ 'general.general.name' | t }} {{ form.errors.messages["author"] }}</label>
+          <input type="text" placeholder="{{ 'general.general.name_placeholder' | t }}" value="{{ form.author }}" name="comment[author]">
+        </div>
+
+        <div class="input-wrapper {% if form.errors contains "email" %}error{% endif %}">
+          <label>{{ 'general.general.email' | t }} {{ form.errors.messages["email"] }}</label>
+          <input type="email" placeholder="{{ 'general.general.email_placeholder' | t }}" value="{{ form.email }}" name="comment[email]">
+        </div>
+
+        <div class="input-wrapper {% if form.errors contains "body" %}error{% endif %}">
+          <label>{{ 'general.general.message' | t }} {{ form.errors.messages["body"] }}</label>
+          <textarea rows="6" name="comment[body]">{{ form.body }}</textarea>
+        </div>
+
+        <div class="input-wrapper">
+          <input type="submit" value="{{ 'general.general.submit' | t }}">
+        </div>
+
+        {% endform %}
+      </div>
+
+    </div>
+    {% endif %}
+
+
+
+  </div>
+  <div class="blogpage-left">
+    <div class="sidebar">
+      <div class="sidebar-author-section">
+        {% if settings.blog-show-author %}
+        {% assign author_img = article.author | handle | append:'.png' | asset_url %}
+        <span class="author-img"><img src="{{author_img}}"></span>
+        <h2>Author</h2>
+        <p class="post-author">{{ article.author }}</p>
+        {% endif %}
+      </div>
+
+      <div class="sidebar-topic-section">
+        
+      </div>
+
+
+      {% if settings.blog-show-share-buttons %}
+      <div class="sidebar-share-icons-section">
+        {% include 'share-buttons' %}
+      </div>
+      {% endif %}  
+
+
+      <div class="sidebar-newsletter-section">
+        {% include 'mailing-list' %}
+      </div> 
+
+      {% if settings.use-sidebar-images %}
+        <div class="sidebar-images-section">
+          {% if settings.sidebar-blog-default-ad-link != blank %}
+            <span class="sidebar-blog-image-1">
+              <a href="{{settings.sidebar-blog-default-ad-link}}">
+                <img src="{{settings['sidebar-blog-default-ad-image.png']}}">
+              </a>
+            </span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+

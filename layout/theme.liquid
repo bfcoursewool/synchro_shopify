@@ -1,0 +1,220 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 lt-ie10 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <link rel="icon" type="image/png" href="https://cdn.besynchro.com/global/fav-icon.png" />
+  <meta name="google-site-verification" content="ZZsiSYvWQok70BBo467yrK3tMUlM3JVpb-UfumI45AE" />
+  <meta name="google-site-verification" content="bnwvTQESo1CMmq8YvKABqCdoyffQL_vQbQ0dY0TQ8dA" />
+  <meta name="google-site-verification" content="D7Oo0rb1h34EQQ0OHTEpRf_hEevYjVnnPzRPXnEOQio" />
+  <meta name="google-site-verification" content="pb1BaXOQMKEDZpReCauskiUHFacGBfTQQBmMCSE6gjs" />
+  <script type="text/javascript">
+  (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/syWV3O0DUgkkpDvutwXXSyHW0ZHmfejdusotXyXD/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+  </script>
+  <meta name="p:domain_verify" content="2a10cf1c20da4a279dca28d54ebcc6b8"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  {% if template == 'index' %}
+    <title>{{ shop.name }} | {{ page_title }}</title>
+  {% elsif template == '404' %}
+    <title>Page Not Found | {{ shop.name }}</title>
+  {% else %}
+    <title>{{ page_title }} | {{ shop.name }}</title>
+  {% endif %}
+  {% if handle contains 'checkout' %}
+<meta name="robots" content="noindex">
+{% endif %}
+{% if handle contains 'tagged' %}
+<meta name="robots" content="noindex">
+{% endif %}
+{% if handle contains 'thank-you' %}
+<meta name="robots" content="noindex">
+{% endif %}
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+  <!-- On product pages, we check the product metafields to see
+    if there is a 'unique_url' key in the seo namespace. If so, set the
+    value of this key as the canonical url, otherwise, use the standard
+    canonical url for the page. Use the "MetaFieldsEditor" shopify app
+    to set metafields for products. -->
+  {% if template contains 'product' %}
+    <div class="find-me" style="display:none;">{{ product.metafields.seo.unique_url }}</div>
+    {% if product.metafields.seo.unique_url == blank %}
+      <link rel="canonical" href="{{ canonical_url }}" />
+    {% else %}
+      <link rel="canonical" href="{{ product.metafields.seo.unique_url }}" />
+    {% endif %}
+  {% else %}
+    <link rel="canonical" href="{{ canonical_url }}" />
+  {% endif %}
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  {{ content_for_header }}
+  {% include 'social-meta' %}
+  <!-- Theme CSS -->
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'mmenu.scss.css' | asset_url | stylesheet_tag }}
+  <!-- Third Party JS Libraries -->
+  {{ 'modernizr-2.7.1.min.js' | asset_url | script_tag }}
+  {% include 'fonts' %}
+  <!-- Store object -->
+  {% include 'theme-options' %}
+  <style type="text/css">
+    {% assign hex2rgb_hex = settings.primary-button-background %}
+    {% include 'hex2rgb' %}
+    .add-to-cart-loader, .home-slideshow-loader, .product-slideshow-loader {
+      border-left:   3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .15);
+      border-right:  3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .15);
+      border-bottom: 3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .15);
+      border-top:    3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .8);
+    }
+    {% assign hex2rgb_hex = settings.primary-button-color %}
+    {% include 'hex2rgb' %}
+    .header-drawer h1, .header-drawer .navigation .primary ul {
+      border-color: {{settings.primary-button-color}};
+      border-color: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .3);
+    }
+    {% assign hex2rgb_hex = settings.footer-accent-color %}
+    {% include 'hex2rgb' %}
+    .copyright, .payment-options {
+      color: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .5);
+    }
+    .spread-the-word .footer-share-icon {
+      background: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .7);
+    }
+    .spread-the-word .footer-share-icon:hover {
+      background: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .9);
+    }
+    {% if settings.custom-css != blank %}
+      {{ settings.custom-css }}
+    {% endif %}
+  </style>
+  <script type="text/javascript" src="//use.typekit.net/qbg6mqz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <!-- BEGIN PRIVY WIDGET CODE -->
+  <script type='text/javascript'> var _d_site = _d_site || 'A0D1801C5174012EDAB8AB32'; </script>
+  <script src='//widget.privy.com/assets/widget.js'></script>
+  <!-- END PRIVY WIDGET CODE -->
+    <!--BEGIN GOOGLE VERIFICATION TAG -->
+  <meta name="google-site-verification" content="bnwvTQESo1CMmq8YvKABqCdoyffQL_vQbQ0dY0TQ8dA" />
+  <meta name="google-site-verification" content="ZhbX-aVaeZXWEolRbslrE7EU9M9ROJmkTb8Wb63jzOA" />
+  <!--END GOOGLE VERIFICATION TAG -->
+  <!-- BEGIN KLAVIYO TRACKING CODE -->
+  <script type="text/javascript">
+    var _learnq = _learnq || [];
+    _learnq.push(['account', 'LnCnB5']);
+    (function () {
+    var b = document.createElement('script'); b.type = 'text/javascript'; b.async = true;
+    b.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'a.klaviyo.com/media/js/analytics/analytics.js';
+    var a = document.getElementsByTagName('script')[0]; a.parentNode.insertBefore(b, a);
+    })();
+  </script>
+  <!-- END KLAVIYO TRACKING CODE -->
+  {% if template != "blog" and page_title != "About Synchro" %}
+  <!-- Chatra support chat widget -->
+  <!-- Chatra {literal} -->
+    <script>
+        (function(d, w, c) {
+            w.ChatraID = 'iMcbpddcEH5XGcDci';
+            var s = d.createElement('script');
+            w[c] = w[c] || function() {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    </script>
+  <!-- /Chatra {/literal} -->
+  <!-- Start of besynchro Zendesk Widget script
+  <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="besynchro.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}();
+  /*]]>*/</script>
+  End of besynchro Zendesk Widget script -->
+  {% endif %}
+  <!-- Pinterest Tag -->
+  <script>
+  !function(e){if(!window.pintrk){window.pintrk = function () {
+  window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+        n=window.pintrk;n.queue=[],n.version="3.0";var
+        t=document.createElement("script");t.async=!0,t.src=e;var
+        r=document.getElementsByTagName("script")[0];
+        r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+  pintrk('load', '2617231721658' /*, {em: '<user_email_address>'}*/);
+  pintrk('page');
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none;" alt=""
+        src="https://ct.pinterest.com/v3/?tid=2617231721658&noscript=1" />
+  </noscript>
+  <!-- end Pinterest Tag --> <!-- Track Pinterest PageVisit event -->
+  <script>
+    pintrk('track', 'pagevisit');
+  </script>
+  <!-- End Track PageVisit -->
+<!-- SnappicSnipStart -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','//connect.facebook.net/en_US/fbevents.js');
+fbq('init', '271468366758680');
+fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=271468366758680&ev=PageView&noscript=1" />
+</noscript>
+<!-- SnappicSnipEnd -->
+</head>
+<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} navigation-{{ settings.header-navigation-location }} {% if template == 'product.slideshow' %}template-product-slideshow{% endif %}" >
+  <div id="content_wrapper">
+    {% include 'header' %}
+    <main class="main-content {% if template contains 'collection' and collection.image and settings.collection-show-featured-image %}{% unless template contains 'list-collections' %}collection-has-featured-image{% endunless %}{% endif %}" role="main">
+      {% unless template contains 'index' or fullBleed %}
+        {% unless template contains 'slideshow' and settings.product-slideshow-layout == 'full-width' %}
+          {% include 'breadcrumbs' %}
+        {% endunless %}
+      {% endunless %}
+      {{ content_for_layout }}
+    </main>
+    {% include 'footer' %}
+      <!-- Scripts -->
+    {{ 'jquery-1.10.0.min.js' | asset_url | script_tag }}
+    {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+    {% if template contains 'cart' %}
+      {% if settings.show-shipping-calculator %}
+        {{ "https://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" | script_tag }}
+        {{ "/services/javascripts/countries.js" | script_tag }}
+        {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+      {% endif %}
+      {{ 'jquery.cart.min.js' | asset_url | script_tag }}
+    {% endif %}
+    {% if template contains 'customers' %}
+      {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+      {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+    {% endif %}
+    {% if settings.show-currency-switcher %}
+      {{ "//cdn.shopify.com/s/javascripts/currencies.js" | script_tag }}
+      {{ "jquery.currencies.js" | asset_url | script_tag }}
+    {% endif %}
+    {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+    {{ 'plugins.js'  | asset_url | script_tag }}
+    {{ 'site.js'  | asset_url | script_tag }}
+    {{ 'app.js' | asset_url | script_tag }}
+    {% include 'subscription-theme-footer' %}
+  </div>
+<!-- Warning: Do not remove. This is used for CartHook Checkout Replacement -->
+{% capture the_snippet_content %}{% include 'carthook-checkout' %}{% endcapture %} {% unless the_snippet_content contains "Liquid error" %} {% include 'carthook-checkout' %} {% endunless %}
+<!-- Warning: Do not remove. This is used for CartHook Checkout Replacement -->
+<!--BEGIN: Bing Ads UET Javascript tag.-->
+<script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"5858604"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script><noscript><img src="//bat.bing.com/action/0?ti=5858604&Ver=2" height="0" width="0" style="display:none; visibility: hidden;" /></noscript>
+<!--LinkedIn Insights Tag -->
+<script type="text/javascript"> _linkedin_data_partner_id = "316778"; </script><script type="text/javascript"> (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); </script> <noscript> <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=316778&fmt=gif" /> </noscript>
+      <script>
+ var sd = 'https://synchrolife.ositracker.com';
+ var resource = document.createElement('script');
+ resource.src = "https://synchrolife.ositracker.com/track.js";
+ var script = document.getElementsByTagName('script')[0];
+ script.parentNode.insertBefore(resource, script);
+</script>
+</body>
+</html>
