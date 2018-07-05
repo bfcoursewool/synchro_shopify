@@ -93,10 +93,6 @@
   </style>
   <script type="text/javascript" src="//use.typekit.net/qbg6mqz.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <!-- BEGIN PRIVY WIDGET CODE -->
-  <script type='text/javascript'> var _d_site = _d_site || 'A0D1801C5174012EDAB8AB32'; </script>
-  <script src='//widget.privy.com/assets/widget.js'></script>
-  <!-- END PRIVY WIDGET CODE -->
     <!--BEGIN GOOGLE VERIFICATION TAG -->
   <meta name="google-site-verification" content="bnwvTQESo1CMmq8YvKABqCdoyffQL_vQbQ0dY0TQ8dA" />
   <meta name="google-site-verification" content="ZhbX-aVaeZXWEolRbslrE7EU9M9ROJmkTb8Wb63jzOA" />
@@ -166,6 +162,9 @@ fbq('track', 'PageView');
 <!-- SnappicSnipEnd -->
 </head>
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} navigation-{{ settings.header-navigation-location }} {% if template == 'product.slideshow' %}template-product-slideshow{% endif %}" >
+<!-- Start of Littledata - Fix Google Analytics Script-->
+{% include 'LittledataLayer' %}
+<!-- End of Littledata - Fix Google Analytics Script -->
   <div id="content_wrapper">
     {% include 'header' %}
     <main class="main-content {% if template contains 'collection' and collection.image and settings.collection-show-featured-image %}{% unless template contains 'list-collections' %}collection-has-featured-image{% endunless %}{% endif %}" role="main">

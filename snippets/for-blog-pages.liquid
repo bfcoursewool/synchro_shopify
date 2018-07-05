@@ -1,0 +1,38 @@
+{% if template contains 'blog' %}
+{% assign taghandle=current_tags.first | handle %}
+{% if taghandle != blank %}
+{% assign usetaghandle=taghandle | append:"-feature-image" %}
+{% assign imgurl=taghandle | append:"-image.png" %}
+{% assign feature_text=taghandle | append:"-text" %}
+{% assign feature_title=taghandle | append:"-title" %}
+{% assign feature_url=taghandle | append:"-url" %}
+{% if settings[usetaghandle] %}
+<div class="topic-featurepost a1">
+  <div class="image-he-feature" style="background:url('{{imgurl | asset_url}}') no-repeat  center center / cover;">
+  
+  <!--<img src="{{imgurl | asset_url}}">-->
+  <div class="topic-featuretext">
+    <span class="topic-txt">Topic</span>
+    <span class="topic-featuretitle"><a href="{{settings[feature_url]}}">{{settings[feature_title]}}</a></span>
+    <span class="topic-feature_text">{{settings[feature_text]}}</span>
+  </div>
+    </div>
+</div>
+{% endif %}
+{% else %}
+{% if settings.use-feature-image %}
+<div class="topic-featurepost a2">
+  <div class="image-he-feature" style="background:url('{{'blog-feature-image.png' | asset_url}}') no-repeat  center center / cover;">
+  <div class="topic-featuretext">
+    <span class="topic-featuretitle main-blog-title-big">{{settings.blog-text}}</span>
+    <span class="topic-feature_text"><a href="{{settings.blog-feature-image-url}}">Read More</a></span>
+  </div>
+</div>
+</div>
+{% endif %}
+<div class="blog-main-page-mailinglist">
+  {% include 'mailing-list' %}
+</div>
+
+{% endif %}
+{% endif %}

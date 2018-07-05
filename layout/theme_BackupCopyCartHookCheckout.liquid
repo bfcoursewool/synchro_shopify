@@ -1,0 +1,201 @@
+			<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 lt-ie10 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta name="google-site-verification" content="ZZsiSYvWQok70BBo467yrK3tMUlM3JVpb-UfumI45AE" />
+  <meta name="google-site-verification" content="bnwvTQESo1CMmq8YvKABqCdoyffQL_vQbQ0dY0TQ8dA" />
+  <script type="text/javascript">
+(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/syWV3O0DUgkkpDvutwXXSyHW0ZHmfejdusotXyXD/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+</script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  {% if template == 'index' %}
+    <title>{{ shop.name }} | {{ page_title }}</title>
+  {% elsif template == '404' %}
+    <title>Page Not Found | {{ shop.name }}</title>
+  {% else %}
+    <title>{{ page_title }} | {{ shop.name }}</title>
+  {% endif %}
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  <link rel="canonical" href="{{ canonical_url }}" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  {{ content_for_header }}
+
+  {% include 'social-meta' %}
+
+  <!-- Theme CSS -->
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'mmenu.scss.css' | asset_url | stylesheet_tag }}
+
+  <!-- Third Party JS Libraries -->
+  {{ 'modernizr-2.7.1.min.js' | asset_url | script_tag }}
+
+  {% include 'fonts' %}
+
+  <!-- Store object -->
+  {% include 'theme-options' %}
+
+  <style type="text/css">
+    {% assign hex2rgb_hex = settings.primary-button-background %}
+    {% include 'hex2rgb' %}
+    .add-to-cart-loader, .home-slideshow-loader, .product-slideshow-loader {
+      border-left:   3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .15);
+      border-right:  3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .15);
+      border-bottom: 3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .15);
+      border-top:    3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .8);
+    }
+    {% assign hex2rgb_hex = settings.primary-button-color %}
+    {% include 'hex2rgb' %}
+    .header-drawer h1, .header-drawer .navigation .primary ul {
+      border-color: {{settings.primary-button-color}};
+      border-color: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .3);
+    }
+    {% assign hex2rgb_hex = settings.footer-accent-color %}
+    {% include 'hex2rgb' %}
+    .copyright, .payment-options {
+      color: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .5);
+    }
+    .spread-the-word .footer-share-icon {
+      background: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .7);
+    }
+    .spread-the-word .footer-share-icon:hover {
+      background: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .9);
+    }
+
+    {% if settings.custom-css != blank %}
+      {{ settings.custom-css }}
+    {% endif %}
+  </style>
+
+<link rel="icon" type="image/png" href="https://cdn.besynchro.com/global/fav-icon.png" />
+
+<script type="text/javascript" src="//use.typekit.net/qbg6mqz.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <!-- BEGIN PRIVY WIDGET CODE -->
+<script type='text/javascript'> var _d_site = _d_site || 'A0D1801C5174012EDAB8AB32'; </script>
+<script src='//widget.privy.com/assets/widget.js'></script>
+<!-- END PRIVY WIDGET CODE -->
+
+  <!--BEGIN GOOGLE VERIFICATION TAG -->
+<meta name="google-site-verification" content="bnwvTQESo1CMmq8YvKABqCdoyffQL_vQbQ0dY0TQ8dA" />
+<meta name="google-site-verification" content="ZhbX-aVaeZXWEolRbslrE7EU9M9ROJmkTb8Wb63jzOA" />
+<!--END GOOGLE VERIFICATION TAG -->
+
+
+<!-- BEGIN KLAVIYO TRACKING CODE -->
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+
+  _learnq.push(['account', 'LnCnB5']);
+
+  (function () {
+  var b = document.createElement('script'); b.type = 'text/javascript'; b.async = true;
+  b.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'a.klaviyo.com/media/js/analytics/analytics.js';
+  var a = document.getElementsByTagName('script')[0]; a.parentNode.insertBefore(b, a);
+  })();
+</script>
+<!-- END KLAVIYO TRACKING CODE -->
+
+</head>
+
+<body class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} navigation-{{ settings.header-navigation-location }} {% if template == 'product.slideshow' %}template-product-slideshow{% endif %}" >
+<!-- Start of Littledata - Fix Google Analytics Script-->
+{% include 'LittledataLayer' %}
+<!-- End of Littledata - Fix Google Analytics Script -->
+
+
+  <div id="content_wrapper">
+    {% include 'header' %}
+
+    <main class="main-content {% if template contains 'collection' and collection.image and settings.collection-show-featured-image %}{% unless template contains 'list-collections' %}collection-has-featured-image{% endunless %}{% endif %}" role="main">
+
+      {% unless template contains 'index' or fullBleed %}
+        {% unless template contains 'slideshow' and settings.product-slideshow-layout == 'full-width' %}
+          {% include 'breadcrumbs' %}
+        {% endunless %}
+      {% endunless %}
+
+      {{ content_for_layout }}
+    </main>
+
+    {% include 'footer' %}
+
+    <!-- Scripts -->
+    {{ 'jquery-1.10.0.min.js' | asset_url | script_tag }}
+    {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+
+    {% if template contains 'cart' %}
+
+      {% if settings.show-shipping-calculator %}
+        {{ "https://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" | script_tag }}
+        {{ "/services/javascripts/countries.js" | script_tag }}
+        {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+      {% endif %}
+
+      {{ 'jquery.cart.min.js' | asset_url | script_tag }}
+    {% endif %}
+
+    {% if template contains 'customers' %}
+      {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+      {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+    {% endif %}
+
+    {% if settings.show-currency-switcher %}
+      {{ "//cdn.shopify.com/s/javascripts/currencies.js" | script_tag }}
+      {{ "jquery.currencies.js" | asset_url | script_tag }}
+    {% endif %}
+
+    {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+
+    {{ 'plugins.js'  | asset_url | script_tag }}
+    {{ 'site.js'  | asset_url | script_tag }}
+    {{ 'app.js' | asset_url | script_tag }}
+
+    {% include 'subscription-theme-footer' %}
+                    <script type="text/javascript">
+    var project_id = 342;
+    (function() {
+      var osiScript = document.createElement('script');
+      osiScript.type = 'text/javascript';
+      osiScript.async = true;
+      osiScript.src = 'https://synchrolife.ositracker.com/widget/initialize-clientjs.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(osiScript, s);
+    })();
+    </script>
+
+    <!-- Google Code for Remarketing Tag -->
+    <!--
+    Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+    -->
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 864481593;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+    <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/864481593/?guid=ON&amp;script=0"/>
+    </div>
+    </noscript>
+  </div>
+
+</body>
+</html>
+
+		
