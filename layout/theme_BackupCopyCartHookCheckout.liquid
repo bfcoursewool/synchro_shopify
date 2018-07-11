@@ -110,9 +110,6 @@
 </head>
 
 <body class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} navigation-{{ settings.header-navigation-location }} {% if template == 'product.slideshow' %}template-product-slideshow{% endif %}" >
-<!-- Start of Littledata - Fix Google Analytics Script-->
-{% include 'LittledataLayer' %}
-<!-- End of Littledata - Fix Google Analytics Script -->
 
 
   <div id="content_wrapper">
@@ -197,5 +194,3 @@
 
 </body>
 </html>
-
-		

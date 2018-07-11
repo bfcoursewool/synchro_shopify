@@ -182,15 +182,15 @@ assets/tag-icon.png:
 assets/theme.scss.liquid:
   development: 2018-06-25T18:32:24-07:00   c7f9561e2cc5f9572b040b770833b7da
 config/settings_data.json:
-  development: 2018-07-03T06:26:32-07:00   f22b2c72c919686ad7ee2eb9e25503b4
+  development: 2018-07-10T22:10:28-07:00   e3e67c8be44025f3f3dda2f014df36f9
 config/settings_schema.json:
   development: 2018-06-19T00:43:19-07:00   a52a9db960f8093b442f42c67a0363c4
 layout/checkout.liquid:
-  development: 2018-06-28T05:08:10-07:00   c0cd887187e1928e73f490c515e99bde
+  development: 2018-07-10T07:03:35-07:00   140f97b27596c063c621a409a78595f0
 layout/theme.liquid:
   development: 2018-06-29T09:05:41-07:00   69d8bf5079929dc0054eae16734435a1
 layout/theme_BackupCopyCartHookCheckout.liquid:
-  development: 2018-06-28T05:08:11-07:00   04c8165533289b4eb363d3486ccc5b9e
+  development: 2018-07-10T07:03:50-07:00   6434753ae676b9b339f6e4e4318f4eb6
 locales/en.default.json:
   development: 2017-07-28T13:56:07-07:00   cde3644e4dedf16a6c5e7596d38e0d9b
 snippets/LittledataLayer.liquid:
