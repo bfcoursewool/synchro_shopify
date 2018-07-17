@@ -6029,10 +6029,19 @@ iframe {
 
       input {
         display: inline-block;
-        width: 55px;
-        text-align: center;
-        margin-top: 0;
-        margin-left: $gutter/2;
+        margin-right: 10px;
+        width: 40px;
+        height: auto;
+        padding: 0;
+        border: none;
+        font-weight: 700;
+        text-align: right;
+
+        @include breakpoint(s) {
+          margin-right: 5px;
+          width: 30px;
+          text-align: left;
+        }
       }
     }
 
