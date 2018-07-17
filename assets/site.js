@@ -429,6 +429,8 @@
     }
 
     ProductView.prototype.events = {
+      'click .cart-item-decrease': 'updateQuantity',
+      'click .cart-item-increase': 'updateQuantity',
       "change .product-options select": "updateVariantLabel",
       "click .product-thumbnails img": "updateProductImage",
       "submit .product-form": "addToCart"
@@ -483,6 +485,10 @@
           return _this.handleErrors(XMLHttpRequest);
         };
       })(this);
+    };
+
+    ProductView.prototype.updateQuantity = function(e) {
+      console.log("Testing")
     };
 
     ProductView.prototype.switchCurrency = function() {
