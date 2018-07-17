@@ -488,7 +488,22 @@
     };
 
     ProductView.prototype.updateQuantity = function(e) {
-      console.log("Testing")
+      var action, inventory, message, newQuantity, oldQuantity, productPrice, productQuantity, productRow, productTitle, title, variant;
+      oldQuantity = parseInt($("#quantity").val(), 10);
+      inventory = parseInt($('#quantity').data('max'), 10);
+      if($(e.target).hasClass('cart-item-increase')) {
+        newQuantity = oldQuantity + 1;
+      } else {
+        newQuntity = oldQuantity <= 1 ? 0 : oldQuantity - 1;
+      }
+      if (newQuantity > inventory) {
+        title = Theme.notAvailableText;
+        message = Theme.stockLevelText;
+        message = message.replace('{{ stock_count }}', inventory);
+        action = "<span class='button dismiss'>" + Theme.okayText + "</span>";
+        return this.openModal(title, message, action);
+      }
+      return $("#quantity").val(newQuantity)
     };
 
     ProductView.prototype.switchCurrency = function() {
