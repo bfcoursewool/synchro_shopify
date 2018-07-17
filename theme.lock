@@ -182,7 +182,7 @@ assets/tag-icon.png:
 assets/theme.scss.liquid:
   development: 2018-06-25T18:32:24-07:00   c7f9561e2cc5f9572b040b770833b7da
 config/settings_data.json:
-  development: 2018-07-10T22:10:28-07:00   e3e67c8be44025f3f3dda2f014df36f9
+  development: 2018-07-12T22:03:49-07:00   5d90caee55ee274eab10661c7195cc0c
 config/settings_schema.json:
   development: 2018-06-19T00:43:19-07:00   a52a9db960f8093b442f42c67a0363c4
 layout/checkout.liquid:
