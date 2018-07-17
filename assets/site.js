@@ -494,7 +494,7 @@
       if($(e.target).hasClass('cart-item-increase')) {
         newQuantity = oldQuantity + 1;
       } else {
-        newQuntity = oldQuantity <= 1 ? 0 : oldQuantity - 1;
+        newQuantity = oldQuantity <= 1 ? 0 : oldQuantity - 1;
       }
       if (newQuantity > inventory) {
         title = Theme.notAvailableText;
