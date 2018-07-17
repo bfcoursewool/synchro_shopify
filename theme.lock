@@ -188,7 +188,7 @@ config/settings_schema.json:
 layout/checkout.liquid:
   development: 2018-07-10T07:03:35-07:00   140f97b27596c063c621a409a78595f0
 layout/theme.liquid:
-  development: 2018-06-29T09:05:41-07:00   69d8bf5079929dc0054eae16734435a1
+  development: 2018-07-16T18:36:32-07:00   1db48761c834a46dc985a1a03e41bac8
 layout/theme_BackupCopyCartHookCheckout.liquid:
   development: 2018-07-10T07:03:50-07:00   6434753ae676b9b339f6e4e4318f4eb6
 locales/en.default.json:
@@ -252,7 +252,7 @@ snippets/product-list-item.liquid:
 snippets/product-page-buy-button.liquid:
   development: 2017-07-28T13:56:08-07:00   7b21fcbd1d356e482b66ec6f57be93b9
 snippets/product-wrapper.liquid:
-  development: 2018-05-22T21:24:25-07:00   f4e07fb92e4f427f60bb4e96b94711c3
+  development: 2018-07-16T18:36:32-07:00   1d727ce5b81740eb5f4f0c4ce8299ea9
 snippets/share-buttons.liquid:
   development: 2017-07-28T13:56:08-07:00   12f64d71e38ec0e1be061b4e48a20d7d
 snippets/single-article-list-item.liquid:
