@@ -64,15 +64,15 @@ assets/home-left-right-image-1.png:
 assets/home-left-right-image-2.png:
   development: 2017-07-28T13:55:58-07:00   f464ef91892899c5cf865169e9fb609c
 assets/home-testimonial-1-avatar.jpg:
-  development: 2018-05-11T04:16:30-07:00   fda39cf78d32183c5af36ef0a2d7bb0b
+  development: 2018-07-20T00:57:20-07:00   21775453b7cc037c1db86ef2aa38b38b
 assets/home-testimonial-2-avatar.jpg:
-  development: 2018-05-11T04:16:30-07:00   41734b0d118f470114cfc8b1ea2813ab
+  development: 2018-07-20T00:59:23-07:00   984dbbe59c500e4bf8666984167b4783
 assets/home-testimonial-3-avatar.jpg:
-  development: 2018-05-11T04:11:55-07:00   59cae329ab6f2ffe54e77805206ae4a2
+  development: 2018-07-20T00:59:55-07:00   0548e8fd55589bf238637a1fa99f6c88
 assets/home-testimonial-4-avatar.jpg:
-  development: 2018-05-11T04:11:55-07:00   a0669b7711d58816525342488f732884
+  development: 2018-07-20T00:59:54-07:00   d8514ff46f5b94335fafde5632e9ad77
 assets/home-testimonial-5-avatar.jpg:
-  development: 2018-05-11T04:04:56-07:00   d7241bbca2c4390f7fe5d0d54694535b
+  development: 2018-07-20T00:59:53-07:00   d2893b01d273d8ac98577d2d6c4c3385
 assets/icon-cart.png:
   development: 2018-06-08T02:39:22-07:00   34f0e62d35fa4f2526118d13621d7f97
 assets/icon-search.png:
@@ -180,11 +180,11 @@ assets/socicon-webfont.woff:
 assets/tag-icon.png:
   development: 2017-07-28T13:56:07-07:00   611ea558d930988d70c366f99fdd888e
 assets/theme.scss.liquid:
-  development: 2018-07-16T19:05:17-07:00   ce840fdad169d78d1d9b8b91fbb8049e
+  development: 2018-07-20T01:07:50-07:00   43f8d542514ad846377fa83a209b3836
 config/settings_data.json:
   development: 2018-07-12T22:03:49-07:00   5d90caee55ee274eab10661c7195cc0c
 config/settings_schema.json:
-  development: 2018-06-19T00:43:19-07:00   a52a9db960f8093b442f42c67a0363c4
+  development: 2018-07-20T00:53:47-07:00   a52a9db960f8093b442f42c67a0363c4
 layout/checkout.liquid:
   development: 2018-07-10T07:03:35-07:00   140f97b27596c063c621a409a78595f0
 layout/theme.liquid:
