@@ -186,9 +186,9 @@ config/settings_data.json:
 config/settings_schema.json:
   development: 2018-07-20T00:53:47-07:00   a52a9db960f8093b442f42c67a0363c4
 layout/checkout.liquid:
-  development: 2018-07-10T07:03:35-07:00   140f97b27596c063c621a409a78595f0
+  development: 2018-07-23T14:29:58-07:00   428fa424a6856a6147844784e38085bb
 layout/theme.liquid:
-  development: 2018-07-16T18:36:32-07:00   1db48761c834a46dc985a1a03e41bac8
+  development: 2018-07-17T09:05:40-07:00   4293f134c3cc024547d42156e6e45d6b
 layout/theme_BackupCopyCartHookCheckout.liquid:
   development: 2018-07-10T07:03:50-07:00   6434753ae676b9b339f6e4e4318f4eb6
 locales/en.default.json:
