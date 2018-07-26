@@ -6,6 +6,10 @@
     {% endif %}
     {% endcomment %}
 
+    <div style="display:none;" class="testing">
+      {{ page_title }}
+    </div>
+
     {% assign unPaginatedArticles = blog.articles %}
     {% paginate blog.articles by settings.articles-per-page %}
     
