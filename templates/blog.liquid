@@ -6,10 +6,6 @@
     {% endif %}
     {% endcomment %}
 
-    <div style="display:none;" class="testing">
-      {{ page_title }}
-    </div>
-
     {% assign unPaginatedArticles = blog.articles %}
     {% paginate blog.articles by settings.articles-per-page %}
     
@@ -86,7 +82,6 @@
 
         {% if settings[blogAdURL] != blank %}
           <span class="sidebar-blog-image-1">
-            <div style="display:none;">{{blogAdImage}}</div>
             <a href="{{settings[blogAdURL]}}">
               <img src="{{settings[blogAdImage]}}">
             </a>
