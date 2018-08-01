@@ -48,13 +48,15 @@
           <img class="home-testimonial-avatar" alt="{{ settings[source] | strip_html | escape }}" src="{{ testimonial | prepend: 'home-' | append: '-avatar.jpg' | asset_url}}">
         {% endif %}
 
-        <blockquote class="home-testimonial-quote">
+        <div class="home-testimonial-quote-box">
+          <blockquote class="home-testimonial-quote">
           {{ settings[quote] }}
 
-        {% if settings[source] != blank %}
-          <p class="home-testimonial-quote-source">{{ settings[source] }}</p>
-        {% endif %}
-        </blockquote>
+        	{% if settings[source] != blank %}
+          	<p class="home-testimonial-quote-source">{{ settings[source] }}</p>
+          {% endif %}
+          </blockquote>
+        </div>
       </div>
       {% endif %}
 
