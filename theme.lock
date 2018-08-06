@@ -182,7 +182,7 @@ assets/tag-icon.png:
 assets/theme.scss.liquid:
   development: 2018-07-27T13:48:30-07:00   ad4bc0146cdfa92a425afbe29b47b734
 config/settings_data.json:
-  development: 2018-07-12T22:03:49-07:00   5d90caee55ee274eab10661c7195cc0c
+  development: 2018-08-01T15:54:17-07:00   7efdf7e8e945d2a820718b75a5b807f5
 config/settings_schema.json:
   development: 2018-07-20T00:53:47-07:00   a52a9db960f8093b442f42c67a0363c4
 layout/checkout.liquid:
@@ -274,7 +274,7 @@ templates/404.liquid:
 templates/article.liquid:
   development: 2017-07-28T13:56:08-07:00   7103996cf26bb6dcc5585db2a046b7cc
 templates/blog.liquid:
-  development: 2018-07-25T17:36:15-07:00   b18a49c0a20db6775834e3a69f7f9a5b
+  development: 2018-08-01T15:54:15-07:00   3f825971a0b5530c5d9786bcd015a779
 templates/cart.liquid:
   development: 2018-05-31T03:58:17-07:00   2ea4750d067867990c32322636f0ad76
 templates/collection.liquid:

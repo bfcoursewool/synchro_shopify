@@ -2144,8 +2144,14 @@ var timeoutCall;
 
 function cycleTestimonials(index, testimonial) {
   var timeToWait = testimonial.attr('data-time')
-  var nextIndex = (index < 4) ? index+1 : 0;
-  var nextTestimonial = getTestimonial(nextIndex)
+  var nextIndex, nextTestimonial
+  do {
+    nextIndex = (index < 4) ? index+1 : 0;
+    nextTestimonial = getTestimonial(nextIndex)
+    console.log("display: " + nextTestimonial.css('display'));
+  }
+  while(nextTestimonial.css('display') == "none")
+
 
   setActive(testimonial)
   timeoutCall = setTimeout(function() {
