@@ -2147,7 +2147,7 @@ function cycleTestimonials(index, testimonial) {
   var nextIndex = index 
   var nextTestimonial = testimonial
   do {
-    nextIndex = (index < 4) ? index+1 : 0;
+    nextIndex = (nextIndex < 4) ? nextIndex+1 : 0;
     nextTestimonial = getTestimonial(nextIndex)
     console.log("display: " + nextTestimonial.css('display'));
   }
