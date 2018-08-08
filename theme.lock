@@ -314,7 +314,7 @@ templates/page.reviews.liquid:
 templates/password.liquid:
   development: 2017-07-28T13:56:09-07:00   db7d4b7f4655a8ed8d57eb1bc97424d2
 templates/product.liquid:
-  development: 2018-05-31T03:58:18-07:00   a82fe2941d49e8fce8b3cbec094f0eaf
+  development: 2018-08-07T22:10:38-07:00   04b4e15237d8caa80076e116e5bbd1aa
 templates/product.slideshow.liquid:
   development: 2018-03-08T08:48:37-08:00   0ff98c1252274c6ee9c773bd257078a9
 templates/search.liquid:
