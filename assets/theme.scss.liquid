@@ -9,11 +9,11 @@ audio:not([controls]) { display: none; height: 0; }
 [hidden] { display: none; }
 
 /*! normalize.css v1.1.0 | Base | MIT License | git.io/normalize */
-html { font-size: 100%; font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html { font-size: 100%; font-family: 'futura-pt', sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-html, button, input, select, textarea { font-family: sans-serif; }
+html, button, input, select, textarea { font-family: 'futura-pt', sans-serif; }
 
-body { margin: 0; font-family: europa !important;}
+body { margin: 0; font-family: 'futura-pt', sans-serif !important;}
 
 /*! normalize.css v1.1.0 | Links | MIT License | git.io/normalize */
 a:focus { outline: thin dotted; }
@@ -21,17 +21,17 @@ a:focus { outline: thin dotted; }
 a:active, a:hover { outline: 0; }
 
 /*! normalize.css v1.1.0 | Typography | MIT License | git.io/normalize */
-h1 { font-size: 2em; margin: 0.67em 0; font-family: futura-pt !important;}
+h1 { font-size: 2em; margin: 0.67em 0; font-family: 'futura-pt', sans-serif !important;}
 
-h2 { font-size: 1.5em; margin: 0.83em 0; font-family: futura-pt !important;}
+h2 { font-size: 1.5em; margin: 0.83em 0; font-family: 'futura-pt', sans-serif !important;}
 
-h3 { font-size: 1.17em; margin: 1em 0; font-family: futura-pt !important;}
+h3 { font-size: 1.17em; margin: 1em 0; font-family: 'futura-pt', sans-serif !important;}
 
-h4 { font-size: 1em; margin: 1.33em 0; font-family: futura-pt !important;}
+h4 { font-size: 1em; margin: 1.33em 0; font-family: 'futura-pt', sans-serif !important;}
 
-h5 { font-size: 0.83em; margin: 1.67em 0; font-family: futura-pt !important;}
+h5 { font-size: 0.83em; margin: 1.67em 0; font-family: 'futura-pt', sans-serif !important;}
 
-h6 { font-size: 0.67em; margin: 2.33em 0; font-family: futura-pt !important;}
+h6 { font-size: 0.67em; margin: 2.33em 0; font-family: 'futura-pt', sans-serif !important;}
 
 abbr[title] { border-bottom: 1px dotted; }
 
@@ -133,7 +133,7 @@ $borderColor: {{ settings.border-color }};
 $logoColor: {{ settings.logo-color }};
 
 $primaryButtonColor: {{ settings.primary-button-color }};
-$primaryButtonFontFamily: futura-pt;
+$primaryButtonFontFamily: 'futura-pt', sans-serif;
 $primaryButtonFontWeight: 500;
 $secondaryButtonBackground: {{ settings.secondary-button-background }};
 $secondaryButtonColor: {{ settings.secondary-button-color }};
@@ -151,7 +151,7 @@ $formSelectBorder: {{ settings.form-select-border-color }};
 
 /* Fonts */
 
-$bodyFont: futura-pt;
+$bodyFont: 'futura-pt', sans-serif;
 
 $logoFont: {{ settings.logo-font }};
 $logoWeight: {{ settings.logo-font-weight }};
@@ -1028,7 +1028,7 @@ input[type="number"] {
 
 input[type="password"] {
   @include lt-ie9 {
-    font-family: Arial, sans-serif;
+    font-family: 'futura-pt', sans-serif;
   }
 }
 
@@ -1248,7 +1248,7 @@ iframe {
 
     li {
       display: inline-block;
-      font-size: 14px;
+      font-size: 16px;
       padding: 5px 15px;
       margin: 0;
       border: 1px solid transparent;
@@ -1456,7 +1456,7 @@ iframe {
   footer {
     max-width: $maxWidth;
     margin: 0 auto;
-    font-size: 14px;
+    font-size: 16px;
     padding: $gutter*2 $gutter 100px;
 
     &.show-border {
@@ -2267,7 +2267,7 @@ iframe {
           font-weight: 700;
           text-align: center;
           font-size: 12px;
-          font-family: Helvetica, Arial, sans-serif;
+          font-family: 'futura-pt', sans-serif;
 
           .ie9 &, html[data-useragent*='MSIE 10.0'] & {
             top: 20px;
@@ -2844,7 +2844,7 @@ iframe {
         padding: 0 $gutter 0 0;
         text-align: left;
         position: relative;
-		font-size: 16px;
+		    font-size: 18px;
 
         .collapsed-navigation & {
           display: none;
@@ -4527,7 +4527,7 @@ iframe {
     .product-vendor {
       color: #868686;
       font-size: 16px;
-      font-family: futura-pt;
+      font-family: 'futura-pt', sans-serif;
       text-transform: uppercase;
       letter-spacing: 2px;
       padding: 5px 0;
@@ -5781,7 +5781,7 @@ iframe {
       display: inline-block;
       vertical-align: top;
       width: 50%;
-      font-size: 16px;
+      font-size: 18px;
 
       @include breakpoint(s) {
         display: block;
@@ -6722,7 +6722,7 @@ iframe {
   }
 
   .topmenulinklist li a{
-    font-family: europa;
+    font-family: 'futura-pt', sans-serif;
     letter-spacing: .5px;
     font-size: 12px;
     font-weight: 600;
@@ -6828,9 +6828,9 @@ iframe {
   .header-area-part .topicmenu ul li{ background: rgba(0, 0, 0, 0) url("blue-icon.png") no-repeat scroll left center; display:inline-block; margin: 0; padding: 0 20px;}
   .header-area-part .topicmenu ul li:first-child{ background:none;}
   .header-area-part .topicmenu ul li a{ color: #000000;
-    font-family: europa;
+    font-family: 'futura-pt', sans-serif;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px; text-transform: uppercase;}
   .header-area-part .header-social-icons{  position: absolute; top:82px; right:0;}
   .header-area-part .header-social-icons ul{margin-top:0;}
@@ -6875,7 +6875,7 @@ iframe {
   .mainblogpage .blogpage-left .sidebar .sidebar-topic-section ul li a:hover{ background:#000; color:#ecedef;}
 
   .mainblogpage .blogpage-left .sidebar .sidebar-most-popular-section{ display: inline-block;}
-  .mainblogpage .blogpage-left .sidebar .sidebar-most-popular-section ul li a{ font-weight: bold; color:#000; font-size:15px;}
+  .mainblogpage .blogpage-left .sidebar .sidebar-most-popular-section ul li a{ font-weight: 500; color:#000; font-size:16px;}
 
   .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section{}
   .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup{ border-top:none; padding: 0; max-width: 100%; margin:50px 0 50px;}
@@ -7174,7 +7174,7 @@ iframe {
 
   .affiliate-button-apply,
   .affiliate-button-login {
-    font-family: Montserrat,sans-serif;
+    font-family: 'futura-pt', sans-serif;
     font-weight: 700;
     color: #FFF;
     -webkit-appearance: none;
