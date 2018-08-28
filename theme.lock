@@ -180,7 +180,11 @@ assets/socicon-webfont.woff:
 assets/tag-icon.png:
   development: 2017-07-28T13:56:07-07:00   611ea558d930988d70c366f99fdd888e
 assets/theme.scss.liquid:
+<<<<<<< HEAD
   development: 2018-08-10T11:54:05-07:00   7fc4c9060bc42ba775d16ab08738ad23
+=======
+  development: 2018-08-27T01:55:17-07:00   b9a3e2203f932cec6eaa4657162202fb
+>>>>>>> bd7d58f17c3f4220206b5c3834170377b6726a50
 config/settings_data.json:
   development: 2018-08-01T15:54:17-07:00   7efdf7e8e945d2a820718b75a5b807f5
 config/settings_schema.json:
@@ -314,7 +318,11 @@ templates/page.reviews.liquid:
 templates/password.liquid:
   development: 2017-07-28T13:56:09-07:00   db7d4b7f4655a8ed8d57eb1bc97424d2
 templates/product.liquid:
+<<<<<<< HEAD
   development: 2018-08-08T09:05:37-07:00   07852d52356ca12b95d67ccefd180602
+=======
+  development: 2018-08-07T22:10:38-07:00   04b4e15237d8caa80076e116e5bbd1aa
+>>>>>>> bd7d58f17c3f4220206b5c3834170377b6726a50
 templates/product.slideshow.liquid:
   development: 2018-03-08T08:48:37-08:00   0ff98c1252274c6ee9c773bd257078a9
 templates/search.liquid:

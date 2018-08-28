@@ -22,6 +22,7 @@
       data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
     </div>
     <p class="product-price">
+
       <span class="price {{product.id}}">
         <span class="money">{{ selectedVariant.price | money }}</span>
           <span class="original money">
@@ -52,6 +53,7 @@
     {% endif %}
   </div>
   {% include 'product-wrapper' %}
+
   {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
   <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
     <span itemprop="itemReviewed">{{ product.title }}</span>
@@ -132,14 +134,3 @@
     }
   }]);
 </script>
-<!-- SnappicSnipStart -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','//connect.facebook.net/en_US/fbevents.js');
-fbq('init', '271468366758680');
-fbq('track', 'PageView');
-fbq('track', 'ViewContent', { content_ids: ['snappic_{{product.id}}'], content_type: 'product' });
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=271468366758680&ev=PageView&noscript=1" />
-</noscript>
-<!-- SnappicSnipEnd -->
