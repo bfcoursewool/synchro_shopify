@@ -256,7 +256,7 @@ snippets/product-wrapper.liquid:
 snippets/share-buttons.liquid:
   development: 2017-07-28T13:56:08-07:00   12f64d71e38ec0e1be061b4e48a20d7d
 snippets/single-article-list-item.liquid:
-  development: 2018-08-28T02:49:15-07:00   3f5947ec521b8d3b8f95ff88cb70c174
+  development: 2018-08-28T02:50:50-07:00   2626cb5e562def8113e68d35676a4204
 snippets/social-meta.liquid:
   development: 2017-07-28T13:56:08-07:00   19ef4e04ef74a1eba5dd2b164d1c531a
 snippets/subscription-cart-footer.liquid:
