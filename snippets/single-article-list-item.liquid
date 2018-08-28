@@ -1,13 +1,4 @@
 <div class="singleblogpage blogpage mainblogpage">
-  
-  <meta property="og:site_name" content="BeSynchro" />
-  <div itemscope itemtype="http://schema.org/Article">
-    <meta itemprop="url" content="{{ article.url }}" />
-    <span itemprop="name" content="{{ article.title }}"> </span>
-    <span itemprop="author" content="{{ article.author }}"></span>
-    <span itemprop="description">{{ article.excerpt }}</span>
-  </div>
-
   <div class="blog-top-head">
     <div style="display:none;">{{ current_tags }}</div>
     <div class="post-date-publish">{{ article.published_at | date: format: 'short_month' }}</div>
