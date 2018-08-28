@@ -3,7 +3,6 @@
 {% assign selectedVariant = product.selected_or_first_available_variant | default: product %}
 <div itemscope itemtype="http://schema.org/Product">
  <!-- <h1 class="page-title test" itemprop="name">{{ product.title }}</h1> -->
-  
   <div class="product-details mobile">
     {% if settings.product-display-vendor %}
       <p class="meta vendor">{{ product.vendor }}</p>
@@ -23,7 +22,6 @@
       data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
     </div>
     <p class="product-price">
-     
       <span class="price {{product.id}}">
         <span class="money">{{ selectedVariant.price | money }}</span>
           <span class="original money">
@@ -31,7 +29,6 @@
               {{ selectedVariant.compare_at_price | money }}
             {% endif %}
           </span>
-        
       </span>
     </p>
   </div>
@@ -53,10 +50,8 @@
       {% endfor %}
     </div>
     {% endif %}
-  </div>  
- 
+  </div>
   {% include 'product-wrapper' %}
-  
   {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
   <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
     <span itemprop="itemReviewed">{{ product.title }}</span>
@@ -114,7 +109,7 @@
 <script text="text/javascript">
   var _learnq = _learnq || [];
   var item = {
-    Name: {{ product.title|json }}, 
+    Name: {{ product.title|json }},
     ProductID: {{ product.id|json }},
     Categories: {{ product.collections|map:'title'|json }},
     ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",

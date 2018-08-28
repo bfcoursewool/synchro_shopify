@@ -284,7 +284,7 @@
             line-height: 40px;
             z-index: 300;
             cursor: pointer;
-            font-family: arial;
+            font-family: 'futura-pt', sans-serif;
         }
         div.rc_popup__popup__content {
             padding: 20px 20px 20px;
@@ -307,7 +307,7 @@
         }
         {{ recharge_custom_css }}
         /* Add custom CSS below */
-        
+
     </style>
     <!-- Subscriptions Powered by ReCharge Payments: HTML -->
     <section id="recurring_choice_{{ product.id }}" style="display: none;" class="rc_container">
@@ -371,7 +371,7 @@
             <div class="rc_popup">
                 <div class="rc_popup__hover">
                     {% if show_widget_icon == 'true' %}
-                        <img src="//rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/widget/rc_widget__icon__black@2x.png" height="21" class="rc_popup__icon"> 
+                        <img src="//rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/widget/rc_widget__icon__black@2x.png" height="21" class="rc_popup__icon">
                     {% endif %}
                     {{ subscription_details_verbiage }}
                     <div class="rc_popup__popup">
@@ -402,7 +402,7 @@
             // "use strict";
             window.rechargedebug = {};
             window.script_inclusion;
-            window.currency_prefix = "$"; // $ £ 
+            window.currency_prefix = "$"; // $ £
             window.currency_suffix = ""; //
             window.lock_{{ product.id }} = false;
             window.first_time_{{ product.id }} = true;
