@@ -85,7 +85,7 @@
     "primary-button-font": "Montserrat, sans-serif",
     "primary-button-font-weight": "400",
     "primary-button-font-small-caps": true,
-    "header-sticky": false,
+    "header-sticky": true,
     "header-show-cart": true,
     "header-show-search": true,
     "header-navigation-location": "header",

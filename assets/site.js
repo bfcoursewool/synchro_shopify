@@ -145,9 +145,11 @@
           return _this.toggleCollapsedNav();
         };
       })(this));
-      if (Theme.headerSticky && $('html').hasClass('no-touch')) {
+      if (Theme.headerSticky) {
+        console.log("Doing sticky header")
         this.stickyHeader();
       } else {
+        console.log("womp womp")
         this.$el.removeClass('sticky-header');
         this.$('.header-navigation').removeClass('sticky-header');
       }
@@ -209,17 +211,16 @@
     };
 
     HeaderView.prototype.stickyHeader = function() {
-      if (theme.isHome && this.$el.hasClass('full-bleed-slideshow')) {
-        return this.window.on('scroll', (function(_this) {
-          return function(e) {
-            var scrollPosition;
-            scrollPosition = _this.window.scrollTop();
-            scrollPosition = scrollPosition < 0 ? 0 : scrollPosition;
-            _this.$el.toggleClass('full-bleed-slideshow', scrollPosition === 0);
-            return _this.$el.toggleClass('lower-than-slideshow', scrollPosition > 0);
-          };
-        })(this));
-      }
+      return this.window.on('scroll', (function(_this) {
+        console.log("Scrolling in sticky header...");
+        return function(e) {
+          var scrollPosition;
+          scrollPosition = _this.window.scrollTop();
+          scrollPosition = scrollPosition < 0 ? 0 : scrollPosition;
+          _this.$el.toggleClass('full-bleed-slideshow', scrollPosition === 0);
+          return _this.$el.toggleClass('lower-than-slideshow', scrollPosition > 0);
+        };
+      })(this));
     };
 
     HeaderView.prototype.calculateHeaderWidths = function() {
@@ -250,6 +251,7 @@
       }
       this.body.toggleClass('showing-drawer');
       if (Modernizr.csstransitions) {
+        console.log('transitions...');
         return this.$el.one('transitionend', (function(_this) {
           return function() {
             return _this.body.toggleClass('drawer-visible');
@@ -2144,7 +2146,7 @@ var timeoutCall;
 
 function cycleTestimonials(index, testimonial) {
   var timeToWait = testimonial.attr('data-time')
-  var nextIndex = index 
+  var nextIndex = index
   var nextTestimonial = testimonial
   do {
     nextIndex = (nextIndex < 4) ? nextIndex+1 : 0;

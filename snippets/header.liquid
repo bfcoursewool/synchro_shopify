@@ -73,6 +73,9 @@
     <div class="main-header top-header">
       <div class="before-main-header">
         <div class="before-main-header-left">
+          <div class="header-actions header-actions-left">
+            <span class="drawer-toggle"></span>
+          </div>
           <ul class="topmenulinklist">
             {% for link in linklists.top-menu.links %}
             <li>
@@ -110,25 +113,24 @@
               {% endif %}
               {% if settings.header-show-cart %}
               <li>
-                <a class="cart-link right" href="#cart">&#57346;<span class="cart-count">{{ cart.item_count }}</span></a>
+                <a class="cart-link right" href="#cart"><img src="https://cdn.besynchro.com/besynchro/icon-cart.svg" class="icon-cart" alt=""><span class="cart-count">{{ cart.item_count }}</span></a>
               </li>
               {% endif %}
               {% if settings.header-navigation-location == 'header' or settings.header-navigation-location == 'below-header' %}
               {% if shop.customer_accounts_enabled %}
-              <li>   
+              <li>
                 <a href="/account" class="account-link">&#57348;</a>
-              </li>  
+              </li>
               {% endif %}
               {% endif %}
             </ul>
-            <span class="drawer-toggle"></span>
           </div>
           <div style="display:none;">
             <form action="/cart" method="post" id="cart">
               <ul data-money-format="{{ shop.money_format }}" data-shop-currency="{{ shop.currency }}" data-shop-name="{{ shop.name | escape }}">
                 <li class="mm-subtitle slideout-title">
                   <p class="cart_title">Your Cart</p>
-                  <a class="continue ss-icon" href="#cart">×</a>
+                  <a class="continue ss-icon" href="#cart"></a>
                 </li>
 
                 {% if cart.item_count == 0 %}
@@ -186,7 +188,7 @@
     </div>
   </div>
 
-  <div class="current-header">
+  <div class="current-header logo-header">
     <header class="main-header" role="banner">
       <div class="branding">
         {% if settings.use-logo %}
@@ -224,7 +226,7 @@
         {% endif %}
       </div>
     </header>
-  </div>  
+  </div>
 
   {% if template contains 'blog' or template contains 'article'  %}
   <div class="current-header header-area-part blog-header-section-only">
@@ -244,21 +246,21 @@
               </li>
               {% endif %}
               {% if settings.header-show-facebook-url != blank %}
-              <li> 
+              <li>
                 <a class="facebook footer-like" href="{{settings.header-show-facebook-url}}" >
 
                 </a>
               </li>
               {% endif %}
               {% if settings.header-show-instagram-url != blank %}
-              <li> 
+              <li>
                 <a class="instagram fi-social-instagram" href="{{settings.header-show-instagram-url}}" >
 
                 </a>
               </li>
               {% endif %}
               {% if settings.header-show-pin-url != blank %}
-              <li> 
+              <li>
                 <a class="pin footer-pin" href="{{settings.header-show-pin-url}}" >
 
                 </a>
@@ -280,7 +282,7 @@
     </div>
   </div>
   {% endif %}
-  
+
 </div>
 
 {% if settings.header-navigation-location == 'below-header' %}
@@ -292,11 +294,26 @@
 {% endif %}
 
 <div class="header-drawer">
-  <h1><a href="/">{{ shop.name }}</a></h1>
+  <form class="" action="/search" method="get" id="header-search">
+    <input class="" name="q" type="text" placeholder="What do you seek?" autocomplete="off">
+    <button type="submit" form="header-search" value="Submit" class="search-button"></button>
+  </form>
 
-  <span class="drawer-toggle icon">&#57349;</span>
+  <div class="navigation-header">
+    <h2><a href="https://besynchro.com/collections/shop"> Shop </a> </h2>
+    {% include 'navigation' %}
+  </div>
 
-  {% include 'navigation' %}
+  <div class="navigation-header topicmenu">
+    <h2><a href="https://besynchro.com/blogs/blog"> Articles </a> </h2>
+    <ul class="topicmenulinklist">
+      {% for link in linklists.topic-menu.links %}
+      <li>
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 
   {% if shop.customer_accounts_enabled %}
   <a href="/account" class="drawer-account-link"><span class="icon">&#57351;</span> {{ 'general.general.my_account' | t }}</a>
@@ -304,4 +321,3 @@
 </div>
 
 {% include 'for-blog-pages' %}
-
