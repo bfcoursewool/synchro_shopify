@@ -23,7 +23,7 @@
   </div>
   {% endif %}
 
-  <div class="home-slideshow">
+  <div class="home-slideshow mobile_hidden">
 
     {% if settings.show-slide-1 %}
       <div id="home-slide-1" class="home-slide home-slide-1 text-aligned-{{settings.slide-1-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{ 'slide-1-image.jpg' | asset_url }});"{% endif %}>
@@ -186,8 +186,7 @@
     {% endif %}
   </div>
 
-  <!-- <div class="home-slideshow mobile_only">
-
+  <div class="home-slideshow mobile_only">
     <div id="home-slide-1" class="home-slide home-slide-1 text-aligned-right">
       <a href="https://besynchro.com/products/ketomanna">
         <img class="slide-image" alt="ketomanna" src="https://cdn.shopify.com/s/files/1/0155/0195/t/30/assets/slide-1-image.jpg">
@@ -208,6 +207,6 @@
         <img class="slide-image" alt="ketomanna" src="https://cdn.shopify.com/s/files/1/0155/0195/t/30/assets/slide-4-image.jpg">
       </a>
     </div>
+  </div>
 
-  </div> -->
 </div>
