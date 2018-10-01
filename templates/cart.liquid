@@ -67,7 +67,6 @@
           <div class="cart-additional-checkout-buttons">
             {{ content_for_additional_checkout_buttons }}
           </div>
-
  </span>
 {% endif %}
         {% if settings.show-currency-switcher %}
@@ -112,3 +111,19 @@
   <p class="empty">{{ 'cart.general.empty' | t }} <a href="{{ shop.url }}/collections/all">{{ 'cart.general.continue' | t }}</a></p>
 {% endif %}
 {%  include 'subscription-cart-footer' %}
+<!-- SnappicSnipStart -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','//connect.facebook.net/en_US/fbevents.js');
+fbq('init', '495265410669440');
+fbq('track', 'PageView');
+fbq('track', 'AddToCart', {
+  value: '{{cart.total_price | money_without_currency}}',
+  currency: '{{shop.currency}}',
+  content_type: 'product',
+  content_ids: [{% for item in cart.items %}'snappic_{{item.product.id}}',{% endfor %}],
+});
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=495265410669440&ev=PageView&noscript=1" />
+</noscript>
+<!-- SnappicSnipEnd -->
