@@ -238,7 +238,7 @@ snippets/home-left-right.liquid:
 snippets/home-order-now.liquid:
   development: 2017-07-28T13:56:08-07:00   bf8cfa7df4497a5da33628e1a5897529
 snippets/home-slideshow.liquid:
-  development: 2018-09-29T13:20:51-07:00   a241fd5d021e5254cda8079c83aa5791
+  development: 2018-10-01T10:14:02-07:00   b084796bd7cef6a9c092129b366a6fc7
 snippets/home-testimonials.liquid:
   development: 2018-07-27T13:48:36-07:00   212a70fbdb5072428dd10ccb5d3f0f8c
 snippets/mailing-list.liquid:
