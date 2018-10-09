@@ -2161,12 +2161,39 @@ function cycleTestimonials(index, testimonial) {
   }, timeToWait*1000);
 }
 
+function parseQueryString(queryString) {
+  var params = {}, queries, temp, i, l;
+  // Split into key/value pairs
+  queries = queryString.split("&");
+  // Convert the array of strings into an object
+  for ( i = 0, l = queries.length; i < l; i++ ) {
+      temp = queries[i].split('=');
+      params[temp[0]] = temp[1];
+  }
+  return params;
+}
+
+function saveGCLID() {
+  var queryParams = parseQueryString(window.location.search.substring(1))
+  if('gclid' in queryParams) {
+    $.ajax({
+      url: 'https://gold.besynchro.com/api/adwords_idents',
+      type: 'POST',
+      dataType: 'json',
+      contentType: 'application/json',
+      url: '/api/adwords_idents',
+      data: JSON.stringify(gclidParams)
+    });
+  }
+}
+
 $(document).ready(function() {
 
   var currentActiveIndex = 2;
   var currentActiveTestimonial = getTestimonial(currentActiveIndex);
 
   cycleTestimonials(currentActiveIndex, currentActiveTestimonial)
+  saveGCLID();
 
   $(".home-testimonial").click(function () {
     clearTimeout(timeoutCall);
