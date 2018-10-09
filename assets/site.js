@@ -2176,13 +2176,16 @@ function parseQueryString(queryString) {
 function saveGCLID() {
   var queryParams = parseQueryString(window.location.search.substring(1))
   if('gclid' in queryParams) {
+    console.log("ajaxing gclid param to server...");
     $.ajax({
       url: 'https://gold.besynchro.com/api/adwords_idents',
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
       url: '/api/adwords_idents',
-      data: JSON.stringify(gclidParams)
+      data: JSON.stringify(gclidParams),
+      success: function () { console.log("Succeeded!") },
+      error: function () { console.log("Failed") }
     });
   }
 }
