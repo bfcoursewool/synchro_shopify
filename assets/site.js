@@ -2183,7 +2183,7 @@ function saveGCLID() {
       dataType: 'json',
       contentType: 'application/json',
       url: '/api/adwords_idents',
-      data: JSON.stringify(gclidParams),
+      data: JSON.stringify(queryParams),
       success: function () { console.log("Succeeded!") },
       error: function () { console.log("Failed") }
     });
