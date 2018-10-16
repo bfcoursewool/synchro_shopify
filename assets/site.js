@@ -2197,6 +2197,18 @@ $(document).ready(function() {
   cycleTestimonials(currentActiveIndex, currentActiveTestimonial)
   saveGCLID();
 
+  $("window").on('scroll', function(e) {
+    var maxScroll = 100;
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    var leftSidebarImage = $('.sidebar-images-section')
+
+    if(scrollTop > maxScroll && !leftSidebarImage.is('.floated')) {
+      leftSidebarImage.addClass('floated');
+    } else if(scrollTop < maxScroll && leftSidebarImage.is('.floated')) {
+      leftSidebarImage.removeClass('floated');
+    }
+  })
+
   $(".home-testimonial").click(function () {
     clearTimeout(timeoutCall);
     cycleTestimonials($(".home-testimonial").index(this), $(this))
