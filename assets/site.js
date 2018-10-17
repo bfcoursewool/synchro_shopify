@@ -2197,20 +2197,49 @@ $(document).ready(function() {
   cycleTestimonials(currentActiveIndex, currentActiveTestimonial)
   saveGCLID();
 
-  $("window").on('scroll', function(e) {
-    var maxScroll = 100;
+  $(window).on('scroll', function(e) {
+    var maxScroll = 450;
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     var leftSidebarImage = $('.sidebar-images-section')
 
-    if(scrollTop > maxScroll && !leftSidebarImage.is('.floated')) {
-      leftSidebarImage.addClass('floated');
-    } else if(scrollTop < maxScroll && leftSidebarImage.is('.floated')) {
-      leftSidebarImage.removeClass('floated');
+    if(scrollTop > maxScroll && !leftSidebarImage.is('.sidebar-image-floated')) {
+      leftSidebarImage.addClass('sidebar-image-floated');
+    } else if(scrollTop < maxScroll && leftSidebarImage.is('.sidebar-image-floated')) {
+      leftSidebarImage.removeClass('sidebar-image-floated');
     }
   })
+
 
   $(".home-testimonial").click(function () {
     clearTimeout(timeoutCall);
     cycleTestimonials($(".home-testimonial").index(this), $(this))
   });
 });
+
+// Set the date we're counting down to
+var countDownDate = new Date("October 17 2018 23:59:59 UTC-0700").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor(distance / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="timer"
+  document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "EXPIRED";
+  }
+}, 1000);
