@@ -7376,6 +7376,12 @@ iframe {
     display: none;
   }
 }
+.flash-sale-banner__mobile {
+  display: none;
+  @include breakpoint(m) {
+    display: inline-block;
+  }
+}
 
 .flash-sale-banner__text {
   padding: 10px;
@@ -7426,7 +7432,7 @@ iframe {
   line-height: 35px;
   padding: 0 20px;
   margin: 0 0 0 15px;
-  @media only screen and (max-width: 670px) {
+  @media only screen and (max-width: 590px) {
     height: 30px;
     line-height: 30px;
     padding: 0 15px;
