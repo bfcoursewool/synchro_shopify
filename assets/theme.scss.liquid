@@ -7063,7 +7063,7 @@ iframe {
   .home-slideshow-wrapper{ clear:both;}
 
   .main-header-wrapper.full-bleed-slideshow.header-bleed-default-colors{
-    // position: static;
+    position: static;
       @include breakpoint(s) {
         background: none;
       }
@@ -7352,102 +7352,104 @@ iframe {
   }
 }
 
-
-.flash-sale-banner {
-  position: fixed;
-  top: 0;
-  text-align: center;
-  background-color: #6c5851;
-  z-index: 10;
-  width: 100%;
-
-  @media only screen and (max-width: 720px) {
-    top: 60px;
-  }
-}
-.flash-sale-banner__blank{
-  height: 0px;
-  @media only screen and (max-width: 720px) {
-    height: 60px;
-  }
-}
-.flash-sale-banner__desktop {
-  @include breakpoint(m) {
-    display: none;
-  }
-}
-.flash-sale-banner__mobile {
-  display: none;
-  @include breakpoint(m) {
-    display: initial;
-  }
-}
-
-.flash-sale-banner__text {
-  padding: 10px;
-  margin: 0;
-  color: #fff;
-  font-weight: 400;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-}
-
-.flash-sale-banner__code {
-  padding: 1px 10px;
-  border: 2px solid #fff;
-  margin: 0 2px;
-  -webkit-animation: flash linear 1s infinite;
-  animation: flash linear 1s infinite;
-}
-@-webkit-keyframes flash {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.7;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes flash {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.7;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.flash-sale-banner__cta {
-  background: #fff;
-  height: 35px;
-  line-height: 35px;
-  padding: 0 20px;
-  margin: 0 0 0 15px;
-  @media only screen and (max-width: 590px) {
-    height: 30px;
-    line-height: 30px;
-    padding: 0 15px;
-    margin-top: 10px;
-  }
-}
-
 .sidebar-image-floated { 
   position: fixed;
   top: 110px;
 }
 
+// FLASH SALE BANNER STARTS
 
-.header-drawer {
-  @media (min-width: 721px) and (max-width: 867px) {
-    top: 99px;
-  }
-}
+// .flash-sale-banner {
+//   position: fixed;
+//   top: 0;
+//   text-align: center;
+//   background-color: #6c5851;
+//   z-index: 10;
+//   width: 100%;
+//
+//   @media only screen and (max-width: 720px) {
+//     top: 60px;
+//   }
+// }
+// .flash-sale-banner__blank{
+//   height: 0px;
+//   @media only screen and (max-width: 720px) {
+//     height: 60px;
+//   }
+// }
+// .flash-sale-banner__desktop {
+//   @include breakpoint(m) {
+//     display: none;
+//   }
+// }
+// .flash-sale-banner__mobile {
+//   display: none;
+//   @include breakpoint(m) {
+//     display: initial;
+//   }
+// }
+//
+// .flash-sale-banner__text {
+//   padding: 10px;
+//   margin: 0;
+//   color: #fff;
+//   font-weight: 400;
+//   font-size: 18px;
+//   letter-spacing: 0.5px;
+// }
+//
+// .flash-sale-banner__code {
+//   padding: 1px 10px;
+//   border: 2px solid #fff;
+//   margin: 0 2px;
+//   -webkit-animation: flash linear 1s infinite;
+//   animation: flash linear 1s infinite;
+// }
+// @-webkit-keyframes flash {
+//   0% {
+//     opacity: 1;
+//   }
+//
+//   50% {
+//     opacity: 0.7;
+//   }
+//
+//   100% {
+//     opacity: 1;
+//   }
+// }
+// @keyframes flash {
+//   0% {
+//     opacity: 1;
+//   }
+//
+//   50% {
+//     opacity: 0.7;
+//   }
+//
+//   100% {
+//     opacity: 1;
+//   }
+// }
+//
+// .flash-sale-banner__cta {
+//   background: #fff;
+//   height: 35px;
+//   line-height: 35px;
+//   padding: 0 20px;
+//   margin: 0 0 0 15px;
+//   @media only screen and (max-width: 590px) {
+//     height: 30px;
+//     line-height: 30px;
+//     padding: 0 15px;
+//     margin-top: 10px;
+//   }
+// }
+//
+// .header-drawer {
+//   @media (min-width: 721px) and (max-width: 867px) {
+//     top: 99px;
+//   }
+// }
+//
+// FLASH SALE BANNER ENDS
