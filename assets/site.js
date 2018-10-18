@@ -2198,15 +2198,22 @@ $(document).ready(function() {
   saveGCLID();
 
   $(window).on('scroll', function(e) {
-    var maxScroll = 500;
+    var startSticky = 473;
+    var stopSticky = 9785;
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     var leftSidebarImage = $('.sidebar-images-section')
 
-    if(scrollTop > maxScroll && !leftSidebarImage.is('.sidebar-image-floated')) {
+    console.log('scroll: ' + scrollTop)
+
+    if(scrollTop > startSticky && scrollTop < stopSticky && !leftSidebarImage.is('.sidebar-image-floated')) {
       leftSidebarImage.addClass('sidebar-image-floated');
-    } else if(scrollTop < maxScroll && leftSidebarImage.is('.sidebar-image-floated')) {
+      leftSidebarImage.removeClass('sidebar-image-bottom');
+    } else if(scrollTop < startSticky && leftSidebarImage.is('.sidebar-image-floated')) {
       leftSidebarImage.removeClass('sidebar-image-floated');
-    } 
+    } else if(scrollTop > stopSticky && leftSidebarImage.is('.sidebar-image-floated')) {
+      leftSidebarImage.removeClass('sidebar-image-floated')
+      leftSidebarImage.addClass('sidebar-image-bottom')
+    }
   })
 
 
