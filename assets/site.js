@@ -2198,7 +2198,7 @@ $(document).ready(function() {
   saveGCLID();
 
   $(window).on('scroll', function(e) {
-    var maxScroll = 450;
+    var maxScroll = 500;
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     var leftSidebarImage = $('.sidebar-images-section')
 
