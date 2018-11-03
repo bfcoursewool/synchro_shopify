@@ -28,7 +28,7 @@ assets/checkout-styles-mobile.css.liquid:
 assets/checkout-styles-mobile.css.liquid.map:
   development: 2017-07-28T13:55:51-07:00   8c5950244fc124ea2873fccd16de53e1
 assets/checkout-styles.css.liquid:
-  development: 2017-07-28T13:55:52-07:00   dc172f826b1c5c51b5c3717237e7b723
+  development: 2018-10-31T05:00:25-07:00   dc172f826b1c5c51b5c3717237e7b723
 assets/checkout-styles.css.liquid.map:
   development: 2017-07-28T13:55:52-07:00   9e6be366354c3199aaf8f630b1a69f4e
 assets/checkout.css.liquid:
@@ -43,6 +43,8 @@ assets/contrast-background-image.jpg:
   development: 2017-07-28T13:55:52-07:00   ecb8c4d51929e74f6785e6ab53d1ea49
 assets/contrast-retina-background-image.jpg:
   development: 2017-07-28T13:55:52-07:00   ecb8c4d51929e74f6785e6ab53d1ea49
+assets/criteo-orderstatus.js:
+  development: 2018-10-31T11:35:02-07:00   4aeb3f362ee3f583b610e8797a40d5f1
 assets/customer-service.png:
   development: 2017-07-28T13:55:53-07:00   172e6f8365307e3e3bd3cbb66a9efd5a
 assets/featurepost.png:
@@ -94,9 +96,9 @@ assets/jquery.currencies.js:
 assets/keto-image.png:
   development: 2018-01-31T16:23:41-08:00   50a1c070a8a6523fb3be20c6afd03622
 assets/logo-retina.png:
-  development: 2017-07-28T13:55:58-07:00   39102f3653996c4e7c3fb2b67b9d762e
+  development: 2018-10-31T05:43:57-07:00   8f47a22e24627a69113a487446326067
 assets/logo.png:
-  development: 2017-07-28T13:55:59-07:00   d0279d8777943ee22296eb6c41c7fde1
+  development: 2018-10-31T05:43:58-07:00   0ce1b8248556e9bd1df4ec73bb716d8a
 assets/mmenu.scss.liquid:
   development: 2018-09-29T13:20:21-07:00   719450f06bdac60e99b655b46024d834
 assets/modernizr-2.7.1.min.js:
@@ -132,7 +134,7 @@ assets/search-icon2.png:
 assets/search-icon4.png:
   development: 2018-06-08T02:24:43-07:00   99bc623924a1b081fbbfc8478833bd5f
 assets/secondary-logo.png:
-  development: 2017-07-28T13:56:02-07:00   ec636576f0fb3718270e0507661cb78e
+  development: 2018-10-24T16:40:17-07:00   5601f5e27dba1fbfa8d078371699b64f
 assets/secondlogo.png:
   development: 2017-07-28T13:56:02-07:00   9e998f19c05273cb93eee1d1a0fc5bd1
 assets/sidebar-blog-body optimization-image.png:
@@ -160,7 +162,7 @@ assets/singleproductwebicons-regular.ttf:
 assets/singleproductwebicons-regular.woff:
   development: 2017-07-28T13:56:03-07:00   956068af159fab7807acd819c1c4a0c9
 assets/site.js:
-  development: 2018-10-18T14:36:54-07:00   d93570d64c98608ef617f7c6453bae1d
+  development: 2018-10-19T08:40:13-07:00   4c1c2f42bca01248bca749c4bb0276c6
 assets/slide-1-image.jpg:
   development: 2018-07-03T06:26:32-07:00   a8e54fe6388adde065fa35d9828a4669
 assets/slide-2-image.jpg:
@@ -182,15 +184,15 @@ assets/socicon-webfont.woff:
 assets/tag-icon.png:
   development: 2017-07-28T13:56:07-07:00   611ea558d930988d70c366f99fdd888e
 assets/theme.scss.liquid:
-  development: 2018-10-18T14:36:53-07:00   6264ce591942d7f3c21d5c61e6e4d0de
+  development: 2018-10-31T05:53:32-07:00   7cfe798cdbf909bb9596dabd27507930
 config/settings_data.json:
-  development: 2018-09-29T13:20:40-07:00   8620917c25071b063fe91cf07a0e0d10
+  development: 2018-10-31T05:45:10-07:00   65302d69a8388adf8a151c595d36da8a
 config/settings_schema.json:
   development: 2018-07-20T00:53:47-07:00   6deb1676bc31f6e00cffe637d40fd4b8
 layout/checkout.liquid:
   development: 2018-09-25T00:08:36-07:00   bdfd5a3d2fb9efebbb9fb29f1b16e846
 layout/theme.liquid:
-  development: 2018-09-18T14:04:38-07:00   e77a3e5e5732223de2550efcf09c3103
+  development: 2018-10-31T11:35:01-07:00   0ddb07dafc876184e5e5c764b52be1c6
 layout/theme_BackupCopyCartHookCheckout.liquid:
   development: 2018-09-18T06:16:04-07:00   035c586ca1a72fced07bf73631cd768a
 locales/en.default.json:
@@ -202,9 +204,11 @@ snippets/article-list-item.liquid:
 snippets/breadcrumbs.liquid:
   development: 2017-07-28T13:56:07-07:00   2b4498617f5592aacadc2e736464bf00
 snippets/carthook-checkout.liquid:
-  development: 2017-07-28T13:56:07-07:00   999794d6a437824391ae464ff20d0b59
+  development: 2018-10-31T05:51:13-07:00   999794d6a437824391ae464ff20d0b59
 snippets/collection-list-item.liquid:
   development: 2018-04-26T12:49:32-07:00   7fc3df234fb1586d3926c4cb1d944967
+snippets/criteo-tracking.liquid:
+  development: 2018-10-31T11:35:01-07:00   a580faf53db7f879e61be3d1fb9f9d39
 snippets/fonts.liquid:
   development: 2017-07-28T13:56:07-07:00   f70bc3180f1bc97080732cdc6bbedf37
 snippets/footer.liquid:
@@ -238,7 +242,7 @@ snippets/home-left-right.liquid:
 snippets/home-order-now.liquid:
   development: 2017-07-28T13:56:08-07:00   bf8cfa7df4497a5da33628e1a5897529
 snippets/home-slideshow.liquid:
-  development: 2018-10-03T14:24:56-07:00   8f473056f5e4fa031cb764d60f62948d
+  development: 2018-10-25T12:02:03-07:00   bec5f0e6d6f689e0a1f4906e2e3d9193
 snippets/home-testimonials.liquid:
   development: 2018-07-27T13:48:36-07:00   212a70fbdb5072428dd10ccb5d3f0f8c
 snippets/mailing-list.liquid:
@@ -256,9 +260,9 @@ snippets/product-page-buy-button.liquid:
 snippets/product-wrapper.liquid:
   development: 2018-07-16T19:08:25-07:00   a118030157d3ed4de99fd5425a952b6e
 snippets/share-buttons.liquid:
-  development: 2017-07-28T13:56:08-07:00   12f64d71e38ec0e1be061b4e48a20d7d
+  development: 2018-11-02T05:38:31-07:00   2b1e04fe733c1b9eb50d97dd014c729d
 snippets/single-article-list-item.liquid:
-  development: 2018-09-18T05:21:33-07:00   6db9a58c48d092fa29bfb36ff65f5226
+  development: 2018-11-02T04:40:56-07:00   6db9a58c48d092fa29bfb36ff65f5226
 snippets/social-meta.liquid:
   development: 2018-08-28T02:58:56-07:00   4b694acaf75fc3ca51fd951d72001658
 snippets/subscription-cart-footer.liquid:
