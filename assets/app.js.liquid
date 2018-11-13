@@ -38,6 +38,22 @@ $(function() {
     });
   }
 
+  function saveGCLID() {
+    var queryParams = parseQueryString(window.location.search.substring(1))
+    if('gclid' in queryParams) {
+      console.log("ajaxing gclid param to server...");
+      $.ajax({
+        url: 'https://gold.besynchro.com/api/adwords_idents',
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(queryParams),
+        success: function () { console.log("Succeeded!") },
+        error: function () { console.log("Failed") }
+      });
+    }
+  }
+
   function refreshCart(cart) {
     $cartCount = $(".cart-count");
     if ($cartCount && $cartCount.size()) {
@@ -134,6 +150,7 @@ $(function() {
     var $addToCartBtn = $addToCartForm.find('.add_to_cart');
 
     console.log($addToCartForm.serialize()); 
+    saveGCLID();
     $.ajax({
       url: '/cart/add.js',
       dataType: 'json',
@@ -148,7 +165,7 @@ $(function() {
 
         mmenuAPI.open();
         
-        console.log("test")
+
 
         pintrk('track', 'AddToCart', {
           value: itemData.price,

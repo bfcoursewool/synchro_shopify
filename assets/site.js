@@ -2173,29 +2173,12 @@ function parseQueryString(queryString) {
   return params;
 }
 
-function saveGCLID() {
-  var queryParams = parseQueryString(window.location.search.substring(1))
-  if('gclid' in queryParams) {
-    console.log("ajaxing gclid param to server...");
-    $.ajax({
-      url: 'https://gold.besynchro.com/api/adwords_idents',
-      type: 'POST',
-      dataType: 'json',
-      contentType: 'application/json',
-      data: JSON.stringify(queryParams),
-      success: function () { console.log("Succeeded!") },
-      error: function () { console.log("Failed") }
-    });
-  }
-}
-
 $(document).ready(function() {
 
   var currentActiveIndex = 2;
   var currentActiveTestimonial = getTestimonial(currentActiveIndex);
 
   cycleTestimonials(currentActiveIndex, currentActiveTestimonial)
-  saveGCLID();
 
   $(".home-testimonial").click(function () {
     clearTimeout(timeoutCall);
