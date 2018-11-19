@@ -7362,97 +7362,43 @@ iframe {
 
 // FLASH SALE BANNER STARTS
 
-// .flash-sale-banner {
-//   position: fixed;
-//   top: 0;
-//   text-align: center;
-//   background-color: #6c5851;
-//   z-index: 10;
-//   width: 100%;
-//
-//   @media only screen and (max-width: 720px) {
-//     top: 60px;
-//   }
-// }
-// .flash-sale-banner__blank{
-//   height: 0px;
-//   @media only screen and (max-width: 720px) {
-//     height: 60px;
-//   }
-// }
-// .flash-sale-banner__desktop {
-//   @include breakpoint(m) {
-//     display: none;
-//   }
-// }
-// .flash-sale-banner__mobile {
-//   display: none;
-//   @include breakpoint(m) {
-//     display: initial;
-//   }
-// }
-//
-// .flash-sale-banner__text {
-//   padding: 10px;
-//   margin: 0;
-//   color: #fff;
-//   font-weight: 400;
-//   font-size: 18px;
-//   letter-spacing: 0.5px;
-// }
-//
-// .flash-sale-banner__code {
-//   padding: 1px 10px;
-//   border: 2px solid #fff;
-//   margin: 0 2px;
-//   -webkit-animation: flash linear 1s infinite;
-//   animation: flash linear 1s infinite;
-// }
-// @-webkit-keyframes flash {
-//   0% {
-//     opacity: 1;
-//   }
-//
-//   50% {
-//     opacity: 0.7;
-//   }
-//
-//   100% {
-//     opacity: 1;
-//   }
-// }
-// @keyframes flash {
-//   0% {
-//     opacity: 1;
-//   }
-//
-//   50% {
-//     opacity: 0.7;
-//   }
-//
-//   100% {
-//     opacity: 1;
-//   }
-// }
-//
-// .flash-sale-banner__cta {
-//   background: #fff;
-//   height: 35px;
-//   line-height: 35px;
-//   padding: 0 20px;
-//   margin: 0 0 0 15px;
-//   @media only screen and (max-width: 590px) {
-//     height: 30px;
-//     line-height: 30px;
-//     padding: 0 15px;
-//     margin-top: 10px;
-//   }
-// }
-//
-// .header-drawer {
-//   @media (min-width: 721px) and (max-width: 867px) {
-//     top: 99px;
-//   }
-// }
-//
+.flash-sale-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: #8b79b3;
+  z-index: 100;
+  padding: 5px;
+
+  &.pseudo {
+    position: relative;
+  }
+
+  .flash-sale-banner__text {
+    display: inline-block;
+    color: #fff;
+    margin: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 18px;
+    vertical-align: middle;
+  }
+
+  .flash-sale-banner__desktop {
+    @include breakpoint(s) {
+      display: none;
+    }
+  }
+
+  .a--cta {
+    height: 38px;
+    margin: 5px;
+    vertical-align: middle;
+    line-height: 38px;
+    padding: 0 20px;
+  }
+}
 // FLASH SALE BANNER ENDS
