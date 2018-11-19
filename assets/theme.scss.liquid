@@ -7063,9 +7063,9 @@ iframe {
 
   .main-header-wrapper.full-bleed-slideshow.header-bleed-default-colors{
     position: static;
-      @include breakpoint(s) {
-        background: none;
-      }
+      // @include breakpoint(s) {
+      //   background: none;
+      // }
   }
 
   .main-header-wrapper.lower-than-slideshow.header-bleed-default-colors{
@@ -7369,11 +7369,28 @@ iframe {
   right: 0;
   text-align: center;
   background: #8b79b3;
-  z-index: 100;
+  z-index: 90;
   padding: 5px;
+  @include breakpoint(s) {
+    top: 60px;
+  }
 
-  &.pseudo {
+  &.pseudo-desktop {
     position: relative;
+    visibility: hidden;
+    @include breakpoint(s) {
+      display: none;
+    }
+  }
+
+  &.pseudo-mobile {
+    display: none;
+    @include breakpoint(s) {
+      display: block;
+      visibility: hidden;
+      position: relative;
+      top: 0;
+    }
   }
 
   .flash-sale-banner__text {
@@ -7399,6 +7416,12 @@ iframe {
     vertical-align: middle;
     line-height: 38px;
     padding: 0 20px;
+  }
+}
+
+.header-drawer {
+  @media (min-width: 721px) and (max-width: 872px) {
+    top: 102px;
   }
 }
 // FLASH SALE BANNER ENDS
