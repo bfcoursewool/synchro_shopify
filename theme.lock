@@ -162,7 +162,7 @@ assets/singleproductwebicons-regular.ttf:
 assets/singleproductwebicons-regular.woff:
   development: 2017-07-28T13:56:03-07:00   956068af159fab7807acd819c1c4a0c9
 assets/site.js:
-  development: 2018-11-22T23:40:21-08:00   202d5f93cc169463bcdadf5f485f95d1
+  development: 2018-11-23T14:56:29-08:00   1e1c97ed083c36815436bee585723340
 assets/slide-1-image.jpg:
   development: 2018-11-23T00:01:36-08:00   4733380044e08df9e0bf54c5472b2aa9
 assets/slide-2-image-keto.jpg:
@@ -276,7 +276,7 @@ snippets/product-list-item.liquid:
 snippets/product-page-buy-button.liquid:
   development: 2017-07-28T13:56:08-07:00   7b21fcbd1d356e482b66ec6f57be93b9
 snippets/product-wrapper.liquid:
-  development: 2018-11-22T23:26:38-08:00   46d197b296cb47548c8a9d9c30fef21d
+  development: 2018-11-23T14:52:54-08:00   35cf1d3c5609bae4b59f063e80914b35
 snippets/share-buttons.liquid:
   development: 2018-11-02T05:38:31-07:00   2b1e04fe733c1b9eb50d97dd014c729d
 snippets/single-article-list-item.liquid:
@@ -286,7 +286,7 @@ snippets/social-meta.liquid:
 snippets/subscription-cart-footer.liquid:
   development: 2017-07-28T13:56:08-07:00   c6edc9b5d93f2bf691513d1003dea8f9
 snippets/subscription-product.liquid:
-  development: 2018-08-10T11:43:00-07:00   d97fb599d0f48540d8088a954d52029e
+  development: 2018-11-23T14:59:02-08:00   3ac3f6138c02ff777ece3832fd31a5a5
 snippets/subscription-theme-footer.liquid:
   development: 2017-07-28T13:56:08-07:00   1d8cc7f2d7c9f1d549334cc16df77a4f
 snippets/test-subscription-product.liquid:

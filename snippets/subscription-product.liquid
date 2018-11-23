@@ -664,7 +664,7 @@
                         var variant_price = getVariantPrice();
                         var quantity = $("form[data-productid=\"{{ product.id }}\"], form[data-product-id=\"{{ product.id }}\"]").find("[name=\"quantity\"],  [name=\"quantity\"]").val();
                         var price = formatPrice(variant_price, quantity);
-                        $(price_selector).html(price);
+                        //$(price_selector).html(price);
                     }
                     function updateInlinePrice() {
                         // Updates the price besides the purchase options (One-time purchase, Subscribe & save)

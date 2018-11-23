@@ -446,6 +446,7 @@
       this.product = window.productJSON;
       this.options = this.product.options;
       this.variants = this.product.variants;
+
       if (!this.homeSlideshow.length) {
         this.noImageURL = this.$(".product-big-image").data("no-image-svg");
         if ($("html").hasClass("no-svg")) {
@@ -569,9 +570,7 @@
 
     ProductView.prototype.selectCallback = function(variant, selector) {
       var newImage, thumbImage;
-      console.log("selectCallback!"); 
       if (variant) {
-        console.log("Variant!"); 
         if (variant.available) {
           this.addToCartButton.val(Theme.addToCartText).removeClass("disabled").removeAttr("disabled");
         } else {
