@@ -357,23 +357,23 @@ if (subscription_on==true) {
 
         // using a timeout to wait for shopify to load select elements via javascript
         setTimeout(function(){
-            
-            // LISTENER FOR WHEN RADIO OPTION FOR ONE-TIME/RECURRING IS CHECKED                
-            rjQuery(".autodeliver.{{product.id}}").change(function(){				
-				if(rjQuery(this).val() == 'autodeliver'){
-					rjQuery('#product-component-subscription').show();
-              		rjQuery('#product-component-one-time').hide();
-              		rjQuery('.product-price .money').html(
-              			rjQuery('#product-component-subscription .shopify-buy__product__actual-price').html()
-                    )
-				} else if (rjQuery(this).val() == 'onetime') {
-                  	rjQuery('#product-component-one-time').show();
-					rjQuery('#product-component-subscription').hide();
-                    rjQuery('.product-price .money').html(
-              			rjQuery('#product-component-one-time .shopify-buy__product__actual-price').html()
-                    )
-              	}
-            });
+          // LISTENER FOR WHEN RADIO OPTION FOR ONE-TIME/RECURRING IS CHECKED    
+          console.log("Weird shit...");            
+          rjQuery(".autodeliver.{{product.id}}").change(function() {				
+    				if(rjQuery(this).val() == 'autodeliver'){
+    					rjQuery('#product-component-subscription').show();
+              rjQuery('#product-component-one-time').hide();
+              rjQuery('.product-price .money').html(
+                rjQuery('#product-component-subscription .shopify-buy__product__actual-price').html()
+              )
+    				} else if (rjQuery(this).val() == 'onetime') {
+              rjQuery('#product-component-one-time').show();
+    					rjQuery('#product-component-subscription').hide();
+              rjQuery('.product-price .money').html(
+                rjQuery('#product-component-one-time .shopify-buy__product__actual-price').html()
+              )
+            }
+          });
         }, 300); // end setTimeout / initialization of select menu listeners
 
     });

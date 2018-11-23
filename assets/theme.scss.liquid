@@ -7364,7 +7364,7 @@ iframe {
   left: 0;
   right: 0;
   text-align: center;
-  background: #8b79b3;
+  background: #000000;
   z-index: 90;
   padding: 5px;
   @include breakpoint(s) {
@@ -7401,9 +7401,13 @@ iframe {
   }
 
   .flash-sale-banner__desktop {
-    @include breakpoint(s) {
+    @include breakpoint(m) {
       display: none;
     }
+  }
+
+  .flash-sale-asterisk {
+    color: #fff;
   }
 
   .a--cta {
@@ -7412,6 +7416,8 @@ iframe {
     vertical-align: middle;
     line-height: 38px;
     padding: 0 20px;
+    background: #fff;
+    color: #000;
   }
 }
 

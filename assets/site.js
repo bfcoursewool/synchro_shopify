@@ -569,7 +569,9 @@
 
     ProductView.prototype.selectCallback = function(variant, selector) {
       var newImage, thumbImage;
+      console.log("selectCallback!"); 
       if (variant) {
+        console.log("Variant!"); 
         if (variant.available) {
           this.addToCartButton.val(Theme.addToCartText).removeClass("disabled").removeAttr("disabled");
         } else {
@@ -1872,6 +1874,7 @@
       Currency.money_format[Theme.currency] = Theme.moneyFormat;
       this.defaultCurrency = Theme.defaultCurrency || Theme.currency;
       this.cookieCurrency = Currency.cookie.read();
+      
       if (this.cookieCurrency) {
         this.$("[name=currencies]").val(this.cookieCurrency);
       }
