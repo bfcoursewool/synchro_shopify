@@ -22,14 +22,11 @@
       <meta itemprop="priceCurrency" content="{{ shop.currency }}">
       <span class="price {{product.id}}">
         <span class="money">{{ selectedVariant.price | money }}</span>
-        
-        {% unless product.variants.size == 1 and product.compare_at_price_min <= selectedVariant.price %}
-        <span class="original money">
-          {% if selectedVariant.compare_at_price > selectedVariant.price %}
-            {{ selectedVariant.compare_at_price | money }}
-          {% endif %}
-        </span>
-        {% endunless %}
+          <span class="original money">
+            {% if selectedVariant.compare_at_price > selectedVariant.price %}
+              {{ selectedVariant.compare_at_price | money }}
+            {% endif %}
+          </span>
       </span>
     </p>
  </div>
