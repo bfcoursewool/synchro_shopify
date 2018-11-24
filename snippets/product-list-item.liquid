@@ -45,20 +45,16 @@
     <p class="product-description">{{ item.description | strip_html | truncate: 90 }}<a href="{{ item.url | within: collection }}">Learn more</a></p>
    <p class="product-list-item-price">
       {% if item.available %}
-        {% if item.price_varies %}
-          <span class="price">{% if item.price_varies %}{{ 'products.product.from' | t }}{% endif %} <span class="money">{{ item.price_min | money }}</span></span>
-        {% else %}
-          <span class="price">
-            <span class="money">{{ item.price_min | money }}</span>
-            {% unless item.compare_at_price_min <= item.price_min %}
-              <span class="original money">
-                {% if item.compare_at_price_min > item.price_min %}
-                  {{ item.compare_at_price_min | money }}
-                {% endif %}
-              </span>
-            {% endunless %}
-          </span>
-        {% endif %}
+        <span class="price">
+          <span class="money">{{ item.price_min | money }}</span>
+          {% unless item.compare_at_price_min <= item.price_min %}
+            <span class="original money">
+              {% if item.compare_at_price_min > item.price_min %}
+                {{ item.compare_at_price_min | money }}
+              {% endif %}
+            </span>
+          {% endunless %}
+        </span>
       {% else %}
         {{ 'products.product.sold_out' | t }}
       {% endif %}

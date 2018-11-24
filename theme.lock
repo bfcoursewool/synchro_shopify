@@ -272,7 +272,7 @@ snippets/old-style-product-wrapper.liquid:
 snippets/pagination.liquid:
   development: 2017-07-28T13:56:08-07:00   9ce065a3eb654f7b146f54d2c3b43269
 snippets/product-list-item.liquid:
-  development: 2018-05-22T21:36:06-07:00   fd41869ba4804f57a9f64442e888d9eb
+  development: 2018-11-23T16:11:37-08:00   1079e8b366615236d6281cce05a90402
 snippets/product-page-buy-button.liquid:
   development: 2017-07-28T13:56:08-07:00   7b21fcbd1d356e482b66ec6f57be93b9
 snippets/product-wrapper.liquid:
