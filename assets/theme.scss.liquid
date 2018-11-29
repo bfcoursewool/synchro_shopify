@@ -2591,13 +2591,16 @@ iframe {
         z-index: 5;
         text-align: center;
         left: 50%;
-        line-height: 50px;
+        line-height: 25px;
         font-size: 0;
         visibility: hidden;
         color: $slideTextColor;
         @include transform(translateX(-50%));
         @include transition(color $slideshowSpeed $easeOutQuad);
 
+        @include breakpoint(s) {
+          display: none;
+        }
         .slides-ready & {
           visibility: visible;
         }
@@ -2619,9 +2622,9 @@ iframe {
           width: 10px;
           height: 10px;
           display: block;
-          background: transparent;
-          border: 1px solid $slideTextColor;
+          background: #ffffff;
           border-radius: 5px;
+          opacity: 0.6;
 
           .template-product-slideshow & {
             border-color: $productSlideshowColor;
@@ -2629,7 +2632,7 @@ iframe {
         }
 
         .active span {
-          background: $slideTextColor;
+          opacity: 1;
 
           .template-product-slideshow & {
             background: $productSlideshowColor;
@@ -6789,7 +6792,6 @@ iframe {
   }
 
   .logo-header {
-    border-bottom: 1px solid #f4f4f5;
 
     @include breakpoint(s) {
       border: none;
