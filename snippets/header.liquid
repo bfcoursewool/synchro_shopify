@@ -141,7 +141,7 @@
                 </li>
 
                 {% if cart.item_count == 0 %}
-                <li class="empty_cart">{{ 'layout.general.empty_cart' | t }}</li>
+                <li class="empty_cart">{{ 'layout.general.empty' | t }}</li>
                 {% else %}
                 {% for item in cart.items %}
                 <li class="cart_item {% if forloop.last %}last_cart_item{% endif %}">
