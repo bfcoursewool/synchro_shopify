@@ -26,11 +26,11 @@
   <div class="home-slideshow">
 
     {% if settings.show-slide-1 %}
-      <div id="home-slide-1" class="home-slide home-slide-1 text-aligned-{{settings.slide-1-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{ 'slide-1-image.jpg' | asset_url }});"{% endif %}>
+      <div id="home-slide-1" class="home-slide home-slide-1 text-aligned-{{settings.slide-1-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{settings.slide-1-image}});"{% endif %}>
 
         {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}<a href="{{settings.slide-1-url}}">{% endif %}
-          <img class="slide-image mobile_hidden" alt="{{ settings.slide-1-title | strip_html | escape }}" src="{{ 'slide-1-image.jpg' | asset_url }}">
-          <img class="slide-image mobile_only" alt="Black Friday Sale" src="https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/slider-bfcm-mobile-1@2x.jpg">
+          <img class="slide-image mobile_hidden" alt="{{settings.slide-1-alt}}" src="{{settings.slide-1-image}}">
+          <img class="slide-image mobile_only" alt="{{settings.slide-1-alt}}" src="{{settings.slide-1-image-mobile}}">
         {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}</a>{% endif %}
 
         {% if settings.slide-1-title.size > 0 or settings.slide-1-subtitle.size > 0 or settings.slide-1-small-text.size > 0 or settings.slide-1-cta.size > 0 %}
@@ -59,11 +59,11 @@
     {% endif %}
 
     {% if settings.show-slide-2 %}
-      <div id="home-slide-2" class="home-slide home-slide-2 text-aligned-{{settings.slide-2-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{ 'slide-2-image.jpg' | asset_url }});"{% endif %}>
+      <div id="home-slide-2" class="home-slide home-slide-2 text-aligned-{{settings.slide-2-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{settings.slide-2-image}});"{% endif %}>
 
         {% if settings.slide-2-cta.size == 0 and settings.slide-2-url.size > 0 %}<a href="{{settings.slide-2-url}}">{% endif %}
-          <img class="slide-image mobile_hidden" alt="{{ settings.slide-2-title | strip_html | escape }}" src="{{ 'slide-2-image.jpg' | asset_url }}">
-          <img class="slide-image mobile_only" alt="Ketomanna Plan" src="https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/slider-bfcm-mobile@2x.jpg">
+          <img class="slide-image mobile_hidden" alt="{{settings.slide-2-alt}}" src="{{settings.slide-2-image}}">
+          <img class="slide-image mobile_only" alt="{{settings.slide-2-alt}}" src="{{settings.slide-2-image-mobile}}">
         {% if settings.slide-2-cta.size == 0 and settings.slide-2-url.size > 0 %}</a>{% endif %}
 
         {% if settings.slide-2-title.size > 0 or settings.slide-2-subtitle.size > 0 or settings.slide-2-small-text.size > 0 or settings.slide-2-cta.size > 0 %}
@@ -92,11 +92,11 @@
     {% endif %}
 
     {% if settings.show-slide-3 %}
-      <div id="home-slide-3" class="home-slide home-slide-3 text-aligned-{{settings.slide-3-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{ 'slide-3-image.jpg' | asset_url }});"{% endif %}>
+      <div id="home-slide-3" class="home-slide home-slide-3 text-aligned-{{settings.slide-3-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{settings.slide-3-image}});"{% endif %}>
 
         {% if settings.slide-3-cta.size == 0 and settings.slide-3-url.size > 0 %}<a href="{{settings.slide-3-url}}">{% endif %}
-          <img class="slide-image mobile_hidden" alt="{{ settings.slide-3-title | strip_html | escape }}" src="{{ 'slide-3-image.jpg' | asset_url }}">
-          <img class="slide-image mobile_only" alt="Genesis" src="https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/slide-3-image-mobile.jpg">
+          <img class="slide-image mobile_hidden" alt="{{settings.slide-3-alt}}" src="{{settings.slide-3-image}}">
+          <img class="slide-image mobile_only" alt="{{settings.slide-3-alt}}" src="{{settings.slide-3-image-mobile}}">
         {% if settings.slide-3-cta.size == 0 and settings.slide-3-url.size > 0 %}</a>{% endif %}
 
         {% if settings.slide-3-title.size > 0 or settings.slide-3-subtitle.size > 0 or settings.slide-3-small-text.size > 0 or settings.slide-3-cta.size > 0 %}
@@ -125,11 +125,11 @@
     {% endif %}
 
     {% if settings.show-slide-4 %}
-      <div id="home-slide-4" class="home-slide home-slide-4 text-aligned-{{settings.slide-4-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{ 'slide-4-image.jpg' | asset_url }});"{% endif %}>
+      <div id="home-slide-4" class="home-slide home-slide-4 text-aligned-{{settings.slide-4-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{settings.slide-4-image}});"{% endif %}>
 
         {% if settings.slide-4-cta.size == 0 and settings.slide-4-url.size > 0 %}<a href="{{settings.slide-4-url}}">{% endif %}
-          <img class="slide-image mobile_hidden" alt="{{ settings.slide-4-title | strip_html | escape }}" src="{{ 'slide-4-image.jpg' | asset_url }}">
-          <img class="slide-image mobile_only" alt="Prebios" src="https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/slide-4-image-mobile.jpg">
+          <img class="slide-image mobile_hidden" alt="{{settings.slide-4-alt}}" src="{{settings.slide-4-image}}">
+          <img class="slide-image mobile_only" alt="{{settings.slide-4-alt}}" src="{{settings.slide-4-image-mobile}}">
         {% if settings.slide-4-cta.size == 0 and settings.slide-4-url.size > 0 %}</a>{% endif %}
 
         {% if settings.slide-4-title.size > 0 or settings.slide-4-subtitle.size > 0 or settings.slide-4-small-text.size > 0 or settings.slide-4-cta.size > 0 %}
@@ -158,11 +158,11 @@
     {% endif %}
 
     {% if settings.show-slide-5 %}
-      <div id="home-slide-5" class="home-slide home-slide-5 text-aligned-{{settings.slide-5-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{ 'slide-5-image.jpg' | asset_url }});"{% endif %}>
+      <div id="home-slide-5" class="home-slide home-slide-5 text-aligned-{{settings.slide-5-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{settings.slide-5-image}});"{% endif %}>
 
         {% if settings.slide-5-cta.size == 0 and settings.slide-5-url.size > 0 %}<a href="{{settings.slide-5-url}}">{% endif %}
-          <img class="slide-image mobile_hidden" alt="{{ settings.slide-5-title | strip_html | escape }}" src="{{ 'slide-5-image.jpg' | asset_url }}">
-          <img class="slide-image mobile_only" alt="Gold" src="https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/slide-5-image-mobile.jpg">
+          <img class="slide-image mobile_hidden" alt="{{settings.slide-5-alt}}" src="{{settings.slide-5-image}}">
+          <img class="slide-image mobile_only" alt="{{settings.slide-5-alt}}" src="{{settings.slide-5-image-mobile}}">
         {% if settings.slide-5-cta.size == 0 and settings.slide-5-url.size > 0 %}</a>{% endif %}
 
         {% if settings.slide-5-title.size > 0 or settings.slide-5-subtitle.size > 0 or settings.slide-5-small-text.size > 0 or settings.slide-5-cta.size > 0 %}

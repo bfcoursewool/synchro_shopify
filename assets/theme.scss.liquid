@@ -2591,13 +2591,16 @@ iframe {
         z-index: 5;
         text-align: center;
         left: 50%;
-        line-height: 50px;
+        line-height: 25px;
         font-size: 0;
         visibility: hidden;
         color: $slideTextColor;
         @include transform(translateX(-50%));
         @include transition(color $slideshowSpeed $easeOutQuad);
 
+        @include breakpoint(s) {
+          display: none;
+        }
         .slides-ready & {
           visibility: visible;
         }
@@ -2619,9 +2622,9 @@ iframe {
           width: 10px;
           height: 10px;
           display: block;
-          background: transparent;
-          border: 1px solid $slideTextColor;
+          background: #ffffff;
           border-radius: 5px;
+          opacity: 0.6;
 
           .template-product-slideshow & {
             border-color: $productSlideshowColor;
@@ -2629,7 +2632,7 @@ iframe {
         }
 
         .active span {
-          background: $slideTextColor;
+          opacity: 1;
 
           .template-product-slideshow & {
             background: $productSlideshowColor;
@@ -7055,7 +7058,7 @@ iframe {
   .search-form form input{ border: medium none; background: url("icon-search.png") no-repeat scroll 95% center; width:20px; transition: all 0.5s ease 0s; background-size: 16px;}
   .search-form form input:focus{ width:200px; opacity: 1; background-color: #fff;}
 
-  .home-slideshow-wrapper{ clear:both;}
+  .home-slideshow-wrapper{ clear:both; top: -1px;}
 
   .main-header-wrapper.full-bleed-slideshow.header-bleed-default-colors{
     position: static;
@@ -7366,9 +7369,10 @@ iframe {
   text-align: center;
   background: #000000;
   z-index: 90;
-  padding: 5px;
+  padding: 0 5px;
   @include breakpoint(s) {
     top: 60px;
+    padding: 5px;
   }
 
   &.pseudo-desktop {
@@ -7392,11 +7396,11 @@ iframe {
   .flash-sale-banner__text {
     display: inline-block;
     color: #fff;
-    margin: 5px;
+    margin: 0 3px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     vertical-align: middle;
   }
 
@@ -7411,11 +7415,11 @@ iframe {
   }
 
   .a--cta {
-    height: 38px;
-    margin: 5px;
+    height: 30px;
+    margin: 7px 3px;
     vertical-align: middle;
-    line-height: 38px;
-    padding: 0 20px;
+    line-height: 30px;
+    padding: 0 14px;
     background: #fff;
     color: #000;
   }
