@@ -9,12 +9,12 @@ assets/bf-homepage-banner.jpg:
   development: 2017-11-23T22:31:33-08:00   2848f1cfdf3622be0bd4b92816028d7a
 assets/black-blue-icon.png:
   development: 2017-07-28T13:55:47-07:00   c48ca2b03c35b4ddc16055849acfa5f6
-assets/bleed-logo.png:
-  development: 2017-07-28T13:55:47-07:00   26521c8fc457e5d6173c0bfacf302a34
 assets/blog-feature-image.png:
   development: 2017-07-28T13:55:48-07:00   c4dc5129cfa2a7bfaaf5552190ef6d28
 assets/blog-km-ad-4@2x.jpg:
   development: 2018-09-28T07:18:10-07:00   76e151dcebfc28c05415a773ab916b98
+assets/blog-km-ad@2x.png:
+  development: 2018-11-30T02:19:08-08:00   e7e861918c73d21299157764b7588aa8
 assets/blue-icon.png:
   development: 2017-07-28T13:55:49-07:00   760ad92cc3ab7a3232a332eba66ee6c8
 assets/body-optimization-image.png:
@@ -59,14 +59,6 @@ assets/graham-ryan.png:
   development: 2017-07-28T13:55:55-07:00   ac1acdcbd501fa9a08440e178f263fb2
 assets/home-full-width-1-image.png:
   development: 2017-07-28T13:55:56-07:00   ba094a48130aff43449666a912b0c2fa
-assets/home-hero-product-image.png:
-  development: 2017-07-28T13:55:57-07:00   de5f2b5ce2e4c637041abeacb116adfe
-assets/home-in-line-image-1.png:
-  development: 2017-07-28T13:55:57-07:00   f464ef91892899c5cf865169e9fb609c
-assets/home-left-right-image-1.png:
-  development: 2017-07-28T13:55:57-07:00   aca1220844d054a2285b8220be6adf0a
-assets/home-left-right-image-2.png:
-  development: 2017-07-28T13:55:58-07:00   f464ef91892899c5cf865169e9fb609c
 assets/home-testimonial-1-avatar.jpg:
   development: 2018-07-20T00:57:20-07:00   21775453b7cc037c1db86ef2aa38b38b
 assets/home-testimonial-2-avatar.jpg:
@@ -103,10 +95,6 @@ assets/mmenu.scss.liquid:
   development: 2018-09-29T13:20:21-07:00   719450f06bdac60e99b655b46024d834
 assets/modernizr-2.7.1.min.js:
   development: 2017-07-28T13:55:59-07:00   e49e67ef07362fcfb0be107f8651f1d9
-assets/mys-site-banner-desktop-min.jpg:
-  development: 2018-05-29T22:16:44-07:00   9ca02deb67de25bb48baf1d1c89557c5
-assets/mys-site-banner-mobile-min.jpg:
-  development: 2018-05-29T22:16:45-07:00   826dee5967eb75b8065bef7726f9a1b3
 assets/no-image.png:
   development: 2017-07-28T13:55:59-07:00   dbcf571b95733efe9d94e4701fcc74a7
 assets/no-image.svg:
@@ -115,10 +103,6 @@ assets/nutrition-image.png:
   development: 2017-07-28T13:56:00-07:00   2a175b62d650f72837370525f6710df9
 assets/plugins.js:
   development: 2017-07-28T13:56:00-07:00   e59977a3618bb92d193bf6f4442b2419
-assets/product-banner-mobile.jpg:
-  development: 2017-11-24T01:45:27-08:00   d5560c2e432c57a767cb8e0fa842a5b2
-assets/product-page-banner.jpg:
-  development: 2017-11-24T01:36:32-08:00   d3f075bcb470cdd02e134122393fcb3d
 assets/recipes-image.png:
   development: 2017-07-28T13:56:00-07:00   a3b8ac7ddd04d12422dbe9fae1d6cbea
 assets/sandra-hernandez.jpg:
@@ -163,34 +147,40 @@ assets/singleproductwebicons-regular.woff:
   development: 2017-07-28T13:56:03-07:00   956068af159fab7807acd819c1c4a0c9
 assets/site.js:
   development: 2018-11-23T14:56:29-08:00   1e1c97ed083c36815436bee585723340
-assets/slide-1-image.jpg:
-  development: 2018-11-23T00:01:36-08:00   4733380044e08df9e0bf54c5472b2aa9
 assets/slide-2-image-keto.jpg:
-  development: 2018-11-23T00:01:42-08:00   a803985e64a5bcaef59b2d6850415b49
-assets/slide-2-image-mobile.jpg:
-  development: 2018-11-20T13:44:08-08:00   69e7c94ca146e2f299193ef981d1fb6b
-assets/slide-2-image.jpg:
-  development: 2018-11-23T00:01:17-08:00   da5b6c9d6f8de6fb5b8490289680f967
-assets/slide-3-image-mobile.jpg:
-  development: 2018-11-20T13:44:09-08:00   74304745fdf49ec0e353e9c18d38efec
-assets/slide-3-image.jpg:
-  development: 2018-11-20T13:36:04-08:00   0ac5256997b28478932ffe53af6737f0
-assets/slide-4-image-mobile.jpg:
-  development: 2018-11-20T13:44:10-08:00   3658d324b643716b7cbb8656729521eb
-assets/slide-4-image.jpg:
-  development: 2018-11-20T13:36:07-08:00   0efeed0ebbc3d9194b048d7a745ecfb3
-assets/slide-5-image-mobile.jpg:
-  development: 2018-11-20T13:44:12-08:00   29acf2e0c909ed9220b5d74482822cff
-assets/slide-5-image.jpg:
-  development: 2018-11-20T13:36:08-08:00   65cc5a5ab1ba5ba8121442b2afb0e616
+  development: 2018-11-27T02:57:52-08:00   a803985e64a5bcaef59b2d6850415b49
+assets/slide-image-foy-mobile2@2x.jpg:
+  development: 2018-11-30T11:57:17-08:00   4323b4a1f0ed9720f34ea8478a2bf78f
+assets/slide-image-foy1@2x.jpg:
+  development: 2018-11-29T07:51:20-08:00   7ba19c964c64af6dd784c761167982d7
+assets/slide-image-free-shipping-mobile1@2x.jpg:
+  development: 2018-11-29T07:51:22-08:00   1a279ac9a876469733477677aa124e15
+assets/slide-image-free-shipping1@2x.jpg:
+  development: 2018-11-29T07:51:24-08:00   14b8f523203ddf565564c5cb4cf23176
+assets/slide-image-genesis-mobile@2x.jpg:
+  development: 2018-11-28T01:47:16-08:00   74304745fdf49ec0e353e9c18d38efec
+assets/slide-image-genesis@2x.jpg:
+  development: 2018-11-28T01:47:10-08:00   0ac5256997b28478932ffe53af6737f0
+assets/slide-image-gold-mobile@2x.jpg:
+  development: 2018-11-28T01:46:16-08:00   29acf2e0c909ed9220b5d74482822cff
+assets/slide-image-gold@2x.jpg:
+  development: 2018-11-28T01:46:11-08:00   65cc5a5ab1ba5ba8121442b2afb0e616
+assets/slide-image-ketomanna-mobile@2x.jpg:
+  development: 2018-11-28T01:44:24-08:00   69e7c94ca146e2f299193ef981d1fb6b
+assets/slide-image-ketomanna@2x.jpg:
+  development: 2018-11-28T01:44:18-08:00   a803985e64a5bcaef59b2d6850415b49
+assets/slide-image-ketoplan-mobile3@2x.jpg:
+  development: 2018-11-30T11:59:27-08:00   347476f3b06ba3eab620f80083eb4e54
+assets/slide-image-ketoplan3@2x.jpg:
+  development: 2018-11-30T11:58:58-08:00   9820ab78cac6977939523d6014b11aa1
 assets/slide-image-prebfcm.jpg:
-  development: 2018-11-23T00:01:55-08:00   44d5fc8c47909af53e1189942a485875
+  development: 2018-11-27T02:57:52-08:00   44d5fc8c47909af53e1189942a485875
+assets/slide-image-prebios-mobile@2x.jpg:
+  development: 2018-11-28T01:46:55-08:00   3658d324b643716b7cbb8656729521eb
+assets/slide-image-prebios@2x.jpg:
+  development: 2018-11-28T01:47:02-08:00   0efeed0ebbc3d9194b048d7a745ecfb3
 assets/slide-mid-year-sale.jpg:
-  development: 2018-11-20T13:27:14-08:00   50ca0a7d2dffd2e1998ddb94398e919b
-assets/slider-bfcm-mobile-1@2x.jpg:
-  development: 2018-11-23T00:02:06-08:00   bac063473af2cfffde8699aa73bcf0ce
-assets/slider-pre-bfcm-mobile.jpg:
-  development: 2018-11-20T13:44:13-08:00   5b3592e84cec6501f7992fd030d8f4d7
+  development: 2018-11-27T02:57:53-08:00   50ca0a7d2dffd2e1998ddb94398e919b
 assets/socicon-webfont.eot:
   development: 2017-07-28T13:56:06-07:00   308531c9c8ba487310162fd5060422e8
 assets/socicon-webfont.svg:
@@ -202,9 +192,9 @@ assets/socicon-webfont.woff:
 assets/tag-icon.png:
   development: 2017-07-28T13:56:07-07:00   611ea558d930988d70c366f99fdd888e
 assets/theme.scss.liquid:
-  development: 2018-11-23T01:47:22-08:00   1224535c2bacffe4cc0597f01de4ad7d
+  development: 2018-11-29T08:05:14-08:00   c3f0425f1dc716fb738216da2eab7479
 config/settings_data.json:
-  development: 2018-11-23T00:05:46-08:00   05631fa1f8d7f8abf787b581751ed82e
+  development: 2018-11-30T11:59:31-08:00   29a035c7a755bff0d36973b5964be167
 config/settings_schema.json:
   development: 2018-07-20T00:53:47-07:00   6deb1676bc31f6e00cffe637d40fd4b8
 layout/checkout.liquid:
@@ -222,21 +212,21 @@ snippets/article-list-item.liquid:
 snippets/breadcrumbs.liquid:
   development: 2017-07-28T13:56:07-07:00   2b4498617f5592aacadc2e736464bf00
 snippets/carthook-checkout.liquid:
-  development: 2018-10-31T05:51:13-07:00   999794d6a437824391ae464ff20d0b59
+  development: 2018-11-27T10:52:46-08:00   9387e325340ff7f09280cf29564608c0
 snippets/collection-list-item.liquid:
-  development: 2018-04-26T12:49:32-07:00   7fc3df234fb1586d3926c4cb1d944967
+  development: 2018-11-27T03:07:45-08:00   7fc3df234fb1586d3926c4cb1d944967
 snippets/criteo-tracking.liquid:
   development: 2018-10-31T11:35:01-07:00   a580faf53db7f879e61be3d1fb9f9d39
 snippets/fonts.liquid:
   development: 2017-07-28T13:56:07-07:00   f70bc3180f1bc97080732cdc6bbedf37
 snippets/footer.liquid:
-  development: 2018-11-23T01:43:15-08:00   664586733fae610c33ff4af54d8bd5d5
+  development: 2018-11-28T00:01:19-08:00   419c66f04d91eb209d20d8a11d188c37
 snippets/for-blog-pages.liquid:
   development: 2017-07-28T13:56:08-07:00   7a3de2429726cc986f651314f135a37a
 snippets/for-looper.liquid:
   development: 2017-07-28T13:56:08-07:00   527e37ca0365fb5b0e04aae22b2d1cfb
 snippets/header.liquid:
-  development: 2018-11-23T01:46:55-08:00   a39070f0807bf5f24d6394cdb2318627
+  development: 2018-11-28T00:01:08-08:00   af37b4dcce744bb7b7ffaefedec88a0c
 snippets/hex2rgb.liquid:
   development: 2017-07-28T13:56:08-07:00   646edef4e1a0cf9a1d47d6465b467a38
 snippets/home-as-seen-on.liquid:
@@ -260,7 +250,7 @@ snippets/home-left-right.liquid:
 snippets/home-order-now.liquid:
   development: 2017-07-28T13:56:08-07:00   bf8cfa7df4497a5da33628e1a5897529
 snippets/home-slideshow.liquid:
-  development: 2018-11-23T00:03:47-08:00   550db3411d6dcd29ff311c27833e97ea
+  development: 2018-11-29T08:01:04-08:00   f7960208e1032c221822082aaed86510
 snippets/home-testimonials.liquid:
   development: 2018-07-27T13:48:36-07:00   212a70fbdb5072428dd10ccb5d3f0f8c
 snippets/mailing-list.liquid:
@@ -272,7 +262,7 @@ snippets/old-style-product-wrapper.liquid:
 snippets/pagination.liquid:
   development: 2017-07-28T13:56:08-07:00   9ce065a3eb654f7b146f54d2c3b43269
 snippets/product-list-item.liquid:
-  development: 2018-11-23T16:11:37-08:00   1079e8b366615236d6281cce05a90402
+  development: 2018-11-28T00:22:15-08:00   1b487f0c5d15ebc827d129b9d2579b63
 snippets/product-page-buy-button.liquid:
   development: 2017-07-28T13:56:08-07:00   7b21fcbd1d356e482b66ec6f57be93b9
 snippets/product-wrapper.liquid:
