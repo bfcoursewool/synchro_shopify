@@ -192,7 +192,7 @@ assets/socicon-webfont.woff:
 assets/tag-icon.png:
   development: 2017-07-28T13:56:07-07:00   611ea558d930988d70c366f99fdd888e
 assets/theme.scss.liquid:
-  development: 2018-11-29T08:05:14-08:00   c3f0425f1dc716fb738216da2eab7479
+  development: 2018-12-03T18:58:59-08:00   7a80556a6a76a99a661da75bd7381738
 config/settings_data.json:
   development: 2018-11-30T11:59:31-08:00   29a035c7a755bff0d36973b5964be167
 config/settings_schema.json:
