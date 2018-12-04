@@ -146,7 +146,7 @@ assets/singleproductwebicons-regular.ttf:
 assets/singleproductwebicons-regular.woff:
   development: 2017-07-28T13:56:03-07:00   956068af159fab7807acd819c1c4a0c9
 assets/site.js:
-  development: 2018-12-03T18:56:23-08:00   df0dd2ee0fe1979b5b3eb57f7654b7b0
+  development: 2018-12-03T19:19:23-08:00   bf60f9b5f5579ba134c4657f74e8d84f
 assets/slide-2-image-keto.jpg:
   development: 2018-11-27T02:57:52-08:00   a803985e64a5bcaef59b2d6850415b49
 assets/slide-image-foy-mobile2@2x.jpg:
@@ -192,7 +192,7 @@ assets/socicon-webfont.woff:
 assets/tag-icon.png:
   development: 2017-07-28T13:56:07-07:00   611ea558d930988d70c366f99fdd888e
 assets/theme.scss.liquid:
-  development: 2018-12-03T18:58:59-08:00   7a80556a6a76a99a661da75bd7381738
+  development: 2018-12-03T19:01:54-08:00   e68905d4e8a994684391f0da014f61dd
 config/settings_data.json:
   development: 2018-11-30T11:59:31-08:00   29a035c7a755bff0d36973b5964be167
 config/settings_schema.json:

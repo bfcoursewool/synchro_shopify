@@ -2181,8 +2181,8 @@ $(document).ready(function() {
   var currentActiveTestimonial = getTestimonial(currentActiveIndex);
 
   cycleTestimonials(currentActiveIndex, currentActiveTestimonial)
-  
-  var startedFloatAtScrollTop = 0
+
+  var initialAdTop = $('.sidebar .sidebar-images-section').offset().top;
   var repinnedAtScrollTop = 0
   var lastScrollTop
   var blogPageLeftHeight = 0;
@@ -2204,9 +2204,6 @@ $(document).ready(function() {
     if(scrollTop > lastScrollTop) {
       // Downward scrolling
       if(distanceFromTop < 100 && distanceFromMailingListTop > 0 && !leftSidebarImage.hasClass('sidebar-image-bottom')) {
-        if(startedFloatAtScrollTop == 0 && scrollTop < 1000) {
-          startedFloatAtScrollTop = scrollTop
-        }
         leftSidebarImage.addClass('sidebar-image-floated');    
       } else if(distanceFromMailingListTop <= 0) {
         if(repinnedAtScrollTop == 0) {
@@ -2217,9 +2214,9 @@ $(document).ready(function() {
       }
     } else {
       // Upward scrolling
-      if(scrollTop < startedFloatAtScrollTop) {
+      if(scrollTop < initialAdTop) {
         leftSidebarImage.removeClass('sidebar-image-floated');
-      } else if(scrollTop < repinnedAtScrollTop && leftSidebarImage.hasClass('sidebar-image-bottom')) {
+      } else if(scrollTop < repinnedAtScrollTop ||  repinnedAtScrollTop == 0) {
         leftSidebarImage.removeClass('sidebar-image-bottom');
         leftSidebarImage.addClass('sidebar-image-floated');
       }
