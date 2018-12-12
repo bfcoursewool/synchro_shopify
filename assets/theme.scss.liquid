@@ -6945,7 +6945,7 @@ iframe {
   .header-area-part .header-social-icons ul li a{ color: #000000; font-size: 21px;}
   .header-area-part .header-social-icons ul li a:before{ font-family: "Single Product Webicons Regular";}
 
-  .mainblogpage .blogpage-left{ background:#f8f9fb; text-align:center; padding:24px;}
+  .mainblogpage .blogpage-left{ background:#f8f9fb; text-align:center; max-width: 400px;}
   .mainblogpage .blogpage-left .sidebar{}
   .mainblogpage .blogpage-left .sidebar h2{font-weight: bold; letter-spacing: 1px; text-transform: uppercase; font-size: 14px;}
   .mainblogpage .blogpage-left .sidebar .sidebar-topic-section{}
@@ -6981,10 +6981,10 @@ iframe {
   .mainblogpage .blogpage-left .sidebar .sidebar-topic-section ul li a{ font-weight: bold; display:block; background:#ecedef; color:#000; padding:0px 6px; text-transform: lowercase;}
   .mainblogpage .blogpage-left .sidebar .sidebar-topic-section ul li a:hover{ background:#000; color:#ecedef;}
 
-  .mainblogpage .blogpage-left .sidebar .sidebar-most-popular-section{ display: inline-block;}
+  .mainblogpage .blogpage-left .sidebar .sidebar-most-popular-section{ display: inline-block; padding: 24px;}
   .mainblogpage .blogpage-left .sidebar .sidebar-most-popular-section ul li a{ font-weight: 500; color:#000; font-size:16px;}
 
-  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section{}
+  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section{ padding: 24px;}
   .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup{ border-top:none; padding: 0; max-width: 100%; margin:50px 0 50px;}
   .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup h3{font-weight: bold; letter-spacing: 1px; text-transform: uppercase; font-size: 14px;}
   .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup p{ margin-top: 0;}
@@ -6995,7 +6995,7 @@ iframe {
 
   .mainblogpage .sidebar-images-section {
     @media only screen and (min-width: 1200px) {
-      max-width: 304px;
+      width: 100%;
     }
 
     &.desktop {
@@ -7353,23 +7353,18 @@ iframe {
 
 .sidebar-image-floated {
   position: fixed;
-  top: 100px;
-
-  @media only screen and (min-width: 800px) and (max-width: 1200px) {
-    max-width: 200px;
-  }
-
-  max-width: 304px;
-
+  top: 70px;
+  width: 30% !important;
+  max-width: 400px;
 }
 
 .sidebar {
   position: relative;
 }
-  
+
 .sidebar-image-bottom {
   position: absolute;
-  bottom: 0px;
+  bottom: 30px;
 }
 
 // FLASH SALE BANNER STARTS
