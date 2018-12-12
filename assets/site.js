@@ -2184,47 +2184,50 @@ $(document).ready(function() {
 
   var initialAdTop = $('.sidebar .sidebar-images-section').offset().top;
   var repinnedAtScrollTop = 0
-  var lastScrollTop
+  var lastScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   var blogPageLeftHeight = 0;
   var sidebarHeight = 0;
-  setTimeout(function() {
-    blogPageLeftHeight = $('.blogpage-right').height();
-    sidebarHeight = $('.blogpage-right').height();
-    $('.blogpage-left').height(blogPageLeftHeight);
-    $('.sidebar').height(sidebarHeight);
-  }, 2000)
-  
-  $(window).on('scroll', function(e) {
-    var leftSidebarImage = $('.sidebar .sidebar-images-section')
-    var distanceFromTop = leftSidebarImage.offset().top - $(document).scrollTop();
-    var mailingListSignupSection = $('.footer-mailinglist > .mailing-list-signup')
-    var distanceFromMailingListTop = mailingListSignupSection.offset().top - (leftSidebarImage.offset().top + 616) // 616px is the height of the ad image
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-    if(scrollTop > lastScrollTop) {
-      // Downward scrolling
-      if(distanceFromTop < 100 && distanceFromMailingListTop > 0 && !leftSidebarImage.hasClass('sidebar-image-bottom')) {
-        leftSidebarImage.addClass('sidebar-image-floated');    
-      } else if(distanceFromMailingListTop <= 0) {
-        if(repinnedAtScrollTop == 0) {
-          repinnedAtScrollTop = scrollTop
+  if(screen.width > 800) {
+    setTimeout(function() {
+      blogPageLeftHeight = $('.blogpage-right').height();
+      sidebarHeight = $('.blogpage-right').height();
+      $('.blogpage-left').height(blogPageLeftHeight);
+      $('.sidebar').height(sidebarHeight);
+    }, 2000)
+    
+    $(window).on('scroll', function(e) {
+      var leftSidebarImage = $('.sidebar .sidebar-images-section')
+      var distanceFromTop = leftSidebarImage.offset().top - $(document).scrollTop();
+      var mailingListSignupSection = $('.footer-mailinglist > .mailing-list-signup')
+      var distanceFromMailingListTop = mailingListSignupSection.offset().top - (leftSidebarImage.offset().top + 616) // 616px is the height of the ad image
+      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+      if(scrollTop > lastScrollTop) {
+        // Downward scrolling
+        if(distanceFromTop < 100 && distanceFromMailingListTop > 0 && !leftSidebarImage.hasClass('sidebar-image-bottom')) {
+          leftSidebarImage.addClass('sidebar-image-floated');    
+        } else if(distanceFromMailingListTop <= 0) {
+          if(repinnedAtScrollTop == 0) {
+            repinnedAtScrollTop = scrollTop
+          }
+          leftSidebarImage.removeClass('sidebar-image-floated')
+          leftSidebarImage.addClass('sidebar-image-bottom')
         }
-        leftSidebarImage.removeClass('sidebar-image-floated')
-        leftSidebarImage.addClass('sidebar-image-bottom')
+      } else {
+        // Upward scrolling
+        if(scrollTop < initialAdTop) {
+          leftSidebarImage.removeClass('sidebar-image-floated');
+        } else if(scrollTop < repinnedAtScrollTop ||  repinnedAtScrollTop == 0) {
+          leftSidebarImage.removeClass('sidebar-image-bottom');
+          leftSidebarImage.addClass('sidebar-image-floated');
+        }
       }
-    } else {
-      // Upward scrolling
-      if(scrollTop < initialAdTop) {
-        leftSidebarImage.removeClass('sidebar-image-floated');
-      } else if(scrollTop < repinnedAtScrollTop ||  repinnedAtScrollTop == 0) {
-        leftSidebarImage.removeClass('sidebar-image-bottom');
-        leftSidebarImage.addClass('sidebar-image-floated');
-      }
-    }
 
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    })
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  })
+  }
 
   $(".home-testimonial").click(function () {
     clearTimeout(timeoutCall);

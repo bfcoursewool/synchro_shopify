@@ -6994,7 +6994,9 @@ iframe {
   .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup form .mailing-list-submit{ padding-left: 0; width: auto; margin-top:20px;}
 
   .mainblogpage .sidebar-images-section {
-    max-width: 304px;
+    @media only screen and (min-width: 1200px) {
+      max-width: 304px;
+    }
 
     &.desktop {
       @media only screen and (max-width: 800px) {
@@ -7352,6 +7354,13 @@ iframe {
 .sidebar-image-floated {
   position: fixed;
   top: 100px;
+
+  @media only screen and (min-width: 800px) and (max-width: 1200px) {
+    max-width: 200px;
+  }
+
+  max-width: 304px;
+
 }
 
 .sidebar {
