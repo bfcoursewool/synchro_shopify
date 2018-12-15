@@ -25,7 +25,7 @@
 
   <figure class="product-list-item-thumbnail">
     <a href="{{ item.url | within: collection }}">
-      <img src="{{ product.images.last | product_img_url: 'grande' }}" alt="{{ item.featured_image.alt | escape }}" />
+      <img src="{{ item.images.last | product_img_url: 'grande' }}" alt="{{ item.featured_image.alt | escape }}" />
     </a>
 
     {% if settings.product-stock-level-overlay and item.available and infinity == false and total < threshold %}
