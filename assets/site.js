@@ -1873,7 +1873,7 @@
       Currency.money_format[Theme.currency] = Theme.moneyFormat;
       this.defaultCurrency = Theme.defaultCurrency || Theme.currency;
       this.cookieCurrency = Currency.cookie.read();
-      
+
       if (this.cookieCurrency) {
         this.$("[name=currencies]").val(this.cookieCurrency);
       }
@@ -2195,7 +2195,7 @@ $(document).ready(function() {
       $('.blogpage-left').height(blogPageLeftHeight);
       $('.sidebar').height(sidebarHeight);
     }, 2000)
-    
+
     $(window).on('scroll', function(e) {
       var leftSidebarImage = $('.sidebar .sidebar-images-section')
       var distanceFromTop = leftSidebarImage.offset().top - $(document).scrollTop();
@@ -2205,8 +2205,8 @@ $(document).ready(function() {
 
       if(scrollTop > lastScrollTop) {
         // Downward scrolling
-        if(distanceFromTop < 100 && distanceFromMailingListTop > 0 && !leftSidebarImage.hasClass('sidebar-image-bottom')) {
-          leftSidebarImage.addClass('sidebar-image-floated');    
+        if(distanceFromTop < 70 && distanceFromMailingListTop > 0 && !leftSidebarImage.hasClass('sidebar-image-bottom')) {
+          leftSidebarImage.addClass('sidebar-image-floated');
         } else if(distanceFromMailingListTop <= 0) {
           if(repinnedAtScrollTop == 0) {
             repinnedAtScrollTop = scrollTop

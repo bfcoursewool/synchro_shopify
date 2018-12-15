@@ -11,6 +11,8 @@ assets/black-blue-icon.png:
   development: 2017-07-28T13:55:47-07:00   c48ca2b03c35b4ddc16055849acfa5f6
 assets/blog-feature-image.png:
   development: 2017-07-28T13:55:48-07:00   c4dc5129cfa2a7bfaaf5552190ef6d28
+assets/blog-km-ad-2a@2x.png:
+  development: 2018-12-12T11:41:17-08:00   64c3035a9209983a57ad98d13fd3834a
 assets/blog-km-ad-4@2x.jpg:
   development: 2018-09-28T07:18:10-07:00   76e151dcebfc28c05415a773ab916b98
 assets/blog-km-ad@2x.png:
@@ -146,7 +148,7 @@ assets/singleproductwebicons-regular.ttf:
 assets/singleproductwebicons-regular.woff:
   development: 2017-07-28T13:56:03-07:00   956068af159fab7807acd819c1c4a0c9
 assets/site.js:
-  development: 2018-12-11T21:44:56-08:00   cfc0d6695d8cf5e12179199bbb327d5b
+  development: 2018-12-12T11:46:15-08:00   2a11d991b57309ca2f80023f5008be61
 assets/slide-2-image-keto.jpg:
   development: 2018-11-27T02:57:52-08:00   a803985e64a5bcaef59b2d6850415b49
 assets/slide-image-foy-mobile2@2x.jpg:
@@ -192,15 +194,15 @@ assets/socicon-webfont.woff:
 assets/tag-icon.png:
   development: 2017-07-28T13:56:07-07:00   611ea558d930988d70c366f99fdd888e
 assets/theme.scss.liquid:
-  development: 2018-12-11T22:02:01-08:00   6734ff5ab7ee85b5b44c3c60f659864b
+  development: 2018-12-12T11:45:44-08:00   4901003c2c62056042014798b45399aa
 config/settings_data.json:
-  development: 2018-11-30T11:59:31-08:00   29a035c7a755bff0d36973b5964be167
+  development: 2018-12-12T11:43:29-08:00   6df545820ef626827f626ccf0cde193a
 config/settings_schema.json:
   development: 2018-07-20T00:53:47-07:00   6deb1676bc31f6e00cffe637d40fd4b8
 layout/checkout.liquid:
   development: 2018-09-25T00:08:36-07:00   bdfd5a3d2fb9efebbb9fb29f1b16e846
 layout/theme.liquid:
-  development: 2018-11-30T16:36:32-08:00   6845af4d0dffe3dd85904aa3fbbb948c
+  development: 2018-12-12T11:39:15-08:00   6845af4d0dffe3dd85904aa3fbbb948c
 layout/theme_BackupCopyCartHookCheckout.liquid:
   development: 2018-09-18T06:16:04-07:00   035c586ca1a72fced07bf73631cd768a
 locales/en.default.json:
@@ -212,7 +214,7 @@ snippets/article-list-item.liquid:
 snippets/breadcrumbs.liquid:
   development: 2017-07-28T13:56:07-07:00   2b4498617f5592aacadc2e736464bf00
 snippets/carthook-checkout.liquid:
-  development: 2018-11-27T10:52:46-08:00   9387e325340ff7f09280cf29564608c0
+  development: 2018-12-12T11:39:16-08:00   9387e325340ff7f09280cf29564608c0
 snippets/collection-list-item.liquid:
   development: 2018-11-27T03:07:45-08:00   7fc3df234fb1586d3926c4cb1d944967
 snippets/criteo-tracking.liquid:
@@ -226,7 +228,7 @@ snippets/for-blog-pages.liquid:
 snippets/for-looper.liquid:
   development: 2017-07-28T13:56:08-07:00   527e37ca0365fb5b0e04aae22b2d1cfb
 snippets/header.liquid:
-  development: 2018-11-30T16:40:41-08:00   9197e6851b4d73c98dc5023f67ffc46a
+  development: 2018-12-12T11:39:19-08:00   9197e6851b4d73c98dc5023f67ffc46a
 snippets/hex2rgb.liquid:
   development: 2017-07-28T13:56:08-07:00   646edef4e1a0cf9a1d47d6465b467a38
 snippets/home-as-seen-on.liquid:
