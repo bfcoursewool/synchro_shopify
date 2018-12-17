@@ -149,8 +149,6 @@ assets/singleproductwebicons-regular.woff:
   development: 2017-07-28T13:56:03-07:00   956068af159fab7807acd819c1c4a0c9
 assets/site.js:
   development: 2018-12-12T11:46:15-08:00   2a11d991b57309ca2f80023f5008be61
-assets/slide-2-image-keto.jpg:
-  development: 2018-11-27T02:57:52-08:00   a803985e64a5bcaef59b2d6850415b49
 assets/slide-image-foy-mobile2@2x.jpg:
   development: 2018-11-30T11:57:17-08:00   4323b4a1f0ed9720f34ea8478a2bf78f
 assets/slide-image-foy1@2x.jpg:
@@ -175,14 +173,10 @@ assets/slide-image-ketoplan-mobile3@2x.jpg:
   development: 2018-11-30T11:59:27-08:00   347476f3b06ba3eab620f80083eb4e54
 assets/slide-image-ketoplan3@2x.jpg:
   development: 2018-11-30T11:58:58-08:00   9820ab78cac6977939523d6014b11aa1
-assets/slide-image-prebfcm.jpg:
-  development: 2018-11-27T02:57:52-08:00   44d5fc8c47909af53e1189942a485875
 assets/slide-image-prebios-mobile@2x.jpg:
   development: 2018-11-28T01:46:55-08:00   3658d324b643716b7cbb8656729521eb
 assets/slide-image-prebios@2x.jpg:
   development: 2018-11-28T01:47:02-08:00   0efeed0ebbc3d9194b048d7a745ecfb3
-assets/slide-mid-year-sale.jpg:
-  development: 2018-11-27T02:57:53-08:00   50ca0a7d2dffd2e1998ddb94398e919b
 assets/socicon-webfont.eot:
   development: 2017-07-28T13:56:06-07:00   308531c9c8ba487310162fd5060422e8
 assets/socicon-webfont.svg:
@@ -196,7 +190,7 @@ assets/tag-icon.png:
 assets/theme.scss.liquid:
   development: 2018-12-12T11:45:44-08:00   4901003c2c62056042014798b45399aa
 config/settings_data.json:
-  development: 2018-12-12T11:43:29-08:00   6df545820ef626827f626ccf0cde193a
+  development: 2018-12-12T11:43:29-08:00   16d1640b04793368d02539735860aab9
 config/settings_schema.json:
   development: 2018-07-20T00:53:47-07:00   6deb1676bc31f6e00cffe637d40fd4b8
 layout/checkout.liquid:
@@ -264,7 +258,7 @@ snippets/old-style-product-wrapper.liquid:
 snippets/pagination.liquid:
   development: 2017-07-28T13:56:08-07:00   9ce065a3eb654f7b146f54d2c3b43269
 snippets/product-list-item.liquid:
-  development: 2018-11-28T00:22:15-08:00   1b487f0c5d15ebc827d129b9d2579b63
+  development: 2018-12-16T16:45:51-08:00   16ba2eb70c8fe0ec8fa0b62b9aaaf933
 snippets/product-page-buy-button.liquid:
   development: 2017-07-28T13:56:08-07:00   7b21fcbd1d356e482b66ec6f57be93b9
 snippets/product-wrapper.liquid:
