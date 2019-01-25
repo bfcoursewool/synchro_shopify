@@ -2201,7 +2201,7 @@ $(document).ready(function() {
 
     $(window).on('scroll', function(e) {
       var leftSidebarImage = $('.sidebar .sidebar-images-section')
-      if(leftSidebarImage) {
+      if(leftSidebarImage.offset()) {
         var distanceFromTop = leftSidebarImage.offset().top - $(document).scrollTop();
         var mailingListSignupSection = $('.footer-mailinglist > .mailing-list-signup')
         var distanceFromMailingListTop = mailingListSignupSection.offset().top - (leftSidebarImage.offset().top + 616) // 616px is the height of the ad image
