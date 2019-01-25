@@ -591,9 +591,9 @@
       }
       if (variant && variant.featured_image) {
         newImage = variant.featured_image;
-        thumbImage = Shopify.Image.getSizedImageUrl(newImage.src, "thumb");
+        thumbImage = Shopify.Image.getSizedImageUrl(newImage.src, "thumb").split('?');
         if (!this.$(".home-slideshow").length) {
-          return this.updateProductImage(null, thumbImage);
+          return this.updateProductImage(null, thumbImage[0]);
         }
       }
     };

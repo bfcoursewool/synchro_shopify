@@ -136,10 +136,7 @@
        in Shopify so that crawler bots at least get the canonical URL right, and real users
        are redirected by JS. -->
   <script>
-    if(window.location.href === "https://besynchro.com/products/keto-cleanse") {
-      window.location.replace("https://keto.besynchro.com/keto-cleanse-program/");
-    }
-    if(window.location.href === "https://besynchro.com/collections/keto/products/keto-cleanse") {
+    if(window.location.href.indexOf('/products/keto-cleanse') !== -1) {
       window.location.replace("https://keto.besynchro.com/keto-cleanse-program/");
     }
     //document.addEventListener("DOMContentLoaded", function(event) {
@@ -208,8 +205,8 @@
 <!-- CRITEO END -->
 
 {% if template contains 'product' %}
-  <!-- Global site tag (gtag.js) - AdWords: 864481593 --> 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-864481593"></script> 
+  <!-- Global site tag (gtag.js) - AdWords: 864481593 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-864481593"></script>
   <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-864481593'); </script>
 
   <script>
