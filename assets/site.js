@@ -2201,33 +2201,35 @@ $(document).ready(function() {
 
     $(window).on('scroll', function(e) {
       var leftSidebarImage = $('.sidebar .sidebar-images-section')
-      var distanceFromTop = leftSidebarImage.offset().top - $(document).scrollTop();
-      var mailingListSignupSection = $('.footer-mailinglist > .mailing-list-signup')
-      var distanceFromMailingListTop = mailingListSignupSection.offset().top - (leftSidebarImage.offset().top + 616) // 616px is the height of the ad image
-      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      if(leftSidebarImage) {
+        var distanceFromTop = leftSidebarImage.offset().top - $(document).scrollTop();
+        var mailingListSignupSection = $('.footer-mailinglist > .mailing-list-signup')
+        var distanceFromMailingListTop = mailingListSignupSection.offset().top - (leftSidebarImage.offset().top + 616) // 616px is the height of the ad image
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-      if(scrollTop > lastScrollTop) {
-        // Downward scrolling
-        if(distanceFromTop < 70 && distanceFromMailingListTop > 0 && !leftSidebarImage.hasClass('sidebar-image-bottom')) {
-          leftSidebarImage.addClass('sidebar-image-floated');
-        } else if(distanceFromMailingListTop <= 0) {
-          if(repinnedAtScrollTop == 0) {
-            repinnedAtScrollTop = scrollTop
+        if(scrollTop > lastScrollTop) {
+          // Downward scrolling
+          if(distanceFromTop < 70 && distanceFromMailingListTop > 0 && !leftSidebarImage.hasClass('sidebar-image-bottom')) {
+            leftSidebarImage.addClass('sidebar-image-floated');
+          } else if(distanceFromMailingListTop <= 0) {
+            if(repinnedAtScrollTop == 0) {
+              repinnedAtScrollTop = scrollTop
+            }
+            leftSidebarImage.removeClass('sidebar-image-floated')
+            leftSidebarImage.addClass('sidebar-image-bottom')
           }
-          leftSidebarImage.removeClass('sidebar-image-floated')
-          leftSidebarImage.addClass('sidebar-image-bottom')
+        } else {
+          // Upward scrolling
+          if(scrollTop < initialAdTop) {
+            leftSidebarImage.removeClass('sidebar-image-floated');
+          } else if(scrollTop < repinnedAtScrollTop ||  repinnedAtScrollTop == 0) {
+            leftSidebarImage.removeClass('sidebar-image-bottom');
+            leftSidebarImage.addClass('sidebar-image-floated');
+          }
         }
-      } else {
-        // Upward scrolling
-        if(scrollTop < initialAdTop) {
-          leftSidebarImage.removeClass('sidebar-image-floated');
-        } else if(scrollTop < repinnedAtScrollTop ||  repinnedAtScrollTop == 0) {
-          leftSidebarImage.removeClass('sidebar-image-bottom');
-          leftSidebarImage.addClass('sidebar-image-floated');
-        }
-      }
 
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;        
+      }
     })
 
   }
