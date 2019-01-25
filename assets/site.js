@@ -2182,7 +2182,10 @@ $(document).ready(function() {
 
   cycleTestimonials(currentActiveIndex, currentActiveTestimonial)
 
-  var initialAdTop = $('.sidebar .sidebar-images-section').offset().top;
+  var initialAdTop = 0;
+  if($('.sidebar .sidebar-images-section').offset()) {
+    initialAdTop = $('.sidebar .sidebar-images-section').offset().top;
+  }
   var repinnedAtScrollTop = 0
   var lastScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   var blogPageLeftHeight = 0;
