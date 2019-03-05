@@ -453,7 +453,7 @@
     "show-dk": false,
     "show-american-express": true,
     "show-google-wallet": false,
-    "show-paypal": false,
+    "show-paypal": true,
     "show-jcb": false,
     "show-cirrus": false,
     "show-stripe": false,
