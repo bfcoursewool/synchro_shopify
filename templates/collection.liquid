@@ -1,10 +1,10 @@
-<img 
+<img
     id="sale-banner-desktop"
-  src="https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/collection-summer-sale-desktop@2x.jpg?567" 
+  src="https://storage.googleapis.com/synchro-assets/besynchro/collection-summer-sale-desktop%402x.jpg"
     class="collection-banner-desktop hidden-sale" />
-<img 
+<img
     id="sale-banner-mobile"
-    src="https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/collection-summer-sale-mobile@2x.jpg?567" 
+    src="https://storage.googleapis.com/synchro-assets/besynchro/collection-summer-sale-mobile%402x.jpg" 
     class="collection-banner-mobile hidden-sale" />
 
 {% capture collectionDescription %}
@@ -82,7 +82,7 @@
   resource.src = "https://synchrolife.ositracker.com/track.js";
   var script = document.getElementsByTagName('script')[0];
   script.parentNode.insertBefore(resource, script);
-  
+
   if(window.location.search.includes('fromEmail')) {
     document.cookie = "show_sale_banner=true;path=/;domain=besynchro.com";
   }
