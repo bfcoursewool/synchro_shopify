@@ -54,6 +54,15 @@
   {% include 'social-meta' %}
   <!-- Theme CSS -->
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+
+
+{%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+{%- assign time_now = 'now' | date: '%s' %}
+{%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+{%- assign diffSeconds = time_now | minus: yotpo_live_time %}
+{%- if yotpo_offload_content == 'yes' and diffSeconds < 86400 -%}
+{{ 'yotpo-full-css.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
   {{ 'mmenu.scss.css' | asset_url | stylesheet_tag }}
   <!-- Third Party JS Libraries -->
   {{ 'modernizr-2.7.1.min.js' | asset_url | script_tag }}
@@ -217,5 +226,5 @@
   </script>
 {% endif %}
 
-{% include 'carro' %}</body>
+</body>
 </html>
