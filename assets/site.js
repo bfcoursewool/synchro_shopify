@@ -2241,7 +2241,7 @@ $(document).ready(function() {
 });
 
 // Set the date we're counting down to
-var countDownDate = new Date("May 24 2019 23:59:59 UTC-0700").getTime();
+var countDownDate = new Date("Oct 11 2019 23:59:59 UTC-0800").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -2268,7 +2268,7 @@ var x = setInterval(function() {
   if (distance < 0) {
     clearInterval(x);
     if(timer) {
-      timer.innerHTML = 'EXPIRED'; 
+      timer.innerHTML = 'EXPIRED';
     }
   }
 }, 1000);
