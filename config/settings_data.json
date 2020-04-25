@@ -117,7 +117,7 @@
     "show-slideshow-pagination": true,
     "slideshow-autoplay": true,
     "slideshow-autoplay-delay": "5",
-    "show-slide-1": true,
+    "show-slide-1": false,
     "slide-1-text-alignment": "right",
     "slide-1-shadows": false,
     "slide-1-title": "",
