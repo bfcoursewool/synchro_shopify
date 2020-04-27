@@ -1,11 +1,11 @@
 <div class="singleblogpage blogpage mainblogpage">
-  <div class="blog-top-head">
-    <div style="display:none;">{{ current_tags }}</div>
-    <div class="post-date-publish">{{ article.published_at | date: format: 'short_month' }}</div>
-    <h1 class="page-title">{{ article.title }}</h1>
-  </div>
   <div class="blogpage-right">
     <div class="blog-posts">
+      <div class="blog-top-head">
+        <div style="display:none;">{{ current_tags }}</div>
+        <div class="post-date-publish">{{ article.published_at | date: format: 'short_month' }}</div>
+        <h1 class="page-title">{{ article.title }}</h1>
+      </div>
       <article class="blog-post clearfix">
 
         {% comment %}
@@ -62,35 +62,34 @@
         </div>
       {% endif %}
 
+      {% if blog.next_article or blog.previous_article %}
+      <div class="single-post-pagination clearfix">
+        {% if blog.previous_article %}<a class="previous-post button" href="{{ blog.previous_article }}">{{ 'general.pagination.previous' | t }}</a>{% endif %}
+        {% if blog.next_article %}<a class="next-post button" href="{{ blog.next_article }}">{{ 'general.pagination.next' | t }}</a>{% endif %}
+      </div>
+      {% endif %}
+
+
+      <!-- DISQUS COMMENTS
+  	================================================-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'synchrolife'; // required: replace example with your forum shortname
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      <!--END DISQUS
+  	================================================-->
+
     </div>
-
-
-    {% if blog.next_article or blog.previous_article %}
-    <div class="single-post-pagination clearfix">
-      {% if blog.previous_article %}<a class="previous-post button" href="{{ blog.previous_article }}">{{ 'general.pagination.previous' | t }}</a>{% endif %}
-      {% if blog.next_article %}<a class="next-post button" href="{{ blog.next_article }}">{{ 'general.pagination.next' | t }}</a>{% endif %}
-    </div>
-    {% endif %}
-
-
-    <!-- DISQUS COMMENTS
-	================================================-->
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'synchrolife'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <!--END DISQUS
-	================================================-->
 
     {% if article.comments_enabled? %}
 
