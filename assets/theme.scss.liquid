@@ -7066,6 +7066,33 @@ iframe {
   .mainblogpage.singleblogpage .blogpage-left .sidebar .sidebar-share-icons-section > div a:hover{ color:#fff;}
   .mainblogpage.singleblogpage .blogpage-right .blog-posts .rte.post-content h4{ max-width:100%;}
 
+
+  .mainblogpage.singleblogpage .blogpage-right .blog-posts .rte.post-content .interview-question,
+  .mainblogpage.singleblogpage .blogpage-right .blog-posts .rte.post-content .interview-answer {
+    position: relative;
+    padding-left: 35px;
+  }
+
+  .mainblogpage.singleblogpage .blogpage-right .blog-posts .rte.post-content .interview-question::before,
+  .mainblogpage.singleblogpage .blogpage-right .blog-posts .rte.post-content .interview-answer::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    display: block;
+    left: 0;
+    top: 6px;
+  }
+
+  .mainblogpage.singleblogpage .blogpage-right .blog-posts .rte.post-content .interview-question::before {
+    background: #e67a7a;
+  }
+
+  .mainblogpage.singleblogpage .blogpage-right .blog-posts .rte.post-content .interview-answer::before {
+    background: #eca846;
+    transform: rotate(45deg);
+  }
+
   .blog-top-head .post-date-publish{ color:#888888; font-weight:bold; text-transform: uppercase;}
   .blog-top-head h1{ font-size: 40px; font-weight: 600;text-align: left;margin:50px 0 0; line-height: 1.4;}
 
