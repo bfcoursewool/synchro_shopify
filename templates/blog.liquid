@@ -8,13 +8,13 @@
 
     {% assign unPaginatedArticles = blog.articles %}
     {% paginate blog.articles by settings.articles-per-page %}
-    
+
     {% assign blogSticky1 = current_tags[0] | append: "-sticky-1" %}
     {% assign blogSticky2 = current_tags[0] | append: "-sticky-2" %}
     {% assign blogSticky3 = current_tags[0] | append: "-sticky-3" %}
 
     {% if paginate.current_page == 1 %}
-      <div class="blog-posts sticky"> 
+      <div class="blog-posts sticky">
         {% for article in unPaginatedArticles %}
           {% if article.tags contains blogSticky1 %}
             {% include 'article-list-item' %}
@@ -32,12 +32,12 @@
         {% endfor %}
       </div>
 	{% endif %}
-    
+
     <div class="blog-posts">
       {% for article in blog.articles %}
         <!-- Lol, shopify is so shitty you cannot negate "contains" -->
         {% if article.tags contains blogSticky1 or article.tags contains blogSticky2 or article.tags contains blogSticky3 %}
-        {% else %} 
+        {% else %}
           {% include 'article-list-item' %}
         {% endif %}
       {% else %}
@@ -52,7 +52,7 @@
   </div>
   <div class="blogpage-left">
     <div class="sidebar">
-     
+
 
       <div class="sidebar-most-popular-section">
         <h2>Most Popular</h2>
@@ -63,7 +63,7 @@
           </li>
           {% endfor %}
         </ul>
-      </div>  
+      </div>
 
 
       {% assign taghandle=current_tags.first | handle %}
@@ -79,18 +79,20 @@
         {% assign blogAdURL = blogAdURL | append: "-ad-link" %}
         {% assign blogAdImage = "sidebar-blog-" | append: current_tags[0] %}
         {% assign blogAdImage = blogAdImage | append: "-ad-image.png" %}
+        {% assign blogImageAlt = "sidebar-blog-" | append: current_tags[0] %}
+        {% assign blogImageAlt = blogImageAlt | append: "-ad-alt" %}
 
         {% if settings[blogAdURL] != blank %}
           <span class="sidebar-blog-image-1">
             <a href="{{settings[blogAdURL]}}">
-              <img src="{{settings[blogAdImage]}}">
+              <img src="{{settings[blogAdImage]}}" alt="{{settings[blogImageAlt]}}">
             </a>
           </span>
         {% else %}
           {% if settings.sidebar-blog-default-ad-link != blank %}
           <span class="sidebar-blog-image-1">
             <a href="{{settings.sidebar-blog-default-ad-link}}">
-              <img src="{{settings['sidebar-blog-default-ad-image.png']}}">
+              <img src="{{settings['sidebar-blog-default-ad-image.png']}}" alt="{{settings.sidebar-blog-default-ad-alt}}">
             </a>
           </span>
           {% endif %}

@@ -35,7 +35,7 @@
   <form action="/cart/add" method="post" class="clearfix product_form" data-money-format="{{ shop.money_format }}" data-shop-currency="{{ shop.currency }}" data-productid="{{product.id}}" id="product-form-{{ product.id }}">
 
     {% include "subscription-product" %}
-    
+
     {% if settings.display_inventory_left %}
       <div class="items_left">
         {% if product.variants.first.inventory_management != blank and product.variants.first.inventory_quantity > 0 %}
@@ -54,7 +54,7 @@
 
     {% if product.variants.size > 1 %}
       <div class="product-options">
-        <select name="id" data-productid="{{product.id}}" id="product-select" class="product-select">
+        <select name="id" data-productid="{{product.id}}" id="product-select" class="product-select" aria-label="Variant">
           {% for variant in product.variants %}
             <option {% if variant == selectedVariant %} selected="selected" {% endif %} value="{{ variant.id }}" data-sku="{{ variant.sku }}">{{ variant.title }} - {{ variant.price | money }}</option>
           {% endfor %}
@@ -62,7 +62,7 @@
       </div>
     {% else %}
       <input type="hidden" name="id" data-productid="{{product.id}}" class="product-select" value="{{ product.variants[0].id }}" data-variant-title="{{ product.variants[0].title }}" />
-    {% endif %}    
+    {% endif %}
 
     <div class="input-wrapper product-quantity">
       <label for="quantity">{{ 'products.product.quantity' | t }}</label>
@@ -73,13 +73,13 @@
 
     <div class="purchase clearfix inline_purchase">
       <button type="submit" name="add" class="action_button add_to_cart" data-label="{{ 'products.product.add_to_cart' | t }}"><span class="text">{{ 'products.product.add_to_cart' | t }}</span></button>
-    </div>  
+    </div>
   </form>
   {% comment %} Just throws a JS error and does not seem to be used
   {% if product.variants.size > 1 or product.options.size > 1 %}
     <script type="text/javascript">
-      // <![CDATA[  
-        $(function() {    
+      // <![CDATA[
+        $(function() {
           $product = $('.product-' + {{ product.id }});
           new Shopify.OptionSelectors("product-select-{{ product.id }}{{ product-form }}", { product: {{ product | json }}, onVariantSelected: selectCallback{% if template contains 'product' %}, enableHistoryState: true{% endif %} });
         });

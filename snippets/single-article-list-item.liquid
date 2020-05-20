@@ -55,7 +55,7 @@
           {% if settings.sidebar-blog-default-ad-link != blank %}
             <span class="sidebar-blog-image-1">
               <a href="{{settings.sidebar-blog-default-ad-link}}">
-                <img src="{{settings['sidebar-blog-default-ad-image.png']}}">
+                <img src="{{settings['sidebar-blog-default-ad-image.png']}}" alt="{{settings.sidebar-blog-default-ad-alt}}">
               </a>
             </span>
           {% endif %}
@@ -169,7 +169,7 @@
       <div class="sidebar-author-section">
         {% if settings.blog-show-author %}
         {% assign author_img = article.author | handle | append:'.png' | asset_url %}
-        <span class="author-img"><img src="{{author_img}}"></span>
+        <span class="author-img"><img src="{{author_img}}" alt="{{article.author}}"></span>
         <h2>Author</h2>
         <p class="post-author">{{ article.author }}</p>
         {% endif %}
@@ -196,7 +196,7 @@
           {% if settings.sidebar-blog-default-ad-link != blank %}
             <span class="sidebar-blog-image-1">
               <a href="{{settings.sidebar-blog-default-ad-link}}">
-                <img src="{{settings['sidebar-blog-default-ad-image.png']}}">
+                <img src="{{settings['sidebar-blog-default-ad-image.png']}}" alt="{{settings.sidebar-blog-default-ad-alt}}">
               </a>
             </span>
           {% endif %}

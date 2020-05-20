@@ -75,8 +75,8 @@
       </p>
     </div>
 
-    <form class="product-form" id="product-form" action="/cart/add" data-productid="{{product.id}}"  method="post"> 
- {% if product.available %}{% include 'subscription-product' %}{% endif %} 
+    <form class="product-form" id="product-form" action="/cart/add" data-productid="{{product.id}}"  method="post">
+ {% if product.available %}{% include 'subscription-product' %}{% endif %}
 
       {% if product.variants.size > 1 %}
         <div class="product-options">

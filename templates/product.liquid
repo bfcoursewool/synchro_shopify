@@ -74,13 +74,13 @@
     {% endif %}
   </div>
   {% include 'product-wrapper' %}
-  {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
+  <!-- {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
   <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
     <span itemprop="itemReviewed">{{ product.title }}</span>
     has a rating of <span itemprop="ratingValue">{{ product.metafields.yotpo.reviews_average }}</span> stars
     based on <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count }}</span> reviews.
   </div>
-  {% endif %}
+  {% endif %} -->
 </div><!-- close itemscope -->
 {% if settings.product-show-related %}
   {% assign number_of_related_products_to_show = 4 %}

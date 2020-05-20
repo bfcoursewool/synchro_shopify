@@ -15,7 +15,7 @@
   <form action="{{ settings.mailing-list-action-url }}" method="post" name="{% if settings.mailing-list-platform == 'mailchimp' %}mc-embedded-subscribe-form{% endif %}" target="_blank">
 
     {% if settings.mailing-list-platform == 'mailchimp' %}
-    <input class="mailing-list-email" name="EMAIL" type="email" placeholder="{{ 'general.general.email_placeholder' | t }}" value="">
+    <input class="mailing-list-email" name="EMAIL" type="email" placeholder="{{ 'general.general.email_placeholder' | t }}" value="" aria-label="Email">
     {% endif %}
 
     {% if settings.mailing-list-platform == 'campaign-monitor' %}

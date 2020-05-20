@@ -19,18 +19,21 @@
 
     {% unless form.posted_successfully? %}
       <div class="input-wrapper">
-        <label>{{ 'general.general.name' | t }}</label>
+        <label>{{ 'general.general.name' | t }}
         <input type="text" placeholder="{{ 'general.general.name_placeholder' | t }}" value="" name="contact[name]" class="{% if form.errors contains "author" %}error{% endif %}">
+        </label>
       </div>
 
       <div class="input-wrapper">
-        <label>{{ 'general.general.email' | t }}</label>
+        <label>{{ 'general.general.email' | t }}
         <input type="text" placeholder="{{ 'general.general.email_placeholder' | t }}" value="" name="contact[email]" class="{% if form.errors contains "email" %}error{% endif %}">
+        </label>
       </div>
 
       <div class="input-wrapper">
-        <label>{{ 'general.general.message' | t }}</label>
+        <label>{{ 'general.general.message' | t }}
         <textarea name="contact[body]" rows="6" class="{% if form.errors contains "body" %}error{% endif %}"></textarea>
+        </label>
       </div>
 
       <div class="input-wrapper">

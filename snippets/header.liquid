@@ -114,13 +114,13 @@
               {% if settings.header-show-search %}
               <li class="search-form">
                 <form class="" action="/search" method="get">
-                  <input class="" name="q" type="text" autocomplete="off">
+                  <input class="" name="q" type="text" autocomplete="off" aria-label="Search">
                 </form>
               </li>
               {% endif %}
               {% if settings.header-show-cart %}
               <li>
-                <a class="cart-link right" href="#cart"><img src="https://cdn.besynchro.com/besynchro/icon-cart.svg" class="icon-cart" alt=""><span class="cart-count">{{ cart.item_count }}</span></a>
+                <a class="cart-link right" href="#cart"><img src="https://cdn.besynchro.com/besynchro/icon-cart.svg" class="icon-cart" alt="Cart"><span class="cart-count">{{ cart.item_count }}</span></a>
               </li>
               {% endif %}
               {% if settings.header-navigation-location == 'header' or settings.header-navigation-location == 'below-header' %}
@@ -137,7 +137,7 @@
               <ul data-money-format="{{ shop.money_format }}" data-shop-currency="{{ shop.currency }}" data-shop-name="{{ shop.name | escape }}">
                 <li class="mm-subtitle slideout-title">
                   <p class="cart_title">Your Cart</p>
-                  <a class="continue ss-icon" href="#cart"></a>
+                  <a class="continue ss-icon" href="#cart">x</a>
                 </li>
 
                 {% if cart.item_count == 0 %}
@@ -241,29 +241,23 @@
       <div class="after-header">
         <div class="after-header-inner">
           <div class="second-logo">
-               <a href="/blogs/blog/tagged/nutrition"><img src="{{'secondary-logo.png' | asset_url}}"></a>
+               <a href="/blogs/blog/tagged/nutrition"><img src="{{'secondary-logo.png' | asset_url}}" alt="The Synchro Life"></a>
           </div>
           <div class="header-social-icons">
             <ul>
               {% if settings.header-show-tweet-url != blank %}
               <li>
-                <a class="tweet footer-tweet" href="{{settings.header-show-tweet-url}}">
-
-                </a>
+                <a class="tweet footer-tweet" href="{{settings.header-show-tweet-url}}">Twitter</a>
               </li>
               {% endif %}
               {% if settings.header-show-facebook-url != blank %}
               <li>
-                <a class="facebook footer-like" href="{{settings.header-show-facebook-url}}" >
-
-                </a>
+                <a class="facebook footer-like" href="{{settings.header-show-facebook-url}}" >Facebook</a>
               </li>
               {% endif %}
               {% if settings.header-show-instagram-url != blank %}
               <li>
-                <a class="instagram fi-social-instagram" href="{{settings.header-show-instagram-url}}" >
-
-                </a>
+                <a class="instagram fi-social-instagram" href="{{settings.header-show-instagram-url}}" >Instagram</a>
               </li>
               {% endif %}
               {% if settings.header-show-pin-url != blank %}
@@ -316,8 +310,8 @@
 
 <div class="header-drawer">
   <form class="" action="/search" method="get" id="header-search">
-    <input class="" name="q" type="text" placeholder="What do you seek?" autocomplete="off">
-    <button type="submit" form="header-search" value="Submit" class="search-button"></button>
+    <input class="" name="q" type="text" placeholder="What do you seek?" autocomplete="off" aria-label="Search">
+    <button type="submit" form="header-search" value="Submit" class="search-button" aria-label="Search"></button>
   </form>
 
   <div class="navigation-header">

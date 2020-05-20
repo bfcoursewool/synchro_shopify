@@ -15,21 +15,21 @@
       {% endif %}
 
       <article class="home-featured-blog-post">
-       
+
         {% if src %}
-          <a class="featured-post-image" href="{{ article.url }}"><img src="{{ src }}"></a>
+          <a class="featured-post-image" href="{{ article.url }}"><img src="{{ src }}">
         {% endif %}
-        
-        <h4 class="featured-post-title"><a href="{{ article.url }}">{{ article.title }}</a></h4>
+
+        <h4 class="featured-post-title">{{ article.title }}</h4>
 
         {% if article.excerpt != blank %}
           <p class="featured-post-excerpt">{{ article.excerpt | strip_html }}</p>
         {% else %}
           <p class="featured-post-excerpt">{{ article.content | strip_html | truncatewords: 23 }}</p>
         {% endif %}
-        <p class="featured-blog-read-more"><a href="{{ article.url }}">{{ 'blogs.article_item.read_more' | t }}</a></p>
+        <p class="featured-blog-read-more">{{ 'blogs.article_item.read_more' | t }}</p></a>
       </article>
     {% endfor %}
-    
+
   </div>
 </div>
