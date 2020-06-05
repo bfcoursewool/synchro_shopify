@@ -565,7 +565,7 @@
     };
 
     ProductView.prototype.singleSelector = function() {
-      return this.$(".selector-wrapper").prepend("<label>" + this.options[0] + "</label>");
+      return this.$(".selector-wrapper").prepend("<label for='product-select-option-0'>" + this.options[0] + "</label>");
     };
 
     ProductView.prototype.selectCallback = function(variant, selector) {

@@ -42,7 +42,23 @@
   {% if template contains 'product' %}
     <div class="find-me" style="display:none;">{{ product.metafields.seo.unique_url }}</div>
     {% if product.metafields.seo.unique_url == blank %}
-      <link rel="canonical" href="{{ canonical_url }}" />
+      
+                
+<!--MB_OPC-->
+<script>     
+              if(window.location.pathname=='/securecheckout'){
+              document.title = 'Secure checkout';
+              var css = 'body > :not(#cartLoader) {display:none !important}',head = document.head || document.getElementsByTagName('head')[0],style = document.createElement('style');  
+              head.appendChild(style);style.appendChild(document.createTextNode(css));        
+              var svg = "<svg style='position:fixed;top:100px;left:50%;margin-left:-100px;' width='200px'  height='200px'  xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid' class='lds-rolling' style='background: none;'><circle cx='50' cy='50' fill='none' ng-attr-stroke='{{config.color}}' ng-attr-stroke-width='{{config.width}}' ng-attr-r='{{config.radius}}' ng-attr-stroke-dasharray='{{config.dasharray}}' stroke='#197bbd' stroke-width='2' r='15' stroke-dasharray='70.68583470577033 25.561944901923447' transform='rotate(243.197 50 50)'><animateTransform attributeName='transform' type='rotate' calcMode='linear' values='0 50 50;360 50 50' keyTimes='0;1' dur='1s' begin='0s' repeatCount='indefinite'></animateTransform></circle></svg>";
+              document.open();document.write("<!doctype ht"+"ml><ht"+"ml><bo"+"dy><div id='cartLoader' style='min-height:600px;width:100%;text-align:center;background-color: rgba(255, 255, 255, .5);position:absolute;z-index:9999999999'>"+svg+"</div></b"+"ody></ht"+"ml>");document.close();                
+              }
+              var opcSettings = {checkoutUrl : 'securecheckout', enabled : false, design : 1, skipCart : false, oneClickBuy : false, customJsFile : 'https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0082%2F6690%2F7727%2Ffiles%2Fcustombtn4.js%3Fv%3D1590591354', customCssFile : '', btnSelector : '', enablePopup: false, popupHtml : "",popupBkg : '#ffffff',upsells : [],boosters : {"booster1":"0","booster1_text":"","booster1_text2":"","booster1_min":"0","booster2":"0","booster3":"0","booster3_heading":"","booster3_title1":"","booster3_text1":"","booster3_img1":"","booster3_title2":"","booster3_text2":"","booster3_img2":"","booster3_title3":"","booster3_text3":"","booster3_img3":"","booster3_title4":"","booster3_text4":"","booster3_img4":"","booster4":"0","booster4_img":"","booster5":"1"}};
+              var opcLang = {completeOrder : "Complete order", payment : "Payment", shippingMethod : "Shipping method", secureCheckout : "Secure Checkout", paymentNotice : "Please submit information in previous step to show payment methods",shippingNotice : "Please submit shipping information in previous step to show shipping methods",upsellTitle : "Would you like also this? (optional)",upsellAdded : "Product has been successfully added to checkout",addToCheckout : "Add to checkout"};
+              </script>
+<!--MB_OPC-->
+
+                <link rel="canonical" href="{{ canonical_url }}" />
     {% else %}
       <link rel="canonical" href="{{ product.metafields.seo.unique_url }}" />
     {% endif %}

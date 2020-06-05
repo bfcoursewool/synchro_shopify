@@ -685,7 +685,7 @@
                             return false;
                         }
                         // Create a hidden select for discount options
-                        var discount_select = $("<select id=\"discount-select-{{ product.id }}\" class=\"styled replaced\" style=\"display: none;\"></select>");
+                        var discount_select = $("<select id=\"discount-select-{{ product.id }}\" title=\"Title\" class=\"styled replaced\" style=\"display: none;\"></select>");
                         discount_prices.forEach(function (price) {
                             // For each discount price, create an option element
                             var discount_option = "<option value=\"" + price + "\">" + price + "</option>";
