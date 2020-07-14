@@ -7436,8 +7436,15 @@ iframe {
   }
 
   .flash-sale-banner__desktop {
-    @include breakpoint(m) {
+    @include breakpoint(s) {
       display: none;
+    }
+  }
+
+  .flash-sale-banner__mobile {
+    display: none;
+    @include breakpoint(s) {
+      display: block;
     }
   }
 
