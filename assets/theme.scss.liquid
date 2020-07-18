@@ -1197,7 +1197,7 @@ iframe {
 
   .main-content {
     max-width: $maxWidth;
-    padding: $gutter $gutter 0;
+    padding: 50px $gutter 0;
     margin: 0 auto;
     @include transition(transform 0.2s $easeOutQuad);
 
@@ -1761,6 +1761,15 @@ iframe {
 
     .footer-disclaimer {
       opacity: 0.75;
+    }
+
+    .pseudo-header {
+      display: none;
+      @include breakpoint(s) {
+        display: block;
+        height: 60px;
+        visibility: hidden;
+      }
     }
 
     .main-header-wrapper {
