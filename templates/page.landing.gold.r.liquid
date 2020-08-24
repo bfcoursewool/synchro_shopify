@@ -1,0 +1,24 @@
+{% layout "theme.landing-page-gold" %}
+
+{% include 'landing-page.gold.og.base' %}
+
+{% assign is_variant = true %}
+
+{% capture page_content %}
+
+    <section class="gold-lp gold-og">
+        {% include 'landing-page.gold.og.top-offer-bar' %}
+        {% include 'landing-page.global.header' %}
+        {% include 'landing-page.gold.og.atf' %}
+        {% include 'landing-page.gold.og.benefits' %}
+        {% include 'landing-page.gold.og.technology' %}
+        {% include 'landing-page.gold.og.ingredients' %}
+        {% include 'landing-page.gold.og.instagram' %}
+        {% include 'landing-page.gold.og.purchase' %}
+        {% include 'landing-page.gold.og.reviews' %}
+        {% include 'landing-page.gold.og.faq' %}
+        {% include 'landing-page.gold.og.references' %}
+        {% include 'landing-page.global.footer' %}
+    </section>
+
+{% endcapture %}
