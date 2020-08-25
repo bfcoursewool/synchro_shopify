@@ -1,0 +1,107 @@
+<script>
+    window.detectReturningPageVisit = () => {
+
+        const addCss = (cssString, id) => {
+
+            const head = document.head || document.getElementsByTagName('head')[0]
+
+            // search for styles already added
+            let style = document.getElementById(id)
+
+            // if no styles found, create style tag
+            if (!style) {
+                style = document.createElement('style');
+                style.id = id
+                head.appendChild(style);
+                style.type = 'text/css';
+            } else {
+                // if styles already in dom, clear children nodes so we can overwrite
+                while (style.firstChild) {
+                    style.firstChild.remove();
+                }
+            }
+
+            // cross browser write styles
+            if (style.styleSheet) {
+                // This is required for IE8 and below.
+                style.styleSheet.cssText = cssString;
+            } else {
+                style.appendChild(document.createTextNode(cssString));
+            }
+        }
+
+        const setCookie = (name, value, daysToLive) => {
+            // Encode value in order to escape semicolons, commas, and whitespace
+            let cookie = name + "=" + encodeURIComponent(value);
+
+            if (typeof daysToLive === "number") {
+                /* Sets the max-age attribute so that the cookie expires
+                after the specified number of days */
+                cookie += "; max-age=" + (daysToLive * 24 * 60 * 60);
+
+                document.cookie = cookie;
+            }
+        }
+
+        const getCookie = (name) => {
+            // Split cookie string and get all individual name=value pairs in an array
+            let cookieArr = document.cookie.split(";");
+
+            // Loop through the array elements
+            for (let i = 0; i < cookieArr.length; i++) {
+                const cookiePair = cookieArr[i].split("=");
+
+                /* Removing whitespace at the beginning of the cookie name
+                and compare it with the given string */
+                if (name == cookiePair[0].trim()) {
+                    // Decode the cookie value and return
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+
+            // Return null if not found
+            return null;
+        }
+
+        const cookieName = 'page-visit-{{ page.id }}'
+
+        try {
+            window.returning_visitor = JSON.parse(
+                getCookie(cookieName)
+            )
+
+            if (window.returning_visitor.returning) {
+                addCss(
+                    `
+                    .show-on-first-page-visit { display: none; }
+                    .show-on-returning-page-visits { display: block; }
+                    `,
+                    'returning_visitor_styles'
+                )
+            }
+        } catch (ex) {
+        }
+
+        if (!window.returning_visitor) {
+            addCss(
+                `
+                    .show-on-first-page-visit { display: block; }
+                    .show-on-returning-page-visits { display: none; }
+                    `,
+                'returning_visitor_styles'
+            )
+
+            setCookie(
+                cookieName,
+                JSON.stringify({
+                    returning: true,
+                    purchased: false
+                }),
+                365
+            )
+
+        }
+    }
+
+    window.detectReturningPageVisit()
+</script>
