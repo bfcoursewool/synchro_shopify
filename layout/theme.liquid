@@ -143,6 +143,7 @@
     pintrk('track', 'pagevisit');
   </script>
   <!-- End Track PageVisit -->
+ {% include 'talkable-partial' %}
 </head>
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} navigation-{{ settings.header-navigation-location }} {% if template == 'product.slideshow' %}template-product-slideshow{% endif %}" >
   <!-- Do a JS redirect from the keto-cleanse product page to our custom landing page.

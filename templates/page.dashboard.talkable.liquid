@@ -1,0 +1,28 @@
+{% comment %}
+  DO NOT MODIFY MANUALLY
+  This asset is generated automatically by Talkable Integration at 8/24/20 10:34AM
+{% endcomment %}
+{% if page.title == "The World's Most Powerful Turmeric Elixir" %}
+	{% layout none %}
+<link rel="shortcut icon" href="https://cdn.besynchro.com/global/fav-icon.png">
+<title>The World's Most Powerful Turmeric Elixir</title>
+
+<div class="rte">
+  	{{ page.content }}
+</div>
+
+{% else %}
+
+<h1 class="page-title">{{ page.title }}</h1>
+
+<div class="rte">
+  {% if shop.customer_accounts_enabled %}
+    {% if customer %}
+      <div id="talkable-offer"></div>
+    {% else %}
+      {{ 'Log in' | customer_login_link }}
+    {% endif %}
+  {% endif %}
+</div>
+
+{% endif %}
