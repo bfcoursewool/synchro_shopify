@@ -5,6 +5,22 @@
         <div style="display:none;">{{ current_tags }}</div>
         <div class="post-date-publish">{{ article.published_at | date: format: 'short_month' }}</div>
         <h1 class="page-title">{{ article.title }}</h1>
+        <div class="post-info-section">
+          <div class="post-author-section">
+            {% if settings.blog-show-author %}
+            {% assign author_img = article.author | handle | append:'.png' | asset_url %}
+            <img src="{{author_img}}" alt="{{article.author}}" class="author-img">
+            <p class="post-author">by {{ article.author }}</p>
+            {% endif %}
+          </div>
+          <div class="post-share-section">
+            {% if settings.blog-show-share-buttons %}
+            <div class="share-icons-section">
+              {% include 'share-buttons' %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
       </div>
       <article class="blog-post clearfix">
 
@@ -166,26 +182,9 @@
   </div>
   <div class="blogpage-left">
     <div class="sidebar">
-      <div class="sidebar-author-section">
-        {% if settings.blog-show-author %}
-        {% assign author_img = article.author | handle | append:'.png' | asset_url %}
-        <span class="author-img"><img src="{{author_img}}" alt="{{article.author}}"></span>
-        <h2>Author</h2>
-        <p class="post-author">{{ article.author }}</p>
-        {% endif %}
-      </div>
 
       <div class="sidebar-topic-section">
-
       </div>
-
-
-      {% if settings.blog-show-share-buttons %}
-      <div class="sidebar-share-icons-section">
-        {% include 'share-buttons' %}
-      </div>
-      {% endif %}
-
 
       <div class="sidebar-newsletter-section">
         {% include 'mailing-list' %}

@@ -244,32 +244,6 @@
           <div class="second-logo">
                <a href="/blogs/blog/tagged/nutrition"><img src="{{'secondary-logo.png' | asset_url}}" alt="The Synchro Life"></a>
           </div>
-          <div class="header-social-icons">
-            <ul>
-              {% if settings.header-show-tweet-url != blank %}
-              <li>
-                <a class="tweet footer-tweet" href="{{settings.header-show-tweet-url}}">Twitter</a>
-              </li>
-              {% endif %}
-              {% if settings.header-show-facebook-url != blank %}
-              <li>
-                <a class="facebook footer-like" href="{{settings.header-show-facebook-url}}" >Facebook</a>
-              </li>
-              {% endif %}
-              {% if settings.header-show-instagram-url != blank %}
-              <li>
-                <a class="instagram fi-social-instagram" href="{{settings.header-show-instagram-url}}" >Instagram</a>
-              </li>
-              {% endif %}
-              {% if settings.header-show-pin-url != blank %}
-              <li>
-                <a class="pin footer-pin" href="{{settings.header-show-pin-url}}" >
-
-                </a>
-              </li>
-              {% endif %}
-            </ul>
-          </div>
           <div class="topicmenu">
             <ul class="topicmenulinklist">
               {% for link in linklists.topic-menu.links %}

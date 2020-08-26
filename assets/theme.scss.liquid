@@ -403,7 +403,7 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 // Custom
 //************************************************************************//
 
-$maxWidth: 1020px;
+$maxWidth: 1200px;
 $gutter: 30px;
 $easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
 
@@ -7071,8 +7071,6 @@ iframe {
 
   .mainblogpage .blogpage-right .blog-posts .blog-post .article-tags{ color:#888888; padding:0 0 0 25px; font-size: 14px; background: rgba(0, 0, 0, 0) url("tag-icon.png") no-repeat scroll left 2px;}
   .mainblogpage .blogpage-right .blog-posts .blog-post .article-tags a{ color:#888888; font-weight:bold; font-size: 14px;}
-
-  .mainblogpage .blogpage-right .blog-posts .blog-post{ margin: 60px 0 0;}
   .mainblogpage .blogpage-right .blog-posts .blog-post:first-child{ margin: 40px 0 0;}
 
   .mainblogpage .blogpage-right .pagination{  float: left; max-width: 100%; width: 100%;}
@@ -7120,6 +7118,73 @@ iframe {
   .mainblogpage.singleblogpage .blogpage-right .blog-posts .rte.post-content .interview-answer::before {
     background: #eca846;
     transform: rotate(45deg);
+  }
+
+  .mainblogpage.singleblogpage .blogpage-right .blog-posts .post-info-section {
+    margin: 20px 0 30px;
+    display: table;
+    width: 100%;
+
+    @media only screen and (max-width: 800px) {
+      margin-bottom: 20px;
+    }
+
+    .post-author-section {
+      display: table-cell;
+
+      .author-img {
+        vertical-align: middle;
+        height: 42px;
+        width: 42px;
+        border-radius: 21px;
+      }
+
+      .post-author {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+        font-weight: 500;
+      }
+    }
+    .post-share-section {
+
+      .share-icons-section {
+        text-align: right;
+
+        .share-buttons {
+
+          ul {
+            margin: 0;
+
+            li {
+              display: inline-block;
+              margin: 0;
+
+              a {
+                margin: 0 0 0 25px;
+                border: 0;
+                padding: 0;
+                cursor: pointer;
+
+                span {
+                  display: none;
+                }
+              }
+
+              a:hover {
+                background: #f4f4f5;
+              }
+
+              a:before {
+                color: #000000;
+                font-size: 20px;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   .blog-top-head .post-date-publish{ color:#888888; font-weight:bold; text-transform: uppercase;}
