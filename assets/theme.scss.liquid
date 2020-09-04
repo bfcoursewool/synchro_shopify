@@ -1314,34 +1314,98 @@ iframe {
   }
 
   .mailing-list-signup {
+    display: table;
     font-size: 20px;
-  max-width: $maxWidth;
-    padding: $gutter*2 30px 0;
-    margin: $gutter*3 auto 0;
-    border-top: 1px solid $borderColor;
+    max-width: $maxWidth;
+    margin: 20px auto 0;
     text-align: center;
     @include transition(transform 0.2s $easeOutQuad);
+    padding: 20px 20px 60px;
+
+    @include breakpoint(l) {
+      padding-bottom: 20px;
+    }
+    @include breakpoint(m) {
+      padding: 20px 0 0;
+    }
 
     // .showing-drawer:not(.template-index) & {
     //   @include transform(translateX(260px));
     // }
 
-    .template-index & {
-      margin-bottom: $gutter*3;
-
-      .section-title {
-        margin-bottom: $gutter;
-      }
-    }
-
-    p {
-      margin-top: $gutter*1.5;
-    }
-
     form {
       max-width: 540px;
       margin: $gutter auto 0;
       font-size: 0;
+    }
+
+    .mailing-list-image {
+      width: 50%;
+      display: table-cell;
+      background: url(https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/opt-in-image.jpg?v=1598634967);
+      background-size: cover;
+      background-position: center center;
+      padding: 60px;
+      vertical-align: middle;
+
+      @include breakpoint(m) {
+        padding: 30px;
+      }
+
+      @include breakpoint(s) {
+        display: block;
+        width: 100%;
+        padding: 40px 50px;
+      }
+
+      .mailing-list-title {
+        font-size: 60px;
+        font-weight: 700;
+        color: #FFFFFF;
+        line-height: normal;
+        margin: 0;
+
+        @include breakpoint(m) {
+          font-size: 50px;
+        }
+
+        @include breakpoint(s) {
+          font-size: 42px;
+        }
+      }
+    }
+
+    .mailing-list-form {
+      width: 50%;
+      display: table-cell;
+      padding: 40px 60px;
+      vertical-align: middle;
+      background: #F9F6F2;
+
+      @include breakpoint(m) {
+        padding: 30px;
+      }
+
+      @include breakpoint(s) {
+        display: block;
+        width: 100%;
+      }
+      .mailing-list-blurb {
+        margin: 0 0 30px;
+        font-weight: 500;
+        color: #4D4D4D;
+      }
+
+      button {
+        width: 170px;
+      }
+
+      .mailing-list-footnote {
+        font-weight: 500;
+        font-size: 16px;
+        color: #4D4D4D;
+        margin: 30px 0 0;
+      }
     }
   }
 
@@ -1420,7 +1484,6 @@ iframe {
     width:100%;
     background-color: $footerBackgroundColor;
     color: $footerAccentColor;
-    margin-top: $gutter*3;
 
     &.default:before {
       content: '';
@@ -1442,10 +1505,6 @@ iframe {
 
     @include breakpoint(m) {
       text-align: center;
-    }
-
-    @include breakpoint(s) {
-      margin-top: $gutter*2;
     }
 
     a {
@@ -5220,7 +5279,6 @@ iframe {
       display: inline-block;
       padding: 0 20px;
       text-align: left;
-      margin-bottom: $gutter*2;
       display: inline-flex;
       align-items: center;
       vertical-align: middle;
@@ -7011,14 +7069,36 @@ iframe {
   .mainblogpage .blogpage-left .sidebar .sidebar-most-popular-section{ display: inline-block; padding: 24px;}
   .mainblogpage .blogpage-left .sidebar .sidebar-most-popular-section ul li a{ font-weight: 500; color:#000; font-size:16px;}
 
-  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section{ padding: 24px;}
-  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup{ border-top:none; padding: 0; max-width: 100%; margin:50px 0 50px;}
-  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup h3{font-weight: bold; letter-spacing: 1px; text-transform: uppercase; font-size: 14px;}
-  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup p{ margin-top: 0;}
+  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup {
+    padding: 0;
+    max-width: 100%;
+    margin: 50px 0 40px;
+  }
 
-  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup form{}
-  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup form input{ width:100%;}
-  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup form .mailing-list-submit{ padding-left: 0; width: auto; margin-top:20px;}
+  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup .mailing-list-image {
+    width: 100%;
+    display: block;
+    padding: 35px 30px;
+
+  }
+
+  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup h3 {
+    font-size: 35px;
+  }
+
+  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup .mailing-list-form {
+    padding: 30px;
+    width: 100%;
+    display: block;
+  }
+
+  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup .mailing-list-form input {
+    width: 100%;
+  }
+
+  .mainblogpage .blogpage-left .sidebar .sidebar-newsletter-section .mailing-list-signup .mailing-list-form button {
+    width: 150px;
+  }
 
   .mainblogpage .sidebar-images-section {
     @media only screen and (min-width: 1200px) {
@@ -7228,7 +7308,7 @@ iframe {
   @media only screen and (max-width: 800px)
   {
     .header-area-part .header-social-icons{  position: static;}
-    .mainblogpage .blogpage-left{ width:100%; padding:20px;}
+    .mainblogpage .blogpage-left{ width:100%; padding:20px; display: none;}
     .mainblogpage .blogpage-right{  width:100%; padding:20px;}
     .mainblogpage .blogpage-right .blog-posts .blog-post{ margin-top: 20px;}
     .template-article .blog-top-head h1{margin-top:20px; }
@@ -7471,10 +7551,10 @@ iframe {
   position: relative;
 }
 
-.sidebar-image-bottom {
-  position: absolute;
-  bottom: 30px;
-}
+// .sidebar-image-bottom {
+//   position: absolute;
+//   bottom: 30px;
+// }
 
 // FLASH SALE BANNER STARTS
 
