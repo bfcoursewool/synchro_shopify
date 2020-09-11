@@ -2240,6 +2240,12 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function(){
+  $(".reference-toggle").click(function(){
+    $(".references").toggleClass("show");
+  });
+});
+
 // Set the date we're counting down to
 var countDownDate = new Date("Jul 17 2020 23:59:59 UTC-0700").getTime();
 

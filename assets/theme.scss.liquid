@@ -7269,6 +7269,25 @@ iframe {
     }
   }
 
+  .mainblogpage.singleblogpage .blogpage-right .blog-posts .references p:nth-child(n+4) {
+    display: none;
+  }
+
+  .mainblogpage.singleblogpage .blogpage-right .blog-posts .references.show p:nth-child(n+4) {
+    display: block;
+  }
+
+  .mainblogpage.singleblogpage .blogpage-right .blog-posts .reference-toggle:after {
+    content: "See all";
+    border-bottom: 2px solid #5da8a6;
+    color: #447e7c;
+    cursor: pointer;
+  }
+
+  .mainblogpage.singleblogpage .blogpage-right .blog-posts .references.show .reference-toggle:after {
+    content: "See less";
+  }
+
   .blog-top-head .post-date-publish{ color:#888888; font-weight:bold; text-transform: uppercase;}
   .blog-top-head h1{ font-size: 40px; font-weight: 600;text-align: left;margin:50px 0 0; line-height: 1.4;}
 
