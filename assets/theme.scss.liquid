@@ -7792,15 +7792,19 @@ iframe {
   }
 }
 
+{% assign mobileBreakpoint = '768px' %}
+
 #blog-posts {
   width: 100%;
-{% comment %}display: flex;{% endcomment %}{% comment %}flex-direction: row;{% endcomment %}
 
   .static-image-left {
-    float: left;
-    display: block;
-    width: 433px !important;
-    height: 437px !important;
+
+    @media screen and (min-width: {{ mobileBreakpoint }}) {
+      float: left;
+      display: block;
+      width: 433px !important;
+      height: 437px !important;
+    }
 
     img {
       width: 100%;
@@ -7863,3 +7867,16 @@ iframe {
     }
   }
 }
+
+@media screen and (max-width: {{ mobileBreakpoint }}) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media screen and (min-width: {{ mobileBreakpoint }}) {
+  .mobile-only {
+    display: none;
+  }
+}
+
