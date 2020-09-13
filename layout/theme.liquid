@@ -220,7 +220,14 @@
 {% if template contains 'product' %}
   <!-- Global site tag (gtag.js) - AdWords: 864481593 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-864481593"></script>
-  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-864481593'); </script>
+  <script> window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'AW-864481593'); </script>
 
   <script>
     gtag('event', 'page_view', {
@@ -230,6 +237,22 @@
   </script>
 {% endif %}
 
-{% render 'spurit_occ2_theme_snippet' %}
+  {% if template contains "blog" %}
+    <script src="{{ 'splide-slider.js' | asset_url }}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <script>
+      $(document).ready(function () {
+        new Splide('.splide', {
+          autoWidth: true,
+          trimSpace: 'move',
+          padding: '40px',
+          gap: '40px',
+          pagination: false
+        }).mount();
+      })
+    </script>
+  {% endif %}
+
+  {% render 'spurit_occ2_theme_snippet' %}
 </body>
 </html>

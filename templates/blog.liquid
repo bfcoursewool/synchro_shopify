@@ -1,4 +1,34 @@
-<div class="blogpage mainblogpage">
+<div id="blog-posts">
+  <div class="static-image-left">
+    <img src="{{ 'blog-seven-desktop.jpg' | asset_url }}" />
+  </div>
+
+  <div class="posts splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for article in blog.articles %}
+          {% if article.tags contains blogSticky1 or article.tags contains blogSticky2 or article.tags contains blogSticky3 %}
+          {% else %}
+            <div class="splide__slide">
+              <div class="post">
+                <img src="{{ article.image.src | img_url: '300x200' }}" />
+                <div class="post-inner">
+                  <h3>{{ article.title }}</h3>
+                  <a href="{{ article.url }}"><span>Read more</span></a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% else %}
+          <span class="empty">{{ 'blogs.blog.empty' | t }}</span>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="mainblogpage blogpage">
+
   <div class="blogpage-right">
     {% comment %}
     {% if current_tags %}
