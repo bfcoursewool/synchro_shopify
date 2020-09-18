@@ -1,137 +1,101 @@
-<div id="blog-posts">
-  <div class="static-image-left">
-    <img class="desktop-only" src="{{ 'blog-seven-desktop.jpg' | asset_url }}" />
-    <img class="mobile-only" src="{{ 'blog-seven-mobile.jpg' | asset_url }}" />
-  </div>
-
-  <div class="posts splide">
-    <div class="splide__track">
-      <ul class="splide__list">
-        {% for article in blog.articles %}
-          {% if article.tags contains blogSticky1 or article.tags contains blogSticky2 or article.tags contains blogSticky3 %}
-          {% else %}
-            <div class="splide__slide">
-              <div class="post">
-                <img src="{{ article.image.src | img_url: '300x200' }}" />
-                <div class="post-inner">
-                  <h3>{{ article.title }}</h3>
-                  <a href="{{ article.url }}"><span>Read more</span></a>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-        {% else %}
-          <span class="empty">{{ 'blogs.blog.empty' | t }}</span>
-        {% endfor %}
-      </ul>
+<div id="blog">
+  <section id="posts">
+    <div class="static-image-left">
+      <img class="desktop-only" src="{{ 'blog-seven-desktop.jpg' | asset_url }}" />
+      <img class="mobile-only" src="{{ 'blog-seven-mobile.jpg' | asset_url }}" />
     </div>
-  </div>
-</div>
 
-<div class="mainblogpage blogpage">
+    <div class="posts splide">
 
-  <div class="blogpage-right">
-    {% comment %}
-    {% if current_tags %}
-    <p class="current-tag">{{ 'blogs.blog.posts_tagged' | t }} <em>"{{ current_tags.first }}"</em></p>
-    {% endif %}
-    {% endcomment %}
-
-    {% assign unPaginatedArticles = blog.articles %}
-    {% paginate blog.articles by settings.articles-per-page %}
-
-    {% assign blogSticky1 = current_tags[0] | append: "-sticky-1" %}
-    {% assign blogSticky2 = current_tags[0] | append: "-sticky-2" %}
-    {% assign blogSticky3 = current_tags[0] | append: "-sticky-3" %}
-
-    {% if paginate.current_page == 1 %}
-      <div class="blog-posts sticky">
-        {% for article in unPaginatedArticles %}
-          {% if article.tags contains blogSticky1 %}
-            {% include 'article-list-item' %}
-          {% endif %}
-        {% endfor %}
-        {% for article in unPaginatedArticles %}
-          {% if article.tags contains blogSticky2 %}
-            {% include 'article-list-item' %}
-          {% endif %}
-        {% endfor %}
-        {% for article in unPaginatedArticles %}
-          {% if article.tags contains blogSticky3 %}
-            {% include 'article-list-item' %}
-          {% endif %}
-        {% endfor %}
+      <div class="splide__arrows">
+        <button class="splide__arrow splide__arrow--prev">
+          <img src="{{ 'blog_slider_arrow.svg' | asset_url }}" />
+        </button>
+        <button class="splide__arrow splide__arrow--next">
+          <img src="{{ 'blog_slider_arrow.svg' | asset_url }}" />
+        </button>
       </div>
-	{% endif %}
 
-    <div class="blog-posts">
-      {% for article in blog.articles %}
-        <!-- Lol, shopify is so shitty you cannot negate "contains" -->
-        {% if article.tags contains blogSticky1 or article.tags contains blogSticky2 or article.tags contains blogSticky3 %}
-        {% else %}
-          {% include 'article-list-item' %}
-        {% endif %}
-      {% else %}
-      <span class="empty">{{ 'blogs.blog.empty' | t }}</span>
-      {% endfor %}
-    </div>
-
-    {% if paginate.previous or paginate.next %}
-    {% include 'pagination' %}
-    {% endif %}
-    {% endpaginate %}
-  </div>
-  <div class="blogpage-left">
-    <div class="sidebar">
-
-
-      <div class="sidebar-most-popular-section">
-        <h2>Most Popular</h2>
-        <ul class="sidebar-most-popular-section-list">
-          {% for link in linklists.most-popular-posts.links %}
-          <li>
-            <a href="{{ link.url }}">{{ link.title }}</a>
-          </li>
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% assign the_seven_articles = blogs.blog.articles | sort: "title" %}
+          {% for article in the_seven_articles %}
+            {% if article.tags contains blogSticky1 or article.tags contains blogSticky2 or article.tags contains blogSticky3 %}
+            {% else %}
+              {% if article.tags contains 'the-seven' %}
+                <div class="splide__slide">
+                  <div class="post">
+                    <img alt="{{ article.img.alt }}" src="{{ article.image.src | img_url: '300x200' }}" />
+                    <div class="post-inner">
+                      <h3>{{ article.title }}</h3>
+                      <a class="read-more" href="{{ article.url }}"><span>Read more</span></a>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% else %}
+            <span class="empty">{{ 'blogs.blog.empty' | t }}</span>
           {% endfor %}
         </ul>
       </div>
-
-
-      {% assign taghandle=current_tags.first | handle %}
-      {% if taghandle != blank %}
-      <div class="sidebar-newsletter-section">
-        {% include 'mailing-list' %}
-      </div>
-      {% endif %}
-
-      {% if settings.use-sidebar-images %}
-      <div class="sidebar-images-section">
-        {% assign blogAdURL = "sidebar-blog-" | append: current_tags[0] %}
-        {% assign blogAdURL = blogAdURL | append: "-ad-link" %}
-        {% assign blogAdImage = "sidebar-blog-" | append: current_tags[0] %}
-        {% assign blogAdImage = blogAdImage | append: "-ad-image.png" %}
-        {% assign blogImageAlt = "sidebar-blog-" | append: current_tags[0] %}
-        {% assign blogImageAlt = blogImageAlt | append: "-ad-alt" %}
-
-        {% if settings[blogAdURL] != blank %}
-          <span class="sidebar-blog-image-1">
-            <a href="{{settings[blogAdURL]}}">
-              <img src="{{settings[blogAdImage]}}" alt="{{settings[blogImageAlt]}}">
-            </a>
-          </span>
-        {% else %}
-          {% if settings.sidebar-blog-default-ad-link != blank %}
-          <span class="sidebar-blog-image-1">
-            <a href="{{settings.sidebar-blog-default-ad-link}}">
-              <img src="{{settings['sidebar-blog-default-ad-image.png']}}" alt="{{settings.sidebar-blog-default-ad-alt}}">
-            </a>
-          </span>
-          {% endif %}
-        {% endif %}
-      </div>
-      {% endif %}
-
-
     </div>
-  </div>
+  </section>
+
+  <section id="most-popular">
+    <h2>Most Popular</h2>
+
+    <div class="column-layout-3">
+      {% assign tag = 'popular' %}
+      {% include 'blog-posts-by-tag' %}
+    </div>
+
+    <button class="call-to-action">All Articles</button>
+  </section>
+
+  <section id="body">
+    <h2>Body</h2>
+
+    <div class="column-layout-3">
+      {% assign tag = 'body' %}
+      {% include 'blog-posts-by-tag' %}
+    </div>
+  </section>
+
+  <section id="brain">
+    <h2>Brain</h2>
+
+    <div class="column-layout-3">
+      {% assign tag = 'brain' %}
+      {% include 'blog-posts-by-tag' %}
+    </div>
+  </section>
+
+  <section id="nutrition">
+    <h2>Nutrition</h2>
+
+    <div class="column-layout-3">
+      {% assign tag = 'nutrition' %}
+      {% include 'blog-posts-by-tag' %}
+    </div>
+  </section>
+
+  <section id="recipes">
+    <h2>Recipes</h2>
+
+    <div class="column-layout-3">
+      {% assign tag = 'recipes' %}
+      {% include 'blog-posts-by-tag' %}
+    </div>
+  </section>
+
+  <section id="keto">
+    <h2>Keto</h2>
+
+    <div class="column-layout-3">
+      {% assign tag = 'keto' %}
+      {% include 'blog-posts-by-tag' %}
+    </div>
+  </section>
+
 </div>
