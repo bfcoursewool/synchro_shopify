@@ -157,15 +157,21 @@
         /* Widget: Subscription */
         #recurring_choice_{{ product.id }},
         section.rc_container {
-            margin: 10px 0;
             display: block;
             width: 100%;
         }
         div.rc_option {
             width: 100%;
-            margin: 0;
-            padding: 15px 0 0;
+            margin: 14px 0;
             cursor: pointer;
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid #d9d9d9;
+            padding: 18px 20px;
+            line-height: normal;
+        }
+        div.rc_select {
+          margin-bottom: 20px;
         }
         label.rc_label {
             font-weight: bold;
@@ -183,33 +189,57 @@
         }
         span.rc_label_text {
             margin-left: 10px;
+            font-size: 18px;
+            font-weight: 400;
+            color: #4d4d4d;
+            vertical-align: middle;
         }
-        span.rc_one_time_price {
-
-        }
+        span.rc_one_time_price,
+        span.rc_discount_percentage,
         span.rc_discount_price {
-
+            font-size: 18px;
+            vertical-align: middle;
+            font-weight: 600;
         }
         input.rc_radio {
-            height: 17px;
+            height: 21px;
+            width: 21px;
             margin: 0;
-            -webkit-appearance: radio;
+            vertical-align: middle;
+            -webkit-appearance: none;
+            border: 1px solid #d9d9d9;
+            border-radius: 11px;
         }
-        div.rc_select {
-            margin: 10px 29px;
+        div.rc_option.active .rc_radio {
+            border: 2px solid #319E9E;
+            background: #319E9E;
+            -webkit-box-shadow:inset 0px 0px 0px 2px #ffffff;
+            -moz-box-shadow:inset 0px 0px 0px 2px #ffffff;
+            box-shadow:inset 0px 0px 0px 2px #ffffff;
+        }
+        span.rc_select__label_text {
+            font-size: 18px;
+            font-weight: 400;
+            color: #4d4d4d;
+            vertical-align: middle;
         }
         select.rc_select__dropdown {
-            height: 30px;
-            margin: 0 5px;
-            background: none;
+            margin-left: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid #d9d9d9;
+            padding: 20px 45px 20px 20px;
+            line-height: 18px;
+            -webkit-appearance: none;
         }
 
-        .rc_select__dropdown:after {
-            color: #333;
+        .rc_select__label:after {
+            color: #4d4d4d;
             content: "\E010";
             margin-top: -8px;
             position: absolute;
-            right: 15px;
+            right: 20px;
             top: 50%;
             z-index: 1;
             font-family: 'Single Product Webicons Regular';
@@ -222,13 +252,13 @@
         /*ALCHEMYTHEMESTYLEUPDATE*/
         /* Widget: Popup */
         div.rc_popup {
-            margin: 10px 29px;
+            margin-left: 20px;
+            display: inline-block;
         }
         div.rc_popup__hover,
         a.rc_popup__hover {
             display: inline-block;
             position: relative;
-            height: 35px;
             clear: both;
             cursor: pointer;
         }
@@ -329,72 +359,71 @@
                     <span id="recurring-time-price_{{ product.id }}" class="rc_discount_price"></span>
                 {% endif %}
             </label><!-- .rc_label -->
-            <div class="rc_select">
-                <label class="rc_select__label">
-                    <span class="rc_select__label_text">{{ widget_deliver_every }}</span>
-                    {% if shipping_interval_frequency.size == 1 %}
-                        <input type="hidden" name="" id="fake_shipping_interval_frequency_{{ product.id }}" value="{{ shipping_interval_frequency }}">
-                        <span class="rc_select__option">
-                            {{ shipping_interval_frequency[0] }}
-                            {% if shipping_interval_frequency[0] == "1" and shipping_interval_unit_type == 'Months' %}
-                                <!-- Display "1 Month" not "1 Months" -->
-                                Month
-                            {% elsif shipping_interval_frequency[0] == "1" and shipping_interval_unit_type == 'Weeks' %}
-                                <!-- Display "1 Week" not "1 Weeks" -->
-                                Week
-                            {% else %}
-                                {{ shipping_interval_unit_type }}
-                            {% endif %}
-                        </span><!-- .rc_select__option -->
-                    {% elsif shipping_interval_frequency.size > 1 %}
-                        <select name="" id="fake_shipping_interval_frequency_{{ product.id }}" class="rc_select__dropdown">
-                            {% for frequency in shipping_interval_frequency %}
-                                <option value="{{ frequency }}">
-                                    {{ frequency }}
-                                    {% if frequency == "1" and shipping_interval_unit_type == 'Months' %}
-                                        <!-- Display "1 Month" not "1 Months" -->
-                                        Month
-                                    {% elsif frequency == "1" and shipping_interval_unit_type == 'Weeks' %}
-                                        <!-- Display "1 Week" not "1 Weeks" -->
-                                        Week
-                                    {% else %}
-                                        {{ shipping_interval_unit_type }}
-                                    {% endif %}
-                                </option>
-                            {% endfor %}
-                        </select><!-- .rc_select__dropdown -->
-                    {% endif %}
-                </label><!-- .rc_select__label -->
-            </div><!-- .rc_select -->
         </div><!-- .rc_option .rc_option__recurring -->
-        {% if show_widget == 'true' %}
-            <div class="rc_popup">
-                <div class="rc_popup__hover">
-                    {% if show_widget_icon == 'true' %}
-                        <img src="//rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/widget/rc_widget__icon__black@2x.png" height="21" class="rc_popup__icon" alt="subscription">
-                    {% endif %}
-                    {{ subscription_details_verbiage }}
-                    <div class="rc_popup__popup">
-                        <div class="rc_popup__popup__content">
-                            <div class="rc_popup__close" style="display: none;">x</div>
-                            {{ how_it_works }}
-                            {% if show_learnmore == 'true' %}
-                                <br><a href="{{ learnmore_url }}" target="_blank">{{ learnmore_verbiage }}</a>
-                            {% endif %}
-                        </div><!-- .rc_popup__popup__content -->
-                        {% if show_poweredby == 'true' %}
-                            <div class="rc_popup__popup__footer">
-                                <a href="{{ poweredby_url }}" target="_blank">
-                                    <img src="//rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/widget/rc_widget__banner@2x.png" height="28" class="rc_popup__badge" alt="Powered by ReCharge">
-                                </a>
-                            </div><!-- .rc_popup__popup__footer -->
+        <div class="rc_select">
+            <label class="rc_select__label">
+                <span class="rc_select__label_text">{{ widget_deliver_every }}</span>
+                {% if shipping_interval_frequency.size == 1 %}
+                    <input type="hidden" name="" id="fake_shipping_interval_frequency_{{ product.id }}" value="{{ shipping_interval_frequency }}">
+                    <span class="rc_select__option">
+                        {{ shipping_interval_frequency[0] }}
+                        {% if shipping_interval_frequency[0] == "1" and shipping_interval_unit_type == 'Months' %}
+                            <!-- Display "1 Month" not "1 Months" -->
+                            Month
+                        {% elsif shipping_interval_frequency[0] == "1" and shipping_interval_unit_type == 'Weeks' %}
+                            <!-- Display "1 Week" not "1 Weeks" -->
+                            Week
+                        {% else %}
+                            {{ shipping_interval_unit_type }}
                         {% endif %}
-                    </div><!-- .rc_popup__popup -->
-                </div><!-- .rc_popup__hover -->
-            </div><!-- .rc_popup -->
-        {% elsif show_widget == 'link' %}
-            <a href="{{ learnmore_url }}" target="_blank" class="rc_popup__hover">{% if show_widget_icon == 'true' %}<img src="//rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/widget/rc_widget__icon__black@2x.png" height="21" class="rc_popup__icon"> {% endif %}{{ subscription_details_verbiage }}</a>
-        {% endif %}
+                    </span><!-- .rc_select__option -->
+                {% elsif shipping_interval_frequency.size > 1 %}
+                    <select name="" id="fake_shipping_interval_frequency_{{ product.id }}" class="rc_select__dropdown">
+                        {% for frequency in shipping_interval_frequency %}
+                            <option value="{{ frequency }}">
+                                {{ frequency }}
+                                {% if frequency == "1" and shipping_interval_unit_type == 'Months' %}
+                                    <!-- Display "1 Month" not "1 Months" -->
+                                    Month
+                                {% elsif frequency == "1" and shipping_interval_unit_type == 'Weeks' %}
+                                    <!-- Display "1 Week" not "1 Weeks" -->
+                                    Week
+                                {% else %}
+                                    {{ shipping_interval_unit_type }}
+                                {% endif %}
+                            </option>
+                        {% endfor %}
+                    </select><!-- .rc_select__dropdown -->
+                {% endif %}
+            </label><!-- .rc_select__label -->
+          {% if show_widget == 'true' %}
+              <div class="rc_popup">
+                  <div class="rc_popup__hover">
+                      {% if show_widget_icon == 'true' %}
+                          <img src="//rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/widget/rc_widget__icon__black@2x.png" height="21" class="rc_popup__icon" alt="subscription">
+                      {% endif %}
+                      <div class="rc_popup__popup">
+                          <div class="rc_popup__popup__content">
+                              <div class="rc_popup__close" style="display: none;">x</div>
+                              {{ how_it_works }}
+                              {% if show_learnmore == 'true' %}
+                                  <br><a href="{{ learnmore_url }}" target="_blank">{{ learnmore_verbiage }}</a>
+                              {% endif %}
+                          </div><!-- .rc_popup__popup__content -->
+                          {% if show_poweredby == 'true' %}
+                              <div class="rc_popup__popup__footer">
+                                  <a href="{{ poweredby_url }}" target="_blank">
+                                      <img src="//rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/widget/rc_widget__banner@2x.png" height="28" class="rc_popup__badge" alt="Powered by ReCharge">
+                                  </a>
+                              </div><!-- .rc_popup__popup__footer -->
+                          {% endif %}
+                      </div><!-- .rc_popup__popup -->
+                  </div><!-- .rc_popup__hover -->
+              </div><!-- .rc_popup -->
+          {% elsif show_widget == 'link' %}
+              <a href="{{ learnmore_url }}" target="_blank" class="rc_popup__hover">{% if show_widget_icon == 'true' %}<img src="//rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/widget/rc_widget__icon__black@2x.png" height="21" class="rc_popup__icon"> {% endif %}{{ subscription_details_verbiage }}</a>
+          {% endif %}
+      </div><!-- .rc_select -->
     </section><!-- .rc_container -->
     <script>
         // Subscriptions Powered by ReCharge Payments: JavaScript

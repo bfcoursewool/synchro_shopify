@@ -900,27 +900,27 @@ body {
   /* Buttons */
 
   .button, .submit, button, input[type="submit"], input[type="button"] {
-    background: #000;
+    background: #319E9E;
     font-family: $primaryButtonFontFamily;
     font-weight: $primaryButtonFontWeight;
     color: #FFF;
     -webkit-appearance: none;
     padding: 0 $gutter;
-    font-size: 16px;
-    height: 50px;
-    line-height: 50px;
+    font-size: 20px;
     display: inline-block;
     cursor: pointer;
     border: none;
-    margin-bottom: 5px;
+    padding: 20px 50px;
+    border-radius: 4px;
+    width: 100%;
 
     &:hover {
       opacity: 0.7;
     }
 
-    font-size:      #{' {% if settings.primary-button-font-small-caps %} '}14px #{' {% endif %} '};
-      letter-spacing: #{' {% if settings.primary-button-font-small-caps %} '}0.15em #{' {% endif %} '};
-      text-transform: #{' {% if settings.primary-button-font-small-caps %} '}uppercase #{' {% endif %} '};
+    //   font-size:      #{' {% if settings.primary-button-font-small-caps %} '}14px #{' {% endif %} '};
+    //   letter-spacing: #{' {% if settings.primary-button-font-small-caps %} '}0.15em #{' {% endif %} '};
+    //   text-transform: #{' {% if settings.primary-button-font-small-caps %} '}uppercase #{' {% endif %} '};
 
       &.secondary {
         background: $secondaryButtonBackground;
@@ -1047,22 +1047,22 @@ input[type=submit] {
 .select-wrapper {
   background-color: $formSelectBackground;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 4px;
   border: 1px solid $formSelectBorder;
   color: $formSelectColor;
-  padding: 13px $gutter*1.5 13px $gutter/2;
+  padding: 18px 40px 18px 20px;
   position: relative;
   text-align: left;
   width: 100%;
-  font-size: 14px;
-  margin: $gutter 0;
+  font-size: 18px;
+  line-height: normal;
 
   &:after {
     color: $formSelectColor;
     content: "\E010";
     margin-top: -8px;
     position: absolute;
-    right: $gutter/2;
+    right: 20px;
     top: 50%;
     z-index: 1;
     @include iconFont();
@@ -4716,11 +4716,11 @@ iframe {
     }
 
     .product-vendor {
-      color: #4d4d4d;
-      font-size: 15px;
+      color: #808080;
+      font-size: 16px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      padding: 5px 0;
+      margin: 15px 0;
     }
 
     .product-list-item-thumbnail {
@@ -5975,7 +5975,6 @@ iframe {
       padding-right: $gutter;
 
       @include breakpoint(s) {
-        margin-top: $gutter;
         padding-right: 0;
       }
     }
@@ -6037,7 +6036,7 @@ iframe {
     }
 
     .product-thumbnails {
-      margin-top: $gutter;
+      margin: 20px 0 10px;
       text-align: center;
       font-size: 0;
 
@@ -6105,7 +6104,7 @@ iframe {
     .product-details {
 
       @include breakpoint(s) {
-        display: none;
+        text-align: center;
       }
 
       &.mobile {
@@ -6138,7 +6137,14 @@ iframe {
       }
     }
 
-    .product-details .vendor {
+    .product-details .product-title{
+      font-size: 30px;
+      font-weight: 500;
+      line-height: normal;
+      margin: 0;
+    }
+
+  .product-vendor  .product-details .vendor {
       margin-top: 0;
       font-size: 16px;
 
@@ -6162,9 +6168,9 @@ iframe {
     }
 
     .product-price {
-      font-size: 26px;
-      margin: 0;
-      opacity: 0.6;
+      font-size: 28px;
+      margin: 10px 0 20px;
+      font-weight: 500;
 
       @include breakpoint(s) {
         margin-top: 10px;
@@ -6199,10 +6205,6 @@ iframe {
     }
 
     .product-options {
-
-      .selector-wrapper {
-        margin-top: $gutter;
-      }
 
       label {
         display: none;
@@ -7448,7 +7450,6 @@ iframe {
 
   .yotpo {
     display: inline-block;
-    padding: 10px 0 0;
 
     .star-clickable {
       cursor: auto !important;

@@ -10,7 +10,7 @@
 {% assign selectedVariant = product.selected_or_first_available_variant | default: product %}
 <div itemscope itemtype="http://schema.org/Product">
  <!-- <h1 class="page-title test" itemprop="name">{{ product.title }}</h1> -->
-  <div class="product-details mobile">
+  <!-- <div class="product-details mobile">
     {% if settings.product-display-vendor %}
       <p class="meta vendor">{{ product.vendor }}</p>
     {% endif %}
@@ -53,7 +53,7 @@
           </span>
       </span>
     </p>
-  </div>
+  </div> -->
   {% assign featured_image = selectedVariant.featured_image | default: product.featured_image %}
   <div class="product-slideshow clearfix">
     <div class="product-big-image" data-no-image-svg="{{ 'no-image.svg' | asset_url }}" data-no-image-png="{{ 'no-image.png' | asset_url }}">
