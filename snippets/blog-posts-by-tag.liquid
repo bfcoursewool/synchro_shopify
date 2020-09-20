@@ -5,11 +5,12 @@
 
 {% paginate blogs.blog.articles by paginate %}
   {% assign count = 0 %}
-  {% assign limit = limit | default: 3 %}
+  {% assign limit = limit or paginate %}
 
   <div class="{{ containerClass }}">
     {% for article in blogs.blog.articles %}
       {% if article.tags contains tag or tag == 'all' %}
+
         {% assign count = count | plus: 1 %}
         {% if count > limit %}
           {% break %}
