@@ -29,7 +29,7 @@
 
         <div class="splide__track">
           <ul class="splide__list">
-            {% assign the_seven_articles = blogs.blog.articles | sort: "title" %}
+            {% assign the_seven_articles = blogs.the-seven.articles | sort: "title" %}
             {% for article in the_seven_articles %}
               {% if article.tags contains blogSticky1 or article.tags contains blogSticky2 or article.tags contains blogSticky3 %}
               {% else %}
