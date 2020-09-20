@@ -8098,21 +8098,30 @@ ul.sidebar-topic-section-list {
 }
 
 .topic-featuretext .topic-featuretitle a {
-  color: #fff;
+  color: #FFFFFF;
+  font-family: futura-pt, sans-serif;
   font-size: 40px;
-  font-weight: bold;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 51px;
+  text-align: center;
 }
 
 .topic-featuretext .topic-feature_text {
-  color: #fff;
-  display: block;
-  font-size: 20px;
+  color: #FFFFFF;
+  font-family: futura-pt, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 36px;
+  text-align: center;
 }
 
 .topic-featurepost .image-he-feature {
   display: table;
   height: 400px;
-  float: left;
+  max-width: 1260px;
+  margin: 0 auto;
   width: 100%;
   clear: both;
   position: relative;
@@ -8566,6 +8575,49 @@ ul.sidebar-topic-section-list {
 
 {% assign mobileBreakpoint = '768px' %}
 
+#tag {
+  padding-top: 40px;
+  max-width: 1260px;
+  margin: 0 auto;
+
+  .post:first-child {
+    margin-left: 0;
+  }
+
+  .post:last-child {
+    margin-right: 0;
+  }
+
+  .pagination {
+    display: block;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+
+    > *:first-child {
+      float: left;
+    }
+
+    > *:last-child {
+      float: right;
+    }
+
+    button {
+      border: 3px solid #000000;
+      border-radius: 6px;
+      background-color: #FFFFFF;
+      color: #000000;
+      font-family: futura-pt, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 23px;
+      text-align: center;
+      display: block;
+    }
+  }
+}
 
 #blog {
 
@@ -8611,6 +8663,7 @@ ul.sidebar-topic-section-list {
 
   .column-layout-3 {
     display: flex;
+    flex-wrap: wrap;
 
     @media screen and (max-width: {{ mobileBreakpoint }}) {
       flex-direction: column;
@@ -8618,12 +8671,19 @@ ul.sidebar-topic-section-list {
 
     @media screen and (min-width: {{ mobileBreakpoint }}) {
       flex-direction: row;
-      justify-content: space-between;
     }
 
     & > div {
       max-width: 400px;
-      margin: 0 15px;
+      padding: 0 15px 40px 15px;
+
+      &:nth-child(3n+1) {
+        padding-left: 0;
+      }
+
+      &:nth-child(3n+3) {
+        padding-right: 0;
+      }
 
       @media screen and (max-width: {{ mobileBreakpoint }}) {
         margin-bottom: 40px;
@@ -8680,6 +8740,10 @@ ul.sidebar-topic-section-list {
 
         .splide__list {
           display: flex;
+        }
+
+        .splide__arrow:disabled {
+
         }
 
         &.hide-previous-arrow {

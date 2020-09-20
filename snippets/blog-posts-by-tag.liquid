@@ -1,21 +1,45 @@
-{% paginate blogs.blog.articles by 100 %}
+{% assign showPagination = showPagination | default: false %}
+{% assign paginate = paginate | default: 100 %}
+{% assign containerClass = containerClass | default: '' %}
+{% assign tag = tag | default: 'all' %}
+
+{% paginate blogs.blog.articles by paginate %}
   {% assign count = 0 %}
   {% assign limit = limit | default: 3 %}
-  {% for article in blogs.blog.articles %}
-    {% if article.tags contains tag %}
-      {% assign count = count | plus: 1 %}
-      {% if count > limit %}
-        {% break %}
-      {% endif %}
-      <div class="post">
-        <img alt="{{ article.img.alt }}" src="{{ article.image.src | img_url: '300x200' }}" />
 
-        <div class="post-inner">
-          <h3>{{ article.title }}</h3>
-          <p>{{ article.excerpt_or_content | strip_html | truncate: 150 }}</p>
-          <a class="read-more" href="{{ article.url }}"><span>Read more</span></a>
+  <div class="{{ containerClass }}">
+    {% for article in blogs.blog.articles %}
+      {% if article.tags contains tag or tag == 'all' %}
+        {% assign count = count | plus: 1 %}
+        {% if count > limit %}
+          {% break %}
+        {% endif %}
+        <div class="post">
+          <img alt="{{ article.img.alt }}" src="{{ article.image.src | img_url: '300x200' }}" />
+
+          <div class="post-inner">
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.excerpt_or_content | strip_html | truncate: 150 }}</p>
+            <a class="read-more" href="{{ article.url }}"><span>Read more</span></a>
+          </div>
         </div>
-      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="pagination">
+    {% if paginate.previous %}
+      <a href="{{ paginate.previous.url }}">
+        <button>Previous</button>
+      </a>
     {% endif %}
-  {% endfor %}
+    {% if paginate.next %}
+      <a href="{{ paginate.next.url }}">
+        <button>
+          Next
+        </button>
+      </a>
+    {% endif %}
+  </div>
+
 {% endpaginate %}

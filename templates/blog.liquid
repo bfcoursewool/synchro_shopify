@@ -1,101 +1,112 @@
-<div id="blog">
-  <section id="posts">
-    <div class="static-image-left">
-      <img class="desktop-only" src="{{ 'blog-seven-desktop.jpg' | asset_url }}" />
-      <img class="mobile-only" src="{{ 'blog-seven-mobile.jpg' | asset_url }}" />
-    </div>
+{% if current_tags.size > 0 %}
+  <div id="tag">
+    {% assign containerClass = 'column-layout-3' %}
+    {% assign showPagination = true %}
+    {% assign tag = current_tags.first %}
+    {% assign limit = 15 %}
+    {% assign paginate = 15 %}
+    {% include 'blog-posts-by-tag' %}
+  </div>
+{% else %}
 
-    <div class="posts splide">
-
-      <div class="splide__arrows">
-        <button class="splide__arrow splide__arrow--prev">
-          <img src="{{ 'blog_slider_arrow.svg' | asset_url }}" />
-        </button>
-        <button class="splide__arrow splide__arrow--next">
-          <img src="{{ 'blog_slider_arrow.svg' | asset_url }}" />
-        </button>
+  <div id="blog">
+    <section id="posts">
+      <div class="static-image-left">
+        <img class="desktop-only" src="{{ 'blog-seven-desktop.jpg' | asset_url }}" />
+        <img class="mobile-only" src="{{ 'blog-seven-mobile.jpg' | asset_url }}" />
       </div>
 
-      <div class="splide__track">
-        <ul class="splide__list">
-          {% assign the_seven_articles = blogs.blog.articles | sort: "title" %}
-          {% for article in the_seven_articles %}
-            {% if article.tags contains blogSticky1 or article.tags contains blogSticky2 or article.tags contains blogSticky3 %}
-            {% else %}
-              {% if article.tags contains 'the-seven' %}
-                <div class="splide__slide">
-                  <div class="post">
-                    <img alt="{{ article.img.alt }}" src="{{ article.image.src | img_url: '300x200' }}" />
-                    <div class="post-inner">
-                      <h3>{{ article.title }}</h3>
-                      <a class="read-more" href="{{ article.url }}"><span>Read more</span></a>
+      <div class="posts splide">
+
+        <div class="splide__arrows">
+          <button class="splide__arrow splide__arrow--prev">
+            <img src="{{ 'blog_slider_arrow.svg' | asset_url }}" />
+          </button>
+          <button class="splide__arrow splide__arrow--next">
+            <img src="{{ 'blog_slider_arrow.svg' | asset_url }}" />
+          </button>
+        </div>
+
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% assign the_seven_articles = blogs.blog.articles | sort: "title" %}
+            {% for article in the_seven_articles %}
+              {% if article.tags contains blogSticky1 or article.tags contains blogSticky2 or article.tags contains blogSticky3 %}
+              {% else %}
+                {% if article.tags contains 'the-seven' %}
+                  <div class="splide__slide">
+                    <div class="post">
+                      <img alt="{{ article.img.alt }}" src="{{ article.image.src | img_url: '300x200' }}" />
+                      <div class="post-inner">
+                        <h3>{{ article.title }}</h3>
+                        <a class="read-more" href="{{ article.url }}"><span>Read more</span></a>
+                      </div>
                     </div>
                   </div>
-                </div>
+                {% endif %}
               {% endif %}
-            {% endif %}
-          {% else %}
-            <span class="empty">{{ 'blogs.blog.empty' | t }}</span>
-          {% endfor %}
-        </ul>
+            {% else %}
+              <span class="empty">{{ 'blogs.blog.empty' | t }}</span>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="most-popular">
-    <h2>Most Popular</h2>
+    <section id="most-popular">
+      <h2>Most Popular</h2>
 
-    <div class="column-layout-3">
+      {% assign containerClass = 'column-layout-3' %}
       {% assign tag = 'popular' %}
       {% include 'blog-posts-by-tag' %}
-    </div>
 
-    <button class="call-to-action">All Articles</button>
-  </section>
+      <a href="/blogs/blog/tagged/all">
+        <button class="call-to-action">All Articles</button>
+      </a>
+    </section>
 
-  <section id="body">
-    <h2>Body</h2>
+    <section id="body">
+      <h2>Body</h2>
 
-    <div class="column-layout-3">
+      {% assign containerClass = 'column-layout-3' %}
       {% assign tag = 'body' %}
       {% include 'blog-posts-by-tag' %}
-    </div>
-  </section>
+    </section>
 
-  <section id="brain">
-    <h2>Brain</h2>
+    <section id="brain">
+      <h2>Brain</h2>
 
-    <div class="column-layout-3">
+      {% assign containerClass = 'column-layout-3' %}
       {% assign tag = 'brain' %}
       {% include 'blog-posts-by-tag' %}
-    </div>
-  </section>
+    </section>
 
-  <section id="nutrition">
-    <h2>Nutrition</h2>
+    <section id="nutrition">
+      <h2>Nutrition</h2>
 
-    <div class="column-layout-3">
+      {% assign containerClass = 'column-layout-3' %}
+
       {% assign tag = 'nutrition' %}
       {% include 'blog-posts-by-tag' %}
-    </div>
-  </section>
+    </section>
 
-  <section id="recipes">
-    <h2>Recipes</h2>
+    <section id="recipes">
+      <h2>Recipes</h2>
 
-    <div class="column-layout-3">
+      {% assign containerClass = 'column-layout-3' %}
       {% assign tag = 'recipes' %}
       {% include 'blog-posts-by-tag' %}
-    </div>
-  </section>
 
-  <section id="keto">
-    <h2>Keto</h2>
+    </section>
 
-    <div class="column-layout-3">
+    <section id="keto">
+      <h2>Keto</h2>
+
+      {% assign containerClass = 'column-layout-3' %}
       {% assign tag = 'keto' %}
       {% include 'blog-posts-by-tag' %}
-    </div>
-  </section>
+    </section>
 
-</div>
+  </div>
+
+{% endif %}
