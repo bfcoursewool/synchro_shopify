@@ -8668,6 +8668,7 @@ ul.sidebar-topic-section-list {
   .column-layout-3 {
     display: flex;
     flex-wrap: wrap;
+    max-width: 1260px;
 
     @media screen and (max-width: {{ mobileBreakpoint }}) {
       flex-direction: column;
@@ -8678,15 +8679,15 @@ ul.sidebar-topic-section-list {
     }
 
     & > div {
-      max-width: 400px;
-      padding: 0 15px 40px 15px;
+      width: 32%;
+      margin: 1%;
 
-      &:nth-child(3n+1) {
-        padding-left: 0;
+      &:nth-of-type(3n+1) {
+        margin-left: 0;
       }
 
-      &:nth-child(3n+3) {
-        padding-right: 0;
+      &:nth-of-type(3n+3) {
+        margin-right: 0;
       }
 
       @media screen and (max-width: {{ mobileBreakpoint }}) {
@@ -8695,10 +8696,6 @@ ul.sidebar-topic-section-list {
         &:last-child {
           margin-bottom: 0;
         }
-      }
-
-      &:last-child {
-        padding-right: 0;
       }
     }
   }
