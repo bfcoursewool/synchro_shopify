@@ -370,14 +370,14 @@
         if (splide.index > 0) {
           splide.root.classList.remove(hiddenClassnames.previous)
         } else {
-          // splide.root.classList.add(hiddenClassnames.previous)
+          splide.root.classList.add(hiddenClassnames.previous)
         }
 
         // hide next arrow on last slide
         if (splide.index === splide.length - 1) {
-          // splide.root.classList.add(hiddenClassnames.next)
+          splide.root.classList.add(hiddenClassnames.next)
         } else {
-          // splide.root.classList.remove(hiddenClassnames.next)
+          splide.root.classList.remove(hiddenClassnames.next)
         }
       })
 
