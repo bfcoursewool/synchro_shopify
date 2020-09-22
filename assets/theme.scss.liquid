@@ -8647,7 +8647,11 @@ ul.sidebar-topic-section-list {
         font-weight: 500;
         letter-spacing: 0;
         line-height: 23px;
-        text-decoration: underline;
+        text-decoration: none;
+
+        span {
+          border-bottom: 1px solid #448e7c;
+        }
       }
 
       p {
@@ -8740,10 +8744,6 @@ ul.sidebar-topic-section-list {
 
         .splide__list {
           display: flex;
-        }
-
-        .splide__arrow:disabled {
-
         }
 
         &.hide-previous-arrow {
@@ -8887,6 +8887,8 @@ ul.sidebar-topic-section-list {
       font-weight: 900;
       letter-spacing: 0;
       line-height: 45px;
+      margin-top: 0;
+      margin-bottom: 50px;
     }
   }
 
