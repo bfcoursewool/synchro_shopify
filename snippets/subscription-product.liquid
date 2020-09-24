@@ -245,7 +245,6 @@
         /*ALCHEMYTHEMESTYLEUPDATE*/
         /* Widget: Popup */
         div.rc_popup {
-            padding-left: 10px;
             display: inline-block;
         }
         div.rc_popup__hover,
@@ -255,6 +254,7 @@
             clear: both;
             cursor: pointer;
             line-height: 61px;
+            padding-left: 10px;
         }
         img.rc_popup__icon {
             vertical-align: middle;
@@ -275,7 +275,7 @@
             div.rc_popup__hover:hover .rc_popup__popup,
             div.rc_popup__popup:hover {
                 display: block;
-                padding: 30px;
+                padding: 30px 30px 15px;
             }
         {% endif %}
         div.rc_popup__hover--mobile div.rc_popup__popup:hover {
@@ -306,14 +306,15 @@
           font-size: 18px;
         }
         div.rc_popup__popup__content a {
-            text-decoration: none;
+            display: none;
+            /* text-decoration: none;
             color: #319E9E;
             font-weight: 500;
             font-size: 16px;
             border: 2px solid #319e9f;
             padding: 6px 20px;
             border-radius: 4px;
-            display: inline-block;
+            display: inline-block; */
         }
         div.rc_popup__popup__footer {
             padding: 0;

@@ -1235,57 +1235,57 @@ iframe {
   }
 
   .rte .tabs {
-    display: block;
-    width: 100%;
-    list-style: none;
+    width: 200px;
+    float: left;
     padding: 0;
-    margin-top: 30px;
-    margin-bottom: 0;
-    font-size: 0;
+    margin: 20px 15px 0 0;
+
+    @include breakpoint(s) {
+      width: 100%;
+    }
 
     li {
-      display: inline-block;
-      font-size: 14px;
-      padding: 0 10px;
-      line-height: 24px;
-      margin: 0 10px 10px 0;
-      background: #e6e6e5;
-      border-radius: 20px;
+      display: block;
+      font-size: 18px;
+      padding: 13px 0;
+      line-height: normal;
+      margin: 0 0 15px;
+      background: #FAFAFA;
+      border-radius: 4px;
       cursor: pointer;
-      text-transform: uppercase;
       font-weight: 600;
       -webkit-font-smoothing: antialiased;
-      letter-spacing: 0.8px;
-      opacity: 0.8;
       transition: all 0.3s;
+      text-align: center;
       @include breakpoint(s) {
-        font-size: 13px;
+        font-size: 16px;
+        display: inline-block;
+        padding: 8px 14px;
+        margin: 0 3px 10px;
       }
 
-      &:hover {}
-
       &.active {
-        background: #000000;
+        background: #319E9E;
         color: white;
-        opacity: 1;
       }
     }
   }
 
   .rte .tabs-content {
-    display: block;
-    width: 100%;
-    height: auto;
-    position: relative;
-    list-style: none;
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 30px;
+    width: auto;
+    padding: 10px 40px;
     overflow: hidden;
+    background: #fafafa;
+    max-width: none;
+    margin: 40px 0 0;
+    text-align: left;
+    @include breakpoint(s) {
+      padding: 0 20px;
+    }
 
     > li {
       display: none;
-      margin: 30px 0 20px;
+      margin: 0;
 
       &.active { display: block; }
     }
@@ -5923,11 +5923,6 @@ iframe {
 
     .template-product {
 
-
-      .main-content {
-        font-size: 0;
-      }
-
       .page-title {
         @include breakpoint(s) {
           margin-bottom: $gutter;
@@ -5959,10 +5954,8 @@ iframe {
     }
 
     .product-slideshow, .product-wrap {
-      display: inline-block;
-      vertical-align: top;
+      display: table-cell;
       width: 50%;
-      font-size: 18px;
 
       @include breakpoint(s) {
         display: block;
@@ -6315,11 +6308,23 @@ iframe {
     }
 
     .product-description {
-      margin-top: $gutter;
+      padding-top: 40px;
+      text-align: center;
+
+      @include breakpoint(s) {
+        margin-top: 30px;
+      }
+
+      p,
+      h2,
+      h3 {
+        max-width: 800px;
+      }
 
       h2 {
         font-size: 26px;
         font-weight: 600;
+        text-align: center;
       }
 
       h2,

@@ -89,14 +89,6 @@
   {% endcomment %}
 {% endif %}
 
-
-
-{% if product.description.size > 0 %}
-  <div class="product-description rte" itemprop="description">
-    {{ product.description }}
-  </div>
-{% endif %}
-
 {% if settings.product-show-info-link-1 or settings.product-show-info-link-2 %}
   <div class="product-more-info">
     {% if settings.product-show-info-link-1 %}
@@ -122,3 +114,9 @@
 {% endif %}
 
 </div>
+
+{% if product.description.size > 0 %}
+  <div class="product-description rte" itemprop="description">
+    {{ product.description }}
+  </div>
+{% endif %}
