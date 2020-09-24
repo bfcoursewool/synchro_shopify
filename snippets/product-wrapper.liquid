@@ -115,6 +115,14 @@
 
 </div>
 
+{% if product.images.size > 0 %}
+<div class="product-thumbnails desktop" {% if product.images.size < 2 %}style="display: none;"{% endif %}>
+  {% for image in product.images %}
+    <img alt="{{ image.alt }}" data-high-res="{{ image | product_img_url: 'master' }}" src="{{ image | product_img_url: 'master' }}" class="{% if image == featured_image %}active{% endif %}">
+  {% endfor %}
+</div>
+{% endif %}
+
 {% if product.description.size > 0 %}
   <div class="product-description rte" itemprop="description">
     {{ product.description }}

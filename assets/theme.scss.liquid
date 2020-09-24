@@ -933,9 +933,9 @@ body {
   }
 
   &.disabled {
-    background: $disabledButtonBackground;
-    color: $disabledButtonColor;
-    opacity: 1; /* fix for iOS */
+    // background: $disabledButtonBackground;
+    // color: $disabledButtonColor;
+    opacity: 0.5; /* fix for iOS */
   }
 }
 
@@ -1056,6 +1056,7 @@ input[type=submit] {
   width: 100%;
   font-size: 18px;
   line-height: normal;
+  margin-bottom: 14px;
 
   &:after {
     color: $formSelectColor;
@@ -6029,9 +6030,28 @@ iframe {
     }
 
     .product-thumbnails {
-      margin: 20px 0 10px;
+      margin: 40px 0 0;
       text-align: center;
       font-size: 0;
+      padding: 10px 0;
+      border-top: 1px solid #f4f4f5;
+      border-bottom: 1px solid #f4f4f5;
+
+      &.mobile {
+        display: none;
+      }
+
+      @include breakpoint(s) {
+        margin: 20px 0;
+
+        &.desktop {
+          display: none;
+        }
+
+        &.mobile {
+          display: block;
+        }
+      }
 
       &.hidden {
         visibility: hidden;
@@ -6039,22 +6059,12 @@ iframe {
 
       img {
         display: inline-block;
-        vertical-align: top;
-        margin: 1px 6px 20px;
-        padding: 2px;
+        margin: 10px 1%;
         cursor: pointer;
+        width: 12%;
 
         &.active {
-          border: 1px solid $borderColor;
-          margin: 0 5px 20px;
-        }
-
-        @include breakpoint(s) {
-          margin: 1px 3px 10px;
-
-          &.active {
-            margin: 0 2px 20px;
-          }
+          border: 1px solid #fff;
         }
       }
     }
@@ -6310,10 +6320,6 @@ iframe {
     .product-description {
       padding-top: 40px;
       text-align: center;
-
-      @include breakpoint(s) {
-        margin-top: 30px;
-      }
 
       p,
       h2,
