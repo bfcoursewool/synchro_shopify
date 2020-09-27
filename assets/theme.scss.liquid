@@ -8619,6 +8619,25 @@ ul.sidebar-topic-section-list {
   }
 }
 
+.futura-pt-medium {
+  font-family: futura-pt, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.futura-pt-heavy {
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.futura-pt-demi {
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
 #blog {
 
   .post {
@@ -8628,11 +8647,10 @@ ul.sidebar-topic-section-list {
     }
 
     h3 {
-      font-family: futura-pt, sans-serif;
       font-size: 22px;
-      font-weight: 500;
       letter-spacing: 0;
       line-height: 29px;
+      @extend .futura-pt-demi;
     }
 
     .post-inner {
@@ -8642,9 +8660,7 @@ ul.sidebar-topic-section-list {
 
       a.read-more {
         color: #447E7C;
-        font-family: futura-pt, sans-serif;
         font-size: 18px;
-        font-weight: 500;
         letter-spacing: 0;
         line-height: 23px;
         text-decoration: none;
@@ -8652,15 +8668,16 @@ ul.sidebar-topic-section-list {
         span {
           border-bottom: 1px solid #448e7c;
         }
+
+        @extend .futura-pt-medium;
       }
 
       p {
         color: #666666;
-        font-family: futura-pt, sans-serif;
         font-size: 18px;
-        font-weight: 500;
         letter-spacing: 0;
         line-height: 27px;
+        @extend .futura-pt-medium;
       }
     }
   }
@@ -8817,11 +8834,11 @@ ul.sidebar-topic-section-list {
             h3 {
               color: #000000;
               font-size: 20px;
-              font-weight: 500;
               letter-spacing: 0;
               line-height: 26px;
               width: 100%;
               margin-top: 0;
+              @extend .futura-pt-demi;
             }
           }
         }
@@ -8842,14 +8859,13 @@ ul.sidebar-topic-section-list {
         border-radius: 6px;
         background-color: #FFFFFF;
         color: #000000;
-        font-family: futura-pt, sans-serif;
         font-size: 18px;
-        font-weight: 500;
         letter-spacing: 0;
         line-height: 23px;
         text-align: center;
         display: block;
         margin: 69px auto 0 auto;
+        @extend .futura-pt-demi;
       }
     }
 
@@ -8888,13 +8904,13 @@ ul.sidebar-topic-section-list {
       text-align: center;
       width: 100%;
       color: #000000;
-      font-family: futura-pt, sans-serif;
       font-size: 35px;
-      font-weight: 900;
       letter-spacing: 0;
       line-height: 45px;
       margin-top: 0;
       margin-bottom: 50px;
+
+      @extend .futura-pt-heavy;
     }
   }
 
