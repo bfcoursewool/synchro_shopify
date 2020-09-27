@@ -8672,22 +8672,31 @@ ul.sidebar-topic-section-list {
 
     @media screen and (max-width: {{ mobileBreakpoint }}) {
       flex-direction: column;
+      align-items: center;
     }
 
     @media screen and (min-width: {{ mobileBreakpoint }}) {
       flex-direction: row;
     }
 
+    @media screen and (max-width: 1260px) and (min-width: {{ mobileBreakpoint }}) {
+      padding: 0 20px;
+    }
+
     & > div {
-      width: 32%;
-      margin: 1%;
+      max-width: 400px;
 
-      &:nth-of-type(3n+1) {
-        margin-left: 0;
-      }
+      @media screen and (min-width: {{ mobileBreakpoint }}) {
+        width: 32%;
+        margin: 1%;
 
-      &:nth-of-type(3n+3) {
-        margin-right: 0;
+        &:nth-of-type(3n+1) {
+          margin-left: 0;
+        }
+
+        &:nth-of-type(3n+3) {
+          margin-right: 0;
+        }
       }
 
       @media screen and (max-width: {{ mobileBreakpoint }}) {
