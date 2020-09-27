@@ -53,10 +53,13 @@
       </div>
     </section>
 
+    {% comment %}limit and containerClass are used for all of the sections{% endcomment %}
+    {% assign limit = 3 %}
+    {% assign containerClass = 'column-layout-3' %}
+
     <section id="most-popular">
       <h2>Most Popular</h2>
 
-      {% assign containerClass = 'column-layout-3' %}
       {% assign tag = 'popular' %}
       {% include 'blog-posts-by-tag' %}
 
@@ -68,7 +71,6 @@
     <section id="body">
       <h2>Body</h2>
 
-      {% assign containerClass = 'column-layout-3' %}
       {% assign tag = 'body' %}
       {% include 'blog-posts-by-tag' %}
     </section>
@@ -76,15 +78,12 @@
     <section id="brain">
       <h2>Brain</h2>
 
-      {% assign containerClass = 'column-layout-3' %}
       {% assign tag = 'brain' %}
       {% include 'blog-posts-by-tag' %}
     </section>
 
     <section id="nutrition">
       <h2>Nutrition</h2>
-
-      {% assign containerClass = 'column-layout-3' %}
 
       {% assign tag = 'nutrition' %}
       {% include 'blog-posts-by-tag' %}
@@ -93,7 +92,6 @@
     <section id="recipes">
       <h2>Recipes</h2>
 
-      {% assign containerClass = 'column-layout-3' %}
       {% assign tag = 'recipes' %}
       {% include 'blog-posts-by-tag' %}
 
@@ -102,7 +100,6 @@
     <section id="keto">
       <h2>Keto</h2>
 
-      {% assign containerClass = 'column-layout-3' %}
       {% assign tag = 'keto' %}
       {% include 'blog-posts-by-tag' %}
     </section>
