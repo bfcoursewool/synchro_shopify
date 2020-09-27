@@ -10,7 +10,7 @@
 {% assign selectedVariant = product.selected_or_first_available_variant | default: product %}
 <div itemscope itemtype="http://schema.org/Product">
  <!-- <h1 class="page-title test" itemprop="name">{{ product.title }}</h1> -->
-  <div class="product-details mobile">
+  <!-- <div class="product-details mobile">
     {% if settings.product-display-vendor %}
       <p class="meta vendor">{{ product.vendor }}</p>
     {% endif %}
@@ -53,7 +53,7 @@
           </span>
       </span>
     </p>
-  </div>
+  </div> -->
   {% assign featured_image = selectedVariant.featured_image | default: product.featured_image %}
   <div class="product-slideshow clearfix">
     <div class="product-big-image" data-no-image-svg="{{ 'no-image.svg' | asset_url }}" data-no-image-png="{{ 'no-image.png' | asset_url }}">
@@ -66,7 +66,7 @@
       {% if settings.product-enable-zoom %}<div class="product-image-zoom"></div>{% endif %}
     </div>
     {% if product.images.size > 0 %}
-    <div class="product-thumbnails" {% if product.images.size < 2 %}style="display: none;"{% endif %}>
+    <div class="product-thumbnails mobile" {% if product.images.size < 2 %}style="display: none;"{% endif %}>
       {% for image in product.images %}
         <img alt="{{ image.alt }}" data-high-res="{{ image | product_img_url: 'master' }}" src="{{ image | product_img_url: 'thumb' }}" class="{% if image == featured_image %}active{% endif %}">
       {% endfor %}
