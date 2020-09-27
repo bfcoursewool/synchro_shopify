@@ -8658,6 +8658,12 @@ ul.sidebar-topic-section-list {
       flex-direction: column;
       text-align: center;
 
+      @media screen and (max-width: {{ mobileBreakpoint }}) {
+        p {
+          display: none;
+        }
+      }
+
       a.read-more {
         color: #447E7C;
         font-size: 18px;
