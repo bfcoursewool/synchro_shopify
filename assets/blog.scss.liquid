@@ -93,6 +93,7 @@ $xlBreakpoint: '1281px';
 
   .post {
     width: 100%;
+    margin-bottom: 25px;
 
     img {
       width: 100%;
@@ -103,6 +104,7 @@ $xlBreakpoint: '1281px';
       font-size: 22px;
       letter-spacing: 0;
       line-height: 29px;
+      margin-top: 0;
       @extend .futura-pt-demi;
     }
 
@@ -110,6 +112,7 @@ $xlBreakpoint: '1281px';
       display: flex;
       flex-direction: column;
       text-align: center;
+      padding: 15px 0;
 
       @media screen and (max-width: {{ mobileBreakpoint }}) {
         p {
@@ -142,12 +145,23 @@ $xlBreakpoint: '1281px';
   }
 
   section {
-    padding-top: 60px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
+
+    padding-top: 60px;
+
+    @media screen and (max-width: {{ mobileBreakpoint }}) {
+      padding-top: 30px;
+      padding-bottom: 25px;
+
+      .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
 
     &:not(:first-child) {
       > * {
@@ -220,10 +234,18 @@ $xlBreakpoint: '1281px';
 
           &.splide__arrow--next {
             right: 40px;
+
+            @media screen and (max-width: {{ mobileBreakpoint }}) {
+              right: 15px;
+            }
           }
 
           &.splide__arrow--prev {
             left: 40px;
+
+            @media screen and (max-width: {{ mobileBreakpoint }}) {
+              left: 15px;
+            }
 
             img {
               -webkit-transform: scaleX(-1);
@@ -243,6 +265,7 @@ $xlBreakpoint: '1281px';
           box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.1);
           display: flex;
           flex-direction: column;
+          margin-bottom: 0;
 
           img {
             width: 100%;
@@ -268,7 +291,6 @@ $xlBreakpoint: '1281px';
               letter-spacing: 0;
               line-height: 26px;
               width: 100%;
-              margin-top: 0;
               @extend .futura-pt-demi;
             }
           }
@@ -286,55 +308,92 @@ $xlBreakpoint: '1281px';
     // most popular
     &:nth-child(2) {
       background-color: #F9F6F2;
-      padding-bottom: 50px;
+
+      @media screen and (min-width: {{ mobileBreakpoint }}) {
+        padding-bottom: 50px;
+      }
+
 
       .blog-post {
         background: transparent;
       }
 
-      button.call-to-action {
-        border: 3px solid #000000;
-        border-radius: 6px;
-        background-color: #FFFFFF;
-        color: #000000;
-        font-size: 18px;
-        letter-spacing: 0;
-        line-height: 23px;
-        text-align: center;
+      .call-to-action {
+        width: 100%;
         display: block;
-        margin: 69px auto 0 auto;
-        @extend .futura-pt-demi;
+
+        @media screen and (max-width: {{ mobileBreakpoint }}) {
+          padding: 0 10%;
+        }
+
+        a {
+          border: 3px solid #000000;
+          border-radius: 6px;
+          background-color: #FFFFFF;
+          color: #000000;
+          font-size: 18px;
+          letter-spacing: 0;
+          line-height: 23px;
+          text-align: center;
+          display: block;
+
+          margin: 69px auto 0 auto;
+
+          @media screen and (max-width: {{ mobileBreakpoint }}) {
+            margin: 0;
+            width: 100%;
+            padding: 14px;
+            display: block;
+          }
+
+          @extend .futura-pt-demi;
+        }
       }
     }
 
     // body
     &:nth-child(3) {
       background-color: #FFFFFF;
-      padding-bottom: 60px;
+
+      @media screen and (min-width: {{ mobileBreakpoint }}) {
+        padding-bottom: 60px;
+      }
     }
 
     // brain
     &:nth-child(4) {
       background-color: #FAFAFA;
-      padding-bottom: 89px;
+
+      @media screen and (min-width: {{ mobileBreakpoint }}) {
+        padding-bottom: 89px;
+      }
     }
 
     // nutrition
     &:nth-child(5) {
       background-color: #FFFFFF;
-      padding-bottom: 60px;
+
+      @media screen and (min-width: {{ mobileBreakpoint }}) {
+        padding-bottom: 60px;
+      }
     }
 
     // recipes
     &:nth-child(6) {
       background-color: #FAFAFA;
-      padding-bottom: 89px;
+
+      @media screen and (min-width: {{ mobileBreakpoint }}) {
+        padding-bottom: 89px;
+      }
     }
 
     //keto
     &:nth-child(7) {
       background-color: #FFFFFF;
-      padding-bottom: 60px;
+
+      @media screen and (min-width: {{ mobileBreakpoint }}) {
+        padding-bottom: 60px;
+      }
     }
 
     h2 {
@@ -342,11 +401,17 @@ $xlBreakpoint: '1281px';
       text-align: center;
       width: 100%;
       color: #000000;
-      font-size: 35px;
       letter-spacing: 0;
       line-height: 45px;
       margin-top: 0;
+
+      font-size: 35px;
       margin-bottom: 50px;
+
+      @media screen and (max-width: {{ mobileBreakpoint }}) {
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
 
       @extend .futura-pt-heavy;
     }
