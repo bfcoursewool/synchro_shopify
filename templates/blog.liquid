@@ -53,9 +53,10 @@
       </div>
     </section>
 
-    {% comment %}limit and containerClass are used for all of the sections{% endcomment %}
+    {% comment %}limit is used for all of the sections{% endcomment %}
     {% assign limit = 3 %}
-    {% assign containerClass = 'column-layout-3' %}
+    {% assign containerClass = 'row center-xs' %}
+    {% assign itemClass = 'post col-sm-4' %}
 
     <section id="most-popular">
       <h2>Most Popular</h2>
@@ -67,6 +68,9 @@
         <button class="call-to-action">All Articles</button>
       </a>
     </section>
+
+    {% assign containerClass = 'row center-xs' %}
+    {% assign itemClass = 'post col-lg-4 col-md-4 col-sm-6' %}
 
     <section id="body">
       <h2>Body</h2>

@@ -92,6 +92,8 @@ $xlBreakpoint: '1281px';
 #blog {
 
   .post {
+    width: 100%;
+
     img {
       width: 100%;
       height: auto;
@@ -139,50 +141,6 @@ $xlBreakpoint: '1281px';
     }
   }
 
-  .column-layout-3 {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1260px;
-
-    @media screen and (max-width: {{ mobileBreakpoint }}) {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    @media screen and (min-width: {{ mobileBreakpoint }}) {
-      flex-direction: row;
-    }
-
-    @media screen and (max-width: 1260px) and (min-width: {{ mobileBreakpoint }}) {
-      padding: 0 20px;
-    }
-
-    & > div {
-      max-width: 400px;
-
-      @media screen and (min-width: {{ mobileBreakpoint }}) {
-        width: 32%;
-        margin: 1%;
-
-        &:nth-of-type(3n+1) {
-          margin-left: 0;
-        }
-
-        &:nth-of-type(3n+3) {
-          margin-right: 0;
-        }
-      }
-
-      @media screen and (max-width: {{ mobileBreakpoint }}) {
-        margin-bottom: 40px;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-
   section {
     padding-top: 60px;
     width: 100%;
@@ -190,6 +148,22 @@ $xlBreakpoint: '1281px';
     flex-direction: column;
     align-items: center;
     align-content: center;
+
+    &:not(:first-child) {
+      > * {
+        max-width: 1280px;
+        padding: 0 20px;
+      }
+    }
+
+    // hide the 3rd post in all sections but the first and second on mobile
+    @media screen and (max-width: 1024px) {
+      &:nth-child(n+3) {
+        .post:nth-child(2) {
+          display: none;
+        }
+      }
+    }
 
     // posts
     &:nth-child(1) {
@@ -215,8 +189,8 @@ $xlBreakpoint: '1281px';
       .posts {
         display: block;
         position: relative;
-        padding: 40px 0;
         overflow: hidden;
+        padding: 20px 0;
 
         .splide__track {
           overflow: visible;
@@ -298,6 +272,13 @@ $xlBreakpoint: '1281px';
               @extend .futura-pt-demi;
             }
           }
+        }
+      }
+
+      // some overrides for larger screens
+      @media screen and (min-width: {{ mobileBreakpoint }}) {
+        .posts {
+          padding: 40px 0;
         }
       }
     }
