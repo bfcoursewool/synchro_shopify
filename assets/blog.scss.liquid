@@ -156,11 +156,6 @@ $xlBreakpoint: '1281px';
     @media screen and (max-width: {{ mobileBreakpoint }}) {
       padding-top: 30px;
       padding-bottom: 25px;
-
-      .row {
-        margin-left: 0;
-        margin-right: 0;
-      }
     }
 
     &:not(:first-child) {
@@ -313,6 +308,12 @@ $xlBreakpoint: '1281px';
         padding-bottom: 50px;
       }
 
+      @media screen and (max-width: {{ mobileBreakpoint }}) {
+        .row {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
 
       .blog-post {
         background: transparent;
@@ -321,6 +322,7 @@ $xlBreakpoint: '1281px';
       .call-to-action {
         width: 100%;
         display: block;
+        text-align: center;
 
         @media screen and (max-width: {{ mobileBreakpoint }}) {
           padding: 0 10%;
@@ -335,8 +337,7 @@ $xlBreakpoint: '1281px';
           letter-spacing: 0;
           line-height: 23px;
           text-align: center;
-          display: block;
-
+          padding: 13px 30px;
           margin: 69px auto 0 auto;
 
           @media screen and (max-width: {{ mobileBreakpoint }}) {
