@@ -1,35 +1,13 @@
-$sBreakpoint: '720px';
-$mBreakpoint: '1020px';
-$lBreakpoint: '1280px';
-$xlBreakpoint: '1281px';
-
-/* TODO: move mixins to separate file so they can be shared, the mixin below is a duplicate declaration */
-@mixin breakpoint($point) {
-  @if $point == xl {
-    @media (min-width: $xlBreakpoint) {
-      @content;
-    }
-  } @else if $point == l {
-    @media (max-width: $lBreakpoint) {
-      @content;
-    }
-  } @else if $point == m {
-    @media (max-width: $mBreakpoint) {
-      @content;
-    }
-  } @else if $point == s {
-    @media (max-width: $sBreakpoint) {
-      @content;
-    }
-  }
-}
-
-{% assign mobileBreakpoint = '720px' %}
+{% assign mobileBreakpoint = '768px' %}
 
 #tag {
-  padding-top: 40px;
   max-width: 1260px;
   margin: 0 auto;
+
+  padding: 40px 40px 0 40px;
+  @media screen and (max-width: {{ mobileBreakpoint }}) {
+    padding: 20px 20px 0 20px;
+  }
 
   .post:first-child {
     margin-left: 0;
@@ -41,20 +19,38 @@ $xlBreakpoint: '1281px';
 
   .pagination {
     display: block;
-    margin-top: 40px;
     width: 100%;
     max-width: 100%;
     overflow: hidden;
 
-    > *:first-child {
-      float: left;
+    @media screen and (min-width: {{ mobileBreakpoint }}) {
+      margin-top: 40px;
+
+      > *:first-child {
+        float: left;
+      }
+
+      > *:last-child {
+        float: right;
+      }
     }
 
-    > *:last-child {
-      float: right;
+    @media screen and (max-width: {{ mobileBreakpoint }}) {
+      padding-top: 0;
+      text-align: center;
+
+      > a + a {
+        margin-left: 15px;
+      }
+
+      a {
+        display: inline-block !important;
+        width: auto;
+      }
     }
 
-    button {
+
+    a {
       border: 3px solid #000000;
       border-radius: 6px;
       background-color: #FFFFFF;
@@ -66,6 +62,7 @@ $xlBreakpoint: '1281px';
       line-height: 23px;
       text-align: center;
       display: block;
+      padding: 13px 30px;
     }
   }
 }
@@ -90,6 +87,10 @@ $xlBreakpoint: '1281px';
 
 
 #blog {
+
+  a.disabled {
+    opacity: .7;
+  }
 
   .post {
     width: 100%;

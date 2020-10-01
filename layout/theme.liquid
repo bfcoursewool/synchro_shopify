@@ -73,9 +73,9 @@
 
   <!-- Blog CSS -->
   {% if template contains "blog" %}
-    {{ 'blog.scss.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"
           type="text/css">
+    {{ 'blog.scss.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="https://use.typekit.net/rjy2euv.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
   {% endif %}

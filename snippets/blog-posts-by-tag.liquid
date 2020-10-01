@@ -30,18 +30,27 @@
   </div>
 
   <div class="pagination">
-    {% if paginate.previous %}
-      <a href="{{ paginate.previous.url }}">
-        <button>Previous</button>
-      </a>
-    {% endif %}
-    {% if paginate.next %}
-      <a href="{{ paginate.next.url }}">
-        <button>
-          Next
-        </button>
-      </a>
-    {% endif %}
+    <a
+      {% if paginate.next.is_link %}
+        href="{{ paginate.previous.url }}"
+      {% else %}
+        class="disabled"
+        disabled
+      {% endif %}
+    >
+      Previous
+    </a>
+
+    <a
+      {% if paginate.next.is_link %}
+        href="{{ paginate.next.url }}"
+      {% else %}
+        class="disabled"
+        disabled
+      {% endif %}
+    >
+      Next
+    </a>
   </div>
 
 {% endpaginate %}
