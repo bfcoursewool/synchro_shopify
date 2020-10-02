@@ -32,18 +32,18 @@
  </div>
 
 {% if product.available %}
-  <form action="/cart/add" method="post" class="clearfix product_form" data-money-format="{{ shop.money_format }}" data-shop-currency="{{ shop.currency }}" data-productid="{{product.id}}" id="product-form-{{ product.id }}">
+  <form action="/cart/add" data-productid="{{ product.id }}" method="post" class="clearfix product_form" data-money-format="{{ shop.money_format }}" data-shop-currency="{{ shop.currency }}" data-productid="{{product.id}}" id="product-form-{{ product.id }}">
 
     {% if product.variants.size > 1 %}
       <div class="product-options">
-        <select name="id" data-productid="{{product.id}}" id="product-select" class="product-select" aria-label="Variant">
+        <select name="id" data-productid="{{ product.id }}" data-productid="{{product.id}}" id="product-select" class="product-select" aria-label="Variant">
           {% for variant in product.variants %}
             <option {% if variant == selectedVariant %} selected="selected" {% endif %} value="{{ variant.id }}" data-sku="{{ variant.sku }}">{{ variant.title }} - {{ variant.price | money }}</option>
           {% endfor %}
         </select>
       </div>
     {% else %}
-      <input type="hidden" name="id" data-productid="{{product.id}}" class="product-select" value="{{ product.variants[0].id }}" data-variant-title="{{ product.variants[0].title }}" />
+      <input type="hidden" name="id" data-productid="{{ product.id }}" data-productid="{{product.id}}" class="product-select" value="{{ product.variants[0].id }}" data-variant-title="{{ product.variants[0].title }}" />
     {% endif %}
 
     {% include "subscription-product" %}

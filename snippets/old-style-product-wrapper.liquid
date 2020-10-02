@@ -35,19 +35,19 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
 
 
       
-    <form class="product-form" id="product-form" action="/cart/add" data-productid="{{product.id}}"  method="post"> 
+    <form class="product-form" id="product-form" action="/cart/add" data-productid="{{ product.id }}" data-productid="{{product.id}}"  method="post"> 
  {% assign subscriptionTemplate = "subscription-product" %}    
  {% if product.available %}{% include subscriptionTemplate %}{% endif %} 
       {% if product.variants.size > 1 %}
         <div class="product-options">
-          <select name="id" data-productid="{{product.id}}" id="product-select" class="product-select">
+          <select name="id" data-productid="{{ product.id }}" data-productid="{{product.id}}" id="product-select" class="product-select">
             {% for variant in product.variants %}
               <option {% if variant == selectedVariant %} selected="selected" {% endif %} value="{{ variant.id }}" data-sku="{{ variant.sku }}">{{ variant.title }} - {{ variant.price | money }}</option>
             {% endfor %}
           </select>
         </div>
       {% else %}
-        <input type="hidden" name="id" data-productid="{{product.id}}" class="product-select" value="{{ product.variants[0].id }}" data-variant-title="{{ product.variants[0].title }}" />
+        <input type="hidden" name="id" data-productid="{{ product.id }}" data-productid="{{product.id}}" class="product-select" value="{{ product.variants[0].id }}" data-variant-title="{{ product.variants[0].title }}" />
       {% endif %}
 
       <div class="input-wrapper product-quantity">
