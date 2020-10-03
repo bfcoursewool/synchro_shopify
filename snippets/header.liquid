@@ -157,6 +157,11 @@
                     {% endif %}
                     <div class="cart_item_details">
                       <div class="item_title">{{ item.title }}</div>
+                      <span class="original price">
+                        {% if item.variant.compare_at_price > item.variant.price %}
+                          {{ item.variant.compare_at_price | money }}
+                        {% endif %}
+                      </span>
                       <strong class="price">{{ item.price | money }}</strong>
                     </div>
                   </a>

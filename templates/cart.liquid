@@ -39,7 +39,14 @@
                 <a class="cart-item-remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">{{ 'general.general.remove' | t }}</a>
               </div>
             </td>
-            <td class="cart-item-price"><span class="money">{{ item.price | money }}</span></td>
+            <td class="cart-item-price">
+              <span class="original money">
+                {% if item.variant.compare_at_price > item.variant.price %}
+                  {{ item.variant.compare_at_price | money }}
+                {% endif %}
+              </span>
+              <span class="money">{{ item.price | money }}</span>
+            </td>
             <td class="cart-item-quantity" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}data-max="{{ item.variant.inventory_quantity }}"{% endunless %}>
               <input type="text" name="updates[]" class="cart-item-quantity-display" value="{{ item.quantity }}" size="1">
               <span class="cart-item-decrease icon">&#57364;</span>

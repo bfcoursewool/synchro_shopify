@@ -4263,6 +4263,11 @@ iframe {
             text-align: center;
           }
         }
+        .cart-item-price .original {
+          text-decoration: line-through;
+          opacity: 0.5;
+          margin-right: 5px;
+        }
       }
 
       .cart-item-price:before, .cart-item-quantity:before, .cart-item-total:before {
@@ -4364,6 +4369,10 @@ iframe {
         text-align: right;
         width: 40%;
         padding-left: $gutter;
+
+        .secondary {
+          margin-bottom: 10px;
+        }
 
         @include breakpoint(s) {
           width: 100%;
