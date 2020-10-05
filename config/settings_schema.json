@@ -1515,6 +1515,60 @@
       },
       {
         "type": "header",
+        "content": "Top Sticky Bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "show-top-bar",
+        "label": "Show Sticky Top Bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "show-top-bar-timer-desktop",
+        "label": "Show Timer CTA (Desktop)"
+      },
+      {
+        "type": "text",
+        "id": "top-bar-copy-desktop",
+        "label": "Bar Copy (Desktop)"
+      },
+      {
+        "type": "text",
+        "id": "top-bar-cta-desktop",
+        "label": "Bar CTA (Desktop)"
+      },
+      {
+        "type": "text",
+        "id": "top-bar-copy-mobile",
+        "label": "Bar Copy (Mobile)"
+      },
+      {
+        "type": "text",
+        "id": "top-bar-cta-mobile",
+        "label": "Bar CTA (Mobile)"
+      },
+      {
+        "type": "color",
+        "id": "top-bar-color",
+        "label": "Bar Color"
+      },
+      {
+        "type": "color",
+        "id": "top-bar-font",
+        "label": "Bar Font Color"
+      },
+      {
+        "type": "color",
+        "id": "top-bar-cta-color",
+        "label": "Bar CTA Color"
+      },
+      {
+        "type": "color",
+        "id": "top-bar-cta-font",
+        "label": "Bar CTA Font Color"
+      },
+      {
+        "type": "header",
         "content": "Breadcrumbs"
       },
       {
@@ -3842,6 +3896,30 @@
             "label": "50"
           }
         ]
+      },
+      {
+        "type": "header",
+        "content": "Banner"
+      },
+      {
+        "type": "checkbox",
+        "id": "show-collection-banner",
+        "label": "Display Collection Banner"
+      },
+      {
+        "type": "image",
+        "id": "collection-banner-desktop",
+        "label": "Image URL (Desktop)"
+      },
+      {
+        "type": "image",
+        "id": "collection-banner-mobile",
+        "label": "Image URL (Mobile)"
+      },
+      {
+        "type": "text",
+        "id": "collection-banner-alt",
+        "label": "Image Alt"
       },
       {
         "type": "header",

@@ -112,6 +112,7 @@
     "top-bar-font": "#fff",
     "top-bar-cta-color": "#fff",
     "top-bar-cta-font": "#a26620",
+    "show-top-bar-timer-desktop": true,
     "top-bar-copy-desktop": "Fall Sale • Up to 27% Off",
     "top-bar-cta-desktop": "",
     "top-bar-copy-mobile": "Sale • Up to 27% Off",

@@ -299,7 +299,7 @@
         <span class="flash-sale-banner__mobile">{{settings.top-bar-copy-mobile}}</span>
       </p>
       <button class="a--cta">
-        <span class="flash-sale-banner__desktop">Ends in <span id="timer"></span>{{settings.top-bar-cta-desktop}}</span>
+        <span class="flash-sale-banner__desktop">{% if settings.show-top-bar-timer-desktop %}Ends in <span id="timer"></span>{% endif %}{{settings.top-bar-cta-desktop}}</span>
         <span class="flash-sale-banner__mobile">{{settings.top-bar-cta-mobile}}</span>
       </button>
     </a>
