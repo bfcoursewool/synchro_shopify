@@ -7607,7 +7607,7 @@ iframe {
   left: 0;
   right: 0;
   text-align: center;
-  background: #71B8C4;
+  background: {{ settings.top-bar-color }};
   z-index: 100;
   padding: 0 5px;
   @include breakpoint(s) {
@@ -7630,20 +7630,16 @@ iframe {
       visibility: hidden;
       position: relative;
       top: 0;
-      height: 114px;
     }
   }
 
   .flash-sale-banner__text {
     display: inline-block;
-    color: #fff;
-    margin: 0 3px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    font-size: 16px;
+    color: {{ settings.top-bar-font }};
+    margin: 0 5px;
+    font-weight: 500;
+    font-size: 18px;
     vertical-align: middle;
-    -webkit-font-smoothing: antialiased;
   }
 
   .flash-sale-banner__desktop {
@@ -7665,14 +7661,15 @@ iframe {
 
   .a--cta {
     height: 30px;
-    margin: 7px 3px;
+    margin: 7px 5px;
     vertical-align: middle;
     line-height: 30px;
-    padding: 0 10px;
-    background: #ffffff;
-    color: #000000;
+    padding: 0 15px;
+    font-size: 18px;
+    background: {{ settings.top-bar-cta-color }};
+    color: {{ settings.top-bar-cta-font }};
     outline: none;
-    letter-spacing: 1px;
+    width: fit-content;
   }
 }
 
