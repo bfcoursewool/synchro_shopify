@@ -21,10 +21,10 @@
 
         <div class="splide__arrows">
           <button class="splide__arrow splide__arrow--prev">
-            <img src="{{ 'blog_slider_arrow.svg' | asset_url }}" />
+            {{ 'blog_slider_arrow.svg' | asset_url | img_tag }}
           </button>
           <button class="splide__arrow splide__arrow--next">
-            <img src="{{ 'blog_slider_arrow.svg' | asset_url }}" />
+            {{ 'blog_slider_arrow.svg' | asset_url | img_tag }}
           </button>
         </div>
 
@@ -73,19 +73,22 @@
 
     {% comment %}limit is used for all of the sections{% endcomment %}
     {% assign limit = 3 %}
+    {% assign pagination = false %}
     {% assign containerClass = 'row justify-content-center' %}
     {% assign itemClass = 'post col-sm-4' %}
 
     <section id="most-popular">
-      <h2>Most Popular</h2>
+      <div class="container">
+        <h2>Most Popular</h2>
 
-      {% assign tag = 'popular' %}
-      {% include 'blog-posts-by-tag' %}
+        {% assign tag = 'popular' %}
+        {% include 'blog-posts-by-tag' %}
 
-      <div class="call-to-action">
-        <a href="/blogs/blog/tagged/all">
-          All Articles
-        </a>
+        <div class="call-to-action">
+          <a href="/blogs/blog/tagged/all">
+            All Articles
+          </a>
+        </div>
       </div>
     </section>
 
@@ -93,39 +96,48 @@
     {% assign itemClass = 'post col-lg-4 col-md-4 col-sm-6 col-xs-6' %}
 
     <section id="body">
-      <h2>Body</h2>
+      <div class="container">
+        <h2>Body</h2>
 
-      {% assign tag = 'body' %}
-      {% include 'blog-posts-by-tag' %}
+        {% assign tag = 'body' %}
+        {% include 'blog-posts-by-tag' %}
+      </div>
     </section>
 
     <section id="brain">
-      <h2>Brain</h2>
+      <div class="container">
+        <h2>Brain</h2>
 
-      {% assign tag = 'brain' %}
-      {% include 'blog-posts-by-tag' %}
+        {% assign tag = 'brain' %}
+        {% include 'blog-posts-by-tag' %}
+        <div class="container">
     </section>
 
     <section id="nutrition">
-      <h2>Nutrition</h2>
+      <div class="container">
+        <h2>Nutrition</h2>
 
-      {% assign tag = 'nutrition' %}
-      {% include 'blog-posts-by-tag' %}
+        {% assign tag = 'nutrition' %}
+        {% include 'blog-posts-by-tag' %}
+      </div>
     </section>
 
     <section id="recipes">
-      <h2>Recipes</h2>
+      <div class="container">
+        <h2>Recipes</h2>
 
-      {% assign tag = 'recipes' %}
-      {% include 'blog-posts-by-tag' %}
-
+        {% assign tag = 'recipes' %}
+        {% include 'blog-posts-by-tag' %}
+        <div class="container">
     </section>
 
     <section id="keto">
-      <h2>Keto</h2>
+      <div class="container">
+        <h2>Keto</h2>
 
-      {% assign tag = 'keto' %}
-      {% include 'blog-posts-by-tag' %}
+        {% assign tag = 'keto' %}
+        {% include 'blog-posts-by-tag' %}
+      </div>
     </section>
 
   </div>
