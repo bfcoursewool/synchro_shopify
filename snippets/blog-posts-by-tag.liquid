@@ -1,7 +1,6 @@
 {% assign showPagination = showPagination | default: false %}
 {% assign paginate = paginate | default: 100 %}
 {% assign containerClass = containerClass | default: 'row' %}
-{% assign itemClass = itemClass | default: 'post' %}
 {% assign tag = tag | default: 'all' %}
 
 {% paginate blogs.blog.articles by paginate %}
@@ -13,18 +12,13 @@
       {% if article.tags contains tag or tag == 'all' %}
 
         {% assign count = count | plus: 1 %}
+
         {% if count > limit %}
           {% break %}
         {% endif %}
-        <div class="{{ itemClass }}">
-          <img alt="{{ article.img.alt }}" src="{{ article.image.src | img_url: '300x200' }}" />
 
-          <div class="post-inner">
-            <h3>{{ article.title }}</h3>
-            <p>{{ article.excerpt_or_content | strip_html | truncate: 150 }}</p>
-            <a class="read-more" href="{{ article.url }}"><span>Read more</span></a>
-          </div>
-        </div>
+        {% include 'blog-post' %}
+
       {% endif %}
     {% endfor %}
   </div>
