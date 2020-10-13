@@ -1,3 +1,5 @@
+{% assign sort = 'created_at' %}
+
 {% if current_tags.size > 0 %}
   <div id="tag">
     {% assign containerClass = 'row justify-content-center' %}
@@ -11,6 +13,8 @@
   {% assign showPagination = false %}
 
   <div id="blog">
+
+    {% assign postImageSize = '300x200' %}
     <section id="posts">
       <div class="static-image-left">
         <img class="desktop-only" src="{{ 'blog-seven-desktop.jpg' | asset_url }}" />
@@ -76,6 +80,7 @@
     {% assign pagination = false %}
     {% assign containerClass = 'row justify-content-center' %}
     {% assign itemClass = 'post col-sm-4' %}
+    {% assign postImageSize = '400x300' %}
 
     <section id="most-popular">
       <div class="container">
