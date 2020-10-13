@@ -1,5 +1,5 @@
 {% assign showPagination = showPagination | default: false %}
-{% assign paginate = paginate | default: 100 %}
+{% assign paginate = paginate | default: 9999 %}
 {% assign containerClass = containerClass | default: 'row' %}
 {% assign tag = tag | default: 'all' %}
 
@@ -23,28 +23,30 @@
     {% endfor %}
   </div>
 
-  <div class="pagination">
-    <a
-      {% if paginate.next.is_link %}
-        href="{{ paginate.previous.url }}"
-      {% else %}
-        class="disabled"
-        disabled
-      {% endif %}
-    >
-      Previous
-    </a>
+  {% if showPagination %}
+    <div class="pagination">
+      <a
+        {% if paginate.next.is_link %}
+          href="{{ paginate.previous.url }}"
+        {% else %}
+          class="disabled"
+          disabled
+        {% endif %}
+      >
+        Previous
+      </a>
 
-    <a
-      {% if paginate.next.is_link %}
-        href="{{ paginate.next.url }}"
-      {% else %}
-        class="disabled"
-        disabled
-      {% endif %}
-    >
-      Next
-    </a>
-  </div>
+      <a
+        {% if paginate.next.is_link %}
+          href="{{ paginate.next.url }}"
+        {% else %}
+          class="disabled"
+          disabled
+        {% endif %}
+      >
+        Next
+      </a>
+    </div>
+  {% endif %}
 
 {% endpaginate %}

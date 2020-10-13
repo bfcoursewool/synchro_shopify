@@ -1,72 +1,5 @@
 {% assign mobileBreakpoint = '768px' %}
 
-#tag {
-  max-width: 1260px;
-  margin: 0 auto;
-
-  padding: 40px 40px 0 40px;
-  @media screen and (max-width: {{ mobileBreakpoint }}) {
-    padding: 20px 20px 0 20px;
-  }
-
-  .post:first-child {
-    margin-left: 0;
-  }
-
-  .post:last-child {
-    margin-right: 0;
-  }
-
-  .pagination {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-
-    @media screen and (min-width: {{ mobileBreakpoint }}) {
-      margin-top: 40px;
-
-      > *:first-child {
-        float: left;
-      }
-
-      > *:last-child {
-        float: right;
-      }
-    }
-
-    @media screen and (max-width: {{ mobileBreakpoint }}) {
-      padding-top: 0;
-      text-align: center;
-
-      > a + a {
-        margin-left: 15px;
-      }
-
-      a {
-        display: inline-block !important;
-        width: auto;
-      }
-    }
-
-
-    a {
-      border: 3px solid #000000;
-      border-radius: 6px;
-      background-color: #FFFFFF;
-      color: #000000;
-      font-family: futura-pt, sans-serif;
-      font-size: 18px;
-      font-weight: 500;
-      letter-spacing: 0;
-      line-height: 23px;
-      text-align: center;
-      display: block;
-      padding: 13px 30px;
-    }
-  }
-}
-
 .futura-pt-medium {
   font-family: futura-pt, sans-serif;
   font-weight: 500;
@@ -86,7 +19,7 @@
 }
 
 
-#blog {
+#blog, #tag {
 
   .main-header {
     @media screen and (min-width: 768px) {
@@ -439,5 +372,64 @@
     }
   }
 
+  .pagination {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 
+    @media screen and (min-width: {{ mobileBreakpoint }}) {
+      margin-top: 40px;
+
+      > *:first-child {
+        float: left;
+      }
+
+      > *:last-child {
+        float: right;
+      }
+    }
+
+    @media screen and (max-width: {{ mobileBreakpoint }}) {
+      padding-top: 0;
+      text-align: center;
+
+      > a + a {
+        margin-left: 15px;
+      }
+
+      a {
+        display: inline-block !important;
+        width: auto;
+      }
+    }
+
+
+    a {
+      border: 3px solid #000000;
+      border-radius: 6px;
+      background-color: #FFFFFF;
+      color: #000000;
+      font-family: futura-pt, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 23px;
+      text-align: center;
+      display: block;
+      padding: 13px 30px;
+    }
+  }
+
+
+}
+
+#tag {
+  max-width: 1260px;
+  margin: 0 auto;
+
+  padding: 40px 40px 0 40px;
+  @media screen and (max-width: {{ mobileBreakpoint }}) {
+    padding: 20px 20px 0 20px;
+  }
 }

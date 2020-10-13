@@ -2,13 +2,13 @@
   <div id="tag">
     {% assign containerClass = 'row justify-content-center' %}
     {% assign itemClass = 'post col-sm-4 col-xs-6' %}
-    {% assign showPagination = true %}
+    {% assign showPagination = false %}
     {% assign tag = current_tags.first %}
-    {% assign limit = 15 %}
-    {% assign paginate = 15 %}
     {% include 'blog-posts-by-tag' %}
   </div>
 {% else %}
+
+  {% assign showPagination = false %}
 
   <div id="blog">
     <section id="posts">
@@ -85,7 +85,7 @@
         {% include 'blog-posts-by-tag' %}
 
         <div class="call-to-action">
-          <a href="/blogs/blog/tagged/all">
+          <a href="/pages/popular-posts">
             All Articles
           </a>
         </div>
@@ -95,20 +95,20 @@
     {% assign containerClass = 'row justify-content-center' %}
     {% assign itemClass = 'post col-lg-4 col-md-4 col-sm-6 col-xs-6' %}
 
-    <section id="body">
+    <section id="lifestyle">
       <div class="container">
-        <h2>Body</h2>
+        <h2>Lifestyle</h2>
 
-        {% assign tag = 'body' %}
+        {% assign tag = 'lifestyle' %}
         {% include 'blog-posts-by-tag' %}
       </div>
     </section>
 
-    <section id="brain">
+    <section id="the-seven">
       <div class="container">
-        <h2>Brain</h2>
+        <h2>The Seven</h2>
 
-        {% assign tag = 'brain' %}
+        {% assign tag = 'the-seven' %}
         {% include 'blog-posts-by-tag' %}
         <div class="container">
     </section>
@@ -129,15 +129,6 @@
         {% assign tag = 'recipes' %}
         {% include 'blog-posts-by-tag' %}
         <div class="container">
-    </section>
-
-    <section id="keto">
-      <div class="container">
-        <h2>Keto</h2>
-
-        {% assign tag = 'keto' %}
-        {% include 'blog-posts-by-tag' %}
-      </div>
     </section>
 
   </div>
