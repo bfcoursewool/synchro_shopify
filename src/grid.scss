@@ -10,11 +10,14 @@ html {
 }
 
 @import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
+@import "./variables";
 
-$grid-columns: 12 !default;
-$grid-gutter-width: 30px !default;
-$grid-row-columns: 6 !default;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1300px
+) !default;
 
 @import "~bootstrap/scss/mixins/breakpoints";
 @import "~bootstrap/scss/mixins/grid-framework";
