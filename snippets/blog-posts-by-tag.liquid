@@ -2,7 +2,7 @@
 {% assign paginate = paginate | default: 9999 %}
 {% assign containerClass = containerClass | default: 'row' %}
 {% assign tag = tag | default: 'all' %}
-{% assign sort = sort | default: 'created_at' %}
+{% assign sort = sort | default: 'published_at' %}
 
 {% paginate blogs.blog.articles by paginate %}
   {% assign count = 0 %}
