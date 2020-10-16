@@ -2,7 +2,7 @@
 {% assign postImageSize = postImageSize | default: '300x200' %}
 
 <div class="{{ itemClass }}">
-  <img alt="{{ article.img.alt }}" src="{{ article.image.src | img_url: postImageSize }}" />
+  <div class="image" style='background-image: url("{{ article.image.src | img_url: postImageSize }}");'></div>
 
   <div class="post-inner">
     <h3>{{ article.title }}</h3>
