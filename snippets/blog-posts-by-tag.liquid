@@ -3,6 +3,7 @@
 {% assign containerClass = containerClass | default: 'row' %}
 {% assign tag = tag | default: 'all' %}
 {% assign sort = sort | default: 'published_at' %}
+{% assign showAll = showAll | default: false %}
 
 {% paginate blogs.blog.articles by paginate %}
   {% assign count = 0 %}
@@ -12,7 +13,7 @@
     {% assign articles = blogs.blog.articles | sort: sort %}
 
     {% for article in articles %}
-      {% if article.tags contains tag or tag == 'all' %}
+      {% if article.tags contains tag or showAll %}
 
         {% assign count = count | plus: 1 %}
 
@@ -29,7 +30,7 @@
   {% if showPagination %}
     <div class="pagination">
       <a
-        {% if paginate.next.is_link %}
+        {% if paginate.previous.is_link %}
           href="{{ paginate.previous.url }}"
         {% else %}
           class="disabled"

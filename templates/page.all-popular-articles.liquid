@@ -2,9 +2,10 @@
   <section>
     {% assign containerClass = 'row justify-content-center' %}
     {% assign itemClass = 'post col-md-4 col-sm-6' %}
-    {% assign showPagination = false %}
+    {% assign showPagination = true %}
+    {% assign showAll = true %}
     {% assign tag = 'popular' %}
-    {% assign limit = 9999 %}
+    {% assign paginate = 100 %}
     {% include 'blog-posts-by-tag' %}
   </section>
 </div>
