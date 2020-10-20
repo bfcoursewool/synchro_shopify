@@ -1045,29 +1045,6 @@ input[type=submit] {
 }
 
 .select-wrapper {
-  background-color: $formSelectBackground;
-  cursor: pointer;
-  border-radius: 4px;
-  border: 1px solid $formSelectBorder;
-  color: $formSelectColor;
-  padding: 18px 40px 18px 20px;
-  position: relative;
-  text-align: left;
-  width: 100%;
-  font-size: 18px;
-  line-height: normal;
-  margin-bottom: 14px;
-
-  &:after {
-    color: $formSelectColor;
-    content: "\E010";
-    margin-top: -8px;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    z-index: 1;
-    @include iconFont();
-  }
 
   select {
     color: black;
@@ -5966,6 +5943,7 @@ iframe {
     .product-slideshow, .product-wrap {
       display: table-cell;
       width: 50%;
+      vertical-align: top;
 
       @include breakpoint(s) {
         display: block;
@@ -6217,6 +6195,29 @@ iframe {
     }
 
     .product-options {
+      background-color: $formSelectBackground;
+      cursor: pointer;
+      border-radius: 4px;
+      border: 1px solid $formSelectBorder;
+      color: $formSelectColor;
+      padding: 18px 40px 18px 20px;
+      position: relative;
+      text-align: left;
+      width: 100%;
+      font-size: 18px;
+      line-height: normal;
+      margin-bottom: 14px;
+
+      &:after {
+        color: $formSelectColor;
+        content: "\E010";
+        margin-top: -8px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        z-index: 1;
+        @include iconFont();
+      }
 
       label {
         display: none;

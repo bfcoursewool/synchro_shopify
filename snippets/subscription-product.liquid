@@ -102,7 +102,7 @@
 	{% if widget_icon == "white" %}
 		{% assign widget_icon = "//rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/widget/rc_widget__icon__white@2x.png" %}
 	{% else %}
-		{% assign widget_icon = "//rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/widget/rc_widget__icon__black@2x.png" %}
+		{% assign widget_icon = "https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/recharge-info.png?v=1600827363" %}
 	{% endif %}
 	{% assign popup_zindex = widget_settings.popup_zindex | default: "56" %}
 	{% assign popup_background_color = widget_settings.popup_background_color | default: "#474747" %}
@@ -135,9 +135,12 @@
 		/* Widget: Purchase options */
 		label.rc_label {
 			color: {{ widget_label_color }};
+			font-size: 18px;
+			line-height: normal !important;
+			cursor: pointer;
 		}
 		div.rc_block__type--active {
-			background-color: {{ widget_active_bg }};
+	    border: 1px solid #a0a0a0 !important;
 		}
 		div.rc_block__type--active label.rc_label {
 			color: {{ widget_active_color }};
@@ -145,9 +148,15 @@
 		/* Widget: Popup */
 		div.rc_popup__block {
 			z-index: {{ popup_zindex }};
+	    font-size: 15px;
+			right: 0;
+			left: initial;
+			box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    	border-radius: 10px;
 		}
 		div.rc_popup__block:before {
 			border-bottom-color: {{ popup_background_color }};
+			display: none;
 		}
 		div.rc_popup__block {
 			background-color: {{ popup_background_color }} !important;
@@ -163,6 +172,85 @@
 		/* ReCharge CSS */
 		{{ recharge_custom_css }}
 		/* Add Custom CSS Below */
+		div.rc_block__type {
+			background: none;
+			border-radius: 4px;
+			border: 1px solid #d9d9d9;
+			color: #4d4d4d;
+			padding: 17px 20px 17px 20px;
+			position: relative;
+			text-align: left;
+			width: 100%;
+			line-height: normal;
+			margin-bottom: 14px;
+		}
+		input.rc_radio {
+	    -webkit-appearance: none;
+			border: 1px solid #D9D9D9;
+	    height: 20px;
+	    width: 20px;
+	    border-radius: 10px;
+			cursor: pointer;
+			margin-right: 7px;
+		}
+		div.rc_block__type--active input.rc_radio {
+	    border: 2px solid #319E9E;
+			border-radius: 10px;
+			background: #319E9E;
+			-moz-box-shadow:    inset 0 0 0px 2px #ffffff;
+			-webkit-box-shadow: inset 0 0 0px 2px #ffffff;
+			box-shadow:         inset 0 0 0px 2px #ffffff;
+		}
+		label.rc_label__deliver_every {
+			border-top: 1px solid #a0a0a0;
+			width: 100%;
+			margin-top: 17px;
+			padding: 15px 0 0;
+	    position: relative;
+		}
+		label.rc_label__deliver_every:after {
+			color: #4d4d4d;
+	    content: "\E010";
+	    position: absolute;
+	    right: 40px;
+	    top: 50%;
+	    z-index: 1;
+	    font-family: 'Single Product Webicons Regular';
+	    font-size: 16px;
+	    font-weight: 400;
+	    line-height: 1;
+	    -webkit-font-smoothing: antialiased;
+			z-index: -1;
+		}
+		label.rc_label__deliver_every select.rc_select {
+			border: 0;
+			-webkit-appearance: none;
+	    width: calc(100% - 120px);
+			background: none;
+			outline: none;
+      vertical-align: middle;
+	    color: #319E9E;
+		}
+		span.rc_label__delivery {
+			padding: 0;
+	    vertical-align: middle;
+		}
+		div.rc_popup {
+			display: inline-block;
+			padding: 0;
+	    vertical-align: middle;
+		}
+		a.rc_popup__hover, div.rc_popup__hover {
+			height: auto;
+			font-size: 0;
+		}
+		div.rc_popup__block__content {
+			padding: 5px 30px;
+		}
+		p.rc_popup__popup_title {
+	    font-size: 18px;
+			font-weight: 500;
+		}
 
 	</style>
 	<!-- Subscriptions Powered by ReCharge Payments: HTML -->
@@ -245,38 +333,29 @@
 								</option>
 							{% endfor %}
 						</select>
+						<div class="rc_popup">
+							{% if show_widget %}
+								<div class="rc_popup__hover">
+									{% if show_widget_icon %}
+										<img src="{{ widget_icon }}" alt="ReCharge Subscription services icon" class="rc_popup__icon">
+									{% endif %}
+									{{ subscription_details_label }}
+									<div class="rc_popup__block">
+										<div class="rc_popup__block__content">
+											<div class="rc_popup__close" style="display: none;">x</div>
+											{{ how_it_works_text }}
+										</div>
+									</div>
+								</div>
+							{% elsif show_widget == "link" %}
+								<a href="{{ learnmore_url }}" target="_blank" class="rc_popup__hover" aria-label="Learn more about ReCharge Payments">{% if show_widget_icon %}<img src="{{ widget_icon }}" height="21" width="18" alt="ReCharge Subscription services icon" class="rc_popup__icon"> {% endif %}{{ subscription_details_label }}</a>
+							{% endif %}
+						</div>
 					</label>
 				</div>
 			</div>
 		</div>
-		<div class="rc_popup">
-			{% if show_widget %}
-				<div class="rc_popup__hover">
-					{% if show_widget_icon %}
-						<img src="{{ widget_icon }}" height="21" width="18" alt="ReCharge Subscription services icon" class="rc_popup__icon">
-					{% endif %}
-					{{ subscription_details_label }}
-					<div class="rc_popup__block">
-						<div class="rc_popup__block__content">
-							<div class="rc_popup__close" style="display: none;">x</div>
-							{{ how_it_works_text }}
-							{% if show_learnmore %}
-								<br><a href="{{ learnmore_url }}" target="_blank" aria-label="Learn more about ReCharge Payments">{{ learnmore_link }}</a>
-							{% endif %}
-						</div>
-						{% if show_poweredby %}
-							<div class="rc_popup__block__footer">
-								<a href="{{ poweredby_url }}" target="_blank" aria-label="ReCharge Payments homepage">
-									<img src="//rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/widget/rc_widget__banner@2x.png" height="28" width="153" alt="ReCharge Subscriptions company banner" class="rc_popup__badge">
-								</a>
-							</div>
-						{% endif %}
-					</div>
-				</div>
-			{% elsif show_widget == "link" %}
-				<a href="{{ learnmore_url }}" target="_blank" class="rc_popup__hover" aria-label="Learn more about ReCharge Payments">{% if show_widget_icon %}<img src="{{ widget_icon }}" height="21" width="18" alt="ReCharge Subscription services icon" class="rc_popup__icon"> {% endif %}{{ subscription_details_label }}</a>
-			{% endif %}
-		</div>
+
 	</div>
 	<!-- Subscriptions Powered by ReCharge Payments: JS -->
 	<script src="//rechargeassets-bootstrapheroes-rechargeapps.netdna-ssl.com/static/js/rcWidget.js"></script>
