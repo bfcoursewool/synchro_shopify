@@ -6906,31 +6906,36 @@ iframe {
     width:100%;
   }
 
-  .template-blog,
-  .template-article {
-    .logo-header {
-      border-bottom: 0;
-    }
+.template-blog,
+.template-article {
+  .logo-header {
+    border-bottom: 0;
   }
+}
 
+.blog-header-section-only {
+  background: #fafafa;
+  overflow: auto;
+  display: none;
+}
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+  .after-header {
+    display: none;
+  }
+  /* don't show the synchro life header on mobile & tablet size screens */
   .blog-header-section-only {
-    background: #fafafa;
-    overflow: auto;
+    display: none;
   }
+  /* also this weird space should be hidden */
+}
 
-  @media screen and (min-width: 0px) and (max-width: 800px) {
-    .after-header { display: none; } /* don't show the synchro life header on mobile & tablet size screens */
-    .blog-header-section-only div.main-header.collapsed-navigation { display: none; } /* also this weird space should be hidden */
-  }
+.before-main-header {
+  max-width: 1200px;
+}
 
-  .before-main-header
-  {
-    max-width: 1200px;
-  }
-
-  ul.topmenulinklist
-  {
-    margin: 0;
+ul.topmenulinklist {
+  margin: 0;
     padding: 0;
     position: relative;
     top: 1px;
@@ -7415,30 +7420,96 @@ iframe {
 
   .topic-featuretext{ padding:0 15%;}
 
-  .featurepost{ clear:both;}
-  .featurepost .featuretext .featuretitle{ font-size:34px; font-weight: bold;}
-  .featurepost .featuretext .readmore{ display:block;}
-  .featurepost .featuretext .readmore a{ color:#fff;clear:both; text-decoration: underline; font-size:15px;}
+.featurepost {
+  clear: both;
+}
+
+.featurepost .featuretext .featuretitle {
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.featurepost .featuretext .readmore {
+  display: block;
+}
+
+.featurepost .featuretext .readmore a {
+  color: #fff;
+  clear: both;
+  text-decoration: underline;
+  font-size: 15px;
+}
 
 
-  .topic-featuretext .topic-txt{ color:#fff; display:block; font-size:15px;}
-  .topic-featuretext .topic-featuretitle{ color:#fff; display:block;}
-  .topic-featuretext .topic-featuretitle a{ color:#fff;font-size:40px; font-weight: bold;}
-  .topic-featuretext .topic-feature_text{ color:#fff; display:block; font-size:20px;}
-  .topic-featurepost .image-he-feature{ display:table; height:400px; float:left; width:100%; clear:both; position:relative;}
-  .header-actions li a.cart-link, .header-actions li a.account-link, .header-actions li a.cart-link span{ padding-right: 0;top: -2px;}
-  .header-actions{ text-align:right;}
-  .after-header .after-header-inner .second-logo{margin-top: 12px;margin-bottom: 10px}
-  @media only screen and (max-width: 720px) {
-    // .topic-featurepost .image-he-feature{ top: 50px;}
+.topic-featuretext .topic-txt {
+  color: #fff;
+  display: block;
+  font-size: 15px;
+}
+
+.topic-featuretext .topic-featuretitle {
+  color: #fff;
+  display: block;
+}
+
+.topic-featuretext .topic-featuretitle a {
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.topic-featuretext .topic-feature_text {
+  color: #fff;
+  display: block;
+  font-size: 24px;
+  line-height: 36px;
+
+  @media screen and (max-width: 720px) {
+    font-size: 22px;
+    line-height: 29px;
   }
+}
 
-  .after-header .after-header-inner .second-logo{ margin-top:60px; margin-bottom: 5px;}
-  .header-area-part .topicmenu ul{ margin-bottom:52px;}
-  .header-actions ul.rightlist{
-    float:left;
-    position: relative;
-    top: 5px;
+.topic-featurepost .image-he-feature {
+  display: table;
+  height: 300px;
+  float: left;
+  width: 100%;
+  clear: both;
+  position: relative;
+}
+
+.header-actions li a.cart-link, .header-actions li a.account-link, .header-actions li a.cart-link span {
+  padding-right: 0;
+  top: -2px;
+}
+
+.header-actions {
+  text-align: right;
+}
+
+.after-header .after-header-inner .second-logo {
+  margin-top: 12px;
+  margin-bottom: 10px
+}
+
+@media only screen and (max-width: 768px) {
+  // .topic-featurepost .image-he-feature{ top: 50px;}
+}
+
+.after-header .after-header-inner .second-logo {
+  margin-top: 60px;
+  margin-bottom: 5px;
+}
+
+.header-area-part .topicmenu ul {
+  margin-bottom: 52px;
+}
+
+.header-actions ul.rightlist {
+  float: left;
+  position: relative;
+  top: 5px;
 
     @include breakpoint(s) {
       top: 10px;

@@ -1,0 +1,412 @@
+{% assign mobileBreakpoint = '768px' %}
+
+.futura-pt-medium {
+  font-family: futura-pt, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.futura-pt-heavy {
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.futura-pt-demi {
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+#blog, #tag {
+
+  h3 {
+    margin-bottom: 2px;
+  }
+
+  .main-header {
+    @media screen and (min-width: 768px) {
+      margin-bottom: 50px;
+    }
+  }
+
+  a.disabled {
+    opacity: .5;
+  }
+
+  .post {
+    width: 100%;
+    margin-bottom: 25px;
+
+    .image {
+      width: 100%;
+      padding-bottom: 75%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-size: 22px;
+      letter-spacing: 0;
+      line-height: 29px;
+      margin-top: 0;
+      @extend .futura-pt-demi;
+    }
+
+    .post-inner {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 15px 0;
+
+      @media screen and (max-width: {{ mobileBreakpoint }}) {
+        p {
+          display: none;
+        }
+      }
+
+      a.read-more {
+        color: #447E7C;
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: 23px;
+        text-decoration: none;
+
+        span {
+          border-bottom: 1px solid #448e7c;
+        }
+
+        @extend .futura-pt-medium;
+      }
+
+      p {
+        color: #666666;
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: 27px;
+        @extend .futura-pt-medium;
+      }
+    }
+  }
+
+  section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+    padding-top: 60px;
+    padding-bottom: 35px;
+
+    @media screen and (max-width: {{ mobileBreakpoint }}) {
+      padding-top: 30px;
+      padding-bottom: 25px;
+    }
+
+    // hide the 3rd post in all sections but the first and second on mobile
+    @media screen and (max-width: 1024px) {
+      &:nth-child(n+3) {
+        .post:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+
+    // posts
+    &:nth-child(1) {
+      background-color: #FFFFFF;
+      padding: 0;
+      display: block;
+
+      .static-image-left {
+        line-height: 0;
+
+        @media screen and (min-width: {{ mobileBreakpoint }}) {
+          float: left;
+          display: block;
+          width: 433px !important;
+          height: 437px !important;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .posts {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        padding: 20px 0;
+
+        .splide__track {
+          overflow: visible;
+        }
+
+        .splide__list {
+          display: flex;
+        }
+
+        &.hide-previous-arrow {
+          .splide__arrow:first-of-type {
+            display: none !important;
+          }
+        }
+
+        &.hide-next-arrow {
+          .splide__arrow:last-of-type {
+            display: none !important;
+          }
+        }
+
+        .splide__arrow {
+          background: #000000;
+          opacity: 1;
+          width: 60px;
+          height: 60px;
+
+          &.splide__arrow--next {
+            right: 40px;
+
+            @media screen and (max-width: {{ mobileBreakpoint }}) {
+              right: 15px;
+            }
+          }
+
+          &.splide__arrow--prev {
+            left: 40px;
+
+            @media screen and (max-width: {{ mobileBreakpoint }}) {
+              left: 15px;
+            }
+
+            img {
+              -webkit-transform: scaleX(-1);
+              transform: scaleX(-1);
+            }
+          }
+
+          &:hover {
+            opacity: .9;
+          }
+        }
+
+        .post {
+          background-color: #FAFAFA;
+          height: 357px;
+          width: 300px;
+          box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 0;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+
+          .post-inner {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+            justify-content: space-between;
+            text-align: left;
+
+            p {
+              margin-bottom: 41px;
+            }
+
+            h3 {
+              color: #000000;
+              font-size: 20px;
+              letter-spacing: 0;
+              line-height: 26px;
+              width: 100%;
+              @extend .futura-pt-demi;
+            }
+          }
+        }
+      }
+
+      // some overrides for larger screens
+      @media screen and (min-width: {{ mobileBreakpoint }}) {
+        .posts {
+          padding: 40px 0;
+        }
+      }
+    }
+
+    // most popular
+    &:nth-child(2) {
+      background-color: #F9F6F2;
+
+      @media screen and (min-width: {{ mobileBreakpoint }}) {
+        padding-bottom: 50px;
+      }
+
+      @media screen and (max-width: {{ mobileBreakpoint }}) {
+        .row {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+
+      .blog-post {
+        background: transparent;
+      }
+
+      .call-to-action {
+        width: 100%;
+        display: block;
+        text-align: center;
+
+        @media screen and (max-width: {{ mobileBreakpoint }}) {
+          padding: 0 10%;
+        }
+
+        a {
+          border: 3px solid #000000;
+          border-radius: 6px;
+          background-color: #FFFFFF;
+          color: #000000;
+          font-size: 18px;
+          letter-spacing: 0;
+          line-height: 23px;
+          text-align: center;
+          padding: 13px 30px;
+          margin: 69px auto 0 auto;
+
+          @media screen and (max-width: {{ mobileBreakpoint }}) {
+            margin: 0;
+            width: 100%;
+            padding: 14px;
+            display: block;
+          }
+
+          @extend .futura-pt-demi;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      background-color: #FFFFFF;
+    }
+
+    &:nth-child(4) {
+      background-color: #FAFAFA;
+    }
+
+    &:nth-child(5) {
+      background-color: #FFFFFF;
+    }
+
+    &:nth-child(6) {
+      background-color: #FAFAFA;
+    }
+
+    &:nth-child(7) {
+      background-color: #FFFFFF;
+    }
+
+    h2 {
+      display: block;
+      text-align: center;
+      width: 100%;
+      color: #000000;
+      letter-spacing: 0;
+      line-height: 45px;
+      margin-top: 0;
+
+      font-size: 35px;
+      margin-bottom: 50px;
+
+      @media screen and (max-width: {{ mobileBreakpoint }}) {
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+
+      @extend .futura-pt-heavy;
+    }
+  }
+
+
+  @media screen and (max-width: {{ mobileBreakpoint }}) {
+    .desktop-only {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: {{ mobileBreakpoint }}) {
+    .mobile-only {
+      display: none;
+    }
+  }
+
+  .pagination {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+
+    @media screen and (min-width: {{ mobileBreakpoint }}) {
+      margin-top: 40px;
+
+      > *:first-child {
+        float: left;
+      }
+
+      > *:last-child {
+        float: right;
+      }
+    }
+
+    @media screen and (max-width: {{ mobileBreakpoint }}) {
+      padding-top: 0;
+      text-align: center;
+
+      > a + a {
+        margin-left: 15px;
+      }
+
+      a {
+        display: inline-block !important;
+        width: auto;
+      }
+    }
+
+
+    a {
+      border: 3px solid #000000;
+      border-radius: 6px;
+      background-color: #FFFFFF;
+      color: #000000;
+      font-family: futura-pt, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 23px;
+      text-align: center;
+      display: block;
+      padding: 13px 30px;
+    }
+  }
+
+
+}
+
+#tag {
+  max-width: 1260px;
+  margin: 0 auto;
+
+  padding: 40px 40px 0 40px;
+  @media screen and (max-width: {{ mobileBreakpoint }}) {
+    padding: 20px 20px 0 20px;
+  }
+}
