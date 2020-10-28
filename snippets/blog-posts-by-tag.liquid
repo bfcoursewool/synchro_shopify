@@ -10,7 +10,7 @@
   {% assign limit = limit or paginate %}
 
   <div class="{{ containerClass }}">
-    {% assign articles = blogs.blog.articles | sort: sort %}
+    {% assign articles = blogs.blog.articles | sort: sort | reverse %}
 
     {% for article in articles %}
       {% if article.tags contains tag or showAll %}
