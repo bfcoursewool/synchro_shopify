@@ -247,30 +247,30 @@
     </header>
   </div>
 
-  {% if template contains 'blog' or template contains 'article'  %}
-  <div class="current-header header-area-part blog-header-section-only">
-    <div class="main-header">
-      <div class="after-header">
-        <div class="after-header-inner">
-          <div class="second-logo">
-               <a href="/blogs/blog/tagged/nutrition"><img src="{{'secondary-logo.png' | asset_url}}" alt="The Synchro Life"></a>
-          </div>
-          <div class="topicmenu">
-            <ul class="topicmenulinklist">
-              {% for link in linklists.topic-menu.links %}
-              <li>
-                <a href="{{ link.url }}">{{ link.title }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
+</div>
+
+{% if template contains 'blog' or template contains 'article'  %}
+<div class="current-header header-area-part blog-header-section-only">
+  <div class="main-header">
+    <div class="after-header">
+      <div class="after-header-inner">
+        <div class="second-logo">
+             <a href="/blogs/blog/tagged/nutrition"><img src="{{'secondary-logo.png' | asset_url}}" alt="The Synchro Life"></a>
+        </div>
+        <div class="topicmenu">
+          <ul class="topicmenulinklist">
+            {% for link in linklists.topic-menu.links %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
         </div>
       </div>
     </div>
   </div>
-  {% endif %}
-
 </div>
+{% endif %}
 
 {% if settings.header-navigation-location == 'below-header' %}
 {% unless fullBleed %}
