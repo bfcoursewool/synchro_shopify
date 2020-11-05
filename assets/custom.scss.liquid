@@ -1,0 +1,158 @@
+// BFCM 2020 //
+
+.bfcm-2020 {
+  font-size: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bfcm-2020__left,
+.bfcm-2020__right {
+  display: inline-block;
+  height: 100vh;
+  width: 50%;
+  vertical-align: top;
+  @media (max-width: 900px) {
+    display: block;
+    width: 100%;
+    height: initial;
+  }
+}
+
+.bfcm-2020__left {
+  background: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/bfcm-2020-optin-image.jpg?v=1604332548");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  @media (max-width: 900px) {
+    padding-bottom: 40px;
+  }
+}
+
+.bfcm-2020__logo {
+  width: 80px;
+  position: absolute;
+  transform: translateX(-50%);
+  @media (max-width: 900px) {
+    margin-bottom: 40px;
+    position: initial;
+    transform: none;
+  }
+  @media (max-width: 767px) {
+    width: 60px;
+  }
+}
+
+.bfcm-2020__content,
+.bfcm-2020__title {
+  max-width: 550px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  @media (max-width: 900px) {
+    position: initial;
+    transform: none;
+  }
+}
+
+.bfcm-2020__title-copy {
+  font-weight: 700;
+  font-size: 70px;
+  color: #FFED15;
+  letter-spacing: 25px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  max-width: 500px;
+  margin: auto;
+  @media (max-width: 1024px) {
+    font-size: 60px;
+  }
+  @media (max-width: 767px) {
+    font-size: 30px;
+    max-width: 350px;
+    letter-spacing: 9px;
+  }
+}
+
+.bfcm-2020__x {
+  width: 34px;
+  margin: 20px;
+  @media (max-width: 767px) {
+    width: 20px;
+    margin: 15px;
+  }
+}
+
+.bfcm-2020__right {
+  background-color: #2A3138;
+  right: 0;
+  text-align: center;
+  padding: 60px;
+  @media (max-width: 1024px) {
+    padding: 40px;
+  }
+  @media (max-width: 767px) {
+    padding: 30px 20px;
+  }
+}
+
+.bfcm-2020__header {
+  margin: 0 0 30px;
+  font-weight: 600;
+  font-size: 50px;
+  color: #FFFFFF;
+  line-height: normal;
+  @media (max-width: 1024px) {
+    font-size: 40px;
+    margin: 0 0 20px;
+  }
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
+}
+
+.bfcm-2020__copy {
+  font-size: 20px;
+  color: #FFFFFF;
+  opacity: 0.9;
+
+  span {
+    text-decoration: underline;
+  }
+
+  a {
+    color: #CCBD11;
+  }
+}
+
+.klaviyo-form {
+  margin-top: 30px;
+  @media (max-width: 1024px) {
+    margin-top: 0;
+  }
+
+  input {
+    text-align: center !important;
+    padding: 0 !important;
+  }
+
+  button {
+    padding: 21px 25px !important;
+  }
+}
+
+.bfcm-2020__cta {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  background: #CCBD11;
+  padding: 15px 25px;
+  border-radius: 4px;
+  margin-top: 10px;
+  display: inline-block;
+
+  &:hover {
+    color: #fff;
+    opacity: 0.8;
+  }
+}
