@@ -2175,13 +2175,13 @@ function parseQueryString(queryString) {
   return params;
 }
 
-// $(document).ready(function() {
-//
-//   var currentActiveIndex = 2;
-//   var currentActiveTestimonial = getTestimonial(currentActiveIndex);
-//
-//   cycleTestimonials(currentActiveIndex, currentActiveTestimonial)
-//
+$(document).ready(function() {
+
+  var currentActiveIndex = 2;
+  var currentActiveTestimonial = getTestimonial(currentActiveIndex);
+
+  cycleTestimonials(currentActiveIndex, currentActiveTestimonial)
+
 //   var initialAdTop = 0;
 //   if($('.sidebar .sidebar-images-section').offset()) {
 //     initialAdTop = $('.sidebar .sidebar-images-section').offset().top;
@@ -2233,12 +2233,12 @@ function parseQueryString(queryString) {
 //     })
 //
 //   }
-//
-//   $(".home-testimonial").click(function () {
-//     clearTimeout(timeoutCall);
-//     cycleTestimonials($(".home-testimonial").index(this), $(this))
-//   });
-// });
+
+  $(".home-testimonial").click(function () {
+    clearTimeout(timeoutCall);
+    cycleTestimonials($(".home-testimonial").index(this), $(this))
+  });
+});
 
 $(document).ready(function(){
   $(".reference-toggle").click(function(){
