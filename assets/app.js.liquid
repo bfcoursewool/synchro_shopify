@@ -1,18 +1,18 @@
 $(function() {
 
   $('#cart').mmenu({
-    offCanvas: { 
-      position: 'right', 
-      zposition : "front", 
-      pageSelector: "#content_wrapper" 
+    offCanvas: {
+      position: 'right',
+      zposition : "front",
+      pageSelector: "#content_wrapper"
     },
     classes: "mm-black"
   });
 
-  var mmenuAPI = $('#cart').data('mmenu'); 
+  var mmenuAPI = $('#cart').data('mmenu');
 
   $(document).on("click", '.continue, .edit_cart, .mm-opened #header', function(e) {
-    mmenuAPI.close(); 
+    mmenuAPI.close();
     $('#cart').trigger("close");
     $('#nav').trigger("close");
     e.stopPropagation();
@@ -149,7 +149,7 @@ $(function() {
     var $addToCartForm = $(this);
     var $addToCartBtn = $addToCartForm.find('.add_to_cart');
 
-    console.log($addToCartForm.serialize()); 
+    console.log($addToCartForm.serialize());
     saveGCLID();
     $.ajax({
       url: '/cart/add.js',
@@ -164,7 +164,7 @@ $(function() {
         $addToCartBtn.find('span').text({{ 'products.product.add_to_cart_success' | t | json }}).removeClass('zoomOut').addClass('fadeIn');
 
         mmenuAPI.open();
-        
+
 
 
         pintrk('track', 'AddToCart', {
@@ -201,7 +201,7 @@ $(function() {
   $(document).on('click', '#cart-submit', function(e) {
     e.preventDefault();
     $('#cart').submit();
-  }); 
+  });
 
   selectCallback = function(variant, selector) {
     var $product = $('.product-' + selector.product.id);

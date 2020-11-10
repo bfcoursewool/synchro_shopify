@@ -156,7 +156,6 @@
   </script>
   <!-- End Track PageVisit -->
  {% include 'talkable-partial' %}
-{% render 'hs-cart-drawer' %}
 </head>
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} navigation-{{ settings.header-navigation-location }} {% if template == 'product.slideshow' %}template-product-slideshow{% endif %}" >
   <!-- Do a JS redirect from the keto-cleanse product page to our custom landing page.
@@ -301,6 +300,5 @@
 {% endif %}
 
 {% render 'spurit_occ2_theme_snippet' %}
-{% render 'hs-cart-drawer-subscriptions' %}
 </body>
 </html>
