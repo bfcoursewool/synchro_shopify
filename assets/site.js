@@ -2247,7 +2247,7 @@ $(document).ready(function(){
 });
 
 // Set the date we're counting down to
-var countDownDate = new Date("Oct 8 2020 23:59:59 UTC-0700").getTime();
+var countDownDate = new Date("Nov 30 2020 23:59:59 UTC-0800").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
