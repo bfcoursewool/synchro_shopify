@@ -1,7 +1,7 @@
 development:
   password: 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
   theme_id: "115062505627"
-  store: https://synchro-dev.myshopify.com/
+  store: https://synchro-dev.myshopify.com
 production:
   password: af05443728f05f70e94d9b92b2d9d9a3
   theme_id: "176806409"
