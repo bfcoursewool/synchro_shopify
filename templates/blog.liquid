@@ -58,14 +58,16 @@
               {% assign img_filename = 'the-seven-blog-' | append: i | append: '-header.jpg' %}
 
               <div class="splide__slide">
-                <div class="post">
-                  {{ img_filename | asset_url | img_tag }}
+                <a href="{{ post_url }}">
+                  <div class="post">
+                    {{ img_filename | asset_url | img_tag }}
 
-                  <div class="post-inner">
-                    <h3>{{ post_title }}</h3>
-                    <a class="read-more" href="{{ post_url }}"><span>Read more</span></a>
+                    <div class="post-inner">
+                      <h3>{{ post_title }}</h3>
+                      <a class="read-more" href="{{ post_url }}"><span>Read more</span></a>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
 
             {% endfor %}

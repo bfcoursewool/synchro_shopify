@@ -1,17 +1,17 @@
 {% assign itemClass = itemClass | default: 'post' %}
 {% assign postImageSize = postImageSize | default: '300x200' %}
+<a href="{{ article.url }}">
+  <div class="{{ itemClass }}">
 
-<div class="{{ itemClass }}">
+    {% assign backupImage = article.image.src | img_url: postImageSize %}
+    {% assign src = article.content | split: 'src="' %}
+    {% assign src = src[1] | split: '"' | first | default: backupImage %}
+    <div class="image" style='background-image: url("{{ src }}");'></div>
 
-  {% assign backupImage = article.image.src | img_url: postImageSize %}
-  {% assign src = article.content | split: 'src="' %}
-  {% assign src = src[1] | split: '"' | first | default: backupImage %}
-  <div class="image" style='background-image: url("{{ src }}");'></div>
-
-  <div class="post-inner">
-    <h3>{{ article.title }}</h3>
-    <p>{{ article.excerpt_or_content | strip_html | truncate: 150 }}</p>
-    <a class="read-more" href="{{ article.url }}"><span>Read more</span></a>
+    <div class="post-inner">
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.excerpt_or_content | strip_html | truncate: 150 }}</p>
+      <a class="read-more" href="{{ article.url }}"><span>Read more</span></a>
+    </div>
   </div>
-</div>
-
+</a>
