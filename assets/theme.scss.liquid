@@ -420,6 +420,9 @@ $easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
   @else if $point == s {
     @media (max-width: 720px) { @content; }
   }
+  @else if $point == xs {
+    @media (max-width: 320px) { @content; }
+  }
 }
 
 @mixin animation($animate...) {
@@ -1204,6 +1207,7 @@ iframe {
 
     @include breakpoint(s) {
       padding-top: $gutter;
+      padding: 50px 25px 0;
     }
 
     .sticky-header ~ & {
@@ -4708,7 +4712,13 @@ iframe {
       }
 
       @include breakpoint(s) {
-        padding: 0!important;
+        padding: 0 10px !important;
+        display: inline-block;
+        width: 50% !important;
+      }
+
+      @include breakpoint(xs) {
+        padding: 0 !important;
         display: block;
         width: 100% !important;
       }
