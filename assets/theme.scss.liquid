@@ -4724,8 +4724,12 @@ iframe {
       }
 
       h1 {
-        font-size: 18px;
-        line-height: 120%;
+        font-size: 22px;
+        line-height: normal;
+
+        @include breakpoint(s) {
+          font-size: 18px;
+        }
 
         a {
           color: $headingColor;
@@ -4735,10 +4739,16 @@ iframe {
 
     .product-vendor {
       color: #808080;
-      font-size: 16px;
+      font-size: 15px;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin: 15px 0;
+      letter-spacing: 1px;
+      margin: 20px 0;
+      font-weight: 500;
+
+      @include breakpoint(s) {
+        font-size: 13px;
+        margin: 10px 0;
+      }
     }
 
     .product-list-item-thumbnail {
@@ -4787,12 +4797,33 @@ iframe {
     }
 
     .product-list-item-price {
-      margin-bottom: 0;
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+
+      @include breakpoint(s) {
+        font-size: 22px;
+        margin: 5px 0 15px;
+      }
 
       .original {
         text-decoration: line-through;
         opacity: 0.4;
         margin-left: 7px;
+      }
+    }
+
+    .product-list-cta {
+      display: none;
+
+      @include breakpoint(s) {
+        display: block;
+        padding: 10px 0;
+        margin-top: 10px;
+      }
+
+      a {
+        color: #fff !important;
       }
     }
 
@@ -5328,6 +5359,7 @@ iframe {
         width: 100%;
         padding: 0 !important;
         max-width: none;
+        margin: 10px 0;
       }
     }
 
@@ -5507,8 +5539,12 @@ iframe {
       padding: $gutter*2 0 $gutter;
 
       @include breakpoint(s) {
-        padding-left: $gutter;
-        padding-right: $gutter;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .product-list-item:last-child {
+          display: none;
+        }
       }
 
       .collection-products {
@@ -7589,13 +7625,18 @@ ul.topmenulinklist {
 .product-list-item-details {
 
   .product-description {
-    margin-top: 10px;
+    margin: 10px 0;
     color: #636363;
     padding: 0;
+    font-weight: 500;
+    font-size: 16px;
+
+    @include breakpoint(s) {
+      display: none;
+    }
 
     a {
-      font-weight: 600;
-      font-size: 16px;
+      color: #319E9E;
       margin-left: 5px;
     }
   }
