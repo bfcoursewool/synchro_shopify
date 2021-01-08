@@ -44,23 +44,28 @@
       {% if settings[enabled] %}
       <div class="home-testimonial {% if settings[avatar] %}has-avatar{% endif %}" data-time="{{ settings[time] }}">
 
-        {% if settings[avatar] %}
-          <img class="home-testimonial-avatar" alt="{{ settings[source] | strip_html | escape }}" src="{{ testimonial | prepend: 'home-' | append: '-avatar.jpg' | asset_url}}">
+        <div class="home-testimonial-content">
+
+            {% if settings[avatar] %}
+              <img class="home-testimonial-avatar" alt="{{ settings[source] | strip_html | escape }}" src="{{ testimonial | prepend: 'home-' | append: '-avatar.jpg' | asset_url}}">
+            {% endif %}
+
+            <div class="home-testimonial-quote-box">
+              <blockquote class="home-testimonial-quote">
+              {{ settings[quote] }}
+
+              <img class="home-testimonial-stars" src="https://cdn.shopify.com/s/files/1/0509/9703/5163/t/12/assets/5-stars.svg?v=1610134073" alt="5-stars">
+
+            	{% if settings[source] != blank %}
+              	<p class="home-testimonial-quote-source">{{ settings[source] }}</p>
+              {% endif %}
+              </blockquote>
+            </div>
+          </div>
+        </div>
         {% endif %}
 
-        <div class="home-testimonial-quote-box">
-          <blockquote class="home-testimonial-quote">
-          {{ settings[quote] }}
-
-        	{% if settings[source] != blank %}
-          	<p class="home-testimonial-quote-source">{{ settings[source] }}</p>
-          {% endif %}
-          </blockquote>
-        </div>
-      </div>
-      {% endif %}
-
-    {% endfor %}
+      {% endfor %}
 
     </div>
 

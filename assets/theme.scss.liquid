@@ -707,6 +707,7 @@ body {
                             font-size: 20px;
                             margin-top: 0;
                             text-align: center;
+                            line-height: normal;
                             -webkit-font-smoothing: initial;
 
                             -webkit-font-smoothing: #{'{% if settings.section-heading-font == "Bitter, serif" %}'} antialiased #{'{% endif %}'};
@@ -717,6 +718,10 @@ body {
 
                               font-size:      #{' {% if settings.section-heading-font-small-caps %} '}35px #{' {% endif %} '};
                               text-transform: #{' {% if settings.section-heading-font-small-caps %} '}capitalize #{' {% endif %} '};
+
+                              @include breakpoint(s) {
+                                font-size: 30px;
+                              }
                             }
 
                               .meta {
@@ -1324,13 +1329,13 @@ iframe {
     margin: 0 auto;
     text-align: center;
     @include transition(transform 0.2s $easeOutQuad);
-    padding: 40px 20px 60px;
+    padding: 60px 30px;
 
     @include breakpoint(l) {
       padding-bottom: 20px;
     }
     @include breakpoint(m) {
-      padding: 20px 0 0;
+      padding: 40px 0 0;
     }
 
     // .showing-drawer:not(.template-index) & {
@@ -5326,53 +5331,46 @@ iframe {
 
     .home-testimonial {
       display: inline-block;
-      padding: 0 20px;
-      text-align: left;
-      display: inline-flex;
-      align-items: center;
-      vertical-align: middle;
-
-      .grid-of-1 & {
-        width: 90%;
-
-        @include breakpoint(s) {
-          width: 100%;
-        }
-      }
+      padding: 0 15px;
+      vertical-align: top;
+      width: 33.333%;
 
       @include breakpoint(m) {
+        width: 50%;
 
-        &:nth-child(2) {
-          display: none;
-        }
-      }
-
-      @media (max-width: 880px) {
-
-        &:nth-child(5) {
+        &:nth-child(3) {
           display: none;
         }
       }
 
       @include breakpoint(s) {
         width: 100%;
-        padding: 0 !important;
-        max-width: none;
-        margin: 10px 0;
+        padding: 0;
+        margin: 0 0 30px;
+
+        &:nth-child(3) {
+          display: inline-block;
+        }
+      }
+    }
+
+    .home-testimonial-content {
+      background: #FAFAFA;
+      border-radius: 10px;
+      padding: 35px;
+
+      @include breakpoint(s) {
+        padding: 20px;
       }
     }
 
     .home-testimonial-avatar {
-      border-radius: 50px;
-      opacity: 0.5;
-      cursor: pointer;
-      width: 60px;
-      -webkit-transition: all 0.3s ease-in-out;
-      transition:  all 0.3s ease-in-out;
+      border-radius: 125px;
+      max-width: 250px;
+      width: 100%;
 
-      @include breakpoint(s) {
-        width: 13% !important;
-        opacity: 1;
+      @include breakpoint(m) {
+        width: 150px;
       }
 
       .testimonial-active & {
@@ -5393,33 +5391,28 @@ iframe {
     }
 
     .home-testimonial-quote-box {
-      font-style: italic;
-      font-size: 18px;
-      overflow: hidden;
-      opacity: 0;
-      width: 0;
-      -webkit-transition: all 0.3s ease-in-out;
-    transition:  all 0.3s ease-in-out;
-
-      @include breakpoint(s) {
-        margin-left: 20px;
-        opacity: 1;
-        width: 100%;
-        box-shadow: inset 5px 0px 0 0 #eaeaea;
-      }
 
       .home-testimonial-quote {
-        width: 355px;
-        margin: 0 0 0 25px;
-        padding: 0;
-
-
-        @media (max-width: 880px) {
-          width: 290px;
-        }
+        margin: 20px 0 0;
+        line-height: 1.5;
+        font-size: 20px;
+        font-weight: 500;
+        color: #4D4D4D;
 
         @include breakpoint(s) {
-          width: auto;
+          font-size: 18px;
+          margin: 15px 0 0;
+        }
+      }
+
+      .home-testimonial-stars {
+        height: 30px;
+        margin: 20px auto;
+        display: block;
+
+        @include breakpoint(s) {
+          height: 26px;
+          margin: 15px auto;
         }
       }
 
@@ -5454,25 +5447,9 @@ iframe {
     }
 
     .home-testimonial-quote-source {
-      color: $headingColor;
-      margin: 20px 0 0;
-      font-style: normal;
-
-      .contrast & {
-        color: $contrastHeadingColor;
-      }
-
-      .has-avatar & {
-        opacity: 0.5;
-      }
-
-      @include breakpoint(s) {
-        padding: 0 $gutter/2;
-
-        .has-avatar & {
-          padding: 0;
-        }
-      }
+      color: #808080;
+      font-size: 18px;
+      margin: 0;
     }
 
     .home-featured-collections {

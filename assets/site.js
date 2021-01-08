@@ -2139,10 +2139,10 @@ function getTestimonial(index) {
   return $($('.home-testimonial').get(index));
 }
 
-function setActive(testimonial) {
-  $(".home-testimonial").removeClass("testimonial-active");
-  testimonial.addClass("testimonial-active");
-}
+// function setActive(testimonial) {
+//   $(".home-testimonial").removeClass("testimonial-active");
+//   testimonial.addClass("testimonial-active");
+// }
 
 var timeoutCall;
 
