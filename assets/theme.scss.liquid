@@ -715,9 +715,8 @@ body {
                               -webkit-font-smoothing: #{'{% if settings.section-heading-font == "Volkhov, serif" %}'} antialiased #{'{% endif %}'};
                               -webkit-font-smoothing: #{'{% if settings.body-font == "Lato, sans-serif" %}'} antialiased #{'{% endif %}'};
 
-                              font-size:      #{' {% if settings.section-heading-font-small-caps %} '}30px #{' {% endif %} '};
-                              letter-spacing: #{' {% if settings.section-heading-font-small-caps %} '}0.1em #{' {% endif %} '};
-                              text-transform: #{' {% if settings.section-heading-font-small-caps %} '}uppercase #{' {% endif %} '};
+                              font-size:      #{' {% if settings.section-heading-font-small-caps %} '}35px #{' {% endif %} '};
+                              text-transform: #{' {% if settings.section-heading-font-small-caps %} '}capitalize #{' {% endif %} '};
                             }
 
                               .meta {
