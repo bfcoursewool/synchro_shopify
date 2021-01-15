@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/fav-icon.png?v=1605894369">
 
-    <link href="https://cdn.besynchro.com/static/synchro.css" rel="stylesheet">
+    {{ 'synchro.css' | asset_url | stylesheet_tag }}
 
     <!-- Typekit Font - Futura -->
     <link rel="stylesheet" href="https://use.typekit.net/ytz3drb.css">
@@ -205,7 +205,7 @@
                src="https://dc.ads.linkedin.com/collect/?pid=316778&fmt=gif"/></noscript>
 <!-- LinkedIn Insights Tag End-->
 
-<script type="text/javascript" src="https://cdn.besynchro.com/static/synchro.bundle.js"></script>
+{{ 'synchro.bundle.js' | asset_url | script_tag }}
 
 <!-- Gorgias Chat Widget Start -->
 <div id="gorgias-chat">
