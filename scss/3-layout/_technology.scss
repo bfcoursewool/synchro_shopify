@@ -1,0 +1,397 @@
+.technology {
+  background: $color-gold;
+  text-align: center;
+
+  &__wrapper {
+    display: table;
+  }
+
+  &__image-mobile {
+    display: none;
+    @include s-screen {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__copy {
+    display: table-cell;
+    text-align: center;
+    width: 50%;
+    padding: 0 5% 36px;
+    @include xl-screen {
+      padding: 0 10% 36px;
+    }
+    @include s-screen {
+      display: block;
+      width: 100%;
+      overflow: auto;
+      padding: 0 $gutter-small 14px;
+    }
+
+    .p--title {
+      color: $color-ivory;
+      border: 2px solid $color-ivory;
+      margin-bottom: 30px;
+      @include s-screen {
+        margin-top: 40px;
+      }
+    }
+
+    .p--header {
+      font-weight: 600;
+      font-size: 40px;
+      color: $color-ivory;
+      letter-spacing: $spacing-normal;
+      @include s-screen {
+        font-size: 35px;
+      }
+    }
+
+    .p--text {
+      font-size: 24px;
+      color: $color-ivory;
+    }
+  }
+
+  &__image {
+    display: table-cell;
+    background-image: url("https://cdn.besynchro.com/gold/v2-0/benefits-inflammationfighting.jpg");
+    background-size: cover;
+    background-position: center;
+    @include s-screen {
+      display: none;
+    }
+  }
+
+  &__tabs-desktop {
+    background: $color-ivory;
+    padding: $gutter-large $gutter-large 0;
+    @include sm-screen {
+      padding: $gutter-medium $gutter-medium 0;
+    }
+    @include s-screen {
+      display: none;
+    }
+  }
+
+  &__tabs {
+    box-shadow: inset 0 0 1px $color-silver-dark;
+    @include s-screen {
+      box-shadow: none;
+    }
+  }
+
+  &__tabs-mobile {
+    display: none;
+    @include s-screen {
+      display: block;
+      padding: 0 $gutter-small 30px;
+    }
+  }
+
+  &__point {
+    transition: 0.3s ease-in-out all;
+    background: $color-ivory;
+    overflow: auto;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+
+    &.active {
+      padding: 25px 20px 20px;
+
+      .technology__details {
+        max-height: 550px;
+      }
+    }
+  }
+
+  &__header {
+    letter-spacing: $spacing-normal;
+    font-weight: $font-demi;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0;
+    transition: 0.3s ease-in-out all;
+  }
+
+  &__details {
+    max-height: 15px;
+    overflow: hidden;
+    transition: 0.3s ease-in-out all;
+  }
+}
+
+.technology-2 {
+  background: url("https://cdn.besynchro.com/gold/capsules/technology-bg.jpg");
+  padding: $gutter-large $gutter-medium $gutter-large $gutter-large;
+  margin: $gutter-small;
+  font-size: 0;
+  background-size: cover;
+  @include m-screen {
+    padding: $gutter-medium $gutter-medium $gutter-small;
+    text-align: center;
+  }
+  @include sm-screen {
+    padding: $gutter-medium;
+  }
+  @include xs-screen {
+    margin: 0 0 $gutter-small;
+    padding: $gutter-medium $gutter-small $gutter-small;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 260px;
+    @include m-screen {
+      margin-bottom: 30px;
+    }
+    @include s-screen {
+      max-width: 220px;
+    }
+  }
+
+  &__content {
+    display: inline-block;
+    width: calc(100% - 260px);
+    vertical-align: middle;
+    padding-left: $gutter-large;
+    @include m-screen {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  &__header {
+    font-weight: $font-bold;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    @include s-screen {
+      font-size: 35px;
+    }
+  }
+
+  &__subheader {
+    font-weight: $font-medium;
+    font-size: 25px;
+    color: #7F7F7F;
+  }
+
+  &__tech {
+    justify-content: space-between;
+    display: flex;
+    margin-top: $gutter-medium;
+    @include s-screen {
+      display: block;
+    }
+  }
+
+  &__extraction,
+  &__liposomal,
+  &__pepper {
+    width: 30%;
+    @include s-screen {
+      width: 100%;
+      margin-top: $gutter-medium;
+    }
+
+    img {
+      width: 80px;
+    }
+  }
+
+  &__extraction {
+    padding: 0;
+  }
+
+  &__title {
+    font-weight: $font-bold;
+    font-size: 28px;
+    line-height: initial;
+    margin: 15px 0 10px;
+  }
+
+  &__copy {
+    font-weight: $font-medium;
+    font-size: 24px;
+    opacity: 0.5;
+    line-height: initial;
+  }
+
+  .a--cta {
+    display: none;
+    @include s-screen {
+      display: inline-block;
+      font-size: 18px;
+      padding: 20px 35px;
+      margin: 20px 0 0;
+      background-color: #39447C;
+      border-radius: 40px;
+    }
+    @include xs-screen {
+      margin: 20px 0 15px;
+    }
+  }
+}
+
+.technology-3 {
+  background: linear-gradient(0deg, #F3EEE7 15%, #FAF7F3 15%);
+  margin: 0 20px 20px;
+  padding: $gutter-large;
+  text-align: center;
+  @include m-screen {
+    margin: 0;
+  }
+  @include s-screen {
+    padding: $gutter-medium $gutter-small;
+  }
+
+  &__header {
+    max-width: 700px;
+    font-weight: $font-bold;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    @include m-screen {
+      font-size: 45px;
+    }
+    @include sm-screen {
+      font-size: 40px;
+    }
+    @include s-screen {
+      font-size: 35px;
+    }
+  }
+
+  &__subheader {
+    max-width: 680px;
+    font-weight: $font-medium;
+    font-size: 30px;
+    opacity: 0.5;
+    margin: 30px auto 0;
+    @include m-screen {
+      font-size: 27px;
+    }
+    @include sm-screen {
+      font-size: 24px;
+    }
+    @include s-screen {
+      font-size: 22px;
+      margin: 20px auto;
+    }
+  }
+
+  &__liposomal {
+    width: 400px;
+    text-align: right;
+    right: 322px;
+    top: 62px;
+    @include m-screen {
+      width: 250px;
+      right: 248px;
+      top: 48px;
+    }
+    @include s-screen {
+      text-align: center;
+    }
+
+    img {
+      position: absolute;
+      margin-left: 30px;
+      @include rotate-cw;
+      @include s-screen {
+        position: initial;
+      }
+    }
+  }
+
+  &__pepper {
+    width: 400px;
+    text-align: left;
+    left: 356px;
+    top: -25px;
+    @include m-screen {
+      width: 250px;
+      left: 280px;
+      top: -13px;
+    }
+    @include s-screen {
+      text-align: center;
+    }
+
+    img {
+      position: absolute;
+      right: 100%;
+      margin-right: 30px;
+      @include rotate-ccw;
+      @include s-screen {
+        position: initial;
+      }
+    }
+  }
+
+  &__extraction {
+    max-width: 700px;
+    text-align: center;
+    top: -79px;
+
+    img {
+      margin-bottom: 20px;
+      @include rotate-cw;
+    }
+  }
+
+  &__extraction,
+  &__liposomal,
+  &__pepper {
+    margin: 0 auto;
+    position: relative;
+    @include s-screen {
+      position: initial;
+    }
+
+    img {
+      height: 120px;
+      @include s-screen {
+        height: 100px;
+        margin: 20px;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: $font-bold;
+    font-size: 40px;
+    line-height: initial;
+    margin-bottom: 10px;
+    @include m-screen {
+      font-size: 30px;
+    }
+  }
+
+  &__copy {
+    font-weight: $font-medium;
+    font-size: 30px;
+    opacity: 0.7;
+    line-height: initial;
+    @include m-screen {
+      font-size: 24px;
+    }
+  }
+
+  &__image {
+    max-width: 430px;
+    margin: 0 auto;
+    @include s-screen {
+      margin-top: $gutter-medium;
+      max-width: 90%;
+    }
+  }
+}

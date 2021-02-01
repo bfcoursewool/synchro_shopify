@@ -1,0 +1,83 @@
+.icon-learn-more {
+  width: 100px;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  font-size: 18px;
+
+  &__svg {
+    height: 30px;
+    transition: 0.2s ease-in-out all;
+  }
+
+  &__circle {
+    stroke: $color-ebony;
+  }
+
+  &__plus {
+    fill: $color-ebony;
+  }
+
+  &__text {
+    font-weight: $font-medium;
+    text-decoration: underline;
+    max-height: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.2s ease-in-out all;
+  }
+
+  &.active {
+    .icon-learn-more__svg {
+      transform: rotate(45deg);
+    }
+
+    .icon-learn-more__text {
+      max-height: 0;
+    }
+  }
+}
+
+.icon-toggle-more {
+  background: $color-gold;
+  display: block;
+  border-radius: 20px;
+  width: fit-content;
+  padding: 4px 12px;
+  margin: 0 auto;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: $spacing-normal;
+  -webkit-font-smoothing: antialiased;
+  color: $color-ivory;
+  font-weight: $font-demi;
+  font-size: 15px;
+  transition: 0.5s ease-in-out all;
+
+  &.active {
+    background: #b2b2b2;
+
+    .icon-toggle-more__svg {
+      transform: rotate(180deg);
+      transform-origin: 6px 3px;
+    }
+
+    &:before {
+      content: "less";
+    }
+  }
+
+  &:before {
+    content: "more";
+  }
+
+  &__svg {
+  transition: 0.5s ease-in-out all;
+    height: 8px;
+    margin-left: 3px;
+  }
+
+  &__chevron {
+    fill: $color-ivory;
+  }
+}

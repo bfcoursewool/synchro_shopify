@@ -1,0 +1,297 @@
+// Main Navigation without links
+
+.header {
+  padding: $gutter-small;
+  font-size: 0;
+  text-align: center;
+
+  &__logo {
+    .synchro-logo {
+      height: 20px;
+    }
+  }
+}
+// Main Navigation with links
+
+.expanded-header-container {
+  .expanded-header {
+    max-width: 2000px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: $color-ivory;
+    z-index: $header-z-index;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 0;
+    transition: all ease-in-out 0.5s, padding ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s, padding ease-in-out 0.5s;
+    /* FF 4 */
+    -webkit-transition: all ease-in-out 0.5s, padding ease-in-out 0.5s;
+    /* Safari & Chrome */
+    -o-transition: all ease-in-out 0.5s, padding ease-in-out 0.5s;
+    /* Opera */
+    @include s-screen {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &.pseudo {
+      position: relative;
+      visibility: hidden;
+      padding-top: 40px !important;
+      padding-bottom: 40px !important;
+      @include s-screen {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+    }
+
+    &.floated {
+      box-shadow: 0 1px 0 0 rgba(0,0,0,0.05);
+      padding-top: 10px;
+      padding-bottom: 10px;
+      @include s-screen {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    &__content {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      align-items: center;
+      @include s-screen {
+        grid-template-columns: 1fr 3fr 1fr;
+        justify-items: center;
+      }
+    }
+
+    &__logo {
+      @include s-screen {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        background: $color-ivory;
+        grid-column-start: 2;
+      }
+
+      .synchro-logo {
+        height: 20px;
+      }
+    }
+
+    .main-navigation {
+      justify-self: right;
+      @include s-screen {
+        left: 0;
+        padding: 30px;
+        position: fixed;
+        background: $color-ivory;
+        text-align: center;
+        margin-top: 10px;
+        width: 100%;
+        transition: all 0.35s ease-in-out;
+        -moz-transition: all 0.35s ease-in-out;
+        -webkit-transition: all 0.35s ease-in-out;
+        -o-transition: all 0.35s ease-in-out;
+        z-index: -1;
+        top: -400px;
+      }
+
+      &.expanded {
+        @include s-screen {
+          top: 20px;
+        }
+      }
+
+      &__hamburger {
+        display: none;
+        @include s-screen {
+          display: block;
+          cursor: pointer;
+          justify-self: right;
+        }
+
+        &.expanded {
+          .main-navigation__stack:first-child {
+            transform: rotateZ(45deg);
+            transform-origin: 8px 3px;
+          }
+
+          .main-navigation__stack:nth-child(2) {
+            display: none;
+          }
+
+          .main-navigation__stack:last-child {
+            transform: rotateZ(-45deg);
+            transform-origin: 7px -1px;
+          }
+        }
+      }
+
+      &__stack {
+        background-color: $color-ebony;
+        height: 3px;
+        width: 25px;
+        margin: 5px 0;
+        transition: 0.2s;
+      }
+
+      &__item {
+        font-size: 18px;
+        padding-right: 40px;
+        font-weight: $font-medium;
+        -webkit-font-smoothing: antialiased;
+        opacity: 0.5;
+        @include m-screen {
+          padding-right: 30px;
+        }
+        @include s-screen {
+          display: block;
+          margin: 20px auto;
+          padding: 0;
+        }
+
+        &:hover {
+          opacity: 0.8;
+          transition: all 0.2s ease;
+        }
+      }
+
+      &__cta {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.shopify-header-container {
+  .shopify-header {
+    padding: 50px 30px;
+    font-size: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: $color-ivory;
+    z-index: $header-z-index;
+    @include sm-screen {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      padding: 0 20px;
+    }
+
+    &.pseudo {
+      display: none;
+      @include sm-screen {
+        visibility: hidden;
+        height: 60px;
+        position: relative;
+        display: block;
+      }
+    }
+
+    &__content {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      align-items: center;
+      @include sm-screen {
+        grid-template-columns: 1fr 3fr 1fr;
+        justify-items: center;
+      }
+    }
+
+    &__logo {
+      @include sm-screen {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        background: $color-ivory;
+        grid-column-start: 2;
+      }
+
+      .synchro-logo {
+        height: 20px;
+      }
+    }
+
+    .main-navigation {
+      justify-self: right;
+      @include sm-screen {
+        left: -100%;
+        top: 60px;
+        bottom: 0;
+        padding: 10px;
+        position: fixed;
+        background: $color-ebony;
+        color: $color-ivory;
+        text-align: center;
+        width: 100%;
+        transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        z-index: -1;
+      }
+
+      &.expanded {
+        @include sm-screen {
+          left: 0;
+        }
+      }
+
+      &__hamburger {
+        display: none;
+        @include sm-screen {
+          display: block;
+          cursor: pointer;
+          justify-self: left;
+        }
+
+        &.expanded {
+          .main-navigation__stack:first-child {
+            transform: rotateZ(45deg);
+            transform-origin: 8px 3px;
+          }
+
+          .main-navigation__stack:nth-child(2) {
+            display: none;
+          }
+
+          .main-navigation__stack:last-child {
+            transform: rotateZ(-45deg);
+            transform-origin: 7px -1px;
+          }
+        }
+      }
+
+      &__stack {
+        background-color: $color-ebony;
+        height: 3px;
+        width: 25px;
+        margin: 5px 0;
+        transition: 0.2s;
+      }
+
+      &__item {
+        font-size: 18px;
+        padding-left: 40px;
+        @include sm-screen {
+          font-size: 19px;
+          display: block;
+          margin: 20px auto;
+          padding: 0;
+        }
+
+        &:hover {
+          color: #989999;
+          transition: all 0.2s ease;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.top-offer-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: $color-silver;
+  z-index: $header-z-index;
+  max-width: 2000px;
+  margin: 0 auto;
+
+  &.pseudo {
+    position: relative;
+    visibility: hidden;
+  }
+
+  &__text {
+    display: inline-block;
+    color: $color-ebony;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 16px;
+    vertical-align: middle;
+    margin: 8px 10px;
+  }
+
+  &__desktop {
+    @include xs-screen {
+      display: none;
+    }
+  }
+
+  &__code {
+    background: $color-ivory;
+    color: $color-ebony;
+    padding: 3px 8px;
+    margin: 0 5px;
+    @include animate-flash;
+
+    &:active,
+    &:focus,
+    &:hover,
+    &:visited {
+      color: $color-ebony;
+    }
+  }
+
+  .a--cta {
+    padding: 10px 20px;
+    vertical-align: middle;
+    font-size: 14px;
+    border-radius: 0;
+    box-shadow: none;
+
+    &:active {
+      top: 0;
+    }
+  }
+}

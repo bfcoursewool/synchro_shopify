@@ -1,0 +1,1396 @@
+.gold-lp {
+  overflow-x: hidden;
+
+  a.anchor {
+    top: -35px;
+  }
+
+  .a--cta {
+    border-radius: 0;
+  }
+
+  .top-offer-bar {
+    @include xs-screen {
+      .a--cta {
+        display: none;
+      }
+    }
+  }
+
+  .main-header {
+    position: initial;
+
+    .a--cta {
+      @include cta-custom($color-gold, white);
+      display: none;
+    }
+
+    &.pseudo {
+      display: none;
+    }
+
+    &.floated {
+      .a--cta {
+        display: block;
+      }
+    }
+
+    &__content {
+      height: 40px;
+    }
+  }
+
+  #videoModal {
+    .modal-dialog {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      width: 90%;
+      max-width: 1000px;
+    }
+
+    .modal-body {
+      padding: 5px;
+    }
+
+    .embed-container {
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      right: -40px;
+      font-size: 40px;
+      color: rgba(0,0,0,0.5);
+      opacity: 1;
+      font-weight: 100;
+      outline: none;
+      background: white;
+      padding: 1px 10px;
+      z-index: -1;
+    }
+
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .atf {
+    display: table;
+    width: 100%;
+
+    &__video {
+      overflow: hidden;
+      position: relative;
+      width: 25%;
+      display: table-cell;
+      background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-atf-video%402x.jpg");
+      background-size: cover;
+      background-position: center;
+      transition: all 0.3s ease-in-out;
+      @include sm-screen {
+        display: block;
+      }
+
+      &:hover {
+        width: 50%;
+      }
+    }
+
+    &__video-btn {
+      position: absolute;
+      top: 53%;
+      left: 50%;
+      cursor: pointer;
+      transform: translate(-50%,-50%);
+      font-weight: $font-demi;
+      font-size: 16px;
+      letter-spacing: 1px;
+      line-height: 1.4;
+      padding: 20px 20px 15px;
+      text-transform: uppercase;
+      background: $color-ivory;
+      color: #675f5f;
+      border: 0;
+      border-radius: 20px;
+      outline: none;
+      -webkit-appearance: button;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-font-smoothing: antialiased;
+
+      &::before {
+        content: "";
+        display: block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-18px);
+        border-top: 25px solid transparent;
+        border-left: 40px solid $color-gold;
+        border-bottom: 25px solid transparent;
+        margin-bottom: 15px;
+      }
+    }
+
+    &__video-bar {
+      position: absolute;
+      left: 55px;
+      right: 30px;
+      bottom: 28px;
+      background: rgba(255,255,255,0.5);
+      height: 2px;
+
+      &::before {
+        content: "";
+        display: block;
+        position: relative;
+        left: -25px;
+        top: -7px;
+        border-top: 8px solid transparent;
+        border-left: 12px solid white;
+        border-bottom: 8px solid transparent;
+      }
+
+      &::after {
+        content: "";
+        height: 18px;
+        width: 18px;
+        background: white;
+        top: -23px;
+        position: relative;
+        display: block;
+        border-radius: 9px;
+      }
+    }
+
+    &__video-mobile {
+      display: none;
+      @include sm-screen {
+        display: block;
+        margin: 20px;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .iframe-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+      }
+
+      .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__copy {
+      font-size: 0;
+      width: 50%;
+      display: table-cell;
+      background-image: linear-gradient(90deg, #F3B37E, #F2C97F);
+      text-align: center;
+      padding: $gutter-medium;
+      @include sm-screen {
+        width: 100%;
+        display: block;
+      }
+      @include s-screen {
+        padding: 30px $gutter-small;
+      }
+    }
+
+    &__content {
+      display: inline-block;
+      vertical-align: middle;
+      @include xs-screen {
+        width: 100%;
+      }
+    }
+
+    &__header {
+      position: initial;
+      transform: none;
+      font-size: 60px;
+      color: $color-ivory;
+      width: auto;
+      max-width: 600px;
+      line-height: initial;
+      font-weight: $font-bold;
+      margin: $gutter-small 0;
+      @include s-screen {
+        margin: 10px auto;
+        font-size: 40px;
+      }
+    }
+
+    &__subheader {
+      font-size: 35px;
+      color: $color-ivory;
+      margin: $gutter-small auto;
+      line-height: 1.4;
+      max-width: 450px;
+      @include s-screen {
+        margin-top: 10px;
+        font-size: 28px;
+      }
+    }
+
+    &__hero-image {
+      background-image: url("https://cdn.besynchro.com/experiments/go010-gold-OG-product-atf%402x.jpg");
+      display: table-cell;
+      background-position: center;
+      background-size: cover;
+      width: 25%;
+      @include sm-screen {
+        height: 300px;
+        width: 100%;
+        display: block;
+      }
+      @include xs-screen {
+        padding: 20px 0 0;
+        width: 100%;
+      }
+    }
+
+    .a--cta {
+      font-size: 18px;
+      padding: 16px 35px;
+      background-color: #39447C;
+      border-radius: 40px;
+    }
+  }
+
+  .benefits {
+    margin-top: 40px;
+
+    &__header {
+      max-width: none;
+    }
+
+    &__point {
+      margin: 0;
+    }
+  }
+
+  .icon-learn-more {
+    &__circle {
+      stroke: none;
+      fill: $color-gold;
+    }
+
+    &__plus {
+      fill: $color-ivory;
+    }
+  }
+
+  .ingredients {
+    &__icons {
+      background-image: linear-gradient(90deg, #F3B37E, #F2C97F);
+    }
+
+    &__icon-box {
+      .p--text {
+        color: $color-ivory;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .instagram {
+    padding-top: $gutter-large;
+    @include m-screen {
+      padding-top: $gutter-medium;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: 35px;
+      margin-bottom: $gutter-large;
+      text-align: center;
+      @include m-screen {
+        margin-bottom: $gutter-medium;
+      }
+    }
+  }
+
+  .purchase {
+    padding-top: $gutter-large;
+    @include m-screen {
+      padding-top: $gutter-medium;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: 35px;
+      margin-bottom: $gutter-large;
+      text-align: center;
+      @include m-screen {
+        margin-bottom: $gutter-medium;
+      }
+    }
+
+    .option-1 {
+      background-color: #eda267;
+      background-image: url("https://cdn.besynchro.com/gold/v2-0/gold-lg1.png");
+      background-image: url("https://cdn.besynchro.com/gold/v2-0/gold-lg1.png"), linear-gradient(90deg, #F3B37E, #F2C97F);
+    }
+
+    .option-2 {
+      background-color: #eda267;
+      background-image: url("https://cdn.besynchro.com/gold/v2-0/gold-lg2.png");
+      background-image: url("https://cdn.besynchro.com/gold/v2-0/gold-lg2.png"), linear-gradient(90deg, #F3B37E, #F2C97F);
+    }
+
+    .option-3 {
+      background-color: #eda267;
+      background-image: url("https://cdn.besynchro.com/gold/v2-0/gold-lg4.png");
+      background-image: url("https://cdn.besynchro.com/gold/v2-0/gold-lg4.png"), linear-gradient(90deg, #F3B37E, #F2C97F);
+    }
+  }
+
+  .synchro-reviews {
+    padding-top: $gutter-medium;
+  }
+}
+// STYLES FOR GOLD ORIGINAL ONLY
+
+.gold-og {
+  .purchase {
+    .option-1 {
+      background-color: #eda267;
+      background-image: url("https://cdn.besynchro.com/gold/og-v1-0/gold-og1.png");
+      background-image: url("https://cdn.besynchro.com/gold/og-v1-0/gold-og1.png"), linear-gradient(90deg, #F3B37E, #F2C97F);
+    }
+
+    .option-2 {
+      background-color: #eda267;
+      background-image: url("https://cdn.besynchro.com/gold/og-v1-0/gold-og2.png");
+      background-image: url("https://cdn.besynchro.com/gold/og-v1-0/gold-og2.png"), linear-gradient(90deg, #F3B37E, #F2C97F);
+    }
+
+    .option-3 {
+      background-color: #eda267;
+      background-image: url("https://cdn.besynchro.com/gold/og-v1-0/gold-og4.png");
+      background-image: url("https://cdn.besynchro.com/gold/og-v1-0/gold-og4.png"), linear-gradient(90deg, #F3B37E, #F2C97F);
+    }
+  }
+}
+// STYLES FOR GOLD ADWORDS ONLY
+
+.gold-adwords {
+  .technology__tabs-desktop {
+    padding-bottom: $gutter-large;
+    @include sm-screen {
+      padding-bottom: $gutter-medium;
+    }
+  }
+
+  &.no-wave {
+    .atf {
+      &:after {
+        content: none;
+      }
+    }
+  }
+}
+// STYLES FOR GOLD CAPSULES ONLY
+
+.gold-capsules {
+  a.anchor {
+    top: 0;
+  }
+
+  .rating-new {
+    &__stars {
+      background: none;
+      box-shadow: none;
+      padding: 0 0 15px;
+    }
+
+    &__icon {
+      fill: $color-gold;
+    }
+
+    &__count {
+      background: $color-ivory;
+      color: #707070;
+      border-radius: 10px;
+      font-weight: $font-demi;
+    }
+  }
+
+  .atf {
+    .a--cta {
+      background-color: $color-gold;
+      border-radius: 6px;
+      padding: 17px 60px;
+    }
+
+    &__copy {
+      background: #FAF7F3;
+      padding: $gutter-large $gutter-medium;
+      @include sm-screen {
+        padding: $gutter-medium;
+      }
+      @include s-screen {
+        padding: 30px $gutter-small 10px;
+      }
+    }
+
+    &__header {
+      color: $color-ebony;
+      font-weight: $font-demi;
+      max-width: 500px;
+      @include m-screen {
+        font-size: 53px;
+      }
+      @include s-screen {
+        font-size: 40px;
+      }
+    }
+
+    &__subheader {
+      color: $color-ebony;
+      font-weight: $font-medium;
+      opacity: 0.6;
+      max-width: 500px;
+      font-size: 30px;
+      margin-bottom: 30px;
+      @include m-screen {
+        font-size: 28px;
+      }
+      @include s-screen {
+        margin-bottom: $gutter-small;
+        font-size: 26px;
+      }
+    }
+
+    &__hero-image {
+      background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-atf-product%402x.jpg");
+      @include sm-screen {
+        display: none;
+      }
+    }
+
+    &__hero-image-mobile {
+      display: none;
+      @include sm-screen {
+        display: block;
+        background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-atf-mobile%402x.jpg");
+        padding-top: 66.66%;
+        background-size: contain;
+      }
+    }
+
+    &__video-mobile {
+      @include sm-screen {
+        margin: 0;
+        padding: $gutter-small;
+        background: #faf7f2;
+      }
+    }
+  }
+
+  .benefits-slider {
+    height: calc(2000px + 100vh);
+    padding: 0 $gutter-medium;
+    @include s-screen {
+      padding: 0 $gutter-small;
+    }
+
+    &__anchor1,
+    &__anchor2,
+    &__anchor3,
+    &__anchor4 {
+      position: relative;
+    }
+
+    &__anchor1 {
+      top: 600px;
+    }
+
+    &__anchor2 {
+      top: 1000px;
+    }
+
+    &__anchor3 {
+      top: 1400px;
+    }
+
+    &__anchor4 {
+      top: 1800px;
+    }
+
+    .pin-trigger {
+      visibility: hidden;
+      z-index: -10;
+      top: 50vh;
+      position: relative;
+      height: 1px;
+    }
+
+    &__content {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f078";
+        position: absolute;
+        font-weight: 900;
+        color: $color-gold;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        @include xs-screen {
+          display: none;
+        }
+      }
+
+      &:before {
+        animation-name: scrolltop;
+      }
+      @keyframes scrolltop {
+        from {
+          top: 40px;
+        }
+
+        to {
+          top: 60px;
+        }
+      }
+    }
+
+    &__icon1,
+    &__icon2,
+    &__icon3,
+    &__icon4 {
+      margin: 30px 80px 30px 0;
+      opacity: 0.3;
+      position: relative;
+      transition: all 0.5s ease 0s;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+      }
+      @include m-screen {
+        width: 50px;
+        margin-right: 50px;
+      }
+      @include s-screen {
+        margin-right: 30px;
+      }
+      @include xs-screen {
+        margin: 40px 20px 40px 0;
+        width: 40px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        height: 2px;
+        width: 0;
+        background: $color-gold;
+        transform: translate(15px, -1px);
+        transition: all 0.5s ease 0s;
+        @include s-screen {
+          left: 50%;
+          top: 100%;
+          width: 2px;
+          height: 0;
+          transform: translate(-1px, 0);
+        }
+        @include xs-screen {
+          width: 1px;
+          transform: none;
+        }
+      }
+
+      &.active {
+        opacity: 1;
+
+        &::after {
+          width: 50px;
+          height: 2px;
+          @include m-screen {
+            width: 20px;
+          }
+          @include s-screen {
+            width: 2px;
+            height: 0;
+          }
+          @include xs-screen {
+            width: 1px;
+          }
+        }
+      }
+
+      &.visited {
+        opacity: 1;
+
+        &::after {
+          @include s-screen {
+            height: 30px;
+          }
+          @include xs-screen {
+            height: 40px;
+          }
+        }
+      }
+
+      &:last-child {
+        @include s-screen {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__copy0,
+    &__copy1,
+    &__copy2,
+    &__copy3,
+    &__copy4 {
+      display: none;
+
+      &.active {
+        display: inline-block;
+      }
+    }
+
+    &__image0,
+    &__image1,
+    &__image2,
+    &__image3,
+    &__image4 {
+      display: inline-block;
+      height: 400px;
+      width: 400px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      vertical-align: middle;
+      @include m-screen {
+        width: 40%;
+      }
+      @include s-screen {
+        width: 100%;
+        height: 30vh;
+      }
+      @include xs-screen {
+        height: 25vh;
+      }
+    }
+
+    &__image0 {
+      background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-benefit-intro.jpg");
+      @include s-screen {
+        background-size: contain;
+        height: 40vh;
+      }
+      @include xs-screen {
+        background-size: cover;
+      }
+    }
+
+    &__image1 {
+      background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-inflammation-fighting.jpg");
+    }
+
+    &__image2 {
+      background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-healing.jpg");
+    }
+
+    &__image3 {
+      background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-joint-health.jpg");
+    }
+
+    &__image4 {
+      background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-brain-health.jpg");
+    }
+
+    &__text {
+      display: inline-block;
+      width: 530px;
+      vertical-align: middle;
+      padding-left: $gutter-medium;
+      text-align: left;
+      margin-bottom: -21px;
+      @include m-screen {
+        padding-left: 30px;
+        width: 59%;
+      }
+      @include s-screen {
+        margin-bottom: 0;
+        width: 100%;
+        padding: $gutter-small 0 0;
+        max-width: 400px;
+      }
+    }
+
+    &__header {
+      opacity: 0.5;
+      font-weight: $font-medium;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      @include m-screen {
+        display: none;
+      }
+    }
+
+    &__intro {
+      font-weight: $font-bold;
+      font-size: 40px;
+      margin-bottom: $gutter-small;
+      @include s-screen {
+        font-size: 30px;
+        text-align: center;
+      }
+    }
+
+    &__title {
+      font-weight: $font-bold;
+      font-size: 30px;
+      @include s-screen {
+        font-size: 24px;
+      }
+    }
+
+    &__text-desktop {
+      @include sm-screen {
+        display: none;
+      }
+    }
+
+    &__text-mobile {
+      display: none;
+      @include sm-screen {
+        display: block;
+      }
+    }
+
+    .p--text {
+      opacity: 0.5;
+      font-weight: $font-medium;
+      @include xs-screen {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .superior {
+    background-color: #F1DEC3;
+    margin: 0 $gutter-medium;
+    @include s-screen {
+      margin: 0 0 20px;
+    }
+
+    &__image {
+      background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-tech-bg.jpg");
+      background-position: center;
+      background-size: cover;
+      height: 650px;
+      @include m-screen {
+        background-position-x: 37%;
+      }
+      @include sm-screen {
+        background: none;
+        height: initial;
+      }
+    }
+
+    &__image-mobile {
+      display: none;
+      @include sm-screen {
+        display: block;
+        padding-top: 100%;
+        background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-tech-bg-mobile.jpg");
+        background-size: cover;
+      }
+    }
+
+    &__title {
+      text-align: center;
+      margin: 0 auto;
+      padding: 120px $gutter-medium 0;
+      max-width: 1280px;
+      @include m-screen {
+        padding-top: 100px;
+      }
+      @include sm-screen {
+        background-color: #F2F1EE;
+        padding: $gutter-medium $gutter-small 0;
+      }
+      @include s-screen {
+        padding-top: $gutter-medium;
+      }
+    }
+
+    &__header {
+      font-weight: $font-bold;
+      font-size: 48px;
+      width: 50%;
+      margin-left: auto;
+      margin-bottom: 20px;
+      @include m-screen {
+        font-size: 40px;
+      }
+      @include sm-screen {
+        font-size: 35px;
+        width: 100%;
+      }
+    }
+
+    &__subheader {
+      font-weight: $font-medium;
+      font-size: 26px;
+      color: #61584e;
+      line-height: 1.5;
+      width: 50%;
+      margin-left: auto;
+      @include sm-screen {
+        font-size: 22px;
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    &__points {
+      -moz-column-count: 2;
+      -moz-column-gap: 40px;
+      -webkit-column-count: 2;
+      -webkit-column-gap: 40px;
+      column-count: 2;
+      column-gap: 40px;
+      padding: 0 $gutter-medium;
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+      top: -60px;
+      background-color: #F1DEC3;
+      @include m-screen {
+        column-gap: 20px;
+        padding: 0 $gutter-small;
+      }
+      @include sm-screen {
+        position: initial;
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+        padding: 0 $gutter-small $gutter-small;
+      }
+    }
+
+    &__card-1,
+    &__card-2,
+    &__card-3,
+    &__card-4,
+    &__card-5 {
+      background: $color-ivory;
+      display: inline-block;
+      padding: 40px 40px 25px;
+      margin-bottom: 40px;
+      text-align: center;
+      line-height: 1.5;
+      background-repeat: no-repeat;
+      background-size: 150px;
+      background-position: top left;
+      @include m-screen {
+        margin-bottom: 20px;
+      }
+      @include s-screen {
+        padding: 30px 20px 15px;
+      }
+    }
+
+    &__card-1 {
+      background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-tech-liposomal%402x.jpg");
+    }
+
+    &__card-2 {
+      background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-tech-turmeric%402x.jpg");
+    }
+
+    &__card-3 {
+      background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-tech-pepper%402x.jpg");
+    }
+
+    &__card-4 {
+      background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-tech-oil%402x.jpg");
+    }
+
+    &__card-5 {
+      background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-tech-sunflower%402x.jpg");
+      margin-bottom: 0;
+    }
+
+    &__point {
+      font-weight: $font-bold;
+      font-size: 30px;
+      @include s-screen {
+        font-size: 26px;
+      }
+    }
+
+    &__copy {
+      font-weight: $font-medium;
+      font-size: 24px;
+      color: #666666;
+      @include s-screen {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .quality {
+    padding: $gutter-medium*2 $gutter-small;
+    text-align: center;
+    font-size: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    @include m-screen {
+      padding: $gutter-large $gutter-medium;
+    }
+    @include s-screen {
+      padding: $gutter-small $gutter-small $gutter-medium;
+    }
+
+    &__icons {
+      @include s-screen {
+        margin: 0 auto;
+        width: fit-content;
+      }
+    }
+
+    &__icon-box {
+      display: inline-block;
+      width: 18%;
+      margin: 0 1%;
+      vertical-align: top;
+      @include s-screen {
+        width: fit-content;
+        margin: $gutter-small 0;
+        display: block;
+      }
+    }
+
+    &__icon-text {
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 25px 0 0;
+      font-weight: $font-demi;
+      font-size: 16px;
+      @include s-screen {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0 0 $gutter-small;
+      }
+    }
+  }
+
+  .ingredients-2 {
+    margin: 0 $gutter-medium;
+    background: #FAF7F3;
+    padding: $gutter-large $gutter-small;
+    @include sm-screen {
+      padding: $gutter-medium $gutter-small;
+    }
+    @include s-screen {
+      margin: 0;
+    }
+
+    &__details {
+      max-width: 1400px;
+      padding: $gutter-medium 0;
+      margin: 0 auto;
+      @include sm-screen {
+        padding: $gutter-small 0;
+      }
+    }
+
+    &__item-box {
+      padding: $gutter-small $gutter-small 0;
+      @include m-screen {
+        width: 50%;
+      }
+      @include s-screen {
+        padding: $gutter-small 0 0;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
+
+    &__image {
+      @include s-screen {
+        width: 100%;
+      }
+    }
+
+    &__header {
+      line-height: normal;
+    }
+
+    &__copy {
+      opacity: 0.6;
+    }
+
+    &__facts {
+      display: inline-block;
+      width: 65%;
+      padding: 0 $gutter-small;
+      background: none;
+      max-width: 600px;
+      @include sm-screen {
+        width: 100%;
+        margin-bottom: $gutter-medium;
+      }
+      @include s-screen {
+        padding: 0;
+        max-width: 500px;
+      }
+    }
+
+    &__facts-image {
+      background: $color-ivory;
+      padding: 25px 30px;
+      margin-top: $gutter-medium;
+      @include s-screen {
+        padding: 15px;
+      }
+    }
+
+    &__directions {
+      display: inline-block;
+      width: 35%;
+      padding: 0 $gutter-small;
+      vertical-align: top;
+      max-width: 375px;
+      @include sm-screen {
+        width: 100%;
+      }
+      @include s-screen {
+        padding: 0;
+        max-width: 500px;
+      }
+    }
+
+    &__direction {
+      font-size: 22px;
+      background: $color-ivory;
+      padding: $gutter-small;
+      border-radius: 10px;
+      margin-top: $gutter-medium;
+      font-weight: $font-medium;
+    }
+  }
+
+  .testimonials {
+    padding: $gutter-large $gutter-medium;
+    text-align: center;
+    @include m-screen {
+      padding: $gutter-large $gutter-small;
+    }
+    @include s-screen {
+      padding: $gutter-medium $gutter-small $gutter-small;
+    }
+
+    &__cards {
+      margin: $gutter-large auto 0;
+      max-width: 1400px;
+      @include s-screen {
+        margin-top: $gutter-medium;
+      }
+    }
+
+    &__card {
+      display: inline-block;
+      width: 29%;
+      margin: 0 2%;
+      padding: $gutter-small $gutter-small 5px;
+      background: $color-silver-light;
+      border-radius: 10px;
+      vertical-align: top;
+      @include m-screen {
+        width: 31%;
+        margin: 0 1%;
+        padding: $gutter-small $gutter-small 5px;
+      }
+      @include sm-screen {
+        width: 47%;
+
+        &:last-child {
+          display: none;
+        }
+      }
+      @include s-screen {
+        width: 100%;
+        margin: 0 0 $gutter-small;
+        max-width: 400px;
+
+        &:last-child {
+          display: inline-block;
+        }
+      }
+    }
+
+    &__headshot {
+      width: 100%;
+    }
+
+    &__quote {
+      font-weight: $font-medium;
+      font-size: 20px;
+      margin: $gutter-small 10px;
+    }
+
+    &__name {
+      font-size: 18px;
+      color: #4D4D4D;
+      font-style: italic;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .purchase-3 {
+    margin: 0 $gutter-medium;
+    background: #FAF7F3;
+    padding: $gutter-large $gutter-small $gutter-medium;
+    text-align: center;
+    font-size: 0;
+    @include m-screen {
+      margin: 0;
+    }
+    @include s-screen {
+      padding: $gutter-medium $gutter-small;
+    }
+
+    &__options {
+      margin: $gutter-large auto;
+      max-width: 1400px;
+      @include s-screen {
+        margin: $gutter-medium 0;
+      }
+    }
+
+    &__item {
+      display: inline-block;
+      width: 31%;
+      margin: 0 1%;
+      padding: $gutter-small 10px 30px;
+      border-radius: 10px;
+      vertical-align: top;
+      @include s-screen {
+        width: 48%;
+        margin: 0 1%;
+        padding: 10px;
+
+        &:first-child {
+          width: 98%;
+          margin-bottom: $gutter-small;
+        }
+      }
+
+      &.popular-item,
+      &.savings-item {
+        background: $color-ivory;
+        position: relative;
+
+        &:before {
+          position: absolute;
+          left: -34px;
+          top: 43px;
+          height: 24px;
+          background-size: 129px;
+          color: white;
+          font-size: 14px;
+          transform: rotate(-45deg);
+          text-transform: uppercase;
+          font-weight: $font-demi;
+          letter-spacing: 0.9px;
+          line-height: 24px;
+          border-left: 24px solid transparent;
+          border-right: 24px solid transparent;
+          border-bottom: 24px solid #F67979;
+          padding: 0 10px;
+        }
+      }
+
+      &.popular-item {
+        &:before {
+          content: "most popular";
+        }
+      }
+
+      &.savings-item {
+        &:before {
+          content: "most savings";
+        }
+      }
+    }
+
+    &__image {
+      background-size: 250px;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 250px;
+      @include s-screen {
+        background-size: 200px;
+        height: 200px;
+      }
+
+      &.option-1 {
+        background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-purchase-1.png");
+      }
+
+      &.option-2 {
+        background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-purchase-2.png");
+      }
+
+      &.option-3 {
+        background-image: url("https://cdn.besynchro.com/gold/capsules/gold-cap-purchase-3.png");
+      }
+    }
+
+    &__quantity {
+      font-weight: $font-bold;
+      font-size: 25px;
+      margin-top: $gutter-small;
+      line-height: 1.5;
+      @include s-screen {
+        margin-top: 10px;
+      }
+
+      span {
+        @include m-screen {
+          display: block;
+          opacity: 0.5;
+
+          &:before {
+            display: none;
+          }
+        }
+        @include s-screen {
+          font-size: 21px;
+        }
+
+        &:before {
+          content: ' — ';
+        }
+      }
+    }
+
+    &__price {
+      font-weight: $font-bold;
+      font-size: 25px;
+      margin: $gutter-small 0;
+      letter-spacing: 0.4px;
+      @include sm-screen {
+        font-size: 21px;
+      }
+      @include s-screen {
+        margin-top: 10px;
+      }
+
+      span {
+        text-decoration: line-through;
+        color: #B2B2B2;
+        margin-right: 10px;
+        @include s-screen {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &__offer,
+    &__offer-extra {
+      font-weight: $font-demi;
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+
+    &__offer {
+      background: #76BB73;
+      color: $color-ivory;
+      padding: 4px 16px;
+      border-radius: 20px;
+      margin: 0 auto 30px;
+      @include s-screen {
+        margin-bottom: 20px;
+      }
+    }
+
+    .a--cta {
+      background-color: #eca846;
+      border-radius: 6px;
+      padding: 12px 80px;
+      @include m-screen {
+        padding: 12px 60px;
+      }
+      @include s-screen {
+        width: 100%;
+        padding: 12px 10px;
+      }
+    }
+
+    .payment__methods {
+      background: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .faq {
+    padding: $gutter-large $gutter-medium 30px;
+    @include sm-screen {
+      padding: $gutter-medium $gutter-small 10px;
+    }
+
+    &__cards {
+      margin: $gutter-large auto 0;
+      max-width: 1400px;
+      @include sm-screen {
+        margin-top: $gutter-medium;
+      }
+    }
+  }
+
+  .references {
+    padding: $gutter-large $gutter-medium $gutter-medium;
+    @include sm-screen {
+      padding: $gutter-medium $gutter-small $gutter-small;
+    }
+  }
+}

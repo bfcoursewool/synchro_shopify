@@ -1,0 +1,337 @@
+.ketomanna-lp {
+  a.anchor {
+    top: -35px;
+  }
+
+  .a--cta {
+    background: #39447c;
+  }
+
+  .p--title {
+    border-color: #39447c;
+    color: #39447c;
+  }
+
+  .top-offer-bar {
+    @include xs-screen {
+      .a--cta {
+        display: none;
+      }
+    }
+  }
+
+  .main-header {
+    position: initial;
+
+    &.pseudo {
+      display: none;
+    }
+
+    .a--cta {
+      display: none;
+    }
+
+    &__content {
+      height: 47px;
+    }
+  }
+
+  .atf {
+    display: flex;
+    @include s-screen {
+      display: block;
+    }
+
+    &__video {
+      position: relative;
+      width: 50%;
+      background-image: url("https://cdn.besynchro.com/experiments/km005-v2-atf-desktop%402x.jpg");
+      background-position: left;
+      background-size: cover;
+      @include m-screen {
+        background-image: url("https://cdn.besynchro.com/experiments/km005-v2-atf-mobile%402x.jpg");
+        background-position: center;
+      }
+      @include s-screen {
+        display: block;
+        height: 400px;
+        height: 70vh;
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    &__copy {
+      width: 50%;
+      min-width: 450px;
+      text-align: center;
+      overflow: auto;
+      background-image: linear-gradient(90deg, #e6c1c8, #ded5c4);
+      padding: 0 $gutter-medium;
+      @include s-screen {
+        width: 100%;
+        min-width: initial;
+      }
+    }
+
+    &__header {
+      position: initial;
+      transform: none;
+      color: #39447c;
+      font-weight: $font-demi;
+      letter-spacing: 0.03em;
+      font-size: 50px;
+      width: auto;
+      max-width: 530px;
+      margin: 30px auto 15px;
+      line-height: initial;
+      @include sm-screen {
+        font-size: 50px;
+        background: none;
+        padding: 0;
+        width: initial;
+      }
+      @include xs-screen {
+        font-size: 40px;
+      }
+    }
+
+    &__description {
+      font-size: 30px;
+      margin: 15px auto;
+    }
+
+    &__benefits {
+      background: white;
+      display: inline-block;
+      padding: 4px 13px;
+      color: #37447D;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      border-radius: 6px;
+      margin: 10px 5px;
+    }
+
+    .rating {
+      &__icon {
+        fill: #39447c;
+      }
+
+      &__count {
+        color: #39447C;
+
+        &:before {
+          content: "370+ 5 star";
+        }
+      }
+    }
+
+    .a--cta {
+      margin: 10px 0 40px;
+      font-size: 18px;
+      padding: 16px 35px;
+    }
+  }
+
+  .intro {
+    background-image: linear-gradient(90deg, #ded5c4, #e6c1c8);
+
+    &__copy {
+      .p--header,
+      .p--text {
+        color: #39447c;
+      }
+    }
+
+    &__image {
+      background-image: url("https://cdn.besynchro.com/ketomanna/v1-0/km-on-the-go@2x.jpg");
+    }
+  }
+
+  .ingredients {
+    &__icons {
+      background: none;
+      margin-top: 0;
+    }
+
+    &__icon-box {
+      .p--text {
+        color: $color-ebony;
+        font-weight: $font-medium;
+      }
+    }
+
+    &__items {
+      padding: $gutter-large 0 20px;
+      text-align: center;
+      @include m-screen {
+        padding: $gutter-medium 0 0;
+      }
+    }
+
+    &__item-box {
+      width: 50%;
+      @include s-screen {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__image {
+      max-height: 110px;
+    }
+
+    &__header {
+      font-size: 20px;
+      border-width: 0 0 2px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  }
+
+  .facts {
+    &__ketomanna {
+      text-align: center;
+      background-image: linear-gradient(90deg, #ded5c4, #e6c1c8);
+      padding: $gutter-large 0;
+      @include sm-screen {
+        padding: $gutter-medium $gutter-medium 14px;
+      }
+      @include s-screen {
+        padding-left: $gutter-small;
+        padding-right: $gutter-small;
+      }
+
+      img {
+        max-height: 400px;
+        max-width: 100%;
+        padding: 0 25px;
+        @include sm-screen {
+          padding: 0;
+        }
+      }
+
+      .p--text {
+        color: #39447c;
+        font-size: 26px;
+        max-width: 700px;
+        @include s-screen {
+          font-size: 22px;
+        }
+      }
+    }
+
+    &__copy {
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: 34px;
+      max-width: 45%;
+      padding: 0 25px;
+      @include sm-screen {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  .consumption {
+    font-size: 0;
+    padding: 0 $gutter-large $gutter-large;
+    max-width: 1400px;
+    margin: 0 auto;
+    @include s-screen {
+      padding: 0 $gutter-small $gutter-medium;
+    }
+
+    &__box {
+      display: inline-block;
+      width: 50%;
+      padding: 10px;
+      vertical-align: top;
+      @include s-screen {
+        width: 100%;
+      }
+    }
+
+    &__text {
+      height: 80px;
+      text-align: center;
+      line-height: 80px;
+      margin: 0;
+      font-size: 26px;
+      color: $color-ivory;
+      @include s-screen {
+        height: initial;
+        line-height: 1.5;
+        padding: 15px;
+        font-size: 22px;
+      }
+
+      &.km-fudge {
+        background: #6C5851;
+      }
+
+      &.km-bar {
+        background: #515E6C;
+      }
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
+
+  .instagram {
+    background-image: linear-gradient(90deg, #ded5c4, #e6c1c8);
+  }
+
+  .purchase {
+    .option-1 {
+      background-color: #DED5C4;
+      background-image: url("https://cdn.besynchro.com/ketomanna/v1-0/km-10ct-box%402x.png");
+      background-image: url("https://cdn.besynchro.com/ketomanna/v1-0/km-10ct-box%402x.png"), linear-gradient(90deg, #ded5c4, #e6c1c8);
+    }
+
+    .option-2 {
+      background-color: #DED5C4;
+      background-image: url("https://cdn.besynchro.com/ketomanna/v1-0/km-20ct-box%402x.png");
+      background-image: url("https://cdn.besynchro.com/ketomanna/v1-0/km-20ct-box%402x.png"), linear-gradient(90deg, #ded5c4, #e6c1c8);
+    }
+
+    .option-3 {
+      background-color: #DED5C4;
+      background-image: url("https://cdn.besynchro.com/ketomanna/v1-0/km-20ctx2-box%402x.png");
+      background-image: url("https://cdn.besynchro.com/ketomanna/v1-0/km-20ctx2-box%402x.png"), linear-gradient(90deg, #ded5c4, #e6c1c8);
+    }
+  }
+
+  .footer {
+    background-image: linear-gradient(90deg, #ded5c4, #e6c1c8);
+
+    &__top {
+      color: #e6c1c8;
+    }
+  }
+}
+
+.ketomanna-paid-r {
+  .top-offer-bar {
+    .a--cta {
+      @include sm-screen {
+        display: none;
+      }
+      @include animate-flash;
+    }
+  }
+
+  .purchase {
+    &__item-off {
+      color: $color-ebony;
+      opacity: 0.5;
+      text-decoration: line-through;
+      font-weight: $font-medium;
+    }
+  }
+}

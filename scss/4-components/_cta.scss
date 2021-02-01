@@ -1,0 +1,73 @@
+// Primary CTA
+
+.a--cta {
+  display: inline-block;
+  -webkit-appearance: none;
+  background: $color-ebony;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 3px 0 0 $color-ivory;
+  transition: all 0.1s ease-in-out;
+  font-family: $font-primary;
+  color: $color-ivory !important;
+  font-size: 18px;
+  font-weight: $font-demi;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  @include xs-screen {
+    padding: 10px 23px;
+  }
+
+  &:active {
+    position: relative;
+    top: 3px;
+    box-shadow: none;
+  }
+
+  &.out-of-stock {
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+      cursor: no-drop;
+    }
+  }
+}
+
+.floating-cta {
+  @keyframes slideInFromBottom {
+    0% {
+      bottom: -100px;
+    }
+
+    100% {
+      bottom: 27px;
+    }
+  }
+  display: none;
+  @include s-screen {
+    position: fixed;
+    display: block;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 100;
+    white-space: nowrap;
+    animation: 1s ease-in-out 0s 1 slideInFromBottom;
+    bottom: 30px;
+  }
+
+  .a--cta {
+    border-radius: 50px;
+    font-size: 18px;
+    padding: 15px 25px;
+    background-image: linear-gradient(90deg, #38447C 0%, #4958A1 100%);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.30);
+
+    &:hover {
+      opacity: 0.2;
+    }
+  }
+}

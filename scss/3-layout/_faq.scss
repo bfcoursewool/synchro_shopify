@@ -1,0 +1,68 @@
+.faq {
+  background: $color-silver-light;
+  overflow: auto;
+  font-size: 0;
+  text-align: center;
+  padding: 0 $gutter-large 30px;
+  @include l-screen {
+    padding: 0 $gutter-small 30px;
+  }
+
+  &__title {
+    padding-top: $gutter-large;
+    font-weight: $font-bold;
+    font-size: 35px;
+    margin-bottom: 40px;
+    @include m-screen {
+      padding-top: $gutter-medium;
+    }
+    @include s-screen {
+      font-size: 25px;
+    }
+  }
+
+  &__card {
+    width: 33.33%;
+    display: inline-block;
+    padding: 0 15px 30px;
+    vertical-align: top;
+    @include m-screen {
+      width: 50%;
+    }
+    @include sm-screen {
+      padding: 0 0 10px;
+      width: 100%;
+    }
+
+    &.active {
+      .faq__copy {
+        max-height: 800px;
+      }
+    }
+
+    .toggle-single-view {
+      background: $color-ivory;
+      padding-bottom: $gutter-small;
+    }
+  }
+
+  &__inner {
+    background: $color-ivory;
+    padding: $gutter-small $gutter-small 0;
+
+    .p--header {
+      font-size: 21px;
+      font-weight: $font-demi;
+    }
+
+    .footnote {
+      font-size: 15px;
+    }
+  }
+
+  &__copy {
+    max-height: 20px;
+    overflow: hidden;
+    transition: 0.5s ease-in-out all;
+  }
+}

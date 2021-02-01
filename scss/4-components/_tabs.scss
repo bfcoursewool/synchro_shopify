@@ -1,0 +1,122 @@
+.tabs-inner {
+  font-size: 0;
+  height: 115px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  @include s-screen {
+    height: initial;
+  }
+}
+
+.tab-box {
+  display: inline-block;
+  width: 25%;
+  @include s-screen {
+    background: $color-ivory;
+    width: 100%;
+    border-radius: 5px;
+    margin: 5px 0;
+  }
+}
+
+.tab {
+  background: $color-silver-light;
+  position: relative;
+  line-height: 100px;
+  cursor: pointer;
+  outline: 1px solid $color-ivory;
+  padding: 0 20px;
+  @include s-screen {
+    transition: 0.3s ease-in-out all;
+    background: none;
+    outline: none;
+    line-height: 30px;
+    padding: 10px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    border-width: 10px;
+    border-style: solid;
+    border-color: $color-silver-light transparent transparent;
+    margin-left: -10px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    @include s-screen {
+      display: none;
+    }
+  }
+
+  h6 {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: $font-normal;
+    vertical-align: middle;
+    line-height: 1.4;
+    margin: 0;
+    @include s-screen {
+      letter-spacing: $spacing-normal;
+      font-weight: $font-demi;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+  }
+
+  &:hover {
+    color: #4e4e4e;
+  }
+
+  &.active {
+    background: $color-gold;
+    @include s-screen {
+      background: none;
+      padding-top: 20px;
+      padding-bottom: 0;
+    }
+
+    h6 {
+      color: $color-ivory;
+      font-weight: $font-medium;
+      @include s-screen {
+        color: initial;
+        font-weight: $font-demi;
+      }
+    }
+
+    &:after {
+      border-color: $color-gold transparent transparent;
+    }
+  }
+}
+
+.tab-pane {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s ease-in-out all;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  top: -10px;
+  @include s-screen {
+    padding: 0 20px;
+  }
+
+  &.active {
+    max-height: 650px;
+    top: 0;
+  }
+}
+
+.tab-content--header {
+  margin-top: 10px;
+  font-weight: $font-normal;
+  font-size: 40px;
+  @include s-screen {
+    display: none;
+  }
+}

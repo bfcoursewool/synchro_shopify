@@ -1,0 +1,90 @@
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+@mixin cta-custom($bg-color, $text-color) {
+  background: $bg-color;
+  color: $text-color;
+}
+@mixin background-retina($image-url, $image-type: "png", $size: auto, $position: center center, $repeat: no-repeat) {
+  $image1x_url: "https://cdn.besynchro.com/#{$image-url}.#{$image-type}";
+  $image2x_url: "https://cdn.besynchro.com/#{$image-url}@2x.#{$image-type}";
+  background-image: url("#{$image1x_url}");
+  background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+  @media all and (-webkit-min-device-pixel-ratio : 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+    background-image: url("#{$image2x_url}");
+  }
+}
+@mixin sprite($position-x, $position-y, $width, $height) {
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: 500px 500px;
+  background-position-x: $position-x;
+  background-position-y: $position-y;
+  width: $width;
+  height: $height;
+}
+@mixin discount($banner-color: #E85050) {
+  position: absolute;
+  display: block;
+  background-color: $banner-color;
+  font-weight: $font-medium;
+  letter-spacing: 0.05em;
+  height: 22px;
+  width: 110px;
+  line-height: 22px;
+  left: 100%;
+  top: 0;
+  font-size: 11px;
+  color: $color-ivory;
+  text-transform: uppercase;
+  z-index: $header-z-index - 10;
+  transform: translate(-100%, -50%);
+  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 11px solid $banner-color;
+    border-left-color: transparent;
+    border-left-width: 8px;
+    border-right-width: 1px;
+    z-index: -1;
+    left: -8px;
+  }
+}
+@mixin image-curve($curve-top, $curve-top-mobile, $curve-bottom, $curve-bottom-mobile) {
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    background-size: 100%;
+    left: 0;
+    background-repeat: no-repeat;
+  }
+
+  &:before {
+    top: 0;
+    background-image: $curve-top;
+    @include s-screen {
+      background-image: $curve-top-mobile;
+    }
+  }
+
+  &:after {
+    bottom: -1px;
+    background-image: $curve-bottom;
+    background-position: bottom;
+    @include s-screen {
+      background-image: $curve-bottom-mobile;
+    }
+  }
+}

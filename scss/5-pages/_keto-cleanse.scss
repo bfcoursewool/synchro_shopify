@@ -1,0 +1,1399 @@
+.keto-cleanse {
+  a.anchor {
+    top: -35px;
+  }
+
+  .top-offer-bar {
+    background: #D4C6BE;
+
+    &__text {
+      color: #5C5652;
+      font-weight: $font-demi;
+    }
+
+    .a--cta {
+      display: none;
+    }
+  }
+
+  .a--cta {
+    @include cta-custom(#429197, $color-ivory);
+  }
+
+  .icon-learn-more {
+    &__circle {
+      stroke: #5d9ca2;
+    }
+
+    &__plus {
+      fill: #5d9ca2;
+    }
+  }
+
+  .atf-kcp {
+    position: relative;
+    text-align: center;
+    background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-atf-desktop%402x.jpg");
+    background-size: cover;
+    @include image-curve (none, none, $curve-out-bottom-white-desktop, none);
+    @include s-screen {
+      background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-atf-mobile%402x.jpg");
+      padding: 30px;
+    }
+
+    .synchro-logo-square {
+      width: 100px;
+      @include s-screen {
+        width: 70px;
+      }
+    }
+
+    &__content-box {
+      background: #F8F3F0;
+      max-width: max-content;
+      margin: 0 auto;
+      padding: 0 90px $gutter-small;
+      @include s-screen {
+        padding: 0 25px $gutter-small;
+      }
+    }
+
+    &__icon {
+      max-height: 100px;
+      display: block;
+      margin: 30px auto;
+      @include s-screen {
+        max-height: 80px;
+        margin: 20px auto;
+      }
+    }
+
+    &__sub-header {
+      font-weight: $font-demi;
+      font-size: 20px;
+      color: $color-kcp;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #427074;
+      display: inline-block;
+      @include s-screen {
+        font-size: 18px;
+      }
+    }
+
+    &__header {
+      font-weight: $font-demi;
+      font-size: 80px;
+      color: $color-kcp;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 10px 0;
+      @include s-screen {
+        font-size: 50px;
+      }
+    }
+
+    &__description {
+      font-weight: $font-medium;
+      font-size: 22px;
+      color: #848280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      @include s-screen {
+        font-size: 16px;
+      }
+    }
+
+    .a--cta {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      @include m-screen {
+        position: initial;
+        margin: 10px;
+      }
+    }
+  }
+  // .program {
+  //   text-align: center;
+  //   padding: 30px 0;
+  //   @include s-screen {
+  //     padding: 10px 0;
+  //   }
+  //
+  //   &__header {
+  //     max-width: 850px;
+  //     font-size: 50px;
+  //     font-weight: $font-medium;
+  //     margin: 40px auto;
+  //     padding: 0 20px;
+  //     @include s-screen {
+  //       font-size: 36px;
+  //     }
+  //   }
+  //
+  //   &__tab {
+  //     display: none;
+  //     @include s-screen {
+  //       display: block;
+  //     }
+  //   }
+  //
+  //   &__tab-week {
+  //     display: inline-block;
+  //     font-size: 16px;
+  //     background: $color-silver-light;
+  //     width: 33.33%;
+  //     height: 44px;
+  //     line-height: 44px;
+  //     text-transform: uppercase;
+  //     font-weight: $font-demi;
+  //     opacity: 0.5;
+  //     letter-spacing: 0.05em;
+  //     cursor: pointer;
+  //     margin: 0;
+  //
+  //     &.active {
+  //       background: $color-kcp;
+  //       color: $color-ivory;
+  //       opacity: 1;
+  //
+  //       &:after {
+  //         border-color: $color-kcp transparent transparent;
+  //       }
+  //     }
+  //   }
+  //
+  //   &__info {
+  //     max-width: 1600px;
+  //     margin: 0 auto;
+  //     font-size: 0;
+  //     padding: 0 1%;
+  //     @include s-screen {
+  //       padding: 0;
+  //     }
+  //   }
+  //
+  //   &__box {
+  //     display: inline-block;
+  //     width: 31%;
+  //     vertical-align: top;
+  //     margin: 0 1%;
+  //     padding: 20px 10px;
+  //     max-height: initial;
+  //     @include s-screen {
+  //       display: none;
+  //
+  //       &.active {
+  //         display: block;
+  //         width: 100%;
+  //         margin: 0;
+  //         padding: 10px 20px;
+  //       }
+  //     }
+  //   }
+  //
+  //   &__week {
+  //     display: inline-block;
+  //     padding: 3px 40px;
+  //     font-weight: $font-medium;
+  //     font-size: 16px;
+  //     color: $color-kcp;
+  //     letter-spacing: 2px;
+  //     border: 2px solid $color-kcp;
+  //     text-transform: uppercase;
+  //     @include s-screen {
+  //       display: none;
+  //     }
+  //   }
+  //
+  //   &__title {
+  //     font-size: 18px;
+  //     font-weight: $font-demi;
+  //     text-transform: uppercase;
+  //     letter-spacing: 1px;
+  //   }
+  //
+  //   &__text {
+  //     font-size: 20px;
+  //   }
+  // }
+  // .weight-loss {
+  //   text-align: center;
+  //   padding: 60px;
+  //   @include background-retina (keto-cleanse/v1-0/kcp-weight-loss-desktop, jpg, cover, center, no-repeat);
+  //   @include s-screen {
+  //     @include background-retina (keto-cleanse/v1-0/kcp-weight-loss-mobile, jpg, cover, center, no-repeat);
+  //     padding: $gutter-medium $gutter-small;
+  //   }
+  //
+  //   &__header {
+  //     max-width: 850px;
+  //     font-size: 50px;
+  //     color: $color-ivory;
+  //     font-weight: $font-medium;
+  //     margin: 0 auto;
+  //     @include s-screen {
+  //       font-size: 36px;
+  //     }
+  //   }
+  //
+  //   &__text {
+  //     color: $color-ivory;
+  //     max-width: 850px;
+  //     font-size: 22px;
+  //     @include s-screen {
+  //       max-height: 65px;
+  //       overflow: hidden;
+  //       transition: 0.5s ease-in-out all;
+  //
+  //       &.active {
+  //         max-height: 700px;
+  //       }
+  //     }
+  //   }
+  //
+  //   &__icon {
+  //     display: none;
+  //     @include s-screen {
+  //       display: initial;
+  //     };
+  //   }
+  //
+  //   .icon-learn-more {
+  //     &__circle {
+  //       stroke: $color-ivory;
+  //     }
+  //
+  //     &__plus {
+  //       fill: $color-ivory;
+  //     }
+  //
+  //     &__text {
+  //       color: $color-ivory;
+  //     }
+  //   }
+  // }
+  .kcp-videos {
+    text-align: center;
+    overflow: auto;
+    background: #F8F3F0;
+    @include s-screen {
+      padding: 0 $gutter-small;
+    }
+
+    &__intro {
+      max-width: 700px;
+    }
+
+    &__videos {
+      max-width: 1300px;
+      margin: 40px auto 10px;
+      font-size: 0;
+      padding: 0 1%;
+
+      .iframe-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+      }
+
+      .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__box {
+      display: inline-block;
+      width: 31%;
+      margin: 0 1% 30px;
+      vertical-align: top;
+      @include m-screen {
+        width: 48%;
+      }
+      @include s-screen {
+        width: 100%;
+        margin: 0 0 30px;
+      }
+    }
+
+    &__video {
+      width: 100%;
+    }
+
+    &__details {
+      font-weight: $font-demi;
+      font-size: 20px;
+      margin: 15px 0 0;
+      text-transform: capitalize;
+
+      span {
+        display: block;
+        font-weight: $font-normal;
+      }
+    }
+  }
+
+  &.kcp-home {
+    .atf-kcp {
+      &__header {
+        font-size: 70px;
+        margin: 20px 0;
+        @include s-screen {
+          font-size: 50px;
+          margin: 10px 0;
+        }
+      }
+    }
+
+    .kcp-intro {
+      padding: 20px;
+
+      &__text {
+        font-size: 20px;
+        margin: 20px auto;
+      }
+    }
+
+    .kcp-program {
+      text-align: center;
+      overflow: auto;
+      background: #F8F3F0;
+      @include s-screen {
+        padding: 0 $gutter-small;
+      }
+
+      .p--title {
+        margin: 50px auto 40px;
+      }
+
+      &__intro {
+        max-width: 700px;
+      }
+
+      &__weeks {
+        max-width: 1300px;
+        margin: 40px auto 20px;
+        font-size: 0;
+        padding: 0 1%;
+        @include s-screen {
+          padding: 0;
+        }
+      }
+
+      &__box {
+        display: inline-block;
+        width: 31%;
+        margin: 0 1% 20px;
+        height: 214px;
+        position: relative;
+        vertical-align: top;
+        background-size: cover;
+        background-position: center;
+        @include m-screen {
+          width: 48%;
+        }
+        @include xs-screen {
+          width: 100%;
+          margin: 0 0 20px;
+        }
+
+        &.week-1 {
+          background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-home-week-1%402x.jpg");
+        }
+
+        &.week-2 {
+          background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-home-week-2%402x.jpg");
+        }
+
+        &.week-3 {
+          background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-home-week-3%402x.jpg");
+        }
+      }
+
+      &__details {
+        position: relative;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+
+      &__day {
+        color: $color-ivory;
+        font-size: 18px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: $font-demi;
+        margin-bottom: 5px;
+      }
+
+      &__week {
+        color: $color-ivory;
+        font-size: 40px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: $font-demi;
+        margin: 0;
+      }
+    }
+
+    .kcp-guides {
+      text-align: center;
+      overflow: auto;
+      @include s-screen {
+        padding: 0 $gutter-small;
+      }
+
+      &__intro {
+        max-width: 700px;
+      }
+
+      &__recipes {
+        max-width: 1300px;
+        margin: 40px auto 10px;
+        font-size: 0;
+        padding: 0 1%;
+      }
+
+      &__box {
+        display: inline-block;
+        width: 31%;
+        margin: 0 1% 30px;
+        vertical-align: top;
+        @include m-screen {
+          width: 48%;
+        }
+        @include s-screen {
+          width: 100%;
+          margin: 0 0 30px;
+        }
+      }
+
+      &__image {
+        height: 214px;
+        background-size: cover;
+        background-position: center;
+
+        &.guide-1 {
+          background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-home-guide-1%402x.jpg");
+        }
+
+        &.guide-2 {
+          background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-home-guide-2%402x.jpg");
+        }
+      }
+
+      &__details {
+        font-weight: $font-demi;
+        font-size: 20px;
+        margin: 15px 0 0;
+        text-transform: capitalize;
+      }
+    }
+
+    .kcp-recipes {
+      text-align: center;
+      overflow: auto;
+      background: #F8F3F0;
+      @include s-screen {
+        padding: 0 $gutter-small;
+      }
+
+      &__intro {
+        max-width: 700px;
+      }
+
+      &__recipes {
+        max-width: 1300px;
+        margin: 40px auto 10px;
+        font-size: 0;
+        padding: 0 1%;
+      }
+
+      &__box {
+        display: inline-block;
+        width: 31%;
+        margin: 0 1% 30px;
+        vertical-align: top;
+        @include m-screen {
+          width: 48%;
+        }
+        @include s-screen {
+          width: 100%;
+          margin: 0 0 30px;
+        }
+      }
+
+      &__image {
+        height: 214px;
+        background-size: cover;
+        background-position: center;
+
+        &.recipe-1 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/PG519949-C286EFD4-1E44-47FB-89F0-8C8D0886BDC7_grande.jpg?v=1504020472");
+        }
+
+        &.recipe-2 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/DSC06462_1024x1024.jpg?v=1535359640");
+        }
+
+        &.recipe-3 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/DSC06531_1024x1024.jpg?v=1534885730");
+        }
+
+        &.recipe-4 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/DSC05713_1024x1024.jpg?v=1529413850");
+        }
+
+        &.recipe-5 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/DSC05012_1024x1024.jpg?v=1527165847");
+        }
+
+        &.recipe-6 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/DSC01058_1024x1024.jpg?v=1527168286");
+        }
+
+        &.recipe-7 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/DSC04982_1024x1024.jpg?v=1527154562");
+        }
+
+        &.recipe-8 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/DSC00449_1024x1024.jpg?v=1526480652");
+        }
+
+        &.recipe-9 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/DSC01764-2_1024x1024.jpg?v=1526121490");
+        }
+
+        &.recipe-10 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/chia_bowl_1_grande.jpg?v=1510841354");
+        }
+      }
+
+      &__details {
+        font-weight: $font-demi;
+        font-size: 20px;
+        margin: 15px 0 0;
+        text-transform: capitalize;
+      }
+    }
+
+    .kcp-videos {
+      background: none;
+    }
+
+    .kcp-readings {
+      text-align: center;
+      overflow: auto;
+      background: #F8F3F0;
+      @include s-screen {
+        padding: 0 $gutter-small;
+      }
+
+      &__intro {
+        max-width: 700px;
+      }
+
+      &__articles {
+        max-width: 1300px;
+        margin: 40px auto 10px;
+        font-size: 0;
+        padding: 0 1%;
+      }
+
+      &__box {
+        display: inline-block;
+        width: 31%;
+        margin: 0 1% 30px;
+        vertical-align: top;
+        @include m-screen {
+          width: 48%;
+        }
+        @include s-screen {
+          width: 100%;
+          margin: 0 0 30px;
+        }
+      }
+
+      &__image {
+        height: 214px;
+        background-size: cover;
+        background-position: center;
+
+        &.article-1 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/shutterstock_392813248_1024x1024.jpg?v=1516871083");
+        }
+
+        &.article-2 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/25688467_l_grande.jpg?v=1493800061");
+        }
+
+        &.article-3 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/shutterstock_656888362_1024x1024.jpg?v=1517821009");
+        }
+
+        &.article-4 {
+          background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/files/10252373_ml_0329cdb0-3c25-40b8-b228-2daf2ae7b633_grande.jpg?7622257216880995316");
+        }
+      }
+
+      &__details {
+        font-weight: $font-demi;
+        font-size: 20px;
+        margin: 15px 0 0;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  &.kcp-weekly {
+    .atf-kcp {
+      &__header {
+        font-size: 70px;
+        margin: 20px 0;
+        @include s-screen {
+          font-size: 50px;
+          margin: 10px 0;
+        }
+      }
+    }
+
+    .kcp-intro {
+      padding: 20px 0;
+
+      &__text {
+        font-size: 20px;
+        max-width: 700px;
+      }
+    }
+
+    .kcp-goals {
+      padding: 0 $gutter-large 10px;
+      overflow: hidden;
+      background: #F8F3F0;
+      position: relative;
+      text-align: center;
+      @include image-curve ($curve-in-top-white-desktop, none, $curve-out-bottom-white-desktop, none);
+      @include s-screen {
+        padding: 0 $gutter-small;
+      }
+
+      .p--title {
+        @include s-screen {
+          margin: $gutter-medium auto;
+        }
+      }
+
+      &__info {
+        max-width: 1600px;
+        margin: 0 auto;
+        font-size: 0;
+        padding: 0 1%;
+      }
+
+      &__item {
+        display: inline-block;
+        width: 23%;
+        vertical-align: top;
+        margin: 10px 1%;
+        @include m-screen {
+          width: 48%;
+        }
+        @include xs-screen {
+          width: 100%;
+          margin: 10px 0;
+        }
+      }
+
+      &__number {
+        color: $color-kcp;
+        font-size: 40px;
+        background: $color-ivory;
+        border-radius: 40px;
+        font-weight: $font-light;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        margin: 0 auto;
+        @include xs-screen {
+          font-weight: $font-normal;
+          font-size: 20px;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+        }
+      }
+
+      &__goal {
+        margin-bottom: 0;
+        @include xs-screen {
+          margin: 10px 0 0;
+        }
+      }
+
+      &__video {
+        margin: $gutter-small auto 50px;
+        @include s-screen {
+          margin-bottom: $gutter-medium;
+        }
+      }
+    }
+
+    .kcp-timeline {
+      max-width: 1200px;
+      padding: $gutter-large;
+      margin: 0 auto;
+      @include m-screen {
+        padding: $gutter-medium;
+      }
+      @include s-screen {
+        padding: $gutter-medium $gutter-small $gutter-medium 10px;
+      }
+
+      &__header {
+        float: left;
+        @include s-screen {
+          float: none;
+        }
+      }
+
+      &__title {
+        font-size: 25px;
+        text-align: center;
+
+        span {
+          color: $color-kcp;
+          font-size: 50px;
+          display: block;
+          font-weight: $font-demi;
+        }
+      }
+
+      &__schedule {
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          background: #CAC1B4;
+          width: 2px;
+          height: 100%;
+          left: 45px;
+          top: 0;
+          @include m-screen {
+            left: 35px;
+          }
+          @include s-screen {
+            width: 1px;
+            left: 10px;
+            top: 10px;
+          }
+        }
+      }
+
+      &__activity {
+        margin-left: 80px;
+        @include m-screen {
+          margin-left: 70px;
+        }
+        @include s-screen {
+          margin-left: 35px;
+        }
+
+        &:last-child {
+          .kcp-timeline__text {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &__event-box {
+        margin-top: 20px;
+        position: relative;
+        width: fit-content;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          position: absolute;
+          background-image: url("https://storage.googleapis.com/synchro-assets/keto-cleanse/v1-0/timeline-8.png");
+          height: 40px;
+          width: 40px;
+          left: -55px;
+          top: -20px;
+          background-size: 40px;
+          @include s-screen {
+            height: 20px;
+            width: 20px;
+            background-size: 20px;
+            left: -35px;
+            top: -10px;
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: url("https://storage.googleapis.com/synchro-assets/keto-cleanse/v1-0/timeline-toggle@2x.png");
+          height: 100%;
+          width: 40px;
+          right: 0;
+          top: 0;
+          margin-top: -10px;
+          transition: 0.2s ease-in-out all;
+          background-size: 26px;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        // icon toggle
+        &.active {
+          &::after {
+            transform: rotate(45deg);
+            margin-top: 0;
+          }
+        }
+      }
+
+      &__event {
+        font-weight: $font-demi;
+        font-size: 22px;
+        position: relative;
+        margin: 0;
+        background: #F8F3F0;
+        width: fit-content;
+        padding: 10px 60px 10px 20px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          height: 15px;
+          width: 30px;
+          left: -15px;
+          top: 0;
+          border-color: #f8f3f0 transparent transparent;
+          border-width: 15px;
+          border-style: solid;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 40px;
+          right: 0;
+          top: 0;
+          transition: 0.2s ease-in-out all;
+          background-size: contain;
+          background-color: $color-kcp;
+          background-image: url("https://storage.googleapis.com/synchro-assets/keto-cleanse/v1-0/timeline-toggle-why@2x.png");
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        // icon toggle
+        &.active {
+          &::after {
+            background-color: #b2b2b2;
+            background-position-x: 50px;
+          }
+        }
+      }
+
+      &__time {
+        display: block;
+        letter-spacing: 1px;
+        font-size: 16px;
+        opacity: 0.5;
+        text-transform: uppercase;
+      }
+
+      &__text {
+        height: 0;
+        overflow: hidden;
+        margin-bottom: 20px;
+        // text toggle
+        &.active {
+          height: auto;
+        }
+      }
+
+      .p--text {
+        font-size: 20px;
+      }
+
+      &__list {
+        padding-left: 1.2em;
+      }
+
+      &__video {
+        width: 100%;
+
+        .iframe-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+          height: 0;
+        }
+
+        .iframe-container iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    &.week-1 {
+      .atf-kcp {
+        background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-week-1-atf-desktop%402x.jpg");
+        @include s-screen {
+          background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-week-1-atf-mobile%402x.jpg");
+        }
+      }
+    }
+
+    &.week-2 {
+      .atf-kcp {
+        background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-week-2-atf-desktop%402x.jpg");
+        @include s-screen {
+          background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-week-2-atf-mobile%402x.jpg");
+        }
+      }
+    }
+
+    &.week-3 {
+      .atf-kcp {
+        background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-week-3-atf-desktop%402x.jpg");
+        @include s-screen {
+          background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-week-3-atf-mobile%402x.jpg");
+        }
+      }
+    }
+  }
+  // V2 //
+  .atf {
+    display: table;
+    width: 100%;
+
+    &__copy {
+      width: 50%;
+      display: table-cell;
+      background: #F8F3F0;
+      text-align: center;
+      padding: 0 $gutter-medium 100px;
+      @include m-screen {
+        padding-bottom: $gutter-medium;
+      }
+      @include sm-screen {
+        width: 100%;
+        display: block;
+        padding: 0 $gutter-small $gutter-medium;
+      }
+    }
+
+    &__content {
+      display: inline-block;
+    }
+
+    &__icon {
+      display: block;
+      margin: 80px auto 0;
+      @include m-screen {
+        margin-top: $gutter-small;
+      }
+    }
+
+    &__header {
+      position: initial;
+      color: #429197;
+      font-size: 18px;
+      letter-spacing: 0.15em;
+      font-weight: $font-demi;
+      text-transform: uppercase;
+      line-height: initial;
+      width: 100%;
+      margin: $gutter-small 0;
+      transform: none;
+      @include sm-screen {
+        margin-top: 10px;
+      }
+
+      span {
+        font-weight: $font-medium;
+        font-size: 70px;
+        letter-spacing: 5px;
+        display: block;
+        background: $color-ivory;
+        padding: 0 $gutter-small;
+        margin-top: $gutter-small;
+        @include sm-screen {
+          font-size: 50px;
+          margin-top: 10px;
+          padding: 10px $gutter-small;
+        }
+      }
+    }
+
+    &__subheader {
+      font-size: 24px;
+      color: #5C5652;
+      margin: 30px auto;
+      line-height: 1.4;
+      @include sm-screen {
+        margin: 20px auto;
+      }
+    }
+
+    &__hero-image {
+      background-image: url("https://cdn.besynchro.com/keto-cleanse/v2-0/kcp-atf-image.jpg");
+      display: table-cell;
+      background-size: cover;
+      width: 50%;
+      background-position: center;
+      @include sm-screen {
+        height: 300px;
+        width: 100%;
+        display: block;
+        background-position: bottom;
+      }
+    }
+  }
+
+  .benefits-2 {
+    &__icon {
+      height: 90px;
+    }
+  }
+
+  .kcp-intro {
+    text-align: center;
+    padding: $gutter-medium 0 50px;
+
+    &__img {
+      max-width: 1168px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 $gutter-small;
+      @include m-screen {}
+    }
+
+    &__text-box {
+      background-image: linear-gradient(#F8F3F0 60%, $color-ivory 40%);
+      overflow: auto;
+      @include s-screen {
+        padding: 0 $gutter-small;
+      }
+    }
+
+    &__text {
+      max-width: 970px;
+      font-size: 36px;
+      font-weight: $font-medium;
+      margin: $gutter-large auto;
+      line-height: normal;
+      @include s-screen {
+        font-size: 30px;
+        margin: $gutter-medium auto;
+      }
+    }
+
+    &__screens {
+      width: 100%;
+      max-width: 900px;
+      display: block;
+      margin: 50px auto;
+    }
+  }
+
+  .kcp-video {
+    display: block;
+    margin: $gutter-large auto;
+    width: 100%;
+    max-width: 800px;
+    @include s-screen {
+      margin: $gutter-small auto;
+    }
+
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .instagram-slider {
+    padding: $gutter-large $gutter-medium;
+    @include s-screen {
+      padding: $gutter-medium $gutter-small;
+    }
+
+    &__post {
+      padding: 0;
+      display: table;
+      margin: 0 auto;
+      max-width: 1000px;
+      @include s-screen {
+        display: block;
+      }
+    }
+
+    &__image {
+      width: 40%;
+      display: table-cell;
+      background-size: cover;
+      background-position: center;
+      @include s-screen {
+        width: 100%;
+        padding-top: 70%;
+        display: block;
+      }
+
+      &.kcp-review-1 {
+        background-image: url("https://cdn.besynchro.com/keto-cleanse/v2-0/kcp-review-1.png");
+      }
+
+      &.kcp-review-2 {
+        background-image: url("https://cdn.besynchro.com/keto-cleanse/v2-0/kcp-review-2.png");
+      }
+    }
+
+    &__content {
+      width: 60%;
+      padding: 30px 40px;
+      display: table-cell;
+    }
+
+    &__stars {
+      margin: 15px 0 20px;
+    }
+
+    &__quote {
+      margin: 0;
+      font-size: 25px;
+    }
+  }
+
+  .how-it-works {
+    text-align: center;
+    padding: 0 0 $gutter-large;
+    overflow: auto;
+    @include background-retina (keto-cleanse/v1-0/kcp-benefits-desktop, jpg, 100%, top, repeat-y);
+    @include s-screen {
+      @include background-retina (keto-cleanse/v1-0/kcp-benefits-mobile, jpg, 100%, top, repeat-y);
+      padding: 0 $gutter-small $gutter-small;
+    }
+
+    .p--title {
+      color: $color-ivory;
+      border: 2px solid $color-ivory;
+      @include s-screen {
+        margin-top: $gutter-medium;
+      }
+    }
+
+    &__header {
+      max-width: 850px;
+      font-size: 50px;
+      color: $color-ivory;
+      font-weight: $font-medium;
+      margin: 40px auto;
+      @include s-screen {
+        font-size: 36px;
+      }
+
+      span {
+        border-bottom: 2px solid #fff;
+        @include s-screen {
+          border: none;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__info {
+      max-width: 1600px;
+      margin: 0 auto;
+      font-size: 0;
+      padding: 0 1%;
+      @include s-screen {
+        padding: 0;
+      }
+    }
+
+    &__box {
+      display: inline-block;
+      width: 23%;
+      vertical-align: top;
+      background: $color-ivory;
+      border-radius: 10px;
+      margin: 0 1%;
+      padding: 30px 20px;
+      opacity: 0.9;
+      @include m-screen {
+        width: 48%;
+        margin: 10px 1%;
+      }
+      @include s-screen {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+
+    &__number {
+      border: 2px solid rgba(0,0,0,0.2);
+      display: inline-block;
+      padding: 2px 10px;
+      margin: 0;
+    }
+
+    &__benefit,
+    &__number {
+      font-size: 18px;
+      font-weight: $font-demi;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    &__text {
+      max-height: 100px;
+      transition: 0.5s ease-in-out all;
+      overflow: hidden;
+      @include s-screen {
+        max-height: 0;
+      }
+
+      &.active {
+        max-height: 900px;
+      }
+    }
+
+    &__icon {
+      transition: 0.5s ease-in-out all;
+      @include s-screen {
+        margin: -20px;
+      }
+
+      &.active {
+        margin: 0;
+      }
+    }
+  }
+
+  .product-cards {
+    .p--title {
+      @include s-screen {
+        margin: $gutter-medium auto;
+      }
+    }
+
+    .product-card {
+      text-align: center;
+
+      &__inner {
+        padding: 30px 0 0;
+      }
+
+      &__header {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid $color-silver;
+        text-transform: none;
+        font-weight: $font-medium;
+        letter-spacing: 0;
+        font-size: 30px;
+      }
+
+      &__item {
+        font-weight: $font-medium;
+        margin: 20px 0 0;
+        font-size: 20px;
+
+        span {
+          opacity: 0.5;
+        }
+      }
+
+      &__info {
+        opacity: 0.5;
+        margin: 0;
+        font-size: 20px;
+      }
+
+      &__icon {
+        height: 50px;
+      }
+
+      &__value {
+        margin-top: 30px;
+        padding-top: 30px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: $font-demi;
+        font-size: 18px;
+        color: $color-kcp;
+        border-top: 1px solid $color-silver;
+      }
+    }
+  }
+
+  .purchase-2 {
+    &__slider label {
+      width: 13%;
+    }
+
+    &__price {
+      font-size: 35px;
+      margin-right: 20px;
+    }
+
+    &__kcp-package {
+      font-size: 22px;
+      font-weight: $font-bold;
+
+      i {
+        font-size: 16px;
+        color: #429197;
+        margin-right: 10px;
+      }
+    }
+
+    &__options-title {
+      @include s-screen {
+        margin: $gutter-small auto;
+      }
+    }
+
+    .a--cta {
+      margin: 30px 0 0;
+      border-radius: 6px;
+      @include s-screen {
+        margin: 30px $gutter-small 0;
+      }
+    }
+  }
+
+  .faq {
+    .p--title {
+      @include s-screen {
+        margin: $gutter-medium auto;
+      }
+    }
+  }
+}

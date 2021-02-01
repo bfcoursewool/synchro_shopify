@@ -1,0 +1,208 @@
+.synchro-reviews {
+  display: block;
+  text-align: center;
+  padding: 0 $gutter-large $gutter-large;
+  @include s-screen {
+    padding: 0 $gutter-small $gutter-small;
+  }
+}
+
+.testimonials-lp {
+  .testimonials-atf {
+    display: table;
+    width: 100%;
+    padding: 0 30px;
+    @include m-screen {
+      display: block;
+      border-top: 1px solid $color-silver-light;
+    }
+    @include xs-screen {
+      max-width: 420px;
+      margin: 0 auto $gutter-small;
+      padding: 0 $gutter-small;
+    }
+
+    &__hero-image {
+      width: 50%;
+      display: table-cell;
+      background-image: url("https://cdn.besynchro.com/reviews/gold-elixir/testimonial-susan.jpg");
+      background-size: cover;
+      background-position: center;
+      @include xs-screen {
+        display: block;
+        width: 100%;
+        padding-top: 83.33%;
+      }
+    }
+
+    &__content {
+      width: 50%;
+      display: table-cell;
+      background: #FAF7F3;
+      text-align: center;
+      padding: $gutter-large $gutter-medium;
+      @include m-screen {
+        padding: 10px $gutter-small $gutter-medium;
+      }
+      @include sm-screen {
+        padding: 0 0 30px;
+      }
+    }
+
+    &__copy {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    &__header {
+      font-weight: $font-demi;
+      font-size: 50px;
+      margin: 0 30px $gutter-medium;
+      line-height: normal;
+      @include m-screen {
+        display: none;
+      }
+    }
+
+    &__header-mobile {
+      display: none;
+      @include m-screen {
+        display: block;
+        font-weight: $font-demi;
+        font-size: 40px;
+        text-align: center;
+        margin: $gutter-large $gutter-small;
+      }
+      @include s-screen {
+        margin: $gutter-medium 0;
+      }
+      @include xs-screen {
+        font-size: 35px;
+      }
+    }
+  }
+
+  .rating-new {
+    &__stars {
+      padding: 0;
+
+      #rating-new__star {
+        height: 28px;
+        @include s-screen {
+          height: 22px;
+        }
+      }
+    }
+
+    &__count {
+      display: none;
+    }
+  }
+
+  .testimonials-cards {
+    -moz-column-count: 3;
+    -moz-column-gap: 40px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 40px;
+    column-count: 3;
+    column-gap: 40px;
+    padding: $gutter-medium 30px $gutter-small;
+    max-width: 1420px;
+    margin: 0 auto;
+    text-align: center;
+    @include m-screen {
+      -moz-column-gap: 30px;
+      column-gap: 30px;
+      padding: 30px 30px 0;
+    }
+    @include sm-screen {
+      -moz-column-count: 2;
+      -webkit-column-count: 2;
+      column-count: 2;
+    }
+    @include xs-screen {
+      -moz-column-count: 1;
+      -webkit-column-count: 1;
+      column-count: 1;
+      max-width: 420px;
+      padding: 0 $gutter-small;
+    }
+
+    &__single {
+      background: #FAF7F3;
+      margin-bottom: $gutter-medium;
+      padding-bottom: 30px;
+      width: 100%;
+      display: inline-block;
+      -webkit-backface-visibility: hidden;
+      @include m-screen {
+        margin-bottom: 30px;
+      }
+      @include xs-screen {
+        margin-bottom: $gutter-small;
+      }
+    }
+
+    &__headshot {
+      width: 100%;
+    }
+
+    &__quote {
+      font-weight: $font-medium;
+      font-size: 20px;
+      margin: 30px 30px $gutter-small;
+      line-height: 1.5;
+      @include m-screen {
+        margin: $gutter-small;
+      }
+    }
+
+    &__name {
+      font-size: 18px;
+      color: #4D4D4D;
+      font-style: italic;
+      margin: 10px 30px 0;
+      @include m-screen {
+        margin: 10px $gutter-small 0;
+      }
+
+      span {
+        display: block;
+      }
+    }
+
+    &__video {
+      font-weight: $font-demi;
+      font-size: 16px;
+      color: $color-genesis;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      vertical-align: middle;
+      margin: $gutter-small $gutter-small 0;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      border: none;
+      outline: none;
+      background: none;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        border-top: 8px solid transparent;
+        border-left: 12px solid $color-genesis;
+        border-bottom: 8px solid transparent;
+        margin-right: 15px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .purchase-3 {
+    margin-bottom: $gutter-medium !important;
+    @include m-screen {
+      margin-bottom: 0 !important;
+    }
+  }
+}

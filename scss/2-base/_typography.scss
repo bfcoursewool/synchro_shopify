@@ -1,0 +1,79 @@
+.p--header,
+.p--text,
+.p--title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: $font-primary;
+  color: $color-ebony;
+}
+// Section Title
+
+.p--title {
+  display: block;
+  letter-spacing: 2px;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 60px auto 50px;
+  padding: 5px 20px;
+  width: fit-content;
+  border: 2px solid $color-ebony;
+  @include s-screen {
+    margin: 40px auto;
+  }
+}
+
+.p--title-new {
+  font-weight: $font-bold;
+  font-size: 35px;
+  text-align: center;
+  margin: 0;
+  @include s-screen {
+    font-size: 30px;
+  }
+}
+// Header
+
+.p--header {
+  line-height: 1.2;
+  font-weight: $font-normal;
+  font-size: 38px;
+  @include s-screen {
+    font-size: 32px;
+  }
+}
+// Paragraph text
+
+.p--text {
+  font-weight: $font-normal;
+  line-height: 1.5;
+  font-size: 21px;
+  margin: 1em auto;
+}
+// Quick-access classes
+
+.p--demi {
+  font-weight: $font-demi;
+}
+
+.p--bold {
+  font-weight: $font-bold;
+}
+
+.p--italic {
+  font-style: italic;
+}
+
+.p--strike {
+  text-decoration: line-through;
+}
+
+.p--superscript {
+  vertical-align: super;
+  font-size: 60%;
+}
