@@ -36,3 +36,12 @@ module.exports = {
     banner
   ]
 }
+
+module.exports = {
+ "mode": "none",
+ "entry": "./synchro.js",
+ "output": {
+   "path": __dirname + '/test',
+   "filename": "synchro.bundle.js"
+ }
+}
