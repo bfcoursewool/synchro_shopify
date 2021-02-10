@@ -10,7 +10,10 @@ const banner = new webpack.BannerPlugin({
 
 module.exports = {
 
-  entry: './src/index.js',
+  entry: [
+    './src/index.js',
+    './synchro.js'
+  ],
 
   output: {
     path: path.resolve(__dirname, 'assets')
@@ -19,12 +22,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          // Translates CSS into CommonJS
           'css-loader',
-          // Compiles Sass to CSS
           'sass-loader'
         ],
       },
@@ -35,13 +41,4 @@ module.exports = {
     new MiniCssExtractPlugin(),
     banner
   ]
-}
-
-module.exports = {
- "mode": "none",
- "entry": "./synchro.js",
- "output": {
-   "path": __dirname + '/test',
-   "filename": "synchro.bundle.js"
- }
 }
