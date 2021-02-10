@@ -1,5 +1,5 @@
 import videojs from 'video.js';
-import { WOW } from 'wowjs';
+import WOW from 'wowjs';
 import EventsBase from './events_base';
 
 export default class LPEffects extends EventsBase {
