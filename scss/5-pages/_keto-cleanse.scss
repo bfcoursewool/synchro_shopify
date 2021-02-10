@@ -35,7 +35,6 @@
     text-align: center;
     background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-atf-desktop%402x.jpg");
     background-size: cover;
-    @include image-curve (none, none, $curve-out-bottom-white-desktop, none);
     @include s-screen {
       background-image: url("https://cdn.besynchro.com/keto-cleanse/v1-0/kcp-atf-mobile%402x.jpg");
       padding: 30px;
@@ -677,7 +676,6 @@
       background: #F8F3F0;
       position: relative;
       text-align: center;
-      @include image-curve ($curve-in-top-white-desktop, none, $curve-out-bottom-white-desktop, none);
       @include s-screen {
         padding: 0 $gutter-small;
       }

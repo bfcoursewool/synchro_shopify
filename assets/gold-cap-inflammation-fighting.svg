@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>fire</title>
+    <desc>Created with Sketch.</desc>
+    <g id="fire" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" stroke="#ECA846" stroke-width="2" cx="30" cy="30" r="29"></circle>
+        <path d="M30,47 C32.209139,47 34,45.1375046 34,42.84 C34,38.9424954 30.1538462,35 30,35 C29.8461538,35 26,38.9424954 26,42.84 C26,45.1375046 27.790861,47 30,47 Z" id="Oval" stroke="#ECA846" stroke-width="2"></path>
+        <path d="M30,13 C30.4615385,13 42,24.1704037 42,35.2133333 C42,41 36.627417,47 30,47 C23.372583,47 18,41 18,35.2133333 C18,28.906772 21.7632629,22.558635 25.0773949,18.2732911 L25.0779327,24.5389664 C25.0779327,25.8981577 26.179775,27 27.5389664,27 C28.8981577,27 30,25.8981577 30,24.5389664 L30,24.5389664 Z" id="Combined-Shape" stroke="#ECA846" stroke-width="2" stroke-linejoin="round"></path>
+    </g>
+</svg>

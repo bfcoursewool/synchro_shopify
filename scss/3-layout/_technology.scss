@@ -59,7 +59,7 @@
 
   &__image {
     display: table-cell;
-    background-image: url("https://cdn.besynchro.com/gold/v2-0/benefits-inflammationfighting.jpg");
+    background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/benefits-inflammation-fighting.jpg?v=1612941495");
     background-size: cover;
     background-position: center;
     @include s-screen {
@@ -127,7 +127,7 @@
 }
 
 .technology-2 {
-  background: url("https://cdn.besynchro.com/gold/capsules/technology-bg.jpg");
+  background: $color-silver-light;
   padding: $gutter-large $gutter-medium $gutter-large $gutter-large;
   margin: $gutter-small;
   font-size: 0;

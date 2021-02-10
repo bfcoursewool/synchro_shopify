@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>healing</title>
+    <desc>Created with Sketch.</desc>
+    <g id="healing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" stroke="#ECA846" stroke-width="2" cx="30" cy="30" r="29"></circle>
+        <path d="M36.5493537,24 L38.9358889,20.1844399 C41.2552628,19.7568576 43.0563709,17.8914767 43.4296316,15.5303374 C43.8028923,13.169198 42.6670864,10.8260696 40.5958096,9.68426047 C38.5245329,8.54245136 35.9684824,8.85041217 34.2184949,10.4526189 C32.4685073,12.0548257 31.9053691,14.6026482 32.8134719,16.8094049 L28.5,24" id="Path" stroke="#ECA846" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill-rule="nonzero"></path>
+        <path d="M16,28 L43,28 C44.1045695,28 45,28.8954305 45,30 L45,39 C45,45.0751322 40.0751322,50 34,50 L25,50 C18.9248678,50 14,45.0751322 14,39 L14,30 C14,28.8954305 14.8954305,28 16,28 Z" id="Rectangle" stroke="#ECA846" stroke-width="2"></path>
+        <path d="M39,35 C39,41 36,44 30,44 C30,38 33,35 39,35 Z" id="Rectangle-Copy-12" stroke="#ECA846" stroke-width="2" stroke-linejoin="round" transform="translate(34.500000, 39.500000) scale(-1, 1) rotate(-90.000000) translate(-34.500000, -39.500000) "></path>
+        <path d="M27,34 C27,38.6666667 24.6666667,41 20,41 C20,36.3333333 22.3333333,34 27,34 Z" id="Rectangle-Copy-13" stroke="#ECA846" stroke-width="2" stroke-linejoin="round" transform="translate(23.500000, 37.500000) rotate(-90.000000) translate(-23.500000, -37.500000) "></path>
+    </g>
+</svg>
