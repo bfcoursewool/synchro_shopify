@@ -40,6 +40,17 @@ module.exports = {
 
   plugins: [
     new MiniCssExtractPlugin(),
-    banner
-  ]
+    banner,
+    new webpack.ProvidePlugin({
+      "$":"jquery",
+      "jQuery":"jquery",
+      "window.jQuery":"jquery",
+      "window.Tether": 'tether'
+    })
+  ],
+  resolve: {
+    alias: {
+      "jquery-ui": "jquery-ui/jquery-ui.js"
+    }
+  }
 }
