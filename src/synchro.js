@@ -1,3 +1,4 @@
+import 'bootstrap';
 import './scss/synchro.scss';
 import LPEffects from './js/effects';
 import FaceBookPixel from './js/analytics/facebook_pixel';
@@ -13,8 +14,6 @@ import FloatingPurchaseOptions from './js/floatingPurchaseOptions';
 import Experiments from './js/experiments';
 import { loadHeroImg } from './js/hero_image';
 
-console.log(`release_tag: ${process.env.RELEASE_TAG}`)
-
 const lpEffectsObj = new LPEffects();
 const fbPixelObj = new FaceBookPixel();
 const gradientObj = new GradientEffect();
@@ -24,8 +23,6 @@ const tabs = new Tabs();
 const analyticsObj = new AnalyticsIntegration();
 const goldCapBenefits = new GoldCapBenefits();
 const slider = Slider('.slides');
-
-//susanEffects();
 
 $(document).ready(() => {
   gradientObj.startEffect();
