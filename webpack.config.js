@@ -10,13 +10,14 @@ const banner = new webpack.BannerPlugin({
 
 module.exports = {
 
-  entry: [
-    './src/index.js',
-    './src/synchro.js'
-  ],
+  entry: {
+    main: './src/index.js',
+    synchro: './src/synchro.js'
+  } ,
 
   output: {
-    path: path.resolve(__dirname, 'assets')
+    path: path.resolve(__dirname, 'assets'),
+    filename: '[name].bundle.js',
   },
 
   module: {
