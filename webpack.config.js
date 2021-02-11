@@ -11,7 +11,8 @@ const banner = new webpack.BannerPlugin({
 module.exports = {
 
   entry: [
-    './src/index.js'
+    './src/index.js',
+    './src/synchro.js'
   ],
 
   output: {
