@@ -34,9 +34,18 @@
 {% if handle contains 'thank-you' %}
 <meta name="robots" content="noindex">
 {% endif %}
-  {% if page_description %}
-    <meta name="description" content="{{ page_description | escape }}" />
-  {% endif %}
+{% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}" />
+{% endif %}
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KTLMZWH');</script>
+<!-- End Google Tag Manager -->
+
   <!-- On product pages, we check the product metafields to see
     if there is a 'unique_url' key in the seo namespace. If so, set the
     value of this key as the canonical url, otherwise, use the standard
@@ -45,7 +54,6 @@
   {% if template contains 'product' %}
     <div class="find-me" style="display:none;">{{ product.metafields.seo.unique_url }}</div>
     {% if product.metafields.seo.unique_url == blank %}
-
 
 <!--MB_OPC-->
 <script>
@@ -139,26 +147,7 @@
   /*]]>*/</script>
   End of besynchro Zendesk Widget script -->
   {% endif %}
-  <!-- Pinterest Tag -->
-  <script>
-  !function(e){if(!window.pintrk){window.pintrk = function () {
-  window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
-        n=window.pintrk;n.queue=[],n.version="3.0";var
-        t=document.createElement("script");t.async=!0,t.src=e;var
-        r=document.getElementsByTagName("script")[0];
-        r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
-  pintrk('load', '2617231721658' /*, {em: '<user_email_address>'}*/);
-  pintrk('page');
-  </script>
-  <noscript>
-  <img height="1" width="1" style="display:none;" alt=""
-        src="https://ct.pinterest.com/v3/?tid=2617231721658&noscript=1" />
-  </noscript>
-  <!-- end Pinterest Tag --> <!-- Track Pinterest PageVisit event -->
-  <script>
-    pintrk('track', 'pagevisit');
-  </script>
-  <!-- End Track PageVisit -->
+  
  {% include 'talkable-partial' %}
 {% render 'hs-cart-drawer' %}
 </head>
@@ -177,6 +166,11 @@
     //  }
     //});
   </script>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTLMZWH"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <div id="content_wrapper">
     {% include 'header' %}

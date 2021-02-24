@@ -72,7 +72,7 @@
     </div>
 
     <div class="purchase clearfix inline_purchase">
-      <button type="submit" name="add" class="action_button add_to_cart" data-label="{{ 'products.product.add_to_cart' | t }}"><span class="text">{{ 'products.product.add_to_cart' | t }}</span></button>
+      <button type="submit" name="add" class="action_button add_to_cart" data-label="{{ 'products.product.add_to_cart' | t }}" onclick="pintrk('track', 'addtocart');"><span class="text">{{ 'products.product.add_to_cart' | t }}</span></button>
     </div>
   </form>
   {% comment %} Just throws a JS error and does not seem to be used
