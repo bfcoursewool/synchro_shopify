@@ -484,7 +484,7 @@
     }
 
     &__hero-image {
-      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-atf-product@2x.jpg?v=1612928405");
+      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-atf-product2@2x.jpg?v=1614363172");
       @include sm-screen {
         display: none;
       }
@@ -494,7 +494,7 @@
       display: none;
       @include sm-screen {
         display: block;
-        background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-atf-mobile@2x.jpg?v=1612928773");
+        background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-atf-mobile2@2x.jpg?v=1614363909");
         padding-top: 66.66%;
         background-size: contain;
       }
@@ -1079,12 +1079,7 @@
     }
 
     &__facts-image {
-      background: $color-ivory;
-      padding: 25px 30px;
       margin-top: $gutter-medium;
-      @include s-screen {
-        padding: 15px;
-      }
     }
 
     &__directions {
@@ -1103,7 +1098,7 @@
     }
 
     &__direction {
-      font-size: 22px;
+      font-size: 20px;
       background: $color-ivory;
       padding: $gutter-small;
       border-radius: 10px;
@@ -1134,14 +1129,13 @@
       display: inline-block;
       width: 29%;
       margin: 0 2%;
-      padding: $gutter-small $gutter-small 5px;
-      background: $color-silver-light;
+      background: #f9f7f2;
       border-radius: 10px;
       vertical-align: top;
+      max-width: 350px;
       @include m-screen {
         width: 31%;
         margin: 0 1%;
-        padding: $gutter-small $gutter-small 5px;
       }
       @include sm-screen {
         width: 47%;
@@ -1153,7 +1147,6 @@
       @include s-screen {
         width: 100%;
         margin: 0 0 $gutter-small;
-        max-width: 400px;
 
         &:last-child {
           display: inline-block;
@@ -1163,18 +1156,23 @@
 
     &__headshot {
       width: 100%;
+      border-radius: 10px 10px 0 0;
     }
 
     &__quote {
       font-weight: $font-medium;
       font-size: 20px;
-      margin: $gutter-small 10px;
+      margin: $gutter-small 30px;
+      @include m-screen {
+        margin: $gutter-small;
+      }
     }
 
     &__name {
       font-size: 18px;
       color: #4D4D4D;
       font-style: italic;
+      margin-bottom: 30px;
 
       span {
         display: block;
