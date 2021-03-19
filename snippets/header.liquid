@@ -74,9 +74,11 @@
       <p class="p--text flash-sale-banner__text">
         <span class="flash-sale-banner__desktop">{{settings.top-bar-copy-desktop}}</span>
       </p>
+      {% if settings.show-top-bar-cta %}
       <button class="a--cta">
-        <span class="flash-sale-banner__desktop">Ends in{{settings.top-bar-cta-desktop}}</span>
+        <span>{{settings.top-bar-cta}}</span>
       </button>
+      {% endif %}
     </a>
   </div>
 {% endif %}
@@ -286,9 +288,11 @@
       <p class="p--text flash-sale-banner__text">
         <span class="flash-sale-banner__mobile">{{settings.top-bar-copy-mobile}}</span>
       </p>
+      {% if settings.show-top-bar-cta %}
       <button class="a--cta">
-      <span class="flash-sale-banner__mobile">{{settings.top-bar-cta-mobile}}</span>
-    </button>
+        <span>{{settings.top-bar-cta}}</span>
+      </button>
+      {% endif %}
     </a>
   </div>
 
@@ -298,9 +302,11 @@
         <span class="flash-sale-banner__desktop">{{settings.top-bar-copy-desktop}}</span>
         <span class="flash-sale-banner__mobile">{{settings.top-bar-copy-mobile}}</span>
       </p>
+      {% if settings.show-top-bar-cta %}
       <button class="a--cta">
-        <span>{% if settings.show-top-bar-timer-desktop %}Ends in <span id="timer"></span>{% endif %}{{settings.top-bar-cta-desktop}}</span>
+        <span>{% if settings.show-top-bar-timer-desktop %}Ends in <span id="timer"></span>{% endif %}{{settings.top-bar-cta}}</span>
       </button>
+      {% endif %}
     </a>
   </div>
 {% endif %}
