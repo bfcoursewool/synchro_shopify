@@ -1,3 +1,7 @@
+{% if request.host == 'lkssbv.com' and request.path == '/' %}
+	{% layout "lkssbv" %}
+{% else %}
+
 {% capture themeSettingsLink %}
   <a href="{{ shop.url }}/admin/themes">{{ 'onboarding.theme_settings_link' | t | downcase }}</a>
 {% endcapture %}
@@ -53,3 +57,5 @@
   var script = document.getElementsByTagName('script')[0];
   script.parentNode.insertBefore(resource, script);
 </script>
+
+{% endif %}
