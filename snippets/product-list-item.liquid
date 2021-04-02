@@ -1,65 +1,59 @@
 {% assign item = product %}
 {% if template contains 'search' %}
-  {% assign item = item %}
+	{% assign item = item %}
 {% elsif template contains 'product' %}
-  {% assign item = prod %}
+	{% assign item = prod %}
 {% endif %}
 
 {% if settings.product-stock-level-overlay and item.available %}
-  {% assign total = 0 %}
-  {% assign threshold = settings.product-stock-level-overlay-threshold | times: 1 %}
-  {% assign infinity = false %}
-  {% for variant in item.variants %}
-    {% if variant.inventory_management == null %}
-      {% assign infinity = true %}
-    {% elsif variant.inventory_management == '' %}
-      {% assign infinity = true %}
-    {% elsif infinity == false %}
-      {% capture temp %}{{ total | plus: variant.inventory_quantity }}{% endcapture %}
-      {% assign total = temp | times: 1 %}
-    {% endif %}
-  {% endfor %}
+	{% assign total = 0 %}
+	{% assign threshold = settings.product-stock-level-overlay-threshold | times: 1 %}
+	{% assign infinity = false %}
+	{% for variant in item.variants %}
+		{% if variant.inventory_management == null %}
+			{% assign infinity = true %}
+		{% elsif variant.inventory_management == '' %}
+			{% assign infinity = true %}
+		{% elsif infinity == false %}
+			{% capture temp %}{{ total | plus: variant.inventory_quantity }}{% endcapture %}
+			{% assign total = temp | times: 1 %}
+		{% endif %}
+	{% endfor %}
 {% endif %}
 
 <article class="product-list-item" id="product-list-item-{{ item.id }}">
+	<figure class="product-list-item-thumbnail">
+		<a href="{{ item.url | within: collection }}"><img class="lazy2" data-src="{{ item.images.last | product_img_url: 'grande' }}" alt="{{ item.images.last.alt | escape }}"></a>
+		{% if settings.product-stock-level-overlay and item.available and infinity == false and total < threshold %}
+		<span class="stock-overlay meta">{{ 'products.product.stock_level' | t: stock_count: total }}</span>
+		{% endif %}
+		{% if item.compare_at_price_min > item.price_min and item.available %}
+		<span class="sale-badge"></span>
+		{% endif %}
+	</figure>
 
-  <figure class="product-list-item-thumbnail">
-    <a href="{{ item.url | within: collection }}">
-      <img src="{{ item.images.last | product_img_url: 'grande' }}" alt="{{ item.images.last.alt | escape }}" />
-    </a>
-
-    {% if settings.product-stock-level-overlay and item.available and infinity == false and total < threshold %}
-      <span class="stock-overlay meta">{{ 'products.product.stock_level' | t: stock_count: total }}</span>
-    {% endif %}
-
-    {% if item.compare_at_price_min > item.price_min and item.available %}
-      <span class="sale-badge"></span>
-    {% endif %}
-  </figure>
-
-  <div class="product-list-item-details">
-    <p class="product-list-item-vendor vendor meta">{{ item.vendor }}</p>
-    <h1><a href="{{ item.url | within: collection }}">{{ item.type }}</a></h1>
-    <div class="product-vendor">{{ item.vendor }}</div>
-    <div class="yotpo bottomLine" data-product-id="{{ item.id }}"></div>
-    <p class="product-description">{{ item.description | strip_html | truncate: 90 }}<a href="{{ item.url | within: collection }}">Learn more</a></p>
-   <p class="product-list-item-price">
-      {% if item.available %}
-        <span class="price">
-          <span class="money">{{ item.price_min | money }}</span>
-          {% unless item.compare_at_price_min <= item.price_min %}
-            <span class="original money">
-              {% if item.compare_at_price_min > item.price_min %}
-                {{ item.compare_at_price_min | money }}
-              {% endif %}
-            </span>
-          {% endunless %}
-        </span>
-      {% else %}
-        {{ 'products.product.sold_out' | t }}
-      {% endif %}
-    </p>
-    <a href="{{ item.url | within: collection }}"><button class="product-list-cta">Shop</button></a>
-  </div>
-
+	<div class="product-list-item-details">
+		<p class="product-list-item-vendor vendor meta">{{ item.vendor }}</p>
+		<h1><a href="{{ item.url | within: collection }}">{{ item.type }}</a></h1>
+		<div class="product-vendor">{{ item.vendor }}</div>
+		<div class="yotpo bottomLine" data-product-id="{{ item.id }}"></div>
+		<p class="product-description">{{ item.description | strip_html | truncate: 90 }}<a href="{{ item.url | within: collection }}">Learn more</a></p>
+		<p class="product-list-item-price">
+			{% if item.available %}
+				<span class="price">
+					<span class="money">{{ item.price_min | money }}</span>
+				{% unless item.compare_at_price_min <= item.price_min %}
+					<span class="original money">
+					{% if item.compare_at_price_min > item.price_min %}
+						{{ item.compare_at_price_min | money }}
+					{% endif %}
+					</span>
+				{% endunless %}
+				</span>
+			{% else %}
+				{{ 'products.product.sold_out' | t }}
+			{% endif %}
+		</p>
+		<a href="{{ item.url | within: collection }}"><button class="product-list-cta">Shop</button></a>
+	</div>
 </article>

@@ -1,205 +1,203 @@
 <!doctype html>
 <html>
-<head>
-    <!--BEGIN FB VERIFICATION TAG -->
-    <meta name="facebook-domain-verification" content="kvx1fv2y1ijqqi8aw5wfb4f5zwastw" />
-    <!--END FB VERIFICATION TAG -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="{{ description | default: page_description }}">
-    <meta name="author" content="">
+	<head>
+		<!--BEGIN FB VERIFICATION TAG -->
+		<meta name="facebook-domain-verification" content="kvx1fv2y1ijqqi8aw5wfb4f5zwastw">
+		<!--END FB VERIFICATION TAG -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="{{ description | default: page_description }}">
+		<meta name="author" content="">
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KTLMZWH');</script>
-    <!-- End Google Tag Manager -->
+		<!-- Google Tag Manager -->
+		<script type="lazyload2">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-KTLMZWH');</script>
+		<!-- End Google Tag Manager -->
 
-    <title>{{ title | default: page_title }}</title>
+		<title>{{ title | default: page_title }}</title>
 
-    <link rel="shortcut icon" href="https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/fav-icon.png?v=1605894369">
+		<link rel="shortcut icon" href="https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/fav-icon.png?v=1605894369">
 
-    {{ 'synchro.css' | asset_url | stylesheet_tag }}
+		<style>:root{--blue: #007bff;--indigo: #6610f2;--purple: #6f42c1;--pink: #e83e8c;--red: #dc3545;--orange: #fd7e14;--yellow: #ffc107;--green: #28a745;--teal: #20c997;--cyan: #17a2b8;--white: #fff;--gray: #6c757d;--gray-dark: #343a40;--primary: #007bff;--secondary: #6c757d;--success: #28a745;--info: #17a2b8;--warning: #ffc107;--danger: #dc3545;--light: #f8f9fa;--dark: #343a40;--breakpoint-xs: 0;--breakpoint-sm: 576px;--breakpoint-md: 768px;--breakpoint-lg: 992px;--breakpoint-xl: 1200px;--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}*,*::before,*::after{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%}header,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}h1,h2,h4{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}a{color:#007bff;text-decoration:none;background-color:transparent}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}button{border-radius:0}button{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button{overflow:visible}button{text-transform:none}button,[type=button]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner{padding:0;border-style:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}h1,h2,h4{margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:2.5rem}h2{font-size:2rem}h4{font-size:1.5rem}.fade:not(.show){opacity:0}.close{float:right;font-size:1.5rem;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;opacity:.5}button.close{padding:0;background-color:transparent;border:0}.modal{position:fixed;top:0;left:0;z-index:1050;display:none;width:100%;height:100%;overflow:hidden;outline:0}.modal-dialog{position:relative;width:auto;margin:.5rem}.modal.fade .modal-dialog{transform:translate(0,-50px)}.modal-content{position:relative;display:flex;flex-direction:column;width:100%;background-color:#fff;background-clip:padding-box;border:1px solid rgba(0,0,0,.2);border-radius:.3rem;outline:0}.modal-body{position:relative;flex:1 1 auto;padding:1rem}@media (min-width:576px){.modal-dialog{max-width:500px;margin:1.75rem auto}}.embed-responsive{position:relative;display:block;width:100%;padding:0;overflow:hidden}.embed-responsive::before{display:block;content:""}.embed-responsive .embed-responsive-item,.embed-responsive iframe{position:absolute;top:0;bottom:0;left:0;width:100%;height:100%;border:0}.embed-responsive-16by9::before{padding-top:56.25%}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}a{background-color:transparent}img{border-style:none}button{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button{overflow:visible}button{text-transform:none}button,[type=button]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring{outline:1px dotted ButtonText}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}body{font-family:"futura-pt","Open Sans",sans-serif;color:#000;margin:0 auto;max-width:2000px;box-shadow:0 0 10px rgba(0,0,0,.1);-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}a:visited{text-decoration:none;color:inherit}a.anchor{display:block;position:relative;top:-60px}.p--text,h1,h2,h4,p{font-family:"futura-pt","Open Sans",sans-serif;color:#000}.p--text{font-weight:400;line-height:1.5;font-size:21px;margin:1em auto}.p--superscript{vertical-align:super;font-size:60%}.header{padding:20px;font-size:0;text-align:center}.header__logo .synchro-logo{height:20px}.atf{position:relative}.atf__header{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90%;-webkit-font-smoothing:antialiased;margin:0 auto;color:#000;font-size:60px;line-height:1.4;text-transform:capitalize;text-align:center;font-weight:400}@media (max-width:767px){.atf__header{font-size:40px}}.a--cta{display:inline-block;-webkit-appearance:none;background:#000;padding:15px 30px;border:none;border-radius:6px;box-shadow:0 3px 0 0 #fff;font-family:"futura-pt","Open Sans",sans-serif;color:#fff!important;font-size:18px;font-weight:600;letter-spacing:.1em;text-decoration:none;text-transform:uppercase;-webkit-font-smoothing:antialiased}@media (max-width:680px){.a--cta{padding:10px 23px}}.rating-new{text-align:center}.rating-new__stars{display:inline-block;background:#fff;padding:10px 25px;border-radius:50px;font-size:0;box-shadow:0 0 10px 0 rgba(0,0,0,.05)}.rating-new__stars #rating-new__star{height:30px;margin:0 4px}@media (max-width:767px){.rating-new__stars #rating-new__star{height:28px}}.rating-new__icon{fill:#fa9865;fill-rule:nonzero}.rating-new__count{font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:1px;margin:0 auto;background:#fa9865;width:fit-content;padding:5px 15px;border-radius:0 0 10px 10px;color:#fff}@media (max-width:767px){.rating-new__count{padding:5px 10px}}.rating-new__count:before{content:"1,400+ 5-star"}.gold-lp{overflow-x:hidden}.gold-lp a.anchor{top:-35px}.gold-lp .a--cta{border-radius:0}.gold-lp #videoModal .modal-dialog{top:50%;left:50%;transform:translate(-50%,-50%);margin:0;width:90%;max-width:1000px}.gold-lp #videoModal .modal-body{padding:5px}.gold-lp #videoModal .close{position:absolute;right:-40px;font-size:40px;color:rgba(0,0,0,.5);opacity:1;font-weight:100;outline:none;background:#fff;padding:1px 10px;z-index:-1}.gold-lp .atf{display:table;width:100%}.gold-lp .atf__video{overflow:hidden;position:relative;width:25%;display:table-cell;background-size:cover;background-position:center}@media (max-width:854px){.gold-lp .atf__video{display:block}}.gold-lp .atf__video-btn{position:absolute;top:53%;left:50%;transform:translate(-50%,-50%);font-weight:600;font-size:16px;letter-spacing:1px;line-height:1.4;padding:20px 20px 15px;text-transform:uppercase;background:#fff;color:#675f5f;border:0;border-radius:20px;outline:none;-webkit-appearance:button;-webkit-font-smoothing:antialiased}.gold-lp .atf__video-btn::before{content:"";display:block;position:relative;left:50%;transform:translateX(-18px);border-top:25px solid transparent;border-left:40px solid #eca846;border-bottom:25px solid transparent;margin-bottom:15px}.gold-lp .atf__video-mobile{display:none}@media (max-width:854px){.gold-lp .atf__video-mobile{display:block;margin:20px;border-radius:20px;overflow:hidden}}.gold-lp .atf__video-mobile .iframe-container{position:relative;width:100%;padding-bottom:56.25%;height:0}.gold-lp .atf__video-mobile .iframe-container iframe{position:absolute;top:0;left:0;width:100%;height:100%}.gold-lp .atf__copy{font-size:0;width:50%;display:table-cell;background-image:linear-gradient(90deg,#F3B37E,#F2C97F);text-align:center;padding:40px}@media (max-width:854px){.gold-lp .atf__copy{width:100%;display:block}}@media (max-width:767px){.gold-lp .atf__copy{padding:30px 20px}}.gold-lp .atf__content{display:inline-block;vertical-align:middle}@media (max-width:680px){.gold-lp .atf__content{width:100%}}.gold-lp .atf__header{position:initial;transform:none;font-size:60px;color:#fff;width:auto;max-width:600px;line-height:initial;font-weight:700;margin:20px 0}@media (max-width:767px){.gold-lp .atf__header{margin:10px auto;font-size:40px}}.gold-lp .atf__subheader{font-size:35px;color:#fff;margin:20px auto;line-height:1.4;max-width:450px}@media (max-width:767px){.gold-lp .atf__subheader{margin-top:10px;font-size:28px}}.gold-lp .atf__hero-image{display:table-cell;background-position:center;background-size:cover;width:25%}@media (max-width:854px){.gold-lp .atf__hero-image{height:300px;width:100%;display:block}}@media (max-width:680px){.gold-lp .atf__hero-image{padding:20px 0 0;width:100%}}.gold-lp .atf .a--cta{font-size:18px;padding:16px 35px;background-color:#39447c;border-radius:40px}.gold-capsules a.anchor{top:0}.gold-capsules .rating-new__stars{background:none;box-shadow:none;padding:0 0 15px}.gold-capsules .rating-new__icon{fill:#eca846}.gold-capsules .rating-new__count{background:#fff;color:#707070;border-radius:10px;font-weight:600}.gold-capsules .atf .a--cta{background-color:#eca846;border-radius:6px;padding:17px 60px}.gold-capsules .atf__copy{background:#faf7f3;padding:60px 40px}@media (max-width:854px){.gold-capsules .atf__copy{padding:40px}}@media (max-width:767px){.gold-capsules .atf__copy{padding:30px 20px 10px}}.gold-capsules .atf__header{color:#000;font-weight:600;max-width:500px}@media (max-width:1199px){.gold-capsules .atf__header{font-size:53px}}@media (max-width:767px){.gold-capsules .atf__header{font-size:40px}}.gold-capsules .atf__subheader{color:#000;font-weight:500;opacity:.6;max-width:500px;font-size:30px;margin-bottom:30px}@media (max-width:1199px){.gold-capsules .atf__subheader{font-size:28px}}@media (max-width:767px){.gold-capsules .atf__subheader{margin-bottom:20px;font-size:26px}}.gold-capsules .atf__hero-image{}@media (max-width:854px){.gold-capsules .atf__hero-image{display:none}}.gold-capsules .atf__hero-image-mobile{display:none}@media (max-width:854px){.gold-capsules .atf__hero-image-mobile{display:block;padding-top:66.66%;background-size:contain}}@media (max-width:854px){.gold-capsules .atf__video-mobile{margin:0;padding:20px;background:#faf7f2}}.gold-capsules .benefits-slider{height:calc(2000px + 100vh);padding:0 40px}@media (max-width:767px){.gold-capsules .benefits-slider{padding:0 20px}}.gold-capsules .benefits-slider__content{height:100vh;display:flex;justify-content:center;align-items:center}.gold-capsules .benefits-slider__content:before{font-family:"Font Awesome 5 Free";content:"ï¸";position:absolute;font-weight:900;color:#eca846;left:50%;transform:translateX(-50%);animation-duration:1.5s;animation-iteration-count:infinite;animation-direction:alternate}@media (max-width:680px){.gold-capsules .benefits-slider__content:before{display:none}}.gold-capsules .benefits-slider__content:before{animation-name:scrolltop}@keyframes scrolltop{from{top:40px}to{top:60px}}.gold-capsules .benefits-slider__icon1{margin:30px 80px 30px 0;opacity:.3;position:relative}.gold-capsules .benefits-slider__icon1 img{width:100%}@media (max-width:1199px){.gold-capsules .benefits-slider__icon1{width:50px;margin-right:50px}}@media (max-width:767px){.gold-capsules .benefits-slider__icon1{margin-right:30px}}@media (max-width:680px){.gold-capsules .benefits-slider__icon1{margin:40px 20px 40px 0;width:40px}}.gold-capsules .benefits-slider__icon1::after{content:"";position:absolute;top:50%;left:100%;height:2px;width:0;background:#eca846;transform:translate(15px,-1px)}@media (max-width:767px){.gold-capsules .benefits-slider__icon1::after{left:50%;top:100%;width:2px;height:0;transform:translate(-1px,0)}}@media (max-width:680px){.gold-capsules .benefits-slider__icon1::after{width:1px;transform:none}}.gold-capsules .benefits-slider__copy0,.gold-capsules .benefits-slider__copy1,.gold-capsules .benefits-slider__copy2,.gold-capsules .benefits-slider__copy3,.gold-capsules .benefits-slider__copy4{display:none}.gold-capsules .benefits-slider__copy0.active{display:inline-block}.gold-capsules .benefits-slider__image0,.gold-capsules .benefits-slider__image1,.gold-capsules .benefits-slider__image2,.gold-capsules .benefits-slider__image3,.gold-capsules .benefits-slider__image4{display:inline-block;height:400px;width:400px;background-size:cover;background-position:center;background-repeat:no-repeat;vertical-align:middle}@media (max-width:1199px){.gold-capsules .benefits-slider__image0,.gold-capsules .benefits-slider__image1,.gold-capsules .benefits-slider__image2,.gold-capsules .benefits-slider__image3,.gold-capsules .benefits-slider__image4{width:40%}}@media (max-width:767px){.gold-capsules .benefits-slider__image0,.gold-capsules .benefits-slider__image1,.gold-capsules .benefits-slider__image2,.gold-capsules .benefits-slider__image3,.gold-capsules .benefits-slider__image4{width:100%;height:30vh}}@media (max-width:680px){.gold-capsules .benefits-slider__image0,.gold-capsules .benefits-slider__image1,.gold-capsules .benefits-slider__image2,.gold-capsules .benefits-slider__image3,.gold-capsules .benefits-slider__image4{height:25vh}}.gold-capsules .benefits-slider__image0{}@media (max-width:767px){.gold-capsules .benefits-slider__image0{background-size:contain;height:40vh}}@media (max-width:680px){.gold-capsules .benefits-slider__image0{background-size:cover}}.gold-capsules .benefits-slider__image1{}.gold-capsules .benefits-slider__image2{}.gold-capsules .benefits-slider__image3{}.gold-capsules .benefits-slider__image4{}.gold-capsules .benefits-slider__text{display:inline-block;width:530px;vertical-align:middle;padding-left:40px;text-align:left;margin-bottom:-21px}@media (max-width:1199px){.gold-capsules .benefits-slider__text{padding-left:30px;width:59%}}@media (max-width:767px){.gold-capsules .benefits-slider__text{margin-bottom:0;width:100%;padding:20px 0 0;max-width:400px}}.gold-capsules .benefits-slider__header{opacity:.5;font-weight:500;font-size:16px;text-transform:uppercase;letter-spacing:1px}@media (max-width:1199px){.gold-capsules .benefits-slider__header{display:none}}.gold-capsules .benefits-slider__title{font-weight:700;font-size:30px}@media (max-width:767px){.gold-capsules .benefits-slider__title{font-size:24px}}@media (max-width:854px){.gold-capsules .benefits-slider__text-desktop{display:none}}.gold-capsules .benefits-slider__text-mobile{display:none}@media (max-width:854px){.gold-capsules .benefits-slider__text-mobile{display:block}}.gold-capsules .benefits-slider .p--text{opacity:.5;font-weight:500}@media (max-width:680px){.gold-capsules .benefits-slider .p--text{font-size:20px}}.gold-capsules .superior__image-mobile{display:none}@media (max-width:854px){.gold-capsules .superior__image-mobile{display:block;padding-top:100%;background-size:cover}}</style>
 
-    <!-- Typekit Font - Futura -->
-    <link rel="stylesheet" href="https://use.typekit.net/ytz3drb.css">
-    <!-- Google Font - Open Sans -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <!-- Font - Font Awesome -->
-    <script src="https://kit.fontawesome.com/aeb70e78d0.js" crossorigin="anonymous"></script>
+		<!-- Typekit Font - Futura -->
+<!--
+		<link rel="stylesheet" href="https://use.typekit.net/ytz3drb.css">
+-->
+		<!-- Google Font - Open Sans -->
+<!--
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+-->
+		<!-- Font - Font Awesome -->
+		<script type="lazyload2" data-src="https://kit.fontawesome.com/aeb70e78d0.js" crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
-        (function e() {
-            var e = document.createElement("script");
-            e.type = "text/javascript", e.async = true, e.src = "//staticw2.yotpo.com/syWV3O0DUgkkpDvutwXXSyHW0ZHmfejdusotXyXD/widget.js";
-            var t = document.getElementsByTagName("script")[0];
-            t.parentNode.insertBefore(e, t)
-        })();
-    </script>
+		<script type="lazyload2">
+			(function e() {
+				var e = document.createElement("script");
+				e.type = "text/javascript", e.async = true, e.src = "//staticw2.yotpo.com/syWV3O0DUgkkpDvutwXXSyHW0ZHmfejdusotXyXD/widget.js";
+				var t = document.getElementsByTagName("script")[0];
+				t.parentNode.insertBefore(e, t)
+			})();
+		</script>
 
-    {% if is_variant != false %}
-        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-    {% endif %}
+		{% if is_variant != false %}
+		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+		{% endif %}
 
-    <!-- Universal Analytics -->
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		<!-- Universal Analytics -->
+		<script type="lazyload2">
+			(function (i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] || function () {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-47061703-1', 'auto', {'allowLinker': true});
-        ga('require', 'ec');
-        ga('require', 'linker');
-        ga('linker:autoLink', ['www.besynchro.com', 'synchro.myshopify.com']);
-        ga('require', 'displayfeatures');
-        ga('send', 'pageview');
-    </script>
+			ga('create', 'UA-47061703-1', 'auto', {'allowLinker': true});
+			ga('require', 'ec');
+			ga('require', 'linker');
+			ga('linker:autoLink', ['www.besynchro.com', 'synchro.myshopify.com']);
+			ga('require', 'displayfeatures');
+			ga('send', 'pageview');
+		</script>
 
-    <!-- Start Visual Website Optimizer Asynchronous Code -->
-    <script type='text/javascript'>
-        var _vwo_code = (function () {
-            var account_id = 286211,
-                settings_tolerance = 5000,
-                library_tolerance = 5000,
-                use_existing_jquery = false,
-                /* DO NOT EDIT BELOW THIS LINE */
-                f = false,
-                d = document;
-            return {
-                use_existing_jquery: function () {
-                    return use_existing_jquery;
-                },
-                library_tolerance: function () {
-                    return library_tolerance;
-                },
-                finish: function () {
-                    if (!f) {
-                        f = true;
-                        var a = d.getElementById('_vis_opt_path_hides');
-                        if (a) a.parentNode.removeChild(a);
-                    }
-                },
-                finished: function () {
-                    return f;
-                },
-                load: function (a) {
-                    var b = d.createElement('script');
-                    b.src = a;
-                    b.type = 'text/javascript';
-                    b.innerText;
-                    b.onerror = function () {
-                        _vwo_code.finish();
-                    };
-                    d.getElementsByTagName('head')[0].appendChild(b);
-                },
-                init: function () {
-                    settings_timer = setTimeout('_vwo_code.finish()', settings_tolerance);
-                    var a = d.createElement('style'),
-                        b = 'body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',
-                        h = d.getElementsByTagName('head')[0];
-                    a.setAttribute('id', '_vis_opt_path_hides');
-                    a.setAttribute('type', 'text/css');
-                    if (a.styleSheet) a.styleSheet.cssText = b;
-                    else a.appendChild(d.createTextNode(b));
-                    h.appendChild(a);
-                    this.load('//dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(d.URL) + '&r=' + Math.random());
-                    return settings_timer;
-                }
-            };
-        }());
-        _vwo_settings_timer = _vwo_code.init();
-    </script>
-    <!-- End Visual Website Optimizer Asynchronous Code -->
+		<!-- Start Visual Website Optimizer Asynchronous Code -->
+		<script type='lazyload2'>
+			var _vwo_code = (function () {
+				var account_id = 286211,
+				settings_tolerance = 5000,
+				library_tolerance = 5000,
+				use_existing_jquery = false,
+				/* DO NOT EDIT BELOW THIS LINE */
+				f = false,
+				d = document;
+				return {
+					use_existing_jquery: function () {
+						return use_existing_jquery;
+					},
+					library_tolerance: function () {
+						return library_tolerance;
+					},
+					finish: function () {
+						if (!f) {
+						f = true;
+							var a = d.getElementById('_vis_opt_path_hides');
+							if (a) a.parentNode.removeChild(a);
+						}
+					},
+					finished: function () {
+						return f;
+					},
+					load: function (a) {
+						var b = d.createElement('script');
+						b.src = a;
+						b.type = 'text/javascript';
+						b.innerText;
+						b.onerror = function () {
+							_vwo_code.finish();
+						};
+						d.getElementsByTagName('head')[0].appendChild(b);
+					},
+					init: function () {
+						settings_timer = setTimeout('_vwo_code.finish()', settings_tolerance);
+						var a = d.createElement('style'),
+						b = 'body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',
+						h = d.getElementsByTagName('head')[0];
+						a.setAttribute('id', '_vis_opt_path_hides');
+						a.setAttribute('type', 'text/css');
+						if (a.styleSheet) a.styleSheet.cssText = b;
+						else a.appendChild(d.createTextNode(b));
+						h.appendChild(a);
+						this.load('//dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(d.URL) + '&r=' + Math.random());
+						return settings_timer;
+					}
+				};
+			}());
+			_vwo_settings_timer = _vwo_code.init();
+		</script>
+		<!-- End Visual Website Optimizer Asynchronous Code -->
 
-    <!-- Klaviyo Code -->
-    <script type="text/javascript" async
-            src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=PqjFfD"></script>
-    <!-- End Klaviyo Code -->
+		<!-- Klaviyo Code -->
+		<script type="lazyload2" data-src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=PqjFfD"></script>
+		<!-- End Klaviyo Code -->
 
-    <!-- Sentry error telemetry -->
-    <script src="https://cdn.ravenjs.com/3.12.0/raven.min.js"></script>
-    <script>
-        Raven.config('https://35f8ce49bcbf4b2fa0299a69b5a0b4c5@sentry.io/130658').install()
-    </script>
-    <!-- Sentry error telemetry end -->
+		<!-- Sentry error telemetry -->
+		<script type="lazyload2" data-src="https://cdn.ravenjs.com/3.12.0/raven.min.js"></script>
+		<script type="lazyload2">Raven.config('https://35f8ce49bcbf4b2fa0299a69b5a0b4c5@sentry.io/130658').install()</script>
+		<!-- Sentry error telemetry end -->
 
-    <!-- Global site tag (gtag.js) - AdWords: 864481593 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-864481593"></script>
-    <script> window.dataLayer = window.dataLayer || [];
+		<!-- Global site tag (gtag.js) - AdWords: 864481593 -->
+		<script type="lazyload2" data-src="https://www.googletagmanager.com/gtag/js?id=AW-864481593"></script>
+		<script type="lazyload2">
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+			gtag('js', new Date());
+			gtag('config', 'AW-864481593');
+		</script>
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+		{{ page_head }}
 
-        gtag('js', new Date());
-        gtag('config', 'AW-864481593'); </script>
+		{% capture content_for_header2 %}{{ content_for_header }}{% endcapture %}
+		{{ content_for_header2 | replace: ' defer="defer" ', ' type="no-load" ' | replace: " src=", " data-src=" | replace: "window.addEventListener('load', asyncLoad, false);", "window.addEventListener('wnw_load', asyncLoad, false);" | replace: "DOMContentLoaded", "" }}
 
+	</head>
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTLMZWH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
-    {{ page_head }}
-    {{ content_for_header }}
-</head>
+		<script type="lazyload2">
+			var sd = 'https://synchrolife.ositracker.com';
+			var resource = document.createElement('script');
+			resource.src = "https://synchrolife.ositracker.com/track.js";
+			var script = document.getElementsByTagName('script')[0];
+			script.parentNode.insertBefore(resource, script);
+		</script>
 
-<body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTLMZWH"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+		{{ content_for_layout }}
+		{{ page_content }}
 
-<script>
-    var sd = 'https://synchrolife.ositracker.com';
-    var resource = document.createElement('script');
-    resource.src = "https://synchrolife.ositracker.com/track.js";
-    var script = document.getElementsByTagName('script')[0];
-    script.parentNode.insertBefore(resource, script);
-</script>
+		<!-- LinkedIn Insights Tag -->
+		<script type="text/javascript"> _linkedin_data_partner_id = "316778"; </script>
+		<script type="lazyload2"> (function () {
+			var s = document.getElementsByTagName("script")[0];
+			var b = document.createElement("script");
+			b.type = "text/javascript";
+			b.async = true;
+			b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+			s.parentNode.insertBefore(b, s);
+		})(); </script>
+		<noscript><img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=316778&fmt=gif"/></noscript>
+		<!-- LinkedIn Insights Tag End-->
 
-{{ content_for_layout }}
-{{ page_content }}
+		{{ 'synchro.js' | asset_url | script_tag }}
 
-<!-- LinkedIn Insights Tag -->
-<script type="text/javascript"> _linkedin_data_partner_id = "316778"; </script>
-<script type="text/javascript"> (function () {
-        var s = document.getElementsByTagName("script")[0];
-        var b = document.createElement("script");
-        b.type = "text/javascript";
-        b.async = true;
-        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-        s.parentNode.insertBefore(b, s);
-    })(); </script>
-<noscript><img height="1" width="1" style="display:none;" alt=""
-               src="https://dc.ads.linkedin.com/collect/?pid=316778&fmt=gif"/></noscript>
-<!-- LinkedIn Insights Tag End-->
+		<!-- Gorgias Chat Widget Start -->
+		<div id="gorgias-chat">
+			<script type="lazyload2" data-src="https://config.gorgias.io/production/3RBN0xMpRO749GJP/chat/z8QbV2PLbK2ogePy.js"></script>
+			<script type="lazyload2">window.gorgiasChatParameters = {}</script>
+		</div>
+		<!-- Gorgias Chat Widget End -->
 
-{{ 'synchro.js' | asset_url | script_tag }}
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script>AOS.init();</script>
 
-<!-- Gorgias Chat Widget Start -->
-<div id="gorgias-chat">
-    <script>window.gorgiasChatParameters = {}</script>
-    <script src="https://config.gorgias.io/production/3RBN0xMpRO749GJP/chat/z8QbV2PLbK2ogePy.js" defer></script>
-</div>
-<!-- Gorgias Chat Widget End -->
-
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-</body>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		{{ 'wnw-optimization-2.js'  | asset_url | script_tag }}
+	</body>
 </html>
