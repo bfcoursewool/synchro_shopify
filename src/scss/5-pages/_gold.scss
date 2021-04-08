@@ -60,15 +60,18 @@
 
     .close {
       position: absolute;
-      right: -40px;
-      font-size: 40px;
-      color: rgba(0,0,0,0.5);
+      top: -50px;
+      font-size: 30px;
+      color: #9a253a;
       opacity: 1;
-      font-weight: 100;
+      font-weight: 400;
       outline: none;
       background: white;
-      padding: 1px 10px;
+      width: 35px;
+      height: 35px;
       z-index: -1;
+      right: 0;
+      border-radius: 30px;
     }
 
     .iframe-container {
@@ -258,7 +261,7 @@
       display: table-cell;
       background-position: center;
       background-size: cover;
-      width: 25%;
+      width: 50%;
       @include sm-screen {
         height: 300px;
         width: 100%;
@@ -430,10 +433,14 @@
     }
 
     &__count {
-      background: $color-ivory;
-      color: #707070;
-      border-radius: 10px;
+      background: none;
+      color: $color-ebony;
+      border-radius: 0;
       font-weight: $font-demi;
+      text-transform: none;
+      padding: 0;
+      text-decoration: underline;
+      letter-spacing: 0;
     }
   }
 
@@ -445,13 +452,17 @@
     }
 
     &__copy {
-      background: #FAF7F3;
-      padding: $gutter-large $gutter-medium;
+      background: $color-beige;
+      padding: 30px $gutter-medium 50px;
       @include sm-screen {
-        padding: $gutter-medium;
+        border-radius: 0 0 20px 20px;
       }
       @include s-screen {
-        padding: 30px $gutter-small 10px;
+        padding: 10px 30px 30px;
+      }
+
+      .a--cta {
+        margin-bottom: 25px;
       }
     }
 
@@ -470,23 +481,25 @@
     &__subheader {
       color: $color-ebony;
       font-weight: $font-medium;
-      opacity: 0.6;
+      opacity: 0.7;
       max-width: 500px;
-      font-size: 30px;
+      font-size: 28px;
       margin-bottom: 30px;
       @include m-screen {
-        font-size: 28px;
+        font-size: 24px;
       }
       @include s-screen {
         margin-bottom: $gutter-small;
-        font-size: 26px;
+        font-size: 20px;
       }
     }
 
     &__hero-image {
-      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-atf-product2@2x.jpg?v=1614363172");
+      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/gold-cap-atf-product2@2x.jpeg?v=1617894082");
       @include sm-screen {
-        display: none;
+        background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/gold-cap-atf-mobile2@2x.jpeg?v=1617894809");
+        padding-top: 66.66%;
+        background-size: cover;
       }
     }
 
@@ -503,8 +516,8 @@
     &__video-mobile {
       @include sm-screen {
         margin: 0;
-        padding: $gutter-small;
-        background: #faf7f2;
+        padding: 30px;
+        background: none;
       }
     }
   }
@@ -512,8 +525,15 @@
   .benefits-slider {
     height: calc(2000px + 100vh);
     padding: 0 $gutter-medium;
-    @include s-screen {
-      padding: 0 $gutter-small;
+    background: #F9F6F2;
+    background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/benefits-bg.svg?v=1617368800");
+    background-size: cover;
+    margin: 40px 0;
+    @include sm-screen {
+      height: initial;
+      padding: 15px 30px;
+      border-radius: 20px;
+      margin-top: 0;
     }
 
     &__anchor1,
@@ -552,6 +572,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+      position: relative;
+      top: -45px;
+      @include sm-screen {
+        position: initial;
+        height: initial;
+      }
 
       &:before {
         font-family: "Font Awesome 5 Free";
@@ -564,7 +591,7 @@
         animation-duration: 1.5s;
         animation-iteration-count: infinite;
         animation-direction: alternate;
-        @include xs-screen {
+        @include sm-screen {
           display: none;
         }
       }
@@ -574,12 +601,24 @@
       }
       @keyframes scrolltop {
         from {
-          top: 40px;
+          top: 70px;
         }
 
         to {
-          top: 60px;
+          top: 80px;
         }
+      }
+    }
+
+    &__icons {
+      max-width: 980px;
+      width: 100%;
+      font-size: 0;
+      background: $color-ivory;
+      border-radius: 10px;
+      padding: 3px;
+      @include sm-screen {
+        display: none;
       }
     }
 
@@ -587,80 +626,98 @@
     &__icon2,
     &__icon3,
     &__icon4 {
-      margin: 30px 80px 30px 0;
-      opacity: 0.3;
+      margin: 0;
+      padding: 20px;
       position: relative;
       transition: all 0.5s ease 0s;
       cursor: pointer;
-
-      img {
-        width: 100%;
-      }
-      @include m-screen {
-        width: 50px;
-        margin-right: 50px;
-      }
-      @include s-screen {
-        margin-right: 30px;
+      display: inline-block;
+      width: 25%;
+      padding: 15px;
+      border-radius: 8px;
+      height: 100%;
+      opacity: 1;
+      vertical-align: middle;
+      @include sm-screen {
+        text-align: center;
       }
       @include xs-screen {
-        margin: 40px 20px 40px 0;
-        width: 40px;
+        padding: 15px;
       }
 
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 100%;
-        height: 2px;
-        width: 0;
-        background: $color-gold;
-        transform: translate(15px, -1px);
-        transition: all 0.5s ease 0s;
-        @include s-screen {
-          left: 50%;
-          top: 100%;
-          width: 2px;
-          height: 0;
-          transform: translate(-1px, 0);
-        }
-        @include xs-screen {
-          width: 1px;
-          transform: none;
+      img {
+        width: 50px;
+        display: inline-block;
+        @include m-screen {
+          width: 40px;
         }
       }
 
+      .benefits-slider__header {
+        font-weight: $font-demi;
+        font-size: 17px;
+        display: inline-block;
+        width: calc(100% - 75px);
+        vertical-align: middle;
+        margin: 0 0 0 15px;
+        line-height: normal;
+        text-transform: none;
+        letter-spacing: 0;
+        opacity: 1;
+        @include m-screen {
+          width: calc(100% - 65px);
+        }
+        @include sm-screen {
+          display: none;
+        }
+      }
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   top: 50%;
+      //   left: 100%;
+      //   height: 2px;
+      //   width: 0;
+      //   background: $color-gold;
+      //   transform: translate(15px, -1px);
+      //   transition: all 0.5s ease 0s;
+      //   @include s-screen {
+      //     left: 50%;
+      //     top: 100%;
+      //     width: 2px;
+      //     height: 0;
+      //     transform: translate(-1px, 0);
+      //   }
+      //   @include xs-screen {
+      //     width: 1px;
+      //     transform: none;
+      //   }
+      // }
       &.active {
         opacity: 1;
+        background: #FAF7F3;
 
-        &::after {
-          width: 50px;
-          height: 2px;
-          @include m-screen {
-            width: 20px;
-          }
-          @include s-screen {
-            width: 2px;
-            height: 0;
-          }
-          @include xs-screen {
-            width: 1px;
-          }
+        .benefits-slider__header {
+          opacity: 1;
         }
+        // &::after {
+        //   width: 50px;
+        //   height: 2px;
+        //   @include m-screen {
+        //     width: 20px;
+        //   }
+        //   @include s-screen {
+        //     width: 2px;
+        //     height: 0;
+        //   }
+        //   @include xs-screen {
+        //     width: 1px;
+        //   }
+        // }
       }
 
       &.visited {
-        opacity: 1;
-
-        &::after {
-          @include s-screen {
-            height: 30px;
-          }
-          @include xs-screen {
-            height: 40px;
-          }
-        }
+        opacity: 0.5;
       }
 
       &:last-child {
@@ -678,10 +735,27 @@
     &__copy3,
     &__copy4 {
       display: none;
+      background: white;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 980px;
+      font-size: 0;
+      margin-top: 10px;
+      @include sm-screen {
+        display: block;
+        margin: 15px 0;
+      }
+      @include s-screen {
+        max-width: 400px;
+      }
 
       &.active {
         display: inline-block;
       }
+    }
+
+    &__copy0 {
+      background: none;
     }
 
     &__image0,
@@ -690,32 +764,25 @@
     &__image3,
     &__image4 {
       display: inline-block;
-      height: 400px;
-      width: 400px;
+      height: 440px;
+      width: 50%;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       vertical-align: middle;
-      @include m-screen {
-        width: 40%;
-      }
+      border-radius: 10px 0 0 10px;
       @include s-screen {
         width: 100%;
-        height: 30vh;
-      }
-      @include xs-screen {
-        height: 25vh;
+        border-radius: 10px 10px 0 0;
+        height: 200px;
       }
     }
 
     &__image0 {
-      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-benefit-intro.jpg?v=1612928432");
+      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/gold-cap-bottle.png?v=1617720697");
+      background-size: contain;
       @include s-screen {
-        background-size: contain;
-        height: 40vh;
-      }
-      @include xs-screen {
-        background-size: cover;
+        padding-top: 100%;
       }
     }
 
@@ -737,31 +804,36 @@
 
     &__text {
       display: inline-block;
-      width: 530px;
+      width: 50%;
       vertical-align: middle;
-      padding-left: $gutter-medium;
+      padding: 0 $gutter-medium;
       text-align: left;
-      margin-bottom: -21px;
+      position: relative;
       @include m-screen {
         padding-left: 30px;
-        width: 59%;
       }
       @include s-screen {
         margin-bottom: 0;
         width: 100%;
-        padding: $gutter-small 0 0;
-        max-width: 400px;
+        padding: 0 $gutter-small 15px;
+        text-align: center;
       }
     }
 
-    &__header {
-      opacity: 0.5;
-      font-weight: $font-medium;
-      font-size: 16px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      @include m-screen {
-        display: none;
+    &__icon-mobile {
+      display: none;
+      @include sm-screen {
+        display: initial;
+        width: 50px;
+        margin-bottom: $gutter-small;
+      }
+      @include s-screen {
+        width: 60px;
+        position: absolute;
+        background: white;
+        padding: 5px;
+        border-radius: 30px;
+        transform: translate(-50%, -50%);
       }
     }
 
@@ -770,16 +842,31 @@
       font-size: 40px;
       margin-bottom: $gutter-small;
       @include s-screen {
-        font-size: 30px;
+        font-size: 35px;
         text-align: center;
+        margin: 20px 0 0;
+      }
+    }
+
+    &__scroll {
+      font-size: 16px;
+      font-weight: 600;
+      opacity: 0.5;
+      @include sm-screen {
+        display: none;
       }
     }
 
     &__title {
       font-weight: $font-bold;
       font-size: 30px;
+
+      span {
+        color: $color-gold;
+      }
       @include s-screen {
-        font-size: 24px;
+        font-size: 27px;
+        margin-top: $gutter-medium;
       }
     }
 
@@ -797,10 +884,11 @@
     }
 
     .p--text {
-      opacity: 0.5;
+      opacity: 0.7;
       font-weight: $font-medium;
-      @include xs-screen {
-        font-size: 20px;
+      @include s-screen {
+        font-size: 18px;
+        margin: 10px 0;
       }
     }
   }
@@ -1172,10 +1260,85 @@
       font-size: 18px;
       color: #4D4D4D;
       font-style: italic;
-      margin-bottom: 30px;
+      margin-bottom: 0;
 
       span {
         display: block;
+      }
+    }
+
+    &__atf {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 150px 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include sm-screen {
+        padding: 30px;
+        display: block;
+      }
+    }
+
+    &__video {
+      width: 50%;
+      @include sm-screen {
+        width: 100%;
+      }
+      @include s-screen {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &__play-button {
+      cursor: pointer;
+      border: 0;
+      outline: none;
+      -webkit-appearance: button;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-font-smoothing: antialiased;
+      padding: 0;
+      background: none;
+    }
+
+    &__copy {
+      width: 50%;
+      padding-left: 40px;
+      @include sm-screen {
+        width: 100%;
+        padding: 0;
+        max-width: 500px;
+        margin: 30px auto 0;
+        text-align: center;
+      }
+      @include s-screen {
+        max-width: 400px;
+        margin-top: 15px;
+      }
+    }
+
+    &__title {
+      color: #319E9E;
+      font-size: 22px;
+      font-weight: $font-demi;
+      @include s-screen {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+    }
+
+    &__quote-single {
+      font-weight: $font-medium;
+      font-size: 20px;
+      @include s-screen {
+        font-size: 16px;
       }
     }
   }

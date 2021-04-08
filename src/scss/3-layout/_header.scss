@@ -1,9 +1,12 @@
 // Main Navigation without links
 
 .header {
-  padding: $gutter-small;
+  padding: 30px;
   font-size: 0;
   text-align: center;
+  @include s-screen {
+    padding: $gutter-small;
+  }
 
   &__logo {
     .synchro-logo {

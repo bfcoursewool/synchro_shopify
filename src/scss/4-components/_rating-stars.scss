@@ -40,11 +40,8 @@
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.05);
 
     #rating-new__star {
-      height: 30px;
-      margin: 0 4px;
-      @include s-screen {
-        height: 28px;
-      }
+      height: 21px;
+      margin: 0 3px;
     }
   }
 
