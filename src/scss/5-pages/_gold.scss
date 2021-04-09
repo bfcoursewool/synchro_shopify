@@ -528,7 +528,7 @@
     background: #F9F6F2;
     background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/benefits-bg.svg?v=1617368800");
     background-size: cover;
-    margin: 40px 0;
+    margin: 0 0 40px;
     @include sm-screen {
       height: initial;
       padding: 15px 30px;
@@ -897,7 +897,7 @@
     background-color: #F1DEC3;
     margin: 0 $gutter-medium;
     @include s-screen {
-      margin: 0 0 20px;
+      margin: 0;
     }
 
     &__image {
@@ -1061,18 +1061,19 @@
     padding: $gutter-medium*2 $gutter-small;
     text-align: center;
     font-size: 0;
-    max-width: 1400px;
-    margin: 0 auto;
+    margin: 0 40px;
     @include m-screen {
       padding: $gutter-large $gutter-medium;
     }
     @include s-screen {
+      margin: 0;
       padding: $gutter-small $gutter-small $gutter-medium;
     }
 
     &__icons {
+      max-width: 1400px;
+      margin: 0 auto;
       @include s-screen {
-        margin: 0 auto;
         width: fit-content;
       }
     }
@@ -1221,6 +1222,7 @@
       border-radius: 10px;
       vertical-align: top;
       max-width: 350px;
+      padding-bottom: 25px;
       @include m-screen {
         width: 31%;
         margin: 0 1%;
@@ -1311,6 +1313,9 @@
     &__copy {
       width: 50%;
       padding-left: 40px;
+      @include m-screen {
+        padding-left: 30px;
+      }
       @include sm-screen {
         width: 100%;
         padding: 0;
