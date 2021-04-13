@@ -3,8 +3,11 @@
 .footer {
   background: $color-ebony;
   padding: $gutter-small 0;
+  @include sm-screen {
+    border-radius: $radius-large $radius-large 0 0;
+  }
   @include s-screen {
-    padding: $gutter-small;
+    padding: $gutter-small 30px;
   }
 
   &__content {
@@ -24,13 +27,13 @@
   &__logo {
     .synchro-logo {
       display: block;
-      margin: 7px auto 10px;
-      height: 18px;
+      margin: 5px auto 10px;
+      height: 20px;
       fill: $color-ivory;
     }
 
     .p--text {
-      color: #6F6F6F;
+      color: $color-ivory;
       font-size: 16px;
       font-weight: $font-medium;
       margin: 0;

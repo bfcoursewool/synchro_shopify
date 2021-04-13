@@ -12,11 +12,8 @@
   transition: all 0.5s ease-in-out;
   white-space: nowrap;
   overflow: auto;
-  padding: 0 15px;
+  padding: 5px 15px;
   -ms-overflow-style: none;
-  @include xs-screen {
-    padding: 5px 15px;
-  }
 
   &.show-purchase-options {
     bottom: 0;
@@ -114,7 +111,7 @@
 }
 
 .pseudo-purchase-options {
-  height: 93px;
+  height: 103px;
   position: relative;
-  visibility: hidden;
+  background-color: $color-ebony;
 }
