@@ -528,12 +528,11 @@
     background: #F9F6F2;
     background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/benefits-bg.svg?v=1617368800");
     background-size: cover;
-    margin: 0 0 40px;
+    margin: 0;
     @include sm-screen {
       height: initial;
-      padding: 15px 30px;
-      border-radius: 20px;
-      margin-top: 0;
+      padding: 15px 30px 35px;
+      border-radius: 20px 20px 0 0;
     }
 
     &__anchor1,
@@ -894,63 +893,54 @@
   }
 
   .superior {
-    background-color: #F1DEC3;
-    margin: 0 $gutter-medium;
-    @include s-screen {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: $gutter-medium $gutter-medium 0;
+    background-color: #e5aba4;
+    background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/gold-cap-tech-desktop.jpeg?v=1618251552");
+    background-size: auto 750px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    @include sm-screen {
+      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/gold-cap-tech-mobile.jpeg?v=1618249384");
+      background-size: 855px;
+      background-position: top center;
+    }
+    @include sm-screen {
       margin: 0;
-    }
-
-    &__image {
-      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-tech-bg.jpg?v=1612928451");
-      background-position: center;
-      background-size: cover;
-      height: 650px;
-      @include m-screen {
-        background-position-x: 37%;
-      }
-      @include sm-screen {
-        background: none;
-        height: initial;
-      }
-    }
-
-    &__image-mobile {
-      display: none;
-      @include sm-screen {
-        display: block;
-        padding-top: 100%;
-        background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-tech-bg-mobile.jpg?v=1612929675");
-        background-size: cover;
-      }
+      top: -20px;
     }
 
     &__title {
-      text-align: center;
+      top: 100px;
       margin: 0 auto;
-      padding: 120px $gutter-medium 0;
+      padding: 100px 40px;
       max-width: 1280px;
-      @include m-screen {
-        padding-top: 100px;
-      }
+      @include m-screen {}
       @include sm-screen {
-        background-color: #F2F1EE;
-        padding: $gutter-medium $gutter-small 0;
+        padding: 80px 30px 0;
+        width: 75%;
+        margin-left: 0;
+        max-width: 420px;
+        height: 650px;
       }
       @include s-screen {
-        padding-top: $gutter-medium;
+        padding-top: 40px;
       }
     }
 
     &__header {
-      font-weight: $font-bold;
-      font-size: 48px;
-      width: 50%;
-      margin-left: auto;
-      margin-bottom: 20px;
+      font-weight: $font-demi;
+      color: $color-ivory;
+      font-size: 50px;
+      width: 45%;
+      margin-bottom: 30px;
       @include m-screen {
         font-size: 40px;
       }
       @include sm-screen {
+        margin-bottom: 20px;
         font-size: 35px;
         width: 100%;
       }
@@ -958,15 +948,14 @@
 
     &__subheader {
       font-weight: $font-medium;
-      font-size: 26px;
-      color: #61584e;
+      color: $color-ivory;
+      font-size: 24px;
       line-height: 1.5;
-      width: 50%;
-      margin-left: auto;
+      width: 45%;
       @include sm-screen {
-        font-size: 22px;
-        width: 100%;
+        font-size: 20px;
         margin: 0;
+        width: 80%;
       }
     }
 
@@ -977,12 +966,11 @@
       -webkit-column-gap: 40px;
       column-count: 2;
       column-gap: 40px;
-      padding: 0 $gutter-medium;
+      padding: 0 $gutter-medium $gutter-medium;
       max-width: 1280px;
       margin: 0 auto;
       position: relative;
-      top: -60px;
-      background-color: #F1DEC3;
+      text-align: center;
       @include m-screen {
         column-gap: 20px;
         padding: 0 $gutter-small;
@@ -992,7 +980,8 @@
         -moz-column-count: 1;
         -webkit-column-count: 1;
         column-count: 1;
-        padding: 0 $gutter-small $gutter-small;
+        padding: 0 30px 30px;
+        background-color: #e5aba4;
       }
     }
 
@@ -1002,19 +991,24 @@
     &__card-4,
     &__card-5 {
       background: $color-ivory;
+      border-radius: 10px;
       display: inline-block;
       padding: 40px 40px 25px;
       margin-bottom: 40px;
       text-align: center;
       line-height: 1.5;
       background-repeat: no-repeat;
-      background-size: 150px;
+      background-size: 120px;
       background-position: top left;
       @include m-screen {
         margin-bottom: 20px;
       }
+      @include sm-screen {
+        margin-bottom: 25px;
+      }
       @include s-screen {
-        padding: 30px 20px 15px;
+        max-width: 400px;
+        padding: 20px 20px 10px;
       }
     }
 
@@ -1023,36 +1017,47 @@
     }
 
     &__card-2 {
-      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-tech-turmeric@2x.jpg?v=1612928465");
-    }
-
-    &__card-3 {
       background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-tech-pepper@2x.jpg?v=1612928468");
     }
 
+    &__card-3 {
+      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-tech-sunflower@2x.jpg?v=1612928467");
+    }
+
     &__card-4 {
-      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-tech-oil@2x.jpg?v=1612928474");
+      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-tech-turmeric@2x.jpg?v=1612928465");
+      position: relative;
+      top: 270px;
+      @include sm-screen {
+        position: initial;
+      }
     }
 
     &__card-5 {
-      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-tech-sunflower@2x.jpg?v=1612928467");
-      margin-bottom: 0;
+      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-tech-oil@2x.jpg?v=1612928474");
+      position: relative;
+      top: 270px;
+      @include sm-screen {
+        margin: 0;
+        position: initial;
+      }
     }
 
     &__point {
       font-weight: $font-bold;
       font-size: 30px;
       @include s-screen {
-        font-size: 26px;
+        font-size: 27px;
+        margin-bottom: 10px;
       }
     }
 
     &__copy {
       font-weight: $font-medium;
-      font-size: 24px;
-      color: #666666;
+      font-size: 20px;
+      opacity: 0.7;
       @include s-screen {
-        font-size: 22px;
+        font-size: 18px;
       }
     }
   }

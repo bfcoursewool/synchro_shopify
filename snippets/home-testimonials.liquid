@@ -54,7 +54,7 @@
               <blockquote class="home-testimonial-quote">
               {{ settings[quote] }}
 
-              <img class="home-testimonial-stars" src="https://cdn.shopify.com/s/files/1/0509/9703/5163/t/12/assets/5-stars.svg?v=1610134073" alt="5-stars">
+              <img class="home-testimonial-stars" src="{{ "5-stars.svg" | asset_url }}" alt="5-stars">
 
             	{% if settings[source] != blank %}
               	<p class="home-testimonial-quote-source">{{ settings[source] }}</p>
