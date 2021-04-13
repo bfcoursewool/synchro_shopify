@@ -1063,16 +1063,16 @@
   }
 
   .quality {
-    padding: $gutter-medium*2 $gutter-small;
+    padding: 100px 0;
     text-align: center;
     font-size: 0;
     margin: 0 40px;
     @include m-screen {
-      padding: $gutter-large $gutter-medium;
+      padding: $gutter-large 0;
     }
     @include s-screen {
       margin: 0;
-      padding: $gutter-small $gutter-small $gutter-medium;
+      padding: $gutter-small 30px 10px;
     }
 
     &__icons {
@@ -1090,21 +1090,22 @@
       vertical-align: top;
       @include s-screen {
         width: fit-content;
-        margin: $gutter-small 0;
+        margin: 0 0 30px;
         display: block;
       }
     }
 
     &__icon-text {
-      letter-spacing: 1px;
-      text-transform: uppercase;
       margin: 25px 0 0;
       font-weight: $font-demi;
-      font-size: 16px;
+      font-size: 18px;
+      @include m-screen {
+        margin: 15px 0 0;
+      }
       @include s-screen {
         display: inline-block;
         vertical-align: middle;
-        margin: 0 0 0 $gutter-small;
+        margin: 0 0 0 15px;
       }
     }
   }
