@@ -1,19 +1,21 @@
 // Floating Bar with Purchase Options
 
 .floating-purchase-options {
-  border-top: 1px solid #E9E2D9;
   position: fixed;
   width: 100%;
   max-width: 2000px;
   bottom: -100px;
   text-align: center;
   z-index: 1000;
-  background: $color-ivory;
+  background: #ece8e1;
   transition: all 0.5s ease-in-out;
   white-space: nowrap;
   overflow: auto;
   padding: 5px 15px;
   -ms-overflow-style: none;
+  @include sm-screen {
+    border-radius: $radius-large $radius-large 0 0;
+  }
 
   &.show-purchase-options {
     bottom: 0;
@@ -26,11 +28,11 @@
   &__item {
     display: inline-block;
     margin: 10px 5px;
-    background: #FAF7F3;
-    border: 1px solid #E9E2D9;
-    border-radius: 10px;
+    background: $color-ivory;
+    border-radius: $radius-medium;
     padding: 5px 15px 5px 20px;
     position: relative;
+
   }
 
   &__item2,
