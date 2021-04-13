@@ -1,11 +1,14 @@
 .faq {
-  background: $color-silver-light;
+  background: $color-beige;
   overflow: auto;
   font-size: 0;
   text-align: center;
-  padding: 0 $gutter-large 30px;
-  @include l-screen {
-    padding: 0 $gutter-small 30px;
+  padding: $gutter-large 30px 30px;
+  border-radius: 20px;
+  margin: 0 $gutter-medium;
+  @include sm-screen {
+    padding: $gutter-medium 30px 10px;
+    margin: 0;
   }
 
   &__title {
@@ -21,6 +24,14 @@
     }
   }
 
+  &__cards {
+    margin: $gutter-large auto 0;
+    max-width: 1400px;
+    @include sm-screen {
+      margin-top: $gutter-medium;
+    }
+  }
+
   &__card {
     width: 33.33%;
     display: inline-block;
@@ -30,8 +41,10 @@
       width: 50%;
     }
     @include sm-screen {
-      padding: 0 0 10px;
+      padding: 0 0 20px;
       width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
     }
 
     &.active {
@@ -43,16 +56,18 @@
     .toggle-single-view {
       background: $color-ivory;
       padding-bottom: $gutter-small;
+      border-radius: 0 0 10px 10px;
     }
   }
 
   &__inner {
     background: $color-ivory;
     padding: $gutter-small $gutter-small 0;
+    border-radius: 10px 10px 0 0;
 
     .p--header {
-      font-size: 21px;
-      font-weight: $font-demi;
+      font-size: 20px;
+      font-weight: $font-bold;
     }
 
     .footnote {

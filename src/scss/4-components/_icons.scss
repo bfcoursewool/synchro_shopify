@@ -46,12 +46,11 @@
   padding: 4px 12px;
   margin: 0 auto;
   cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: $spacing-normal;
+  text-transform: capitalize;
   -webkit-font-smoothing: antialiased;
   color: $color-ivory;
-  font-weight: $font-demi;
-  font-size: 15px;
+  font-weight: $font-bold;
+  font-size: 14px;
   transition: 0.5s ease-in-out all;
 
   &.active {

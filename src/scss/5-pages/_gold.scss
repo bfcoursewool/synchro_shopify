@@ -1544,21 +1544,6 @@
     }
   }
 
-  .faq {
-    padding: $gutter-large $gutter-medium 30px;
-    @include sm-screen {
-      padding: $gutter-medium $gutter-small 10px;
-    }
-
-    &__cards {
-      margin: $gutter-large auto 0;
-      max-width: 1400px;
-      @include sm-screen {
-        margin-top: $gutter-medium;
-      }
-    }
-  }
-
   .references {
     padding: $gutter-large $gutter-medium $gutter-medium;
     @include sm-screen {
