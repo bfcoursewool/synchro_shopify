@@ -128,7 +128,9 @@
   border-radius: $radius-large;
   margin: 0 $gutter-medium;
   background: $color-beige;
-  padding: $gutter-large 30px;
+  padding: $gutter-large $gutter-small;
+  z-index: 2;
+  position: relative;
   @include m-screen {
     padding-bottom: $gutter-small;
   }
@@ -233,13 +235,84 @@
 }
 
 .supplements {
-  display: none;
+  background: $color-gold;
+  background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/benefits-bg-light.svg?v=1618504845");
+  background-size: cover;
+  border-radius: 0 0 $radius-large $radius-large;
+  margin: 0 $gutter-medium;
+  padding: $gutter-medium*2 0 30px;
+  position: relative;
+  top: -$gutter-small;
+  z-index: 1;
+  @include m-screen {
+    padding: $gutter-medium*2 10px 30px;
+  }
+  @include sm-screen {
+    padding: $gutter-large 30px 30px;
+    margin: 0;
+  }
 
-  &__facts {}
+  .p--title-new {
+    color: $color-ivory;
+  }
 
-  &__facts-image {}
+  &__content {
+    margin-top: $gutter-large;
+    text-align: center;
+    font-size: 0;
+    @include sm-screen {
+      margin-top: $gutter-medium;
+    }
+  }
 
-  &__directions {}
+  &__facts {
+    display: inline-block;
+    max-width: 500px;
+    margin: 0 $gutter-small 30px;
+    @include m-screen {
+      margin: 0 10px 30px;
+    }
+    @include sm-screen {
+      margin: 0 0 30px;
+    }
+  }
 
-  &__direction {}
+  &__facts-image {
+    width: 100%;
+  }
+
+  &__directions {
+    display: inline-block;
+    max-width: 354px;
+    text-align: center;
+    background: #CF9034;
+    border-radius: $radius-medium;
+    padding: 30px $gutter-medium;
+    vertical-align: top;
+    margin: 0 $gutter-small 30px;
+    @include m-screen {
+      margin: 0 10px 30px;
+    }
+    @include sm-screen {
+      margin: 0;
+      padding: $gutter-small;
+    }
+  }
+
+  &__directions-title {
+    font-size: 25px;
+    font-weight: $font-bold;
+    color: $color-ivory;
+    margin-bottom: 15px;
+    @include sm-screen {
+      margin-bottom: 10px;
+    }
+  }
+
+  .p--text {
+    font-size: 18px;
+    color: $color-ivory;
+    opacity: 1;
+    margin: 0;
+  }
 }
