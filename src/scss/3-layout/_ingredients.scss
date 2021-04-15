@@ -125,132 +125,121 @@
 }
 
 .ingredients-2 {
-  padding-top: $gutter-large;
-  text-align: center;
-  font-size: 0;
+  border-radius: $radius-large;
+  margin: 0 $gutter-medium;
+  background: $color-beige;
+  padding: $gutter-large 30px;
   @include m-screen {
-    padding-top: $gutter-medium;
+    padding-bottom: $gutter-small;
+  }
+  @include sm-screen {
+    padding: $gutter-medium 30px 0;
+    margin: 0;
   }
 
-  &__title {
-    font-weight: $font-bold;
-    font-size: 35px;
-    margin-bottom: $gutter-medium;
-    @include s-screen {
-      font-size: 35px;
+  &__content {
+    -moz-column-count: 3;
+    -moz-column-gap: $gutter-medium;
+    -webkit-column-count: 3;
+    -webkit-column-gap: $gutter-medium;
+    column-count: 3;
+    column-gap: $gutter-medium;
+    padding: $gutter-large $gutter-medium 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    @include m-screen {
+      -moz-column-gap: $gutter-small;
+      -webkit-column-gap: $gutter-small;
+      column-gap: $gutter-small;
+      padding: $gutter-large 0 0;
+    }
+    @include sm-screen {
+      -moz-column-count: 1;
+      -webkit-column-count: 1;
+      column-count: 1;
+      padding-top: $gutter-medium;
     }
   }
 
   &__details {
+    background: $color-ivory;
+    border-radius: $radius-medium;
+    overflow: hidden;
     font-size: 0;
-    padding: 0 $gutter-large;
-    @include m-screen {
-      padding: 0 $gutter-small;
+    page-break-inside: avoid;
+    @include sm-screen {
+      max-width: 400px;
+      margin: 0 auto 30px;
+    }
+    @include s-screen {}
+  }
+
+  &__image1,
+  &__image2,
+  &__image3 {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    @include s-screen {
+      height: 200px;
     }
   }
 
-  &__item-box {
-    width: 33.33%;
+  &__image1 {
+    background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-ingredients-turmeric@2x.jpg?v=1614361293");
+  }
+
+  &__image2 {
+    background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-ingredients-pepper@2x.jpg?v=1614361297");
+  }
+
+  &__image3 {
+    background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-ingredients-sunflower@2x.jpg?v=1614361295");
+  }
+
+  &__text {
     display: inline-block;
-    padding: 25px;
-    vertical-align: top;
-    @include s-screen {
-      display: block;
-      width: 100%;
-      padding: 0 0 10px;
-    }
+    width: 100%;
+    vertical-align: middle;
+    padding: 25px $gutter-small $gutter-small;
+    margin-bottom: 0;
+    text-align: center;
   }
 
-  &__image {
-    max-width: 100%;
-    width: 376px;
-    @include s-screen {
-      width: 300px;
-    }
-  }
-
-  &__header {
+  &__title {
     font-weight: $font-bold;
-    font-size: 25px;
-    margin: 20px 0;
+    font-size: 27px;
 
     span {
       opacity: 0.5;
       display: block;
     }
-  }
-
-  &__copy {
-    font-weight: $font-medium;
-    font-size: 24px;
-    opacity: 0.5;
-    line-height: initial;
-  }
-
-  &__info {
-    display: table;
-    width: 100%;
-  }
-
-  &__facts {
-    display: table-cell;
-    width: 66.66%;
-    padding: 20px;
-    background: #fef7e5;
-    text-align: center;
-    @include m-screen {
-      width: 60%;
-    }
     @include s-screen {
-      padding: 10px;
-      width: 100%;
-      display: block;
-    }
-
-    img {
-      max-height: 500px;
-      max-width: 100%;
+      font-size: 27px;
     }
   }
 
-  &__icons {
-    display: table-cell;
-    background: #fafafa;
-    vertical-align: middle;
-    width: 33.33%;
-    text-align: left;
-    @include m-screen {
-      width: 40%;
-    }
+  &__copy {}
+
+  .p--text {
+    margin: 10px 0;
     @include s-screen {
-      display: block;
-      width: 100%;
-      padding: 10px 0;
+      font-size: 18px;
     }
   }
+}
 
-  &__icon-box {
-    text-align: left;
-    width: fit-content;
-    margin: 30px auto;
-    @include m-screen {
-      margin: 20px auto;
-    }
-  }
+.supplements {
+  display: none;
 
-  &__icon {
-    display: inline-block;
-    width: 60px;
-    margin-right: 20px;
-  }
+  &__facts {}
 
-  &__icon-text {
-    display: inline-block;
-    font-weight: $font-demi;
-    font-size: 16px;
-    vertical-align: middle;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    width: 200px;
-  }
+  &__facts-image {}
+
+  &__directions {}
+
+  &__direction {}
 }
