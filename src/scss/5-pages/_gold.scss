@@ -1070,7 +1070,7 @@
     @include m-screen {
       padding: $gutter-large 0;
     }
-    @include s-screen {
+    @include sm-screen {
       margin: 0;
       padding: $gutter-small 30px 10px;
     }
