@@ -217,9 +217,9 @@
 		</div>
 		<!--LinkedIn Insights Tag -->
 		<script type="text/javascript"> _linkedin_data_partner_id = "316778"; </script>
-		<script type="text/javascript"> (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); </script>
+		<script type="lazyload2">(function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})();</script>
 		<noscript><img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=316778&fmt=gif"></noscript>
-		<script>
+		<script type="lazyload2">
 			var sd = 'https://synchrolife.ositracker.com';
 			var resource = document.createElement('script');
 			resource.src = "https://synchrolife.ositracker.com/track.js";
@@ -231,9 +231,9 @@
 		<!-- CRITEO END -->
 		{% if template contains 'product' %}
 		<!-- Global site tag (gtag.js) - AdWords: 864481593 -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-864481593"></script>
+		<script type="lazyload2" data-src="https://www.googletagmanager.com/gtag/js?id=AW-864481593"></script>
 		<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-864481593'); </script>
-		<script>
+		<script type="lazyload2">
 			gtag('event', 'page_view', {
 				'send_to': 'AW-864481593',
 				'ecomm_prodid': '{{ product.id }}'
@@ -241,8 +241,8 @@
 		</script>
 		{% endif %}
 		{% if template contains "blog" %}
-		<script src="{{ 'splide-slider.js' | asset_url }}"></script>
-		<script>
+		<script type="lazyload2" data-src="{{ 'splide-slider.js' | asset_url }}"></script>
+		<script type="lazyload2">
 			$(document).ready(function () {
 				// prevents the slider from being initialized on the tag pages
 				if ($('.splide').length === 0) return
@@ -298,7 +298,7 @@
 		{% render 'spurit_occ2_theme_snippet' %}
 		{% render 'hs-cart-drawer-subscriptions' %}
 		{% include 'wisepops-generated' %}
-		<!--Gorgias Chat Widget Start--><script id="gorgias-chat-widget-install">!function(_){_.GORGIAS_CHAT_APP_ID="4538",_.GORGIAS_CHAT_BASE_URL="us-east1-898b.production.gorgias.chat",_.GORGIAS_API_BASE_URL="config.gorgias.chat";var e=new XMLHttpRequest;e.open("GET","https://config.gorgias.chat/applications/4538",!0),e.onload=function(t){if(4===e.readyState)if(200===e.status){var n=JSON.parse(e.responseText);if(!n.application||!n.bundleVersion)throw new Error("Missing fields in the response body - https://config.gorgias.chat/applications/4538");if(_.GORGIAS_CHAT_APP=n.application,_.GORGIAS_CHAT_BUNDLE_VERSION=n.bundleVersion,n&&n.texts&&(_.GORGIAS_CHAT_TEXTS=n.texts),n&&n.sspTexts&&(_.GORGIAS_CHAT_SELF_SERVICE_PORTAL_TEXTS=n.sspTexts),!document.getElementById("gorgias-chat-container")){var o=document.createElement("div");o.id="gorgias-chat-container",document.body.appendChild(o);var r=document.createElement("script");r.setAttribute("defer",!0),r.src="https://storage.googleapis.com/gorgias-chat-production-client-builds/{bundleVersion}/static/js/main.js".replace("{bundleVersion}",n.bundleVersion),document.body.appendChild(r)}}else console.error("Failed request GET - https://config.gorgias.chat/applications/4538")},e.onerror=function(_){console.error(_)},e.send()}(window||{});</script><script id="gorgias-chat-shopify-install">!function(_){_.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",_.SHOPIFY_CUSTOMER_ID="{{customer.id}}",_.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});</script><!--Gorgias Chat Widget End-->
+		<!--Gorgias Chat Widget Start--><script id="gorgias-chat-widget-install" type="lazyload2">!function(_){_.GORGIAS_CHAT_APP_ID="4538",_.GORGIAS_CHAT_BASE_URL="us-east1-898b.production.gorgias.chat",_.GORGIAS_API_BASE_URL="config.gorgias.chat";var e=new XMLHttpRequest;e.open("GET","https://config.gorgias.chat/applications/4538",!0),e.onload=function(t){if(4===e.readyState)if(200===e.status){var n=JSON.parse(e.responseText);if(!n.application||!n.bundleVersion)throw new Error("Missing fields in the response body - https://config.gorgias.chat/applications/4538");if(_.GORGIAS_CHAT_APP=n.application,_.GORGIAS_CHAT_BUNDLE_VERSION=n.bundleVersion,n&&n.texts&&(_.GORGIAS_CHAT_TEXTS=n.texts),n&&n.sspTexts&&(_.GORGIAS_CHAT_SELF_SERVICE_PORTAL_TEXTS=n.sspTexts),!document.getElementById("gorgias-chat-container")){var o=document.createElement("div");o.id="gorgias-chat-container",document.body.appendChild(o);var r=document.createElement("script");r.setAttribute("defer",!0),r.src="https://storage.googleapis.com/gorgias-chat-production-client-builds/{bundleVersion}/static/js/main.js".replace("{bundleVersion}",n.bundleVersion),document.body.appendChild(r)}}else console.error("Failed request GET - https://config.gorgias.chat/applications/4538")},e.onerror=function(_){console.error(_)},e.send()}(window||{});</script><script id="gorgias-chat-shopify-install">!function(_){_.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",_.SHOPIFY_CUSTOMER_ID="{{customer.id}}",_.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});</script><!--Gorgias Chat Widget End-->
 		{{ 'wnw-optimization.js'  | asset_url | script_tag }}
 	</body>
 	<!-- Warning: Do not remove. This is used for CartHook Checkout Replacement -->

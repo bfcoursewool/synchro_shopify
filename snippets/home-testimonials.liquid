@@ -20,77 +20,77 @@
 
 <div class="home-module-wrapper {{ settings.home-testimonial-style }} grid-of-{{testimonialCount}}">
   <div class="home-module home-testimonials">
-    {% if settings.home-testimonial-heading.size > 0 %}
-      <h3 class="section-title">{{ settings.home-testimonial-heading }}</h3>
-    {% else %}
-      {% if testimonialCount == 0 %}
-        <h3 class="section-title">{{ 'onboarding.testimonials_section.section_title' | t }}</h3>
-      {% endif %}
-    {% endif %}
+	{% if settings.home-testimonial-heading.size > 0 %}
+	  <h3 class="section-title">{{ settings.home-testimonial-heading }}</h3>
+	{% else %}
+	  {% if testimonialCount == 0 %}
+		<h3 class="section-title">{{ 'onboarding.testimonials_section.section_title' | t }}</h3>
+	  {% endif %}
+	{% endif %}
 
-    {% assign testimonials = "testimonial-1|testimonial-2|testimonial-3|testimonial-4|testimonial-5|testimonial-6" | split: "|" %}
+	{% assign testimonials = "testimonial-1|testimonial-2|testimonial-3|testimonial-4|testimonial-5|testimonial-6" | split: "|" %}
 
-    <div class="home-testimonial-wrapper">
+	<div class="home-testimonial-wrapper">
 
-    {% for testimonial in testimonials %}
+	{% for testimonial in testimonials %}
 
-      {% capture enabled %}home-show-{{testimonial}}{% endcapture %}
-      {% capture avatar %}home-{{testimonial}}-use-avatar{% endcapture %}
-      {% capture quote %}home-{{testimonial}}-quote{% endcapture %}
-      {% capture source %}home-{{testimonial}}-source{% endcapture %}
-      {% capture url %}home-{{testimonial}}-url{% endcapture %}
-      {% capture time %}home-{{testimonial}}-time{% endcapture %}
+	  {% capture enabled %}home-show-{{testimonial}}{% endcapture %}
+	  {% capture avatar %}home-{{testimonial}}-use-avatar{% endcapture %}
+	  {% capture quote %}home-{{testimonial}}-quote{% endcapture %}
+	  {% capture source %}home-{{testimonial}}-source{% endcapture %}
+	  {% capture url %}home-{{testimonial}}-url{% endcapture %}
+	  {% capture time %}home-{{testimonial}}-time{% endcapture %}
 
-      {% if settings[enabled] %}
-      <div class="home-testimonial {% if settings[avatar] %}has-avatar{% endif %}" data-time="{{ settings[time] }}">
+	  {% if settings[enabled] %}
+	  <div class="home-testimonial {% if settings[avatar] %}has-avatar{% endif %}" data-time="{{ settings[time] }}">
 
-        <div class="home-testimonial-content">
+		<div class="home-testimonial-content">
 
-            {% if settings[avatar] %}
-              <img class="home-testimonial-avatar" alt="{{ settings[source] | strip_html | escape }}" src="{{ testimonial | prepend: 'home-' | append: '-avatar.jpg' | asset_url}}">
-            {% endif %}
+			{% if settings[avatar] %}
+			  <img class="home-testimonial-avatar lazy2" alt="{{ settings[source] | strip_html | escape }}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{ testimonial | prepend: 'home-' | append: '-avatar.jpg' | asset_url}}">
+			{% endif %}
 
-            <div class="home-testimonial-quote-box">
-              <blockquote class="home-testimonial-quote">
-              {{ settings[quote] }}
+			<div class="home-testimonial-quote-box">
+			  <blockquote class="home-testimonial-quote">
+			  {{ settings[quote] }}
 
-              <img class="home-testimonial-stars" src="{{ "5-stars.svg" | asset_url }}" alt="5-stars">
+			  <img class="home-testimonial-stars" src="{{ "5-stars.svg" | asset_url }}" alt="5-stars">
 
-            	{% if settings[source] != blank %}
-              	<p class="home-testimonial-quote-source">{{ settings[source] }}</p>
-              {% endif %}
-              </blockquote>
-            </div>
-          </div>
-        </div>
-        {% endif %}
+			  {% if settings[source] != blank %}
+				<p class="home-testimonial-quote-source">{{ settings[source] }}</p>
+			  {% endif %}
+			  </blockquote>
+			</div>
+		  </div>
+		</div>
+		{% endif %}
 
-      {% endfor %}
+	  {% endfor %}
 
-    </div>
+	</div>
 
-    {% if testimonialCount == 0 %}
-      <div class="home-testimonial has-avatar">
+	{% if testimonialCount == 0 %}
+	  <div class="home-testimonial has-avatar">
 
-        <img class="home-testimonial-avatar" alt="Fake person" src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg">
+		<img class="home-testimonial-avatar" alt="Fake person" src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg">
 
-        <blockquote class="home-testimonial-quote">
-          &ldquo;{{ 'onboarding.testimonials_section.first_quote' | t }}&rdquo;
-        </blockquote>
+		<blockquote class="home-testimonial-quote">
+		  &ldquo;{{ 'onboarding.testimonials_section.first_quote' | t }}&rdquo;
+		</blockquote>
 
-        <p class="home-testimonial-quote-source">– {{ 'onboarding.testimonials_section.first_quote_speaker_name' | t }}</p>
-      </div>
+		<p class="home-testimonial-quote-source">– {{ 'onboarding.testimonials_section.first_quote_speaker_name' | t }}</p>
+	  </div>
 
-      <div class="home-testimonial has-avatar">
+	  <div class="home-testimonial has-avatar">
 
-        <img class="home-testimonial-avatar" alt="Fake person" src="https://s3.amazonaws.com/uifaces/faces/twitter/liang/128.jpg">
+		<img class="home-testimonial-avatar" alt="Fake person" src="https://s3.amazonaws.com/uifaces/faces/twitter/liang/128.jpg">
 
-        <blockquote class="home-testimonial-quote">
-          &ldquo;{{ 'onboarding.testimonials_section.second_quote' | t }}&rdquo;
-        </blockquote>
+		<blockquote class="home-testimonial-quote">
+		  &ldquo;{{ 'onboarding.testimonials_section.second_quote' | t }}&rdquo;
+		</blockquote>
 
-        <p class="home-testimonial-quote-source">– {{ 'onboarding.testimonials_section.second_quote_speaker_name' | t }}</p>
-      </div>
-    {% endif %}
+		<p class="home-testimonial-quote-source">– {{ 'onboarding.testimonials_section.second_quote_speaker_name' | t }}</p>
+	  </div>
+	{% endif %}
   </div>
 </div>
