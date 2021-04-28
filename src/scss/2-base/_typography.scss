@@ -29,10 +29,14 @@ p {
 }
 
 .p--title-new {
-  font-weight: $font-bold;
-  font-size: 35px;
+  font-weight: $font-demi;
+  font-size: 40px;
   text-align: center;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 800px;
+  @include m-screen {
+    font-size: 35px;
+  }
 }
 // Header
 
