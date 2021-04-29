@@ -1,3 +1,11 @@
+{% unless template contains 'index' %}
+{% if settings.display-mailing-list %}
+<div class="footer-mailinglist">
+  {% include 'mailing-list' %}
+</div>
+{% endif %}
+{% endunless %}
+
 {% assign borderClass = '' %}
 {% if settings.background-color == settings.footer-background-color %}
 {% unless settings.body-background-use-image or settings.footer-background-use-image %}
