@@ -8037,130 +8037,227 @@ ul.topmenulinklist {
     padding: 0 20px;
   }
 }
-
-.effective-altruism__atf {
-  height: 640px;
-  background: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/effective-altruism-atf-desktop.jpeg?v=1619813756");
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  padding: 60px;
-}
-
-.effective-altruism__title {
-  font-size: 22px;
-  font-weight: 600;
-  background: white;
-  border-radius: 40px;
-  padding: 10px 25px;
-  line-height: normal;
-  color: #6F684C;
-  width: max-content;
-  margin: 0 auto;
-}
-
-.effective-altruism__header {
-  max-width: 1000px;
-  font-size: 50px;
-  color: white;
-  line-height: normal;
-  margin: 30px auto 0;
-}
-
-.effective-altruism__content {
-  padding: 50px 60px;
-  max-width: 940px;
-  margin: 0 auto;
-}
-
-.effective-altruism__overview {
-  background: #F9F6F2;
-  padding: 40px 60px 15px;
-  border-radius: 20px;
-  margin-bottom: 50px;
-}
-
-.effective-altruism__overview-title {
-  font-size: 35px;
-  font-weight: 500;
-  margin: 0;
-}
-
-.effective-altruism__overview-copy {
-  li {
-    list-style: initial;
-    margin-left: 20px;
-  }
-}
-
-.effective-altruism__copy {
-  margin: 25px 0;
-  opacity: 0.8;
-  font-weight: 500;
-  font-size: 19px;
-  -webkit-font-smoothing: antialiased;
-
-  a {
-    color: #319E9E;
-    text-decoration: underline;
+.effective-altruism {
+  .effective-altruism__atf {
+    padding: 170px 60px 200px;
+    background: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/effective-altruism-atf-desktop.jpeg?v=1620064331");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(m) {
+      padding: 140px 60px 170px;
+    }
+    @include breakpoint(s) {
+      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/effective-altruism-atf-mobile.jpeg?v=1620067381");
+      padding: 30px;
+      border-radius: 0 0 20px 20px;
+      height: 70vh;
+    }
   }
 
-  li {
-    list-style: initial;
-    margin-left: 20px;
-  }
-}
-
-.effective-altruism__details {
-  max-width: 700px;
-  margin: 0 auto;
-
-  .p--bold {
-    font-weight: 600;
-  }
-
-  .p--italic {
-    font-style: italic;
-  }
-}
-
-.effective-altruism__mantra {
-  font-size: 22px;
-  font-style: italic;
-  opacity: 0.8;
-
-  span {
-    font-size: 16px;
-    display: block;
-    margin-top: 20px;
-  }
-}
-
-.effective-altruism__section-header {
-  font-size: 30px;
-  font-weight: 500;
-  margin: 40px 0;
-  line-height: normal;
-
-  span {
-    display: block;
-    font-style: italic;
+  .effective-altruism__title {
     font-size: 22px;
-    opacity: 0.6;
-    margin-top: 20px;
-    font-weight: 400;
+    font-weight: 600;
+    background: white;
+    border-radius: 40px;
+    padding: 10px 25px;
+    line-height: normal;
+    color: #6F684C;
+    width: max-content;
+    margin: 0 auto;
+    @include breakpoint(m) {
+      font-size: 20px;
+    }
+    @include breakpoint(s) {
+      font-size: 16px;
+      padding: 7px 20px;
+    }
+  }
+
+  .effective-altruism__header {
+    max-width: 1000px;
+    font-size: 50px;
+    color: white;
+    line-height: normal;
+    margin: 30px auto 0;
+    @include breakpoint(m) {
+      font-size: 40px;
+    }
+    @include breakpoint(s) {
+      font-size: 35px;
+    }
+  }
+
+  .effective-altruism__content {
+    padding: 50px 40px;
+    max-width: 940px;
+    margin: 0 auto;
+    @include breakpoint(m) {
+      padding: 40px;
+    }
+    @include breakpoint(s) {
+      padding: 30px;
+    }
+  }
+
+  .effective-altruism__overview {
+    background: #F9F6F2;
+    padding: 40px 60px 15px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    @include breakpoint(s) {
+      margin-bottom: 30px;
+      padding: 30px 30px 5px;
+    }
+  }
+
+  .effective-altruism__overview-title {
+    font-size: 35px;
+    font-weight: 500;
+    margin: 0;
+    @include breakpoint(s) {
+      font-size: 25px;
+    }
+  }
+
+  .effective-altruism__overview-copy {
+    text-align: left;
+
+    li {
+      list-style: initial;
+      margin-left: 20px;
+    }
+  }
+
+  .effective-altruism__copy {
+    margin: 25px 0;
+    opacity: 0.8;
+    font-weight: 500;
+    font-size: 19px;
+    -webkit-font-smoothing: antialiased;
+    @include breakpoint(s) {
+      font-size: 18px;
+    }
+
+    a {
+      color: #319E9E;
+      text-decoration: underline;
+    }
+
+    li {
+      margin-left: 20px;
+    }
+  }
+
+  ul {
+    list-style: initial;
+  }
+
+  .effective-altruism__details {
+    max-width: 700px;
+    margin: 0 auto;
+
+    .p--bold {
+      font-weight: 700;
+    }
+
+    .p--italic {
+      font-style: italic;
+    }
+  }
+
+  .effective-altruism__mantra {
+    font-size: 22px;
+    font-style: italic;
+    opacity: 0.8;
+    @include breakpoint(s) {
+      font-size: 20px;
+    }
+
+    span {
+      font-size: 16px;
+      display: block;
+      margin-top: 20px;
+    }
+  }
+
+  .effective-altruism__section-header {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 40px 0;
+    line-height: normal;
+    @include breakpoint(s) {
+      font-size: 25px;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    span {
+      display: block;
+      font-style: italic;
+      font-size: 22px;
+      opacity: 0.6;
+      margin-top: 20px;
+      font-weight: 400;
+      @include breakpoint(s) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .effective-altruism__signature {
+    max-width: 135px;
+    margin-top: 25px;
+  }
+
+  .effective-altruism__lkssbv {
+    width: 204px;
+    margin-top: 15px;
+  }
+
+  .effective-altruism__mantra-box {
+    background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/effective-altruism-mantra-desktop.jpeg?v=1620064046");
+    padding: 130px 60px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 40px 60px;
+    border-radius: 20px;
+    text-align: center;
+    @include breakpoint(m) {
+      padding: 100px 40px;
+      margin: 0 40px 40px;
+    }
+    @include breakpoint(s) {
+      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/effective-altruism-mantra-mobile.jpeg?v=1620066638");
+      padding: 50px 20px;
+      margin: 0;
+      border-radius: 0;
+      height: 650px;
+    }
+  }
+
+  .effective-altruism__icon-dove {
+    @include breakpoint(s) {
+      width: 70px;
+    }
+  }
+
+  .effective-altruism__mantra-copy {
+    max-width: 700px;
+    margin: 40px auto 0;
+    font-size: 40px;
+    font-style: italic;
+    color: white;
+    line-height: 1.5;
+    @include breakpoint(m) {
+      font-size: 35px;
+    }
+    @include breakpoint(s) {
+      margin-top: 25px;
+      font-size: 24px;
+    }
   }
 }
-
-.effective-altruism__signature {}
-
-.effective-altruism__lkssbv {}
-
-.effective-altruism__mantra-box {}
-
-.effective-altruism__icon-dove {}
-
-.effective-altruism__mantra-copy {}
