@@ -80,6 +80,10 @@
     </div>
     {% endif %}
 
+    <div class="footer-link-list effective-altruism__footer">
+      <p class="effective-altruism__footer-copy">A minimum of 10% of our profits go to the most effective NGOs working to improve human health + wellbeing globally. <a href="https://besynchro.com/pages/10-for-global-health">Learn more</a></p>
+    </div>
+
     {% if settings.footer-show-sharing %}
     <div class="spread-the-word">
       {% if settings.footer-show-headers and settings.footer-sharing-header.size > 0 %}
@@ -127,10 +131,10 @@
     </div>
     {% endif %}
 
-    <div role="contentinfo" class="copyright footer-module">
-      {% capture year %}{{ "now" | date: "%Y" }}{% endcapture %}
-      <p>{{ 'general.general.copyright_text_html' | t: year: year }}<br>
-        <a href="http://www.pixelunion.net/themes/shopify/startup">Startup theme</a> by <a href="https://www.pixelunion.net">Pixel Union</a>. {{ powered_by_link | replace: "shopify.com", "shopify.com/?ref=pixel-union" }}.</p>
+    <div class="footer-disclaimer" id="bottom">
+      <p>The statements on this website have not been evaluated by the Food and Drug Administration.</p>
+      <p>These products are not intended to diagnose, treat, cure or prevent any disease.</p>
+      <p>*Free shipping on orders over $125 only valid in the USA. Gold Turmeric Elixir is not eligible (Gold Turmeric Capsules, however, ARE eligible)</p>
     </div>
 
     {% if settings.footer-show-payment-options %}
@@ -152,10 +156,10 @@
     </div>
     {% endif %}
 
-    <div class="footer-disclaimer" id="bottom">
-      <p>The statements on this website have not been evaluated by the Food and Drug Administration.
-      <br>These products are not intended to diagnose, treat, cure or prevent any disease.
-      <br>*Free shipping on orders over $125 only valid in the USA. Gold Turmeric Elixir is not eligible (Gold Turmeric Capsules, however, ARE eligible)</p>
+    <div role="contentinfo" class="copyright footer-module">
+      {% capture year %}{{ "now" | date: "%Y" }}{% endcapture %}
+      <p>{{ 'general.general.copyright_text_html' | t: year: year }}<br>
+        <a href="http://www.pixelunion.net/themes/shopify/startup">Startup theme</a> by <a href="https://www.pixelunion.net">Pixel Union</a>. {{ powered_by_link | replace: "shopify.com", "shopify.com/?ref=pixel-union" }}.</p>
     </div>
 
   </footer>

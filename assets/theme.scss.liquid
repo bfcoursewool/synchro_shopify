@@ -1623,7 +1623,7 @@ footer {
   max-width: $maxWidth;
   margin: 0 auto;
   font-size: 16px;
-  padding: $gutter*2 $gutter 100px;
+  padding: $gutter*2 40px;
 
   &.show-border {
     border-top: 1px solid $borderColor;
@@ -1655,10 +1655,10 @@ footer {
 .footer-link-list {
   float: left;
   padding-right: $gutter;
-  margin-bottom: $gutter*2;
+  margin-bottom: 40px;
 
   .showing-4-lists & {
-    width: 18.3%;
+    width: 20%;
     @include breakpoint(m) {
       width: 25%;
     }
@@ -1696,7 +1696,6 @@ footer {
       width: 100%;
       padding: 0;
       display: block;
-      margin-bottom: $gutter*2;
 
       li {
         display: inline;
@@ -2079,7 +2078,7 @@ footer {
 }
 
 .payment-options {
-  margin-top: $gutter;
+  margin-top: 20px;
   margin-bottom: 50px;
   font-size: 0;
   -webkit-user-select: none;
@@ -2097,7 +2096,12 @@ footer {
 }
 
 .footer-disclaimer {
+  clear: both;
   opacity: 0.75;
+  @include breakpoint(m) {
+    max-width: 700px;
+    margin: 0 auto;
+  }
 }
 
 .pseudo-header {
@@ -3823,10 +3827,10 @@ $slideshowSpeed: 0.7s;
 
 .pagination-next,
 .pagination-previous {
-  > a:after,
+  > a:before,
    > span:after,
    > span:before,
-  > a:before {
+  > a:after {
     @include iconFont()
   }
   @include breakpoint(s) {
@@ -3837,8 +3841,8 @@ $slideshowSpeed: 0.7s;
 }
 
 .pagination-previous {
-  > span,
-  > a {
+  > a,
+  > span {
     &:before {
       content: '\E012';
       margin-right: 10px;
@@ -3852,8 +3856,8 @@ $slideshowSpeed: 0.7s;
 .pagination-next {
   text-align: right;
 
-  > span,
-  > a {
+  > a,
+  > span {
     &:after {
       content: '\E013';
       margin-left: 10px;
@@ -8588,6 +8592,41 @@ ul.sidebar-topic-section-list {
     @include breakpoint(s) {
       margin-top: 25px;
       font-size: 24px;
+    }
+  }
+}
+
+.effective-altruism__footer {
+  background: #2b2726;
+  border-radius: 10px;
+  padding: 20px 25px 25px !important;
+  background: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/effective-altruism-footer.jpeg?v=1620071888");
+  background-size: cover;
+  @include breakpoint(m) {
+    width: 100% !important;
+  }
+}
+
+.effective-altruism__footer-copy {
+  font-size: 18px;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  color: #ffffff;
+  max-width: 600px;
+  margin: 0 auto;
+
+  a {
+    background: white;
+    display: block;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 15px;
+    color: #d79436;
+    font-weight: 600;
+    margin-top: 20px;
+    width: fit-content;
+    @include breakpoint(m) {
+      margin: 20px auto 0;
     }
   }
 }
