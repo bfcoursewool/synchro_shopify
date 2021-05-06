@@ -2,7 +2,19 @@
 
 {% include 'header' %}
 
-<!-- {{ page.content }} -->
-{% include 'effective-altruism' %}
+<!-- Effective Altruism LP -->
+{% if page.url == "/pages/10-for-global-health" %}
+  {% include 'effective-altruism' %}
+{% endif %}
+
+<!-- Ambassador Program LP -->
+{% if page.url == "/pages/ambassador-program" %}
+  {% include 'ambassador-program' %}
+{% endif %}
+
+<!-- Ambassador Program Thank You Page -->
+{% if page.url == "/pages/ambassador-program-thank-you" %}
+  {% include 'ambassador-program-ty' %}
+{% endif %}
 
 {% include 'footer' %}
