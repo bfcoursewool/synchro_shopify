@@ -62,7 +62,7 @@
     "sentry-cli-binary": "^1.21.0",
     "slick-carousel": "^1.8.1",
     "tether": "^1.4.4",
-    "underscore": "^1.8.3",
+    "underscore": "^1.12.1",
     "vivus": "^0.4.3",
     "wowjs": "^1.1.3"
   }
