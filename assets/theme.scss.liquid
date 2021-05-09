@@ -2520,7 +2520,7 @@ input.header-search-input {
   display: none;
   position: relative;
   float: right;
-  top: 5px;
+  top: 0;
   background: #000;
   content: "";
   height: 3px;
@@ -2681,13 +2681,14 @@ input.header-search-input {
 
   input[type="text"] {
     margin-top: 20px;
-    border-radius: 0;
+    border-radius: 10px;
     background: none;
-    border: 1px solid #818181;
+    border: 2px solid #E6E6E5;
     color: #fff;
     font-size: 18px;
-    letter-spacing: 1px;
+    letter-spacing: 0;
     height: 56px;
+    font-weight: 500;
 
     &:focus {
       background: #fff;
@@ -2697,12 +2698,12 @@ input.header-search-input {
 
   button {
     position: absolute;
-    right: 14px;
-    top: 14px;
+    right: 18px;
+    top: 18px;
     background: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/icon-search.svg?v=1612939990");
     background-size: cover;
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
     padding: 0;
     outline: none;
   }
@@ -3707,9 +3708,11 @@ $slideshowSpeed: 0.7s;
     }
 
     h2 {
-      font-size: 15px;
+      font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+      font-weight: 500;
+      margin-top: 25px;
     }
 
     a {
@@ -3723,9 +3726,9 @@ $slideshowSpeed: 0.7s;
 
     li {
       -webkit-font-smoothing: antialiased;
-      margin: 12px 0;
-      font-size: 19px;
-      letter-spacing: 0.5px;
+      margin: 10px 0;
+      font-size: 18px;
+      letter-spacing: 0;
       font-weight: 500;
     }
   }
@@ -3827,10 +3830,10 @@ $slideshowSpeed: 0.7s;
 
 .pagination-next,
 .pagination-previous {
-  > a:before,
+  > a:after,
    > span:after,
    > span:before,
-  > a:after {
+  > a:before {
     @include iconFont()
   }
   @include breakpoint(s) {
@@ -3841,8 +3844,8 @@ $slideshowSpeed: 0.7s;
 }
 
 .pagination-previous {
-  > a,
-  > span {
+  > span,
+  > a {
     &:before {
       content: '\E012';
       margin-right: 10px;
@@ -3856,8 +3859,8 @@ $slideshowSpeed: 0.7s;
 .pagination-next {
   text-align: right;
 
-  > a,
-  > span {
+  > span,
+  > a {
     &:after {
       content: '\E013';
       margin-left: 10px;
@@ -7026,8 +7029,9 @@ input[type="text"].search-input {
 }
 
 .before-header {
-  height: 44px;
+  padding: 5px 0;
   background: #f4f4f5;
+  height: 45px;
   @include breakpoint(s) {
     height: 100%;
     background: none;
@@ -7070,7 +7074,7 @@ ul.topmenulinklist {
   margin: 0;
   padding: 0;
   position: relative;
-  top: 1px;
+  top: 0;
 }
 
 ul.rightlist li,
@@ -7087,17 +7091,34 @@ ul.topmenulinklist li {
   font-weight: 600;
   color: #000;
   text-transform: uppercase;
+  line-height: 29px;
 }
 
 .topmenulinklist li {
   padding-left: 20px;
-  background: rgba(0,0,0,0) url("black-blue-icon.png") no-repeat scroll left center;
-  background-position: 5px 15px;
+  background: rgba(0,0,0,0) url("black-blue-icon.png") no-repeat scroll;
+  background-position: 6px center;
 }
 
 .topmenulinklist li:first-child {
   padding-left: 0;
   background: none;
+}
+
+.topmenulinklist li:last-child {
+  padding: 0 12px;
+  background: none;
+  border: 2px solid #ECA846;
+  border-radius: 30px;
+  margin-left: 15px;
+
+  a {
+    color: #ECA846;
+    font-size: 14px;
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 30px;
+  }
 }
 @media only screen and (max-width: 450px) {
   .header-actions a,
@@ -7865,9 +7886,9 @@ ul.sidebar-topic-section-list {
 .header-actions ul.rightlist {
   float: left;
   position: relative;
-  top: 5px;
+  top: 0;
   @include breakpoint(s) {
-    top: 10px;
+    top: 6px;
     right: -10px;
   }
 }
@@ -8373,7 +8394,7 @@ ul.sidebar-topic-section-list {
 
 .effective-altruism {
   .effective-altruism__atf {
-    padding: 170px 60px 200px;
+    padding: 140px 60px 170px;
     background: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/effective-altruism-atf-desktop.jpeg?v=1620064331");
     background-size: cover;
     background-position: center;
@@ -8382,7 +8403,7 @@ ul.sidebar-topic-section-list {
     display: flex;
     flex-direction: column;
     @include breakpoint(m) {
-      padding: 140px 60px 170px;
+      padding: 110px 60px 140px;
     }
     @include breakpoint(s) {
       background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/effective-altruism-atf-mobile.jpeg?v=1620067381");
@@ -8392,16 +8413,22 @@ ul.sidebar-topic-section-list {
     }
   }
 
+  .effective-altruism__atf-icon {
+    width: 60px;
+    margin: 0 auto 30px;
+  }
+
   .effective-altruism__title {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
-    background: white;
     border-radius: 40px;
-    padding: 10px 25px;
+    padding: 8px 22px;
     line-height: normal;
-    color: #6F684C;
+    color: #ffffff;
     width: max-content;
     margin: 0 auto;
+    border: 2px solid #ffffff;
+    -webkit-font-smoothing: antialiased;
     @include breakpoint(m) {
       font-size: 20px;
     }
@@ -8597,37 +8624,70 @@ ul.sidebar-topic-section-list {
 }
 
 .effective-altruism__footer {
-  background: #2b2726;
   border-radius: 10px;
-  padding: 20px 25px 25px !important;
-  background: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/effective-altruism-footer.jpeg?v=1620071888");
-  background-size: cover;
+  padding: 20px !important;
+  border: 2px solid #ECA846;
+  text-align: center;
   @include breakpoint(m) {
     width: 100% !important;
+    max-width: 500px;
+    clear: both;
+    margin: 0 auto 40px;
+    float: none;
   }
 }
 
 .effective-altruism__footer-copy {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
   color: #ffffff;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 10px auto 0;
 
   a {
-    background: white;
+    font-size: 14px;
     display: block;
-    border-radius: 5px;
-    text-align: center;
-    padding: 5px 15px;
-    color: #d79436;
-    font-weight: 600;
-    margin-top: 20px;
+    border-radius: 30px;
+    padding: 2px 12px;
+    color: #ECA846;
+    margin: 15px auto 0;
     width: fit-content;
+    border: 2px solid #ECA846;
     @include breakpoint(m) {
       margin: 20px auto 0;
     }
+  }
+}
+
+.effective-altruism__mobile-nav {
+  border-radius: 10px;
+  padding: 20px;
+  border: 2px solid #ECA846;
+  position: absolute;
+  bottom: 80px;
+  margin: 20px;
+  left: 0;
+  font-size: 0;
+}
+
+.effective-altruism__mobile-nav-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.effective-altruism__mobile-nav-copy {
+  font-size: 16px;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  color: #ffffff;
+  margin: 0 0 0 20px;
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% - 80px);
+
+  a {
+    color: #ECA846;
   }
 }
 
