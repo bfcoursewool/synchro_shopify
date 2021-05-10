@@ -896,20 +896,18 @@
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    margin: $gutter-medium $gutter-medium 0;
+    margin: 0 $gutter-medium;
     background-color: #e5aba4;
     background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/gold-cap-tech-desktop.jpeg?v=1618251552");
     background-size: auto 750px;
     background-repeat: no-repeat;
     background-position: top center;
+    z-index: 2;
     @include sm-screen {
       background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/gold-cap-tech-mobile.jpeg?v=1618249384");
       background-size: 855px;
       background-position: top center;
-    }
-    @include sm-screen {
       margin: 0;
-      top: -20px;
     }
 
     &__title {
@@ -1063,16 +1061,21 @@
   }
 
   .quality {
-    padding: 100px 0;
+    padding: 120px 0 100px;
     text-align: center;
     font-size: 0;
-    margin: 0 40px;
+    margin: 0 $gutter-medium -20px;
+    z-index: 1;
+    background: #fafafa;
+    border-radius: 0 0 $radius-large $radius-large;
+    position: relative;
+    top: -20px;
     @include m-screen {
-      padding: $gutter-large 0;
+      padding: 80px 30px $gutter-large;
     }
     @include sm-screen {
-      margin: 0;
-      padding: $gutter-small 30px 10px;
+      margin: 0 0 -20px;
+      padding: $gutter-large 30px 10px;
     }
 
     &__icons {
@@ -1156,7 +1159,6 @@
     // &__copy {
     //   opacity: 0.6;
     // }
-
     &__facts {
       display: inline-block;
       width: 65%;
@@ -1274,18 +1276,18 @@
         display: block;
       }
     }
+  }
 
-    &__atf {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 150px 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      @include sm-screen {
-        padding: 30px;
-        display: block;
-      }
+  .ugc {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 150px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include sm-screen {
+      padding: 30px;
+      display: block;
     }
 
     &__video {
@@ -1350,6 +1352,16 @@
       font-size: 20px;
       @include s-screen {
         font-size: 16px;
+      }
+    }
+    &__name {
+      font-size: 18px;
+      color: #4D4D4D;
+      font-style: italic;
+      margin-bottom: 0;
+
+      span {
+        display: block;
       }
     }
   }

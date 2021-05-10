@@ -239,7 +239,7 @@
   background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/benefits-bg-light.svg?v=1618504845");
   background-size: cover;
   border-radius: 0 0 $radius-large $radius-large;
-  margin: 0 $gutter-medium;
+  margin: 0 $gutter-medium -20px;
   padding: $gutter-medium*2 0 30px;
   position: relative;
   top: -$gutter-small;
@@ -249,7 +249,7 @@
   }
   @include sm-screen {
     padding: $gutter-large 30px 30px;
-    margin: 0;
+    margin: 0 0 -20px;
   }
 
   .p--title-new {
