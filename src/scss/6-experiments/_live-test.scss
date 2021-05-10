@@ -1,29 +1,5 @@
 // STYLES FOR ONGOING EXPERIMENTS/TESTS
 
-.cap012 {
-  .superior {
-    z-index: 2;
-    @include sm-screen {
-      top: 0;
-    }
-  }
-
-  .quality {
-    padding: 120px 0 100px;
-    z-index: 1;
-    background: #fafafa;
-    border-radius: 0 0 $radius-large $radius-large;
-    position: relative;
-    top: -20px;
-    @include m-screen {
-      padding: 80px 30px $gutter-large;
-    }
-    @include sm-screen {
-      padding: $gutter-large 30px 10px;
-    }
-  }
-}
-
 .cap014 {
   .superior {
     &__points {
