@@ -2665,7 +2665,7 @@ input.header-search-input {
 .header-drawer {
   position: fixed;
   left: -100%;
-  top: 60px;
+  top: 84px;
   height: 100%;
   width: 100%;
   background: $accentColor;
@@ -2674,6 +2674,10 @@ input.header-search-input {
   -webkit-transform: translateZ(0);
   @include transition(transform 0.2s $easeOutQuad);
   -webkit-backface-visibility: hidden;
+
+  @include breakpoint(s) {
+  top: 99px;
+  }
 
   form {
     position: relative;
@@ -3256,7 +3260,7 @@ $slideshowSpeed: 0.7s;
 
 .header-tools .navigation {
   display: inline-block;
-  padding: 0 $gutter 0 0;
+  padding: 0;
   text-align: left;
   position: relative;
   font-size: 18px;
@@ -3282,7 +3286,7 @@ $slideshowSpeed: 0.7s;
 
   a {
     color: $headerNavigationColor;
-    padding: 13px 20px;
+    padding: 15px 0 15px 40px;
     @media (min-width: 721px) {
       .header-bleed-light-colors & {
         color: #fff;
@@ -7032,6 +7036,7 @@ input[type="text"].search-input {
   padding: 5px 0;
   background: #f4f4f5;
   height: 45px;
+  overflow: hidden;
   @include breakpoint(s) {
     height: 100%;
     background: none;
@@ -8402,12 +8407,13 @@ ul.sidebar-topic-section-list {
     justify-content: center;
     display: flex;
     flex-direction: column;
+    width: 100%;
     @include breakpoint(m) {
       padding: 110px 60px 140px;
     }
     @include breakpoint(s) {
       background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/effective-altruism-atf-mobile.jpeg?v=1620067381");
-      padding: 30px;
+      padding: 20px 30px 30px;
       border-radius: 0 0 20px 20px;
       height: 70vh;
     }
@@ -8416,6 +8422,9 @@ ul.sidebar-topic-section-list {
   .effective-altruism__atf-icon {
     width: 60px;
     margin: 0 auto 30px;
+    @include breakpoint(s) {
+      margin: 0 auto 20px;
+    }
   }
 
   .effective-altruism__title {
@@ -8448,6 +8457,7 @@ ul.sidebar-topic-section-list {
       font-size: 40px;
     }
     @include breakpoint(s) {
+      margin: 20px auto 0;
       font-size: 35px;
     }
   }
@@ -8665,7 +8675,7 @@ ul.sidebar-topic-section-list {
   padding: 20px;
   border: 2px solid #ECA846;
   position: absolute;
-  bottom: 80px;
+  bottom: 100px;
   margin: 20px;
   left: 0;
   font-size: 0;
