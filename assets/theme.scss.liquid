@@ -2665,7 +2665,7 @@ input.header-search-input {
 .header-drawer {
   position: fixed;
   left: -100%;
-  top: 84px;
+  top: 45px;
   height: 100%;
   width: 100%;
   background: $accentColor;
@@ -2674,9 +2674,8 @@ input.header-search-input {
   -webkit-transform: translateZ(0);
   @include transition(transform 0.2s $easeOutQuad);
   -webkit-backface-visibility: hidden;
-
   @include breakpoint(s) {
-  top: 99px;
+    top: 60px;
   }
 
   form {
@@ -3834,10 +3833,10 @@ $slideshowSpeed: 0.7s;
 
 .pagination-next,
 .pagination-previous {
-  > a:after,
+  > a:before,
    > span:after,
    > span:before,
-  > a:before {
+  > a:after {
     @include iconFont()
   }
   @include breakpoint(s) {
@@ -3848,8 +3847,8 @@ $slideshowSpeed: 0.7s;
 }
 
 .pagination-previous {
-  > span,
-  > a {
+  > a,
+  > span {
     &:before {
       content: '\E012';
       margin-right: 10px;
@@ -3863,8 +3862,8 @@ $slideshowSpeed: 0.7s;
 .pagination-next {
   text-align: right;
 
-  > span,
-  > a {
+  > a,
+  > span {
     &:after {
       content: '\E013';
       margin-left: 10px;
@@ -8138,12 +8137,6 @@ ul.sidebar-topic-section-list {
     @include breakpoint(s) {
       margin: 3px 0;
     }
-  }
-}
-
-.header-drawer {
-  @media (min-width: 721px) and (max-width: 872px) {
-    top: 88px;
   }
 }
 // FLASH SALE BANNER ENDS

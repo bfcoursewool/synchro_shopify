@@ -107,7 +107,7 @@
     "home-hero-small-text": "",
     "home-hero-cta": "Buy",
     "home-hero-url": "http:\/\/besynchro.com\/collections\/frontpage\/products\/synchro-genesis",
-    "show-top-bar": true,
+    "show-top-bar": false,
     "top-bar-color": "#319e9e",
     "top-bar-font": "#fff",
     "top-bar-cta-color": "#202125",
