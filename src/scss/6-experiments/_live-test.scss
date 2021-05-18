@@ -159,7 +159,7 @@
 
 .cap015 {
   .purchase-4 {
-    background: $color-silver-light;
+    background: $color-beige;
     padding: $gutter-large $gutter-medium;
     @include m-screen {
       padding: 30px;
@@ -240,10 +240,10 @@
     &__quantity {
       font-size: 27px;
       font-weight: $font-bold;
-      margin: 15px 0 20px;
+      margin: 15px 0 10px;
       @include m-screen {
         font-size: 24px;
-        margin: 5px 0 15px;
+        margin: 5px 0;
       }
     }
 
@@ -256,7 +256,7 @@
       font-weight: $font-bold;
       border-radius: $radius-large;
       padding: 0 12px;
-      margin: 0 3px;
+      margin: 10px 3px 5px;
       font-size: 14px;
       line-height: 25px;
 
@@ -303,10 +303,10 @@
     &__price {
       font-size: 27px;
       font-weight: $font-bold;
-      margin: 20px 0;
+      margin: 10px 0 20px;
       @include m-screen {
         font-size: 24px;
-        margin: 10px 0;
+        margin: 5px 0 10px;
       }
 
       span {
@@ -332,23 +332,40 @@
 
     &__option-item {
       display: inline-block;
-      margin: 10px 5px;
+      margin: 10px;
       background: $color-ivory;
       border-radius: $radius-small;
       padding: 5px 15px 5px 20px;
       position: relative;
       cursor: pointer;
+      transition: all 0.3s ease-in-out;
       @include m-screen {
+        margin: 10px 5px;
         padding: 5px 18px;
       }
       @include s-screen {
         padding: 5px 10px;
       }
 
+      &:hover {
+        box-shadow: 0 10px 15px rgb(0 0 0 / 10%);
+
+        .purchase-4__option-details {
+          opacity: 0.8;
+        }
+
+        .purchase-4__option-image {
+          opacity: 1;
+        }
+      }
+
       &.selected {
         box-shadow: inset 0 0 0 2px $color-gold;
 
-        .purchase-4__option-details,
+        .purchase-4__option-details {
+          opacity: 0.8;
+        }
+
         .purchase-4__option-image {
           opacity: 1;
         }

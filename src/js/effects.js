@@ -28,13 +28,22 @@ export default class LPEffects extends EventsBase {
   }
 
   goldCapsulePurchaseSwap(target) {
-    $('.purchase-4__option-item').not(this).removeClass('selected')
-    $(target).addClass('selected')
-    $("img[class*='option-'],div[class*='option-']").each(function() { $(this).removeClass('selected') })
-    let targetClasses = $(target).attr('class').split(/\s+/)
+    // clear current selection on purchase chip
+    $('.purchase-4__option-item').removeClass('selected');
+    // select currently clicked purchase chip
+    $(target).addClass('selected');
+    // clear all current selected image, description & button
+    $("img[class*='option-'], div[class*='option-']").each(function() {
+        $(this).removeClass('selected');
+    });
+    // get modifier class from target purchase chip (ie. 'option-1')
+    let targetClasses = $(target).attr('class').split(/\s+/);
+    // find all selected chip related items and add 'selected' to them
     $.each(targetClasses, function(index, item) {
-      if(item.includes('option-')) {
-        $(`img[class*='${item}'],div[class*='${item}']`).each(function() { $(this).addClass('selected') })
+      if(new RegExp(/option-\d/gi).test(item)) {
+        $(`img[class*='${item}'],div[class*='${item}']`).each(function() {
+            $(this).addClass('selected')
+        });
       }
     })
   }
