@@ -5,10 +5,6 @@
     top: -35px;
   }
 
-  .a--cta {
-    border-radius: 0;
-  }
-
   .top-offer-bar {
     @include xs-screen {
       .a--cta {
@@ -272,13 +268,6 @@
         width: 100%;
       }
     }
-
-    .a--cta {
-      font-size: 18px;
-      padding: 16px 35px;
-      background-color: #39447C;
-      border-radius: 40px;
-    }
   }
 
   .benefits {
@@ -445,12 +434,6 @@
   }
 
   .atf {
-    .a--cta {
-      background-color: $color-gold;
-      border-radius: 6px;
-      padding: 17px 60px;
-    }
-
     &__copy {
       background: $color-beige;
       padding: 30px $gutter-medium 50px;
@@ -462,7 +445,9 @@
       }
 
       .a--cta {
+        background-color: $color-gold;
         margin-bottom: 25px;
+        width: 70%;
       }
     }
 
@@ -1354,6 +1339,7 @@
         font-size: 16px;
       }
     }
+
     &__name {
       font-size: 18px;
       color: #4D4D4D;
@@ -1538,14 +1524,8 @@
 
     .a--cta {
       background-color: #eca846;
-      border-radius: 6px;
-      padding: 12px 80px;
-      @include m-screen {
-        padding: 12px 60px;
-      }
       @include s-screen {
         width: 100%;
-        padding: 12px 10px;
       }
     }
 

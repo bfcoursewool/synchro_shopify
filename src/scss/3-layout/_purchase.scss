@@ -169,10 +169,6 @@
       text-decoration: line-through;
     }
   }
-
-  .a--cta {
-    width: 100%;
-  }
 }
 
 .purchase-2 {
@@ -351,17 +347,6 @@
       border-radius: 20px;
       margin-right: 6px;
     }
-  }
-
-  .a--cta {
-    display: block;
-    font-weight: $font-bold;
-    font-size: 20px;
-    padding: 10px 35px;
-    margin: 10px 0 20px;
-    background-color: #39447C;
-    border-radius: 40px;
-    text-align: center;
   }
 
   &__options-title {

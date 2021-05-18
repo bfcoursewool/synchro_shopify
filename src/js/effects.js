@@ -23,20 +23,18 @@ export default class LPEffects extends EventsBase {
       'click .how-it-works__icon': 'toggleHowItWorks',
       'click .toggle-single-view': 'toggleSingleView', // Only ONE element is visible at one time. Use this toggle event for this element globally.
       'click .toggle-multiple-view': 'toggleMultipleView', // MULTIPLE element are visible at one time. Use this toggle event for this element globally.
-      'click .purchase-2__options': 'goldCapsulePurchaseSwap',
+      'click .purchase-4__option-item': 'goldCapsulePurchaseSwap',
     }
   }
 
   goldCapsulePurchaseSwap(target) {
-    $('.purchase-2__options').each(function() { $(this).removeClass('selected') })
+    $('.purchase-4__option-item').not(this).removeClass('selected')
     $(target).addClass('selected')
-    $("div[class*='option-'],p[class*='option-']").each(function() { $(this).removeClass('active') })
-    $("input[class*='option-']").each(function() { $(this).prop('checked', false) })
+    $("img[class*='option-'],div[class*='option-']").each(function() { $(this).removeClass('selected') })
     let targetClasses = $(target).attr('class').split(/\s+/)
     $.each(targetClasses, function(index, item) {
       if(item.includes('option-')) {
-        $(`div[class*='${item}'],p[class*='${item}']`).each(function() { $(this).addClass('active') })
-        $(`input[class*='${item}']`).prop('checked', true)
+        $(`img[class*='${item}'],div[class*='${item}']`).each(function() { $(this).addClass('selected') })
       }
     })
   }

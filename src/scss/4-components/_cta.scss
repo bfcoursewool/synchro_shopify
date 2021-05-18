@@ -1,24 +1,37 @@
 // Primary CTA
 
 .a--cta {
+  background: $color-accent;
+  font-family: $font-primary;
+  font-weight: $font-demi;
+  line-height: 40px;
+  color: $color-ivory;
+  border-radius: $radius-small;
+  font-size: 20px;
   display: inline-block;
-  -webkit-appearance: none;
-  background: $color-ebony;
-  padding: 15px 30px;
   border: none;
-  border-radius: 6px;
   box-shadow: 0 3px 0 0 $color-ivory;
   transition: all 0.1s ease-in-out;
-  font-family: $font-primary;
-  color: $color-ivory !important;
-  font-size: 18px;
-  font-weight: $font-demi;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  text-transform: uppercase;
+  -webkit-appearance: none;
   -webkit-font-smoothing: antialiased;
-  @include xs-screen {
-    padding: 10px 23px;
+  cursor: pointer;
+  padding: 10px 0 10px 50px;
+  @include s-screen {
+    line-height: 36px;
+    padding-left: 15px;
+  }
+
+  &:after {
+    content: "\f291";
+    font-family: "Font Awesome 5 Free";
+    float: right;
+    border-left: 1px solid rgba(255,255,255,.3);
+    padding: 0 20px;
+    margin-left: 50px;
+    @include s-screen {
+      padding: 0 15px;
+      margin-left: 15px;
+    }
   }
 
   &:active {
