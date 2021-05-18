@@ -215,14 +215,14 @@
         {% if settings.use-logo %}
         <a class="logo {% if settings.use-retina-logo %}has-retina{% endif %}" href="/">
 
-          {% assign regularLogo = 'logo.png' | asset_url %}
+          {% assign regularLogo = 'synchro-wordmark-dark.svg' | asset_url %}
           {% if fullBleedIndex and settings.home-bleed-use-logo %}
           {% assign regularLogo = 'bleed-logo.png' | asset_url %}
           {% elsif fullBleedProduct and settings.product-bleed-use-logo %}
           {% assign regularLogo = 'product-bleed-logo.png' | asset_url %}
           {% endif %}
 
-          <img class="logo-regular" alt="{{ shop.name | escape }}" src="{{ regularLogo }}" data-regular="{{ 'logo.png' | asset_url }}">
+          <img class="logo-regular" alt="{{ shop.name | escape }}" src="{{ regularLogo }}" data-regular="{{ 'synchro-wordmark-dark.svg' | asset_url }}">
 
           {% if settings.use-retina-logo %}
 
@@ -336,7 +336,7 @@
   {% if shop.customer_accounts_enabled %}
   <a href="/account" class="drawer-account-link"><span class="icon">&#57351;</span> {{ 'general.general.my_account' | t }}</a>
   {% endif %}
-  
+
   <div class="effective-altruism__mobile-nav">
     <img class="effective-altruism__mobile-nav-icon" src="https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/icon-giving.svg?v=1620392201" alt="Giving">
     <p class="effective-altruism__mobile-nav-copy">A minimum of 10% of our profits go to the most effective NGOs working to improve human health + wellbeing globally. <a href="https://besynchro.com/pages/10-for-global-health">Learn more</a></p>

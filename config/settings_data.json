@@ -2,7 +2,7 @@
   "current": {
     "use-logo": true,
     "logo-height": "32",
-    "use-retina-logo": true,
+    "use-retina-logo": false,
     "body-background-use-image": false,
     "background-image-width": "",
     "background-image-height": "",
