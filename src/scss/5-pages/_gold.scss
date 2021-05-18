@@ -447,7 +447,8 @@
       .a--cta {
         background-color: $color-gold;
         margin-bottom: 25px;
-        width: 70%;
+        width: 100%;
+        max-width: 300px;
       }
     }
 
