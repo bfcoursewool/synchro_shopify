@@ -232,6 +232,22 @@
     &__option {
       display: none;
 
+      &.option-1 {
+        .purchase-4__quantity {
+          margin: 30px 0 25px;
+          @include m-screen {
+            margin: 20px 0 15px;
+          }
+        }
+
+        .purchase-4__price {
+          margin: 20px 0 40px;
+          @include m-screen {
+            margin: 20px 0 26px;
+          }
+        }
+      }
+
       &.selected {
         display: initial;
       }
