@@ -3833,10 +3833,10 @@ $slideshowSpeed: 0.7s;
 
 .pagination-next,
 .pagination-previous {
-  > a:before,
+  > a:after,
    > span:after,
    > span:before,
-  > a:after {
+  > a:before {
     @include iconFont()
   }
   @include breakpoint(s) {
@@ -3847,8 +3847,8 @@ $slideshowSpeed: 0.7s;
 }
 
 .pagination-previous {
-  > a,
-  > span {
+  > span,
+  > a {
     &:before {
       content: '\E012';
       margin-right: 10px;
@@ -3862,8 +3862,8 @@ $slideshowSpeed: 0.7s;
 .pagination-next {
   text-align: right;
 
-  > a,
-  > span {
+  > span,
+  > a {
     &:after {
       content: '\E013';
       margin-left: 10px;
@@ -8695,6 +8695,7 @@ ul.sidebar-topic-section-list {
 }
 
 .ambassador-program {
+  // Ambassador Program Page Global Styles
   .p--bold {
     font-weight: 700;
   }
@@ -8703,69 +8704,410 @@ ul.sidebar-topic-section-list {
     font-style: italic;
   }
 
+  .p--underline {
+    text-decoration: underline;
+  }
+
+  .ambassador-program__cta-title,
+  .ambassador-program__main-title,
+  .ambassador-program__title {
+    font-size: 35px;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: normal;
+    @include breakpoint(m) {
+      font-size: 30px;
+    }
+  }
+
+  .ambassador-program__benefit-copy,
+  .ambassador-program__copy {
+    margin: 20px 0;
+    opacity: 0.7;
+    font-size: 19px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 500;
+
+    a {
+      color: #b0c167;
+      font-weight: 700;
+    }
+  }
+  // Ambassador Program Page Global Styles End
   .ambassador-program__atf {
-    padding: 220px 60px;
-    background: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/ambassador-header-desktop.jpeg?v=1620320075");
+    padding: 200px 60px 240px;
+    background: #b0c167;
+    background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/benefits-bg-light.svg?v=1618504845");
     background-size: cover;
     background-position: center;
-    text-align: center;
+    margin: 0 40px;
+    border-radius: 20px;
+    position: relative;
+    @include breakpoint(m) {
+      padding: 150px 60px 190px;
+    }
+    @include breakpoint(s) {
+      padding: 100px 20px 170px;
+      margin: 0;
+      border-radius: 0 0 20px 20px;
+    }
   }
 
   .ambassador-program__header {
-    max-width: 700px;
-    font-size: 50px;
+    max-width: 800px;
+    font-size: 55px;
     line-height: normal;
     margin: 0 auto;
     font-weight: 600;
     text-align: center;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    @include breakpoint(m) {
+      font-size: 45px;
+      max-width: 660px;
+    }
+    @include breakpoint(s) {
+      font-size: 35px;
+    }
+  }
+
+  .ambassador-program__learn-more {
+    font-weight: 600;
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+
+    &:after {
+      content: "\f063";
+      display: block;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 800;
+      padding: 10px 0 30px;
+    }
+  }
+
+  .ambassador-program__intro {
+    max-width: 700px;
+    margin: 120px auto;
+    text-align: center;
+    font-size: 24px;
+    opacity: 0.7;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    @include breakpoint(m) {
+      margin: 100px auto;
+      max-width: 500px;
+    }
+    @include breakpoint(s) {
+      font-size: 22px;
+      margin: 80px auto;
+      padding: 0 40px;
+    }
 
     span {
-      color: #eca846;
+      color: #b0c167;
+      font-weight: 500;
+      opacity: 1;
+    }
+  }
+
+  .ambassador-program__application {
+    padding: 60px 30px;
+    background: #F9F6F2;
+    border-radius: 20px;
+    text-align: center;
+    margin: 0 40px;
+    @include breakpoint(s) {
+      padding: 40px 10px;
+      margin: 0;
+    }
+
+    .ambassador-program__copy,
+    .ambassador-program__main-title {
+      @include breakpoint(s) {
+        padding: 0 20px;
+      }
+    }
+
+    .ambassador-program__form {
+      max-width: 700px;
+      margin: 50px auto 0;
+      @include breakpoint(s) {
+        margin-top: 30px;
+      }
+
+      .klaviyo-form-X7WDzX {
+        input {
+          border-radius: 5px !important;
+        }
+
+        label {
+          padding-bottom: 10px !important;
+        }
+
+        button {
+          padding: 21px 25px !important;
+          @include breakpoint(s) {
+            padding: 20px !important;
+            font-size: 20px !important;
+          }
+        }
+      }
     }
   }
 
   .ambassador-program__content {
-    padding: 40px;
-    max-width: 940px;
-    margin: 0 auto;
+    .ambassador-program__almost-there {
+      max-width: 780px;
+      margin: 60px auto;
+      padding: 0 40px;
+      @include breakpoint(s) {
+        margin: 40px 0;
+        padding: 0 20px;
+      }
+
+      .ambassador-program__title {
+        margin: 60px 0 40px;
+        @include breakpoint(s) {
+          margin: 40px 0;
+        }
+      }
+    }
+
+    .ambassador-program__ambassadors {
+      height: 450px;
+      background: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/ambassador-people.jpg?v=1622824906");
+      background-position: center;
+      background-size: cover;
+      @include breakpoint(m) {
+        height: 400px;
+      }
+      @include breakpoint(s) {
+        background: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/ambassador-people-mobile.jpg?v=1622825304");
+        padding-top: 80%;
+        background-size: cover;
+        background-position: center;
+        height: auto;
+      }
+    }
+
+    .ambassador-program__about {
+      max-width: 780px;
+      margin: 60px auto;
+      padding: 0 40px;
+      @include breakpoint(s) {
+        margin: 40px 0;
+        padding: 0 20px;
+      }
+
+      .ambassador-program__title {
+        margin: 60px 0 40px;
+        @include breakpoint(s) {
+          margin: 0 0 40px;
+        }
+      }
+
+      .ambassador-program__benefits {
+        -moz-column-count: 2;
+        -moz-column-gap: 40px;
+        -webkit-column-count: 2;
+        -webkit-column-gap: 20px;
+        column-count: 2;
+        column-gap: 20px;
+        margin: 40px 0 20px;
+        @include breakpoint(s) {
+          -moz-column-count: 1;
+          -webkit-column-count: 1;
+          column-count: 1;
+          margin: 40px 0 20px;
+        }
+
+        .ambassador-program__benefit {
+          background: #F9F6F2;
+          border-radius: 10px;
+          padding: 30px;
+          margin-bottom: 20px;
+          text-align: center;
+          @include breakpoint(s) {
+            padding: 20px 25px;
+          }
+        }
+
+        .ambassador-program__benefit-title {
+          font-size: 22px;
+          font-weight: 600;
+          margin: 0 0 10px;
+          color: #b0c167;
+          @include breakpoint(s) {
+            font-size: 19px;
+          }
+        }
+
+        .ambassador-program__benefit-copy {
+          margin: 0;
+        }
+      }
+    }
   }
 
-  .ambassador-program__application {
+  .ambassador-program__eligibility {
+    background: #b0c167;
+    border-radius: 20px;
+    margin: 60px 40px;
+    padding: 60px 40px;
+    background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/benefits-bg-light.svg?v=1618504845");
+    background-size: cover;
+    @include breakpoint(m) {
+      margin-top: 40px;
+      padding: 40px;
+    }
+    @include breakpoint(s) {
+      padding: 40px 20px 20px;
+      margin: 40px 0 0;
+    }
+
+    .ambassador-program__header {
+      margin-bottom: 40px;
+      color: #ffffff;
+      @include breakpoint(m) {
+        margin-bottom: 40px;
+      }
+    }
+
+    .ambassador-program__eligibility-box {
+      max-width: 700px;
+      background: white;
+      padding: 5px 25px;
+      border-radius: 10px;
+      margin: 20px auto 0;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      @include breakpoint(s) {
+        padding: 0 20px;
+      }
+
+      .ambassador-program__check {
+        position: relative;
+        background: #b0c167;
+        color: #ffffff;
+        border-radius: 20px;
+        font-family: "Font Awesome 5 Free";
+        font-size: 14px;
+        text-align: center;
+        font-weight: 800;
+        margin-right: 20px;
+        padding: 18px;
+
+        &:before {
+          content: "\f00c";
+          position: absolute;
+          top: 8px;
+          left: 11px;
+        }
+      }
+    }
+  }
+
+  .ambassador-program__cta {
     text-align: center;
+    margin: 80px 0;
+    @include breakpoint(m) {
+      margin: 60px 0;
+    }
+    @include breakpoint(s) {
+      margin: 40px 20px;
+    }
+
+    .ambassador-program__cta-title {
+      font-size: 35px;
+      @include breakpoint(s) {
+        font-size: 30px;
+      }
+
+      span {
+        opacity: 0.5;
+        display: block;
+      }
+    }
+
+    button {
+      width: initial;
+      padding: 10px 30px;
+      margin-top: 40px;
+      -webkit-font-smoothing: antialiased;
+      font-weight: 600;
+      line-height: 40px;
+      background: #b0c167;
+      @include breakpoint(s) {
+        padding: 10px 20px;
+      }
+    }
   }
 
-  .ambassador-program__title {
-    font-size: 35px;
-    font-weight: 500;
-    margin: 60px 0 40px;
-    line-height: normal;
+  .ambassador-program__ty-atf {
+    padding: 140px 60px 170px;
+    background: #b0c167;
+    text-align: center;
+    background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/benefits-bg-light.svg?v=1618504845");
+    background-size: cover;
+    background-position: center;
+    margin: 0 40px;
+    border-radius: 20px;
+    position: relative;
+    @include breakpoint(s) {
+      padding: 100px 20px 140px;
+      margin: 0;
+      border-radius: 0 0 20px 20px;
+    }
   }
 
-  .ambassador-program__copy {
-    margin: 25px 0;
-    opacity: 0.8;
-    font-weight: 500;
-    font-size: 19px;
+  .ambassador-program__ty-atf-image {
+    max-width: 678px;
+    width: 100%;
+  }
+
+  .ambassador-program__questions {
+    margin: 40px 0;
+  }
+
+  .ambassador-program__question-box {
+    background: #F9F6F2;
+    padding: 5px 25px;
+    border-radius: 10px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include breakpoint(s) {
+      padding: 0 20px;
+    }
+
+    .ambassador-program__list {
+      background: #b0c167;
+      color: #ffffff;
+      border-radius: 20px;
+      line-height: 19px;
+      font-size: 19px;
+      text-align: center;
+      font-weight: 600;
+      margin-right: 20px;
+      padding: 8px 12px;
+    }
+  }
+
+  .ambassador-program__subtitle {
+    line-height: 1.5;
+    font-size: 25px;
+    font-weight: 600;
     -webkit-font-smoothing: antialiased;
   }
-
-  .ambassador-program__form {}
-
-  .ambassador-program__details {
-    background: #fafafa;
-    padding: 20px 60px 40px;
-    border-radius: 20px;
-  }
-
-  .ambassador-program__benefits {}
-
-  .ambassador-program__benefit {}
-
-  .ambassador-program__benefit-title {}
-
-  .ambassador-program__eligibility {}
-
-  .ambassador-program__check {}
-
-  .ambassador-program__cta {}
 }
