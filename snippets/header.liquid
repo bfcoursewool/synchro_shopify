@@ -251,6 +251,22 @@
 
 </div>
 
+{% if settings.show-top-bar %}
+  <div class="flash-sale-banner pseudo-mobile">
+    <a role="button">
+      <p class="p--text flash-sale-banner__text">
+        <span class="flash-sale-banner__mobile">{{settings.top-bar-copy-mobile}}</span>
+      </p>
+      {% if settings.show-top-bar-cta %}
+      <button class="a--cta">
+        <span>{{settings.top-bar-cta}}</span>
+      </button>
+      {% endif %}
+    </a>
+  </div>
+{% endif %}
+
+
 {% if template contains 'blog' or template contains 'article'  %}
 <div class="current-header header-area-part blog-header-section-only">
   <div class="main-header">
@@ -283,20 +299,7 @@
 {% endif %}
 
 {% if settings.show-top-bar %}
-  <div class="flash-sale-banner pseudo-mobile">
-    <a role="button">
-      <p class="p--text flash-sale-banner__text">
-        <span class="flash-sale-banner__mobile">{{settings.top-bar-copy-mobile}}</span>
-      </p>
-      {% if settings.show-top-bar-cta %}
-      <button class="a--cta">
-        <span>{{settings.top-bar-cta}}</span>
-      </button>
-      {% endif %}
-    </a>
-  </div>
-
-  <div class="flash-sale-banner">
+<div class="flash-sale-banner">
     <a role="button" href="{{settings.top-bar-link}}">
       <p class="p--text flash-sale-banner__text">
         <span class="flash-sale-banner__desktop">{{settings.top-bar-copy-desktop}}</span>
