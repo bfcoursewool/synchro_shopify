@@ -5,6 +5,9 @@
 <!--[if IE 9 ]><html class="ie9 lt-ie10 no-js"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 	<head>
+		{% if canonical_url contains "tagged" %}
+			<meta name='robots' content='noindex, follow'>
+		{% endif %}
 		<link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/fav-icon.png?v=1605894369">
 		<!--BEGIN GOOGLE VERIFICATION TAG -->
 		<meta name="google-site-verification" content="D7Oo0rb1h34EQQ0OHTEpRf_hEevYjVnnPzRPXnEOQio">
@@ -22,6 +25,12 @@
 			<title>{{ shop.name }} | {{ page_title }}</title>
 		{% elsif template == '404' %}
 			<title>Page Not Found | {{ shop.name }}</title>
+		{% elsif canonical_url contains "/blogs/blog" %}
+			{% if canonical_url contains "/blogs/blog/" %}
+				<title>{{ page_title }} | {{ shop.name }}</title>
+			{% else %}
+				<title>Articles True Health | Naturally Innovative Nutrition</title>
+			{% endif %}
 		{% else %}
 			<title>{{ page_title }} | {{ shop.name }}</title>
 		{% endif %}
@@ -36,7 +45,15 @@
 		{% endif %}
 
 		{% if page_description %}
-			<meta name="description" content="{{ page_description | escape }}" />
+			<meta name="description" content="{{ page_description | escape }}">
+		{% elsif canonical_url contains "/blogs/blog" %}
+			{% if canonical_url contains "/blogs/blog/" %}
+				<meta name="description" content="{{ page_description | escape }}">
+			{% else %}
+				<meta name="description" content="What Is Graceful Keto? The Profound Benefits Of Cold, Part 1: Cold Showers For Improved Mood, Disease Resistance, and Metabolic Rate,">
+			{% endif %}
+		{% else %}
+			<meta name="description" content="{{ page_description | escape }}">
 		{% endif %}
 
 		<!-- Google Tag Manager -->
@@ -71,11 +88,13 @@
 		<!--MB_OPC-->
 
 		<link rel="canonical" href="{{ canonical_url }}">
-		{% else %}
-		<link rel="canonical" href="{{ product.metafields.seo.unique_url }}">
 		{% endif %}
 		{% else %}
-		<link rel="canonical" href="{{ canonical_url }}">
+			{% if canonical_url contains "all-articles" %}
+				<link rel="canonical" href="https://besynchro.com/pages/all-articles">
+			{% else %}
+				<link rel="canonical" href="{{ canonical_url }}">
+			{% endif %}
 		{% endif %}
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -83,7 +102,7 @@
 			{{ content_for_header }}
 		{% else %}
 			{% capture content_for_header2 %}{{ content_for_header }}{% endcapture %}
-			{{ content_for_header2 | replace: ' defer="defer" ', ' type="no-load" ' | replace: " src=", " data-src=" | replace: "window.addEventListener('load', asyncLoad, false);", "window.addEventListener('wnw_load', asyncLoad, false);" | replace: "DOMContentLoaded", "" }}
+			{{ content_for_header2 | replace: ' defer="defer" ', ' type="no-load" ' | replace: " src=", " data-src=" | replace: "addEventListener('load',", "addEventListener('wnw_load'," | replace: "DOMContentLoaded", "" }}
 		{% endif %}
 
 		{% include 'social-meta' %}
@@ -119,10 +138,7 @@
 		{{ 'modernizr-2.7.1.min.js' | asset_url | script_tag }}
 -->
 		{% include "modernizr-271-min-js" %}
-		{% comment %}
-		{% include 'fonts' %}
-		{% endcomment %}
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+		<link rel="stylesheet" data-href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
 		<!-- Store object -->
 		{% include 'theme-options' %}
 		<style type="text/css">
@@ -165,8 +181,19 @@
 
 		{% include 'talkable-partial' %}
 		{% render 'hs-cart-drawer' %}
+		<style>span[itemprop]{display:none}</style>
 	</head>
 	<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} navigation-{{ settings.header-navigation-location }} {% if template == 'product.slideshow' %}template-product-slideshow{% endif %}" >
+		{% if canonical_url contains "/blogs/blog" %}
+			{% if canonical_url contains "/blogs/blog/" %}{% else %}
+				<h1 style="display: none;">Blog - The Synchro Life</h1>
+			{% endif %}
+		{% elsif canonical_url contains "/pages/all-articles" %}
+			{% if canonical_url contains "/pages/all-articles/?" or canonical_url contains "/pages/all-articles?" %}{% else %}
+				<h1 style="display: none;">All Articals - The Synchro Life</h1>
+			{% endif %}
+		{% endif %}
+
 		<!-- Do a JS redirect from the keto-cleanse product page to our custom landing page.
 		The custom LP URL is set up as the seo.unique_url for the keto-cleanse product
 		in Shopify so that crawler bots at least get the canonical URL right, and real users
