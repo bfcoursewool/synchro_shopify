@@ -1,0 +1,310 @@
+@import '../synchro';
+
+.cap015 {
+  .purchase-4 {
+    background: $color-beige;
+    padding: $gutter-large $gutter-medium;
+    @include m-screen {
+      padding: 30px;
+    }
+    @include xs-screen {
+      padding: $gutter-small;
+    }
+
+    &__content {
+      padding: $gutter-medium;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: $color-ivory;
+      border-radius: $radius-large;
+      display: flex;
+      align-items: center;
+      @include sm-screen {
+        flex-direction: column;
+      }
+      @include s-screen {
+        padding: 30px $gutter-small $gutter-small;
+        max-width: 400px;
+      }
+    }
+
+    &__image {
+      display: none;
+      width: 45%;
+      padding-right: $gutter-small;
+      @include sm-screen {
+        width: initial;
+        padding: 0;
+        margin-bottom: $gutter-small;
+        height: 250px;
+      }
+
+      &.selected {
+        display: block;
+      }
+    }
+
+    &__details {
+      width: 55%;
+      padding-left: $gutter-small;
+      text-align: center;
+      @include sm-screen {
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    &__reviews {
+      display: inline-block;
+      margin: 0 auto;
+
+      .yotpo-icon {
+        font-size: 20px !important;
+        letter-spacing: 2px;
+      }
+
+      .text-m {
+        font-size: 14px;
+        font-weight: $font-demi;
+        opacity: 0.4;
+        margin-left: 10px;
+        line-height: 20px;
+      }
+    }
+
+    &__option {
+      display: none;
+
+      &.option-1 {
+        .purchase-4__quantity {
+          margin: 30px 0 25px;
+          @include m-screen {
+            margin: 20px 0 15px;
+          }
+        }
+
+        .purchase-4__price {
+          margin: 20px 0 40px;
+          @include m-screen {
+            margin: 20px 0 26px;
+          }
+        }
+      }
+
+      &.selected {
+        display: initial;
+      }
+    }
+
+    &__quantity {
+      font-size: 27px;
+      font-weight: $font-bold;
+      margin: 15px 0 10px;
+      @include m-screen {
+        font-size: 24px;
+        margin: 5px 0;
+      }
+    }
+
+    &__offer-10,
+    &__offer-5,
+    &__popular,
+    &__savings {
+      display: inline-block;
+      color: $color-ivory;
+      font-weight: $font-bold;
+      border-radius: $radius-large;
+      padding: 0 12px;
+      margin: 10px 3px 5px;
+      font-size: 14px;
+      line-height: 25px;
+
+      &:before {
+        font-family: "Font Awesome 5 Free";
+        margin-right: 7px;
+      }
+    }
+
+    &__popular,
+    &__savings {
+      background: #EB5B28;
+    }
+
+    &__offer-10,
+    &__offer-5 {
+      background: #4C74DB;
+    }
+
+    &__popular {
+      &:before {
+        content: "\f005";
+      }
+    }
+
+    &__savings {
+      &:before {
+        content: "\f555";
+      }
+    }
+
+    &__offer-10 {
+      &:before {
+        content: "\f02c";
+      }
+    }
+
+    &__offer-5 {
+      &:before {
+        content: "\f02b";
+      }
+    }
+
+    &__price {
+      font-size: 27px;
+      font-weight: $font-bold;
+      margin: 10px 0 20px;
+      @include m-screen {
+        font-size: 24px;
+        margin: 5px 0 10px;
+      }
+
+      span {
+        opacity: 0.5;
+        text-decoration: line-through;
+        margin-right: 10px;
+      }
+    }
+
+    &__options {
+      background: $color-beige;
+      border-radius: $radius-medium;
+      padding: 10px 10px 5px;
+      font-size: 0;
+      margin-bottom: 10px;
+    }
+
+    &__options-title {
+      font-size: 14px;
+      font-weight: $font-demi;
+      margin: 0;
+    }
+
+    &__option-item {
+      display: inline-block;
+      margin: 10px;
+      background: $color-ivory;
+      border-radius: $radius-small;
+      padding: 5px 15px 5px 20px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      @include m-screen {
+        margin: 10px 5px;
+        padding: 5px 18px;
+      }
+      @include s-screen {
+        padding: 5px 10px;
+      }
+
+      &:hover {
+        box-shadow: 0 10px 15px rgb(0 0 0 / 10%);
+
+        .purchase-4__option-details {
+          opacity: 0.8;
+        }
+
+        .purchase-4__option-image {
+          opacity: 1;
+        }
+      }
+
+      &.selected {
+        box-shadow: inset 0 0 0 2px $color-gold;
+
+        .purchase-4__option-details {
+          opacity: 0.8;
+        }
+
+        .purchase-4__option-image {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__option-image {
+      opacity: 0.6;
+      height: 60px;
+      display: inline-block;
+      vertical-align: middle;
+      @include m-screen {
+        display: none;
+      }
+      @include sm-screen {
+        display: inline-block;
+      }
+      @include s-screen {
+        display: none;
+      }
+    }
+
+    &__option-details {
+      opacity: 0.6;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      @include m-screen {
+        margin-left: 0;
+      }
+      @include sm-screen {
+        margin-left: 10px;
+      }
+      @include s-screen {
+        margin-left: 0;
+      }
+    }
+
+    &__option-quantity {
+      font-weight: $font-bold;
+      font-size: 16px;
+      @include xs-screen {
+        font-size: 14px;
+      }
+    }
+
+    &__option-price {
+      font-weight: $font-bold;
+      font-size: 18px;
+      @include xs-screen {
+        font-size: 16px;
+      }
+    }
+
+    .a--cta {
+      display: none;
+      background-color: #eca846;
+
+      &.selected {
+        display: block;
+      }
+    }
+
+    &__fast-shipping {
+      width: 100%;
+      max-width: 385px;
+      margin-top: 35px;
+      @include m-screen {
+        display: none;
+      }
+    }
+
+    &__fast-shipping-mobile {
+      display: none;
+      @include m-screen {
+        display: block;
+        width: 100%;
+        max-width: 265px;
+        margin: 20px auto 0;
+      }
+    }
+  }
+}

@@ -1354,6 +1354,7 @@
   }
 
   .purchase-3 {
+    display: none;
     margin: 0 $gutter-medium;
     background: #FAF7F3;
     padding: $gutter-large $gutter-small $gutter-medium;
@@ -1363,6 +1364,7 @@
       margin: 0;
     }
     @include s-screen {
+      display: block;
       padding: $gutter-medium $gutter-small;
     }
 
