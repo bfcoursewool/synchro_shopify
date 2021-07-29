@@ -1876,11 +1876,23 @@
         "content": "Content:"
       },
       {
-        "type": "image",
-        "id": "slide-1-image.jpg",
-        "label": "Image",
-        "max-width": 9999,
-        "max-height": 9999
+        "type": "paragraph",
+        "content": "To upload an image, click 'Actions > Edit Code > Add a new asset'. Copy the image URL and paste below."
+      },
+      {
+        "type": "url",
+        "id": "slide-1-image",
+        "label": "Image (Desktop)"
+      },
+      {
+        "type": "url",
+        "id": "slide-1-image-mobile",
+        "label": "Image (Mobile)"
+      },
+      {
+        "type": "text",
+        "id": "slide-1-alt",
+        "label": "Image Alt Text"
       },
       {
         "type": "text",
@@ -1945,11 +1957,23 @@
         "content": "Content:"
       },
       {
-        "type": "image",
-        "id": "slide-2-image.jpg",
-        "label": "Image",
-        "max-width": 9999,
-        "max-height": 9999
+        "type": "paragraph",
+        "content": "To upload an image, click 'Actions > Edit Code > Add a new asset'. Copy the image URL and paste below."
+      },
+      {
+        "type": "url",
+        "id": "slide-2-image",
+        "label": "Image (Desktop)"
+      },
+      {
+        "type": "url",
+        "id": "slide-2-image-mobile",
+        "label": "Image (Mobile)"
+      },
+      {
+        "type": "text",
+        "id": "slide-2-alt",
+        "label": "Image Alt Text"
       },
       {
         "type": "text",
@@ -2014,11 +2038,23 @@
         "content": "Content:"
       },
       {
-        "type": "image",
-        "id": "slide-3-image.jpg",
-        "label": "Image",
-        "max-width": 9999,
-        "max-height": 9999
+        "type": "paragraph",
+        "content": "To upload an image, click 'Actions > Edit Code > Add a new asset'. Copy the image URL and paste below."
+      },
+      {
+        "type": "url",
+        "id": "slide-3-image",
+        "label": "Image (Desktop)"
+      },
+      {
+        "type": "url",
+        "id": "slide-3-image-mobile",
+        "label": "Image (Mobile)"
+      },
+      {
+        "type": "text",
+        "id": "slide-3-alt",
+        "label": "Image Alt Text"
       },
       {
         "type": "text",
@@ -2083,11 +2119,23 @@
         "content": "Content:"
       },
       {
-        "type": "image",
-        "id": "slide-4-image.jpg",
-        "label": "Image",
-        "max-width": 9999,
-        "max-height": 9999
+        "type": "paragraph",
+        "content": "To upload an image, click 'Actions > Edit Code > Add a new asset'. Copy the image URL and paste below."
+      },
+      {
+        "type": "url",
+        "id": "slide-4-image",
+        "label": "Image (Desktop)"
+      },
+      {
+        "type": "url",
+        "id": "slide-4-image-mobile",
+        "label": "Image (Mobile)"
+      },
+      {
+        "type": "text",
+        "id": "slide-4-alt",
+        "label": "Image Alt Text"
       },
       {
         "type": "text",
@@ -2152,11 +2200,23 @@
         "content": "Content:"
       },
       {
-        "type": "image",
-        "id": "slide-5-image.jpg",
-        "label": "Image",
-        "max-width": 9999,
-        "max-height": 9999
+        "type": "paragraph",
+        "content": "To upload an image, click 'Actions > Edit Code > Add a new asset'. Copy the image URL and paste below."
+      },
+      {
+        "type": "url",
+        "id": "slide-5-image",
+        "label": "Image (Desktop)"
+      },
+      {
+        "type": "url",
+        "id": "slide-5-image-mobile",
+        "label": "Image (Mobile)"
+      },
+      {
+        "type": "text",
+        "id": "slide-5-alt",
+        "label": "Image Alt Text"
       },
       {
         "type": "text",
