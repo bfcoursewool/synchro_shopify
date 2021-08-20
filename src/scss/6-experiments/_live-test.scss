@@ -156,23 +156,13 @@
     }
   }
 }
+// cap017 common styles //
 
-.cap016 {
-  .atf {
-    &__hero-image {
-      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/gold-cap-atf-product-cap016@2x.jpeg?v=1627322058");
-      @include sm-screen {
-        background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/gold-cap-atf-mobile-cap016@2x.jpeg?v=1627322056");
-      }
-    }
-  }
-}
-
-.cap017-01 {
+.cap017-01,
+.cap017-02 {
   .purchase-4 {
     @include s-screen {
-      background: #fafafa;
-      padding: 40px 20px 30px;
+      padding: 40px 30px 30px;
       display: block;
     }
 
@@ -197,15 +187,6 @@
       }
     }
 
-    &__details-mobile {
-      @include s-screen {
-        background: $color-ivory;
-        border: 2px solid $color-gold;
-        border-radius: $radius-medium;
-        padding: 30px 20px 10px;
-      }
-    }
-
     &__image-mobile {
       display: none;
       @include s-screen {
@@ -213,6 +194,23 @@
         width: initial;
         margin: 15px auto;
         height: 250px;
+      }
+    }
+  }
+}
+
+.cap017-01 {
+  .purchase-4 {
+    @include s-screen {
+      background: #fafafa;
+    }
+
+    &__details-mobile {
+      @include s-screen {
+        background: $color-ivory;
+        border: 2px solid $color-gold;
+        border-radius: $radius-medium;
+        padding: 30px 20px 10px;
       }
     }
 
@@ -270,6 +268,24 @@
     &__fast-shipping-mobile {
       @include s-screen {
         margin-top: 30px;
+      }
+    }
+  }
+}
+
+.cap017-02 {
+  .purchase-4 {
+    &__details {
+      @include s-screen {
+        background: $color-ivory;
+        border-radius: 20px;
+        padding: 30px 20px 20px;
+      }
+    }
+
+    &__options {
+      @include s-screen {
+        display: none;
       }
     }
   }

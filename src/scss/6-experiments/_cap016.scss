@@ -1,0 +1,12 @@
+@import '../synchro';
+
+.cap016 {
+  .atf {
+    &__hero-image {
+      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/gold-cap-atf-product-cap016@2x.jpeg?v=1627322058");
+      @include sm-screen {
+        background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/gold-cap-atf-mobile-cap016@2x.jpeg?v=1627322056");
+      }
+    }
+  }
+}
