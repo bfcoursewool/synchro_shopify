@@ -481,21 +481,11 @@
     }
 
     &__hero-image {
-      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/gold-cap-atf-product2@2x.jpeg?v=1617894082");
+      background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/39/assets/gold-cap-atf-product-2@2x.jpg?v=1629471615");
       @include sm-screen {
-        background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/37/assets/gold-cap-atf-mobile2@2x.jpeg?v=1617894809");
+        background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/39/assets/gold-cap-atf-mobile-2@2x.jpg?v=1629471617");
         padding-top: 66.66%;
         background-size: cover;
-      }
-    }
-
-    &__hero-image-mobile {
-      display: none;
-      @include sm-screen {
-        display: block;
-        background-image: url("https://cdn.shopify.com/s/files/1/0155/0195/t/23/assets/gold-cap-atf-mobile2@2x.jpg?v=1614363909");
-        padding-top: 66.66%;
-        background-size: contain;
       }
     }
 
@@ -1288,6 +1278,7 @@
 
       img {
         width: 100%;
+        object-fit: contain;
       }
     }
 

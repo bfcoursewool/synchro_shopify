@@ -471,6 +471,7 @@
     display: none;
     width: 45%;
     padding-right: $gutter-small;
+    object-fit: contain;
     @include sm-screen {
       width: initial;
       padding: 0;
