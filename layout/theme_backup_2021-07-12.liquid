@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="{{ shop.locale }}"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="{{ shop.locale }}"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="{{ shop.locale }}"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="{{ shop.locale }}"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--><html lang="{{ shop.locale }}"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="robots" content="index,follow">
+
+    {% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %}{% endif %}
+    <title>{% if template contains "index" %}{{ page_title }}{% else %}{{ page_title }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}{% endif %}{% unless page_title contains shop.name %} - {{ shop.name }}{% endunless %}{% endif %}</title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags | escape }}.{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}.{% endif %}"/>
+    {% endif %}
+
+    {% render 'social-meta-info' %}
+
+    {% if collection.previous_product %}
+      <link rel="prev" href="{{ collection.previous_product }}">
+    {% endif %}
+
+    {% if collection.next_product %}
+      <link rel="next" href="{{ collection.next_product }}">
+    {% endif %}
+
+		<!--BEGIN GOOGLE VERIFICATION TAG -->
+		<meta name="google-site-verification" content="D7Oo0rb1h34EQQ0OHTEpRf_hEevYjVnnPzRPXnEOQio">
+		<!--END GOOGLE VERIFICATION TAG -->
+
+    <!--BEGIN FB VERIFICATION TAG -->
+		<meta name="facebook-domain-verification" content="kvx1fv2y1ijqqi8aw5wfb4f5zwastw">
+		<!--END FB VERIFICATION TAG -->
+    
+		<meta name="p:domain_verify" content="2a10cf1c20da4a279dca28d54ebcc6b8">
+
+    <!-- Robot conditions -->
+    {% if handle contains 'checkout' %}
+			<meta name="robots" content="noindex">
+		{% endif %}
+		{% if handle contains 'tagged' %}
+			<meta name="robots" content="noindex">
+		{% endif %}
+		{% if handle contains 'thank-you' %}
+			<meta name="robots" content="noindex">
+		{% endif %}
+    
+		<!-- Google Tag Manager -->
+		<script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KTLMZWH');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- On product pages, we check the product metafields to see
+		if there is a 'unique_url' key in the seo namespace. If so, set the
+		value of this key as the canonical url, otherwise, use the standard
+		canonical url for the page. Use the "MetaFieldsEditor" shopify app
+		to set metafields for products. -->
+		{% if template contains 'product' %}
+		<div class="find-me" style="display:none;">{{ product.metafields.seo.unique_url }}</div>
+      {% if product.metafields.seo.unique_url == blank %}
+
+      <!--MB_OPC-->
+      <script async>
+      if(window.location.pathname=='/securecheckout'){
+      document.title = 'Secure checkout';
+      var css = 'body > :not(#cartLoader) {display:none !important}',head = document.head || document.getElementsByTagName('head')[0],style = document.createElement('style');
+      head.appendChild(style);style.appendChild(document.createTextNode(css));
+      var svg = "<svg style='position:fixed;top:100px;left:50%;margin-left:-100px;' width='200px'  height='200px'  xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid' class='lds-rolling' style='background: none;'><circle cx='50' cy='50' fill='none' ng-attr-stroke='{{config.color}}' ng-attr-stroke-width='{{config.width}}' ng-attr-r='{{config.radius}}' ng-attr-stroke-dasharray='{{config.dasharray}}' stroke='#197bbd' stroke-width='2' r='15' stroke-dasharray='70.68583470577033 25.561944901923447' transform='rotate(243.197 50 50)'><animateTransform attributeName='transform' type='rotate' calcMode='linear' values='0 50 50;360 50 50' keyTimes='0;1' dur='1s' begin='0s' repeatCount='indefinite'></animateTransform></circle></svg>";
+      document.open();document.write("<!doctype ht"+"ml><ht"+"ml><bo"+"dy><div id='cartLoader' style='min-height:600px;width:100%;text-align:center;background-color: rgba(255, 255, 255, .5);position:absolute;z-index:9999999999'>"+svg+"</div></b"+"ody></ht"+"ml>");document.close();
+      }
+      var opcSettings = {checkoutUrl : 'securecheckout', enabled : false, design : 1, skipCart : false, oneClickBuy : false, customJsFile : 'https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0082%2F6690%2F7727%2Ffiles%2Fcustombtn4.js%3Fv%3D1590591354', customCssFile : '', btnSelector : '', enablePopup: false, popupHtml : "",popupBkg : '#ffffff',upsells : [],boosters : {"booster1":"0","booster1_text":"","booster1_text2":"","booster1_min":"0","booster2":"0","booster3":"0","booster3_heading":"","booster3_title1":"","booster3_text1":"","booster3_img1":"","booster3_title2":"","booster3_text2":"","booster3_img2":"","booster3_title3":"","booster3_text3":"","booster3_img3":"","booster3_title4":"","booster3_text4":"","booster3_img4":"","booster4":"0","booster4_img":"","booster5":"1"}};
+      var opcLang = {completeOrder : "Complete order", payment : "Payment", shippingMethod : "Shipping method", secureCheckout : "Secure Checkout", paymentNotice : "Please submit information in previous step to show payment methods",shippingNotice : "Please submit shipping information in previous step to show shipping methods",upsellTitle : "Would you like also this? (optional)",upsellAdded : "Product has been successfully added to checkout",addToCheckout : "Add to checkout"};
+      </script>
+      <!--MB_OPC-->
+      <link rel="canonical" href="{{ canonical_url }}">
+      {% else %}
+      <link rel="canonical" href="{{ product.metafields.seo.unique_url }}">  
+      {% endif %}
+    {% else %}
+    <link rel="canonical" href="{{ canonical_url }}">
+    {% endif %}
+
+    <!-- Mobile Specific Metas -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.shop_bg_color }}">
+
+    <!-- Preconnect Domains -->
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
+
+    <!-- Preload Assets -->
+    <link rel="preload" href="{{ 'mmenu-styles.scss' | asset_url }}" as="style">
+    <link rel="preload" href="{{ 'fancybox.css' | asset_url }}" as="style">
+    <link rel="preload" href="{{ 'styles.css' | asset_url }}" as="style">
+    <link rel="preload" href="{{ 'app.js' | asset_url }}" as="script">
+
+    <!-- Stylesheet for mmenu plugin -->
+    {{ 'mmenu-styles.scss' | asset_url | stylesheet_tag }}
+
+    <!-- Stylesheet for Fancybox library -->
+    {{ 'fancybox.css' | asset_url | stylesheet_tag }}
+
+    <!-- Stylesheets for Parallax 4.1.1 -->
+    {{ 'styles.css' | asset_url | stylesheet_tag }}
+
+    <!-- Fontawesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    {% if settings.favicon != nil %}
+      <link rel="shortcut icon" type="image/x-icon" href="{{ settings.favicon | img_url: '180x180' }}">
+      <link rel="apple-touch-icon" href="{{ settings.favicon | img_url: '180x180' }}"/>
+      <link rel="apple-touch-icon" sizes="72x72" href="{{ settings.favicon | img_url: '72x72' }}"/>
+      <link rel="apple-touch-icon" sizes="114x114" href="{{ settings.favicon | img_url: '114x114' }}"/>
+      <link rel="apple-touch-icon" sizes="180x180" href="{{ settings.favicon | img_url: '180x180' }}"/>
+      <link rel="apple-touch-icon" sizes="228x228" href="{{ settings.favicon | img_url: '228x228' }}"/>
+    {% else %}
+      <link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.png' | asset_url }}">
+    {% endif %}
+
+
+    {% if template contains 'customer' %}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
+      <script src="{{ 'customer_area.js' | shopify_asset_url }}" defer></script>
+    {% endif %}
+
+    {% if settings.show_shipping_calculator and shop.enabled_currencies.size > 1 %}
+      <script type="text/javascript" src="/services/javascripts/currencies.js" defer></script>
+      <script src="{{ 'currencies.js' | asset_url }}" defer></script>
+    {% endif %}
+
+    <script>
+      {% render 'js-variables' %}
+    </script>
+
+    <script defer src="//use.typekit.net/qbg6mqz.js"></script>
+    <script defer src="{{ 'app.js' | asset_url }}"></script>
+    <script defer>
+			try {
+				Typekit.load();
+			} catch (e) {
+			}
+		</script>
+    <script src="{{ 'site-v2.js' | asset_url }}" defer></script>
+
+    <!-- yotpo plugin -->
+    {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+		{%- assign time_now = 'now' | date: '%s' %}
+		{%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+		{%- assign diffSeconds = time_now | minus: yotpo_live_time %}
+		{%- if yotpo_offload_content == 'yes' and diffSeconds < 86400 -%}
+			{{ 'yotpo-full-css.css' | asset_url | stylesheet_tag }}
+		{%- endif -%}
+
+    <script defer>
+			(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/syWV3O0DUgkkpDvutwXXSyHW0ZHmfejdusotXyXD/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+		</script>
+
+    <!-- HS Cart -->
+		{% render 'hs-cart-drawer' %}
+
+		<!-- Klaviyo Code -->
+		<script defer src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=PqjFfD"></script>
+		<!-- End Klaviyo Code -->
+
+    {{ content_for_header }}
+
+    {% render 'noscript-styles' %}
+  </head>
+
+  {% if template contains "index" %}
+    {% assign feature_image = true %}
+  {% elsif template contains "collection" %}
+    {% assign feature_image = true %}
+  {% elsif template contains "blog" %}
+    {% assign feature_image = true %}
+  {% elsif template contains "article" %}
+    {% assign feature_image = true %}
+  {% elsif template contains "contact" %}
+    {% assign feature_image = true %}
+  {% elsif template contains "banner" %}
+    {% assign feature_image = true %}
+  {% else %}
+    {% assign feature_image = false %}
+  {% endif %}
+
+  <body class="{{ template | replace: '.', '-' | handle }} {% if feature_image %}feature_image{% endif %}"
+    data-money-format="{% if settings.currency_format == 'money_with_currency_format' %}{{ shop.money_with_currency_format | strip_html }}{% else %}{{ shop.money_format | strip_html }}{% endif %}"
+    data-shop-url="{{ shop.url }}"
+    data-current-lang="{{ request.locale.iso_code }}">
+
+    <!-- Do a JS redirect from the keto-cleanse product page to our custom landing page.
+		The custom LP URL is set up as the seo.unique_url for the keto-cleanse product
+		in Shopify so that crawler bots at least get the canonical URL right, and real users
+		are redirected by JS. -->
+		<script>
+			if(window.location.href.indexOf('/products/keto-cleanse') !== -1) {
+				window.location.replace("https://keto.besynchro.com/keto-cleanse-program/");
+			}
+		</script>
+
+    <!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTLMZWH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+    <div id="content_wrapper">
+      {% section 'header' %}
+
+      <div class="global-wrapper">
+        {% if settings.mobile_search_location == 'below-header' %}
+          {% render 'mobile-search-bar' %}
+        {% endif %}
+        {{ content_for_layout }}
+      </div>
+
+      {% render 'cart-shipping-calculator' %}
+
+      {% section 'footer' %}
+
+      <div id="search" class="animated">
+        <section class="section">
+          <div class="five-eighths columns medium-down--one-whole offset-by-three is-hidden-offset-mobile-only center">
+            <div data-autocomplete-{{ settings.enable_autocomplete }}>
+              <form action="{{ routes.search_url }}" class="search__form">
+                <input type="hidden" name="type" value="{{ settings.search_option }}" />
+                <div class="search__close">
+                  <span class="icon-close"></span>
+                </div>
+                <span class="search__submit icon-search"></span>
+                <input type="text" class="search__input" name="q" placeholder="{{ 'general.search.placeholder_with_shop_name' | t: shop_name: shop.name }}" value="{% if search and search.results.first.price %}{{ search.terms }}{% endif %}" autocapitalize="off" autocomplete="off" autocorrect="off" />
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    {% if settings.size_chart != blank and template contains 'product' %}
+      {% render 'size-chart-popup' %}
+    {% endif %}
+
+    {% if settings.newsletter_popup %}
+      {% render 'newsletter-popup' %}
+    {% endif %}
+
+    {% if settings.disqus_enabled %}
+      {% if template contains "blog" or template contains "article" or template contains "index" %}
+        <script id="dsq-count-scr" src="//{{ settings.disqus_shortname }}.disqus.com/count.js" async></script>
+      {% endif %}
+    {% endif %}
+
+    <!--LinkedIn Insights Tag -->
+		<script async> _linkedin_data_partner_id = "316778"; </script>
+		<script async>(function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})();</script>
+		<noscript><img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=316778&fmt=gif"></noscript>
+		<script async>
+			var sd = 'https://synchrolife.ositracker.com';
+			var resource = document.createElement('script');
+			resource.src = "https://synchrolife.ositracker.com/track.js";
+			var script = document.getElementsByTagName('script')[0];
+			script.parentNode.insertBefore(resource, script);
+		</script>
+		<!-- CRITEO START -->
+		{% include 'criteo-tracking' %}
+		<!-- CRITEO END -->
+
+		{% if template contains 'product' %}
+		<!-- Global site tag (gtag.js) - AdWords: 864481593 -->
+		<script async data-src="https://www.googletagmanager.com/gtag/js?id=AW-864481593"></script>
+		<script async> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-864481593'); </script>
+		<script async>
+			gtag('event', 'page_view', {
+				'send_to': 'AW-864481593',
+				'ecomm_prodid': '{{ product.id }}'
+			});
+		</script>
+		{% endif %}
+
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        // Parallax plugin initialized if there is a parallax banner added to the page
+        if ($('.parallax-banner').length > 0) {
+          new universalParallax().init({
+            speed: Shopify.media_queries.tablet.matches ? 10 : 4
+          })
+        }
+      });
+    </script>
+
+    {% render 'mobile-search' %}
+
+		{% render 'hs-cart-drawer-subscriptions' %}
+    
+    <!--Gorgias Chat Widget Start-->
+    <script id="gorgias-chat-widget-install" defer>!function(_){_.GORGIAS_CHAT_APP_ID="4538",_.GORGIAS_CHAT_BASE_URL="us-east1-898b.production.gorgias.chat",_.GORGIAS_API_BASE_URL="config.gorgias.chat";var e=new XMLHttpRequest;e.open("GET","https://config.gorgias.chat/applications/4538",!0),e.onload=function(t){if(4===e.readyState)if(200===e.status){var n=JSON.parse(e.responseText);if(!n.application||!n.bundleVersion)throw new Error("Missing fields in the response body - https://config.gorgias.chat/applications/4538");if(_.GORGIAS_CHAT_APP=n.application,_.GORGIAS_CHAT_BUNDLE_VERSION=n.bundleVersion,n&&n.texts&&(_.GORGIAS_CHAT_TEXTS=n.texts),n&&n.sspTexts&&(_.GORGIAS_CHAT_SELF_SERVICE_PORTAL_TEXTS=n.sspTexts),!document.getElementById("gorgias-chat-container")){var o=document.createElement("div");o.id="gorgias-chat-container",document.body.appendChild(o);var r=document.createElement("script");r.setAttribute("defer",!0),r.src="https://storage.googleapis.com/gorgias-chat-production-client-builds/{bundleVersion}/static/js/main.js".replace("{bundleVersion}",n.bundleVersion),document.body.appendChild(r)}}else console.error("Failed request GET - https://config.gorgias.chat/applications/4538")},e.onerror=function(_){console.error(_)},e.send()}(window||{});</script><script id="gorgias-chat-shopify-install">!function(_){_.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",_.SHOPIFY_CUSTOMER_ID="{{customer.id}}",_.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});</script>
+    <!--Gorgias Chat Widget End-->
+
+    
+    <!-- Warning: Do not remove. This is used for CartHook Checkout Replacement -->
+    {% capture the_snippet_content %}{% include 'carthook-checkout' %}{% endcapture %}
+    {% unless the_snippet_content contains "Liquid error" %}{% include 'carthook-checkout' %}{% endunless %}
+    <!-- Warning: Do not remove. This is used for CartHook Checkout Replacement -->
+  </body>
+</html>

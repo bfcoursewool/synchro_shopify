@@ -1,0 +1,30 @@
+<div class="js-newsletter-popup {% if settings.newsletter_bg %} newsletter-popup__has-background-image {% endif %} {% if settings.newsletter_bg_stretched %} newsletter-popup__has-background-stretched {% endif %}">
+  <div class="newsletter-popup__content">
+  <a id="newsletter" href="#target"></a>
+    <span id="target">
+    {% if settings.newsletter_popup_link != blank %}
+      <a href="{{ settings.newsletter_popup_link }}">
+    {% endif %}
+
+    {% if settings.newsletter_popup_image %}
+      <p>
+        {{ settings.newsletter_popup_image | img_url: '580x', scale: 2 | img_tag: settings.newsletter_popup_image.alt, 'lazyload transition-in' }}
+      </p>
+    {% endif %}
+
+    <div class="newsletter__content">
+      {% if settings.newsletter_popup_text != blank %}
+        <div class="newsletter_popup__description">{{ settings.newsletter_popup_text }}</div>
+      {% endif %}
+
+      <div class="klaviyo-form-VfpQK4"></div>
+
+      {% if settings.newsletter_popup_subtext != blank %}
+      <div class="newsletter_popup__subtext">{{ settings.newsletter_popup_subtext }}</div>
+      {% endif %}
+    </div>
+
+    </span>
+  </div>
+</div>
+
