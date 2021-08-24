@@ -156,7 +156,7 @@
     }
   }
 }
-// cap017 common styles //
+// cap017 common & desktop styles //
 
 .cap017-01,
 .cap017-02 {
@@ -194,6 +194,66 @@
         width: initial;
         margin: 15px auto;
         height: 250px;
+      }
+    }
+  }
+
+  .floating-purchase-options {
+    &__item {
+      padding: 5px;
+      @include m-screen {
+        padding-right: 10px;
+      }
+    }
+
+    &__image {
+      height: 55px;
+      display: inline-block;
+      vertical-align: middle;
+      width: 55px;
+      border-radius: 5px;
+      background: #F9F6F2;
+      object-fit: contain;
+    }
+
+    &__details {
+      text-align: left;
+      margin-left: 5px;
+    }
+
+    &__quantity {
+      font-size: 16px;
+      @include s-screen {
+        font-size: 15px;
+      }
+    }
+
+    &__price {
+      span {
+        color: $color-ebony;
+        opacity: 0.5;
+        text-decoration: line-through;
+        margin-right: 5px;
+        @include s-screen {
+          display: none;
+        }
+      }
+    }
+
+    .a--cta {
+      width: 55px;
+      height: 55px;
+      text-align: center;
+      font-size: 15px;
+      line-height: 16px;
+      padding: 10px 0;
+
+      &:before {
+        content: "";
+        font-family: "Font Awesome 5 Free";
+        display: block;
+        font-size: 16px;
+        margin-bottom: 5px;
       }
     }
   }
@@ -285,6 +345,102 @@
 
     &__options {
       @include s-screen {
+        display: none;
+      }
+    }
+
+    &__more-options {
+      display: none;
+      @include s-screen {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &__more-options-title {
+      font-size: 14px;
+      font-weight: $font-demi;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    &__more-option-item {
+      @include s-screen {
+        position: relative;
+        background: $color-ivory;
+        border-radius: $radius-medium;
+        margin-bottom: 15px;
+        padding: 10px;
+      }
+    }
+
+    &__more-option-image {
+      height: 74px;
+      width: 60px;
+      display: inline-block;
+      vertical-align: middle;
+      object-fit: contain;
+    }
+
+    &__more-option-details {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+
+    &__more-option-quantity {
+      font-weight: $font-bold;
+      font-size: 18px;
+      line-height: normal;
+
+      .purchase-4__offer-5 {
+        margin: 0 0 0 10px;
+        line-height: 22px;
+        font-size: 12px;
+        padding: 0 10px;
+        vertical-align: top;
+      }
+    }
+
+    &__more-option-price {
+      font-weight: $font-bold;
+      font-size: 18px;
+      line-height: normal;
+
+      span {
+        opacity: 0.5;
+        text-decoration: line-through;
+        margin-right: 5px;
+      }
+    }
+
+    &__more-option-supply {
+      font-size: 14px;
+      opacity: 0.5;
+      font-weight: $font-demi;
+    }
+
+    &__more-option-buy {
+      width: 60px;
+      display: inline-block;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      top: 10px;
+      padding: 14px 0;
+      text-align: center;
+      font-size: 16px;
+      line-height: normal;
+
+      &:before {
+        content: "";
+        font-family: "Font Awesome 5 Free";
+        display: block;
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+
+      &:after {
         display: none;
       }
     }
