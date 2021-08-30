@@ -109,7 +109,7 @@
 <div class="hidden">
   <div class="mobile_header_logo">
     <img src="{{ "synchro-wordmark-light.svg" | asset_url }}" alt="{{shop.name}}">
-    <a href="/account" class="header-account-link account-link"><span class="icon"></span> My Account</a>
+    <a href="/account" class="header-account-link account-link"><i class="account-icon fas fa-user"></i>My Account</a>
   </div>
 </div>
 
@@ -118,7 +118,7 @@
     <ul class="mm-nolistview menu-container">
       <div class="container menu-wrapper">
         <div class="one-whole column menu-top-links">
-          <div class="container">
+          <div class="container menu-top-links__container">
             <div class="one-half column mobile-menu">
               <h2>Shop</h2>
               {% for link in linklists[section.settings.mobile_linklist_1].links %}

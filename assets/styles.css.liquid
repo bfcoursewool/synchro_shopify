@@ -11478,7 +11478,7 @@ div.collection_title_tags {
 
   #header a.mobile_logo img {
     max-width: 150px;
-    max-height: 20px;
+    /* max-height: 20px; */
     object-fit: contain;
   }
 
@@ -15530,7 +15530,6 @@ select.rc_select:focus {
 #nav .account-link {
   color: white;
   font-size: 12px;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -15555,8 +15554,11 @@ margin-right: 10px;
   margin: 20px 0;
   font-size: 18px;
   letter-spacing: 0;
-  font-weight: 500;
   color: #D0D0CC;
+}
+
+#nav .mobile-menu li a {
+  font-weight: 500;
 }
 
 #nav .header-account-link {
@@ -15577,6 +15579,9 @@ margin-right: 10px;
 
 #nav .mm-navbar__title img {
   max-height: 20px;
+  max-width: none;
+  width: auto;
+  object-fit: contain;
 }
 
 .mm-panel:after, .mm-panel:before {
@@ -15592,9 +15597,24 @@ margin-right: 10px;
   flex-grow: 1;
 }
 
+#nav .menu-top-links__container {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
 @media screen and (min-width: 798px) {
   [class*="404"] div.content,
   .customers-login div.content {
     padding-top: 215px;    
   }
+}
+
+@media only screen and (max-width: 798px) {
+  .collections-content {
+    padding: 0 8px;
+  }
+}
+
+#nav .account-icon {
+  margin-right: 8px;
 }
