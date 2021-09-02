@@ -118,6 +118,7 @@ function load_all_js() {
   //     _0x4f34a1 = new Event(_0x4d088b(0x192));
   //   window[_0x4d088b(0x18b)](_0x4f34a1);
   // }, 0xc8), 
+  lazyLoadCss('https://use.fontawesome.com/releases/v5.15.3/css/all.css'),
   lazyLoadJS(_0x41e15b(0x164)),
   lazyLoadJS('https://cdn.shopify.com/shopifycloud/shopify/assets/shopify_pay/storefront-b61f50798075db890698930c4405673937fe89353f7fea7be88b5ce16a9c0af8.js'),
   lazyLoadJS(_0x41e15b(0x173)),
