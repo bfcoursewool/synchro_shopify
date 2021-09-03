@@ -2248,7 +2248,7 @@
     "currency_format": "money_format",
     "mobile_search_location": "mobile-menu",
     "search_option": "product",
-    "favicon": "",
+    "favicon": "shopify:\/\/shop_images\/fav-icon.png",
     "enable_mobile_parallax": false,
     "slideshow_images_crop": false,
     "checkout_header_image": "shopify:\/\/shop_images\/image-from-rawpixel-id-448503-jpeg.jpg",
