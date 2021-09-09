@@ -40,7 +40,9 @@
 
         {% if settings.sale_banner_enabled %}
           <div class="banner_holder">
-            {% if product.compare_at_price_max > product.price %}
+            <!-- product.compare_at_price_min: {{product.compare_at_price_min}} -->
+            <!-- product.price_min: {{product.price_min}} -->
+            {% if product.compare_at_price_min > product.price_min and product.available %}
               <div class="sale_banner">{{ 'collections.general.sale' | t }}</div>
             {% endif %}
             {% if collection_handles contains 'new' %}
@@ -165,7 +167,7 @@
 
           {% if settings.sale_banner_enabled %}
             <div class="banner_holder">
-              {% if product.compare_at_price_max > product.price %}
+              {% if product.compare_at_price_min > product.price_min and product.available %}
                 <div class="sale_banner">{{ 'collections.general.sale' | t }}</div>
               {% endif %}
               {% if collection_handles contains 'new' %}

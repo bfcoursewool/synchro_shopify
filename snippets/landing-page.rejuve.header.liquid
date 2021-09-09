@@ -1,0 +1,34 @@
+<section class="rejuve-section rejuve-header">
+    <nav class="rejuve-header__nav">
+        <a class="rejuve-header__logo" href="/">
+            {% include 'landing-page.global.logo-svg' %}
+        </a>
+    </nav>
+    <div class="div rejuve-header__banner">
+        <div class="rejuve-header__banner-graphic">
+            <img class="rejuve-header__banner-img-bottle wow animate__fadeIn"
+                src="{{ 'rejuve_bottle.png' | asset_url }}" alt="Rejuve Bottle" aria-hidden="true" width="232"
+                height="500" data-wow-delay="400ms" data-wow-duration="300ms">
+            <img class="rejuve-header__banner-img-leaf-left wow animate__fadeIn"
+                src="{{ 'rejuve-bottle-leaves-left.png' | asset_url }}" alt="Rejuve Bottle Leaves Left"
+                aria-hidden="true" width="499" height="559" data-wow-delay="550ms" data-wow-duration="450ms">
+            <img class="rejuve-header__banner-img-leaf-right wow animate__fadeIn"
+                src="{{ 'rejuve-bottle-leaves-right.png' | asset_url }}" alt="Rejuve Bottle Leaves Right"
+                aria-hidden="true" width="303" height="499" data-wow-delay="550ms" data-wow-duration="450ms">
+            <img class="rejuve-header__banner-img-leaf-bottom wow animate__fadeIn"
+                src="{{ 'rejuve-bottle-leaves-bottom.png' | asset_url }}" alt="Rejuve Bottle Leaves Bottom"
+                aria-hidden="true" width="373" height="467" data-wow-delay="550ms" data-wow-duration="450ms">
+        </div>
+        <div class="rejuve-header__banner-content">
+            <h1 class="rejuve-header__banner-title wow animate__fadeInUp" data-wow-delay="250ms" data-wow-duration="400ms">
+                <em>Rejuvenate</em> your connective tissue and get back to moving like you want to.
+            </h1>
+            <p class="rejuve-header__banner-subtitle wow animate__fadeInUp" data-wow-delay="300ms" data-wow-duration="400ms">Re·juve works to regenerate the tissues of the joint capsule,
+                helping to restore smoothness and range-of-motion.</p>
+
+                <a role="button" href="#purchase" class="rejuve-header__banner-cta-button wow animate__fadeIn" data-wow-delay="500ms" data-wow-duration="400ms">
+                    <div class="a--cta">Buy Now</div>
+                  </a>
+        </div>
+    </div>
+</section>
